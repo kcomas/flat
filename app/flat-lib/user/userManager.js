@@ -89,9 +89,8 @@ export default class userManager {
                 user = this.users[i];
                 break;
             }
+            return user;
         }
-        return user;
-    }
 
     /**
      * Find a user by their id
