@@ -77,6 +77,36 @@ export default class userManager {
         });
     }
 
+    /**
+     * Find a user by the name
+     * @param {string} name - the name of the user to find
+     * @return {user} the user object or null of not found
+     */
+    findByName(name){
+        var user = null;
+        for(let i=0,length = this.users.length; i<length; i++){
+            if(this.users[i].name === name)
+                user = this.users[i];
+                break;
+            }
+        }
+        return user;
+    }
 
+    /**
+     * Find a user by their id
+     * @param {string} id - the id of the user
+     * @return {user} the user object or null if not found
+     */
+    findById(id){
+        var user = null;
+        for(let i=0,length = this.users.length; i<length; i++){
+            if(this.users[i].id === id){
+                user = this.users[i];
+                break;
+            }
+            return user;
+        }
+    }
 
 }

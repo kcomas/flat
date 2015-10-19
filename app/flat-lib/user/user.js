@@ -3,6 +3,7 @@
 
 import fs from 'fs';
 import crypto from 'crypto';
+import idGen from '../helpers/idGen.js';
 
 
 /**
@@ -72,7 +73,7 @@ export default class user {
      * Get the username
      * @return {string} the username
      */
-    get usernmae(){
+    get username(){
         return this.userData.username;
     }
 
@@ -104,52 +105,34 @@ export default class user {
     create(username,email,pass,callback){
         var self = this;
         //create the password
-        this.password(pass,function(err,done){
-            if(err){
-                return callback(err,null);
-            }
-            //create the id
-            self.id(function(err,done){
+        if(!this.userData.id){
+            this.password(pass,function(err,done){
                 if(err){
                     return callback(err,null);
                 }
-                //check if theo email is valid
-                if(!user.checkEmail){
-                    return callback(new Error("Invalid Email"),null);
-                }
-                self.userData.userName = username;
-                self.uerData.email = email;
-                self.dateCreated = new Date();
-                self.save(function(err,done){
+                //create the id
+                idGen(function(err,id){
                     if(err){
-                        return callback(err);
+                        return callback(err,null);
                     }
+                    //check if theo email is valid
+                    if(!user.checkEmail){
+                        return callback(new Error("Invalid Email"),null);
+                    }
+                    self.userData.userName = username;
+                    self.uerData.email = email;
+                    self.userData.id = id;
+                    self.filename = id +'.json';
+                    self.dateCreated = new Date();
+                    self.save(function(err,done){
+                        if(err){
+                            return callback(err,null);
+                        }
+                    });
                 });
             });
-        });
-    }
-    
-   /**
-    * Genertae a new id/only can be done on account createtion
-    * @param {function(err:error,done:boolean)} callback - the callback when complete
-    * @return {function} the callback function
-    */
-    id(callback){
-        var self = this;
-        if(!this.userData.id){
-            crypto.randomBytes(5,function(err,bytes){
-                if(err){
-                    return callback(err,null);
-                }
-                var id = crypto.createHash('sha512');
-                id.update(bytes.toString(),'utf8');
-                id.update(new Date.getTime(),'utf8');
-                self.userData.id = id.digest('hex');
-                self.filename = self.userData.id;
-                return callback(null,true);
-            });
         } else {
-            return callback(new Error("Id is allready generated"),null);
+            return callback(new Error("User Allready Exists"),null);
         }
     }
 
