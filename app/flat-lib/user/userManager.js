@@ -10,6 +10,7 @@ export default class userManager extends manager {
 
     /**
      * Create a user
+     * @override
      * @param {string} username - the users account name
      * @param {string} email - the users email
      * @param {string} pass - the users password

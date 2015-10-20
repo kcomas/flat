@@ -80,5 +80,13 @@ export default class fileManager {
         });
     }
 
+    /**
+     * Remove an object from disk syncronously
+     * @param {string} name - the name of the file
+     */
+    unlinkSync(name){
+        fs.unlinkSync(this.dir+name);
+    }
+
 
 }

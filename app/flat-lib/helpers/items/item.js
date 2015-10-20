@@ -136,6 +136,13 @@ export default class item {
     }
 
     /**
+     * Remove File from the disk syncronusly
+     */
+    unlinkSync(){
+        this.fileManager.unlinkSync(this.filename);
+    }
+
+    /**
      * Generate an id and filename
      * @return {function(err:error,done:boolean)} the callback if the id was generated or not
      */

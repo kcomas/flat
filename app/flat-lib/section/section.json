@@ -1,0 +1,10 @@
+{
+
+    "description":"The layout for the section object",
+    "version":"0",
+    "data":{
+        "name":"The name of the section",
+        "dateCreated":"The date the section was created",
+        "layout":"The json layout of the section"
+    }
+}

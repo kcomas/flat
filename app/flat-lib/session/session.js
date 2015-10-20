@@ -11,6 +11,7 @@ export default class session extends item {
 
     /**
      * Create a new session
+     * @override
      * @param {object} req - the request object
      * @param {object} res - the response object
      * @param {string} name - the name of the cookie

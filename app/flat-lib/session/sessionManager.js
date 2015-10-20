@@ -12,6 +12,7 @@ export default class sessionManager extends manager {
 
     /**
      * Create a new session
+     * @override
      * @param {object} req - the request object
      * @param {object} res - the response object
      * @param {string} name - the name of the cookie
@@ -31,7 +32,36 @@ export default class sessionManager extends manager {
         });
     }
 
+    /**
+     * Get a session from a cookie
+     * @param {object} req - the request object
+     * @param {string} name - the name of the cookie
+     * @return {session} return a session object or null if not found
+     */
+    getSession(req,name){
+        var ses = null;
+        if(!req.cookies[name]){
+            return null;
+        }
+        for(var i=0,l=this.items.length; i<l; i++){
+            if(this.items[i].id === req.cookies[name]){
+                ses = this.items[i];
+                break;
+            }
+        }
+        return ses;
+    }
 
+    /**
+     * Syncronously remove all of the expired sessions
+     */
+    clean(){
+        this.items.forEach(function(ses){
+            if(ses.expired()){
+                ses.unlinkSync();
+            }
+        });
+    }
 
 
 }
