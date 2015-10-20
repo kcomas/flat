@@ -110,6 +110,7 @@ export default class router {
     run(){
         var self = this;
         return function(req,res){
+            req.routerConfig = self.config;
             var loop = new routerLoop(req,res,next,self.uses,self.gets,self.posts,self.doneFn);
             loop.loop();
         }

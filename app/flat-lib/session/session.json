@@ -4,6 +4,7 @@
     "version":"0",
     "data": {
         "dateCreated":"The date the session was created",
+        "cookieName":"The name of the cookie",
         "expires":"The date the session expires",
         "ip":"The session ip address",
         "userAgent":"The session user agent",

@@ -113,15 +113,16 @@ export default class server {
      */
     run(){
         var self = this;
-        //load post data
-        urlMods(req);
-        cookies(req,res);
-        loadBody(req,res,this.config.maxPostSize,function(){
-            return function(req,res){
-                var loop = new serverLoop(req,res,self.uses,self.routers,self.done);
-                loop.loop();
-            }
-        });
+        return function(req,res){
+            //load post data
+            urlMods(req);
+            req.serverConfig = self.config;
+            cookies(req,res);
+            loadBody(req,res,self.config.maxPostSize,function(){
+                    var loop = new serverLoop(req,res,self.uses,self.routers,self.done);
+                    loop.loop();
+            });
+        }
     }
 
 }

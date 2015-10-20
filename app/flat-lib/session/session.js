@@ -26,6 +26,7 @@ export default class session extends item {
             }
             //create a new cookie
             this.data.dateCreated = new Date();
+            this.data.cookieName = name;
             var cookieObj = res.setCookie(name,this.id,time);
             this.data.expires = cookieObj.expires;
             this.data.userAgent = req.headers['user-agent'];
@@ -43,5 +44,23 @@ export default class session extends item {
         return this.data.sesData;
     }
 
+    /**
+     * Is the session expired?
+     * @return {boolean} if the session is expired
+     */
+    get expired(){
+        var date = new Date();
+        if(date > this.data.expires){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Remove a session cookie
+     */
+    destory(){
+        res.removeCookie(this.data.cookieName);
+    }
 
 }
