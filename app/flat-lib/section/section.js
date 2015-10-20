@@ -17,8 +17,17 @@ export default class section extends item {
      * @param {function(err:error,done:boolean)} callback - the callback function done is true if the section is created
      * @return {function} 
      */
-    create(){
-
+    create(name,layout,callback){
+        //generate id
+        var self = this;
+        genId(function(err,done){
+            if(err){
+                return callback(err,done);
+            }
+            self.data.name = name;
+            self.data.layout = layout;
+            self.dateCreated = new Date();
+        });
     }
 
 }
