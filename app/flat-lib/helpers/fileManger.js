@@ -65,5 +65,20 @@ export default class fileManager {
         });
     }
 
+    /**
+     * Remove an object from disk
+     * @param {string} name - the name of the file
+     * @param {function(err:error,done:boolean)} callback - the callback if the file was deleted or not
+     * @return {function} the callback function
+     */
+    unlink(name,callback){
+        fs.unlink(this.dir+name,function(err){
+            if(err){
+                return callback(err,null);
+            }
+            return callback(null,true);
+        });
+    }
+
 
 }

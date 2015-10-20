@@ -59,6 +59,14 @@ export default class item {
     }
 
     /**
+     * This method is diferent depening on the sub class
+     * @abstract
+     */
+    create(){
+
+    }
+
+    /**
      * Get the directory
      * @return {string} the directory
      */
@@ -92,7 +100,8 @@ export default class item {
 
     /**
      * Save the object to disk
-     * @return {function{err:error,done:boolean}) the callback if error or if the file saved
+     * @param {function(err:error,done:boolean)} callback - if the file was saved or not
+     * @return {function} the callback if error or if the file saved
      */
     save(callback){
         this.fileManager.save(this.filename,this.data,function(err,done){
@@ -102,7 +111,8 @@ export default class item {
 
     /**
      * Load a file from disk
-     * @return {callback(err:error,done:boolean)} the callack if the file loaded or not
+     * @param {function(err:error,done:boolean)} callback - if the file was loaded or not
+     * @return {function} the callack if the file loaded or not
      */
     load(callback){
         this.fileManager.load(this.filename,function(err,obj){
@@ -111,6 +121,17 @@ export default class item {
             }
             this.data = obj;
             return callback(null,true);
+        });
+    }
+
+    /**
+     * Remove a file from disk
+     * @param {function(err:error,done:boolean)} callback - if the file was deleted or error
+     * @return {function} the callback function
+     */
+    unlink(callback){
+        this.fileManager.unlink(this.filename,function(err,done){
+            return callback(err,done);
         });
     }
 

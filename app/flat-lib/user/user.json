@@ -1,0 +1,11 @@
+{
+    "description":"This is the layout for the user object",
+    "version":"0",
+    "data":{
+        "username":"The users account name",
+        "email":"The users email",
+        "dateCreated":"The date the user joined",
+        "salt":"The users salt",
+        "hash":"The users hash"
+    }
+}
