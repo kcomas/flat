@@ -30,6 +30,14 @@ export default class manager {
     }
 
     /**
+     * Create a new item based on the current sub class
+     * @abstract
+     */
+    create(){
+
+    }
+
+    /**
      * Get the directory
      * @return {string} the directory of the items
      */

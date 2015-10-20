@@ -7,8 +7,8 @@ import crypto from 'crypto';
 
 
 /**
- * @extends item
  * This is the user class for managing user data
+ * @extends {item}
  */
 export default class user extends item {
 
@@ -26,12 +26,19 @@ export default class user extends item {
         if(!emailVal(email)){
             return callback(new Error("Invalid Email"),null);
         }
-        this.data.username = username;
-        this.data.email = email;
-        this.dateCreated = new Date();
-        //create a password
-        this.password(pass,function(err,done){
-            return callback(err,done);
+        //generate id
+        var self = this;
+        this.genId(function(err,done){
+            if(err){
+                return callback(err,null);
+            }
+            self.data.username = username;
+            self.data.email = email;
+            self.dateCreated = new Date();
+            //create a password
+            self.password(pass,function(err,done){
+                return callback(err,done);
+            });
         });
     }
 

@@ -1,0 +1,12 @@
+{
+
+    "description":"The layout for the session object",
+    "version":"0",
+    "data": {
+        "dateCreated":"The date the session was created",
+        "expires":"The date the session expires",
+        "ip":"The session ip address",
+        "userAgent":"The session user agent",
+        "sesData":"The session data"
+    }
+}
