@@ -11,7 +11,7 @@ import fs from 'fs';
  * @param {array} files - the array of files objects as name:filename to render
  */
 export default function pageRender(dir,permalink,tags,files){
-    var file = dir+permalink.replace('/','|') + '.html';
+    var file = dir+permalink.replace('/','~') + '.html';
     var loadedFiles = [];
     files.forEach(function(file){
         for(var key in file){

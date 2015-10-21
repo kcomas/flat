@@ -10,7 +10,6 @@ import fs from 'fs';
  * @return {string} the contents rendered together
  */
 export default function contentsRender(dir,contents){
-    console.dir(contents);
     var rendered = '';
     contents.forEach(function(content){
         try {
