@@ -16,7 +16,7 @@ export default function pageRender(dir,permalink,tags,files){
     files.forEach(function(file){
         for(var key in file){
             try {
-                loadedFiles.push({'name':key,string:fs.readFileSync(file[key],'utf8')});
+                loadedFiles.push({name:key,string:fs.readFileSync(file[key],'utf8')});
             } catch(err){
                 console.log(err);
             }
