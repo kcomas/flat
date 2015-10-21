@@ -53,7 +53,7 @@ export default class pageManager {
      */
     render(url){
         var page = null;
-        console.log(req.url);
+        console.log(url);
         for(let i=0,length=this.pages.length; i<length; i++){
             if(this.pages[i].permalink === url){
                 page = this.pages[i];
