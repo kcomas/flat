@@ -77,7 +77,6 @@ export default class pageManager {
     renderAll(){
         var errors = [];
         this.pages.forEach(function(page){
-            console.dir(page);
             try {
                 page.render();
             } catch(err){

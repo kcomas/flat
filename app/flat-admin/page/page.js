@@ -183,6 +183,8 @@ export default class page {
         files.push({'head':tpl+this.head});
         files.push({'body':tpl+this.body});
         files.push({'foot':tpl+this.foot});
+        console.dir(tags);
+        console.dir(files);
         //render the page to a file
         pageRender(this.config.cacheDir,this.permalink,tags,files);
     }
