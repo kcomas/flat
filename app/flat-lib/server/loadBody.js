@@ -39,6 +39,12 @@ export default function loadBody(req,res,maxPostSize,callback){
         } catch(err){
 
         }
+        try{
+            req.body = JSON.parse(body);
+            return callback();
+        }catch(err){
+
+        }
         req.body = qs.parse(body);
         return callback();
     });
