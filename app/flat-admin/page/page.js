@@ -126,38 +126,6 @@ export default class page {
     }
 
     /**
-     * Get title
-     * @return {string} the title
-     */
-    get title(){
-        return this.title;
-    }
-
-    /**
-     * Set title
-     * @param {string} title - the page title
-     */
-    set title(title) {
-        this.title = title;
-    }
-
-    /**
-     * Get the config
-     * @return {object} the config defaults object
-     */
-    get config(){
-        return this.config;
-    }
-
-    /**
-     * Get the extra tags
-     * @return {array} the extra tags array
-     */
-    get tags(){
-        return this.extraTags;
-    }
-
-    /**
      * Add contents to the contents array
      * @param {string} name - the name of the contents section
      * @param {string} filename - the filename of the contents section
