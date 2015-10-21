@@ -9,13 +9,12 @@ export default class routerLoop {
      * @constructor
      * @param {object} req - the request object
      * @param {object} res - the response object
-     * @param {funtion} next - the function to call the next route/fn
      * @param {array} uses - the function to be called in order
      * @param {array} gets - the array of get functions
      * @param {array} posts - the array of post functions
      * @param {funtion} end - the final function of the route
      */
-    constructor(req,res,next,uses,gets,posts,end){
+    constructor(req,res,uses,gets,posts,end){
         /**
          * The position of the uses array
          */
@@ -33,7 +32,6 @@ export default class routerLoop {
 
         this.req = req;
         this.res = res;
-        this.next = next;
         this.uses = uses;
         this.gets = gets;
         this.posts = posts;
@@ -63,7 +61,7 @@ export default class routerLoop {
                    }
                 } else {
                     //end function
-                    this.end(this.next);
+                    this.end(req,res);
                 }
             } else if(this.req.method === 'POST'){
                 if(this.postsPosition < this.posts.length){
