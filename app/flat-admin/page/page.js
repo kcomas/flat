@@ -26,7 +26,7 @@ export default class page {
      * @property {string} containerDefault - the default container filename
      * @property {string} headDefault - the default head filename
      * @property {string} menuDefault - the default menu filename
-     * @property {string} bodyDefault - the default 
+     * @property {string} bodyDefault - the default body filename 
      * @param {array} meta - the array of meta objects
      * @param {array} css - the array of css objects
      * @param {array} js - the array of js objetcs
@@ -237,7 +237,7 @@ export default class page {
             if(err){
                 return callback(err,null);
             }
-            file.replace('[data]','<script>var data ="'+JSON.stringify(data)+'";</script>');
+            file.replace('[data]','<script>var data = "'+JSON.stringify(data)+'";</script>');
             return callback(null,file);
         });
     }
