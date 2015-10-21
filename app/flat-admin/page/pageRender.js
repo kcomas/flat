@@ -29,6 +29,7 @@ export default function pageRender(dir,permalink,tags,files){
             console.log(err);
         }
     }
+    console.dir(loadedFiles);
     tags.forEach(function(tag){
         for(key in tag){
             try {
