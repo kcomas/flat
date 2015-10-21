@@ -13,10 +13,12 @@ import fs from 'fs';
 export default function pageRender(dir,permalink,tags,files){
     var file = dir+permalink + '.html';
     var loadedFiles = [];
-    console.dir(tags);
-    console.dir(files);
     for(let key in files){
-        loadedFiles.push({'name':key,'string':fs.readFileSync(files[key],'utf8')});
+        try {
+            loadedFiles.push({'name':key,'string':fs.readFileSync(files[key],'utf8')});
+        } catch(err){
+            console.log(err);
+        }
     }
     console.dir(loadedFiles);
     for(var i=0; i<loadedFiles.length; i++){
