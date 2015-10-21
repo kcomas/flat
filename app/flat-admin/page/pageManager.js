@@ -55,6 +55,7 @@ export default class pageManager {
         var page = null;
         for(let i=0,length=this.pages.length; i<length; i++){
             if(this.pages[i].permalink === url){
+                console.dir(page);
                 page = this.pages[i];
                 break;
             }
