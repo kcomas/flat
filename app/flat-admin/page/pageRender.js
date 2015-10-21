@@ -14,6 +14,7 @@ export default function pageRender(dir,permalink,tags,files){
     var file = dir+permalink + '.html';
     var loadedFiles = [];
     for(var key in files){
+        console.log(files[key]);
         try {
             loadedFiles.push({'name':key,'string':fs.readFileSync(files[key],'utf8')});
         } catch(err){
