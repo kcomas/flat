@@ -193,7 +193,7 @@ export default class page {
      * @param {function(err:error,file:string)} callback - the callback function returns the file after the data is added
      */
     load(data,callback){
-        fs.readFile(this.config.cacheDir+this.permalink+'.html','utf8',function(err,file){
+        fs.readFile(this.config.cacheDir+this.permalink.replace('/','')+'.html','utf8',function(err,file){
             if(err){
                 return callback(err,null);
             }
