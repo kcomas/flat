@@ -30,9 +30,8 @@ export default function pageRender(dir,permalink,tags,files){
             console.log(err);
         }
     });
-    console.dir(tags);
     tags.forEach(function(tag){
-        for(key in tag){
+        for(var key in tag){
             try {
                 container = container.replace('['+key+']',tag[key]);
             } catch(err){
