@@ -8,8 +8,8 @@
             {"name":"viewport","content":"width=device-width, initial-scale=1"}
     ],
     "cssDefault":[
-        {"href":"/globals/bootstrap/bootstrap.min.css","rel":"stylesheet"},
-        {"href":"/globals/bootstrap/bootstrap-theme.min.css","rel":"stylesheet"}
+        {"href":"/globals/bootstrap/css/bootstrap.min.css","rel":"stylesheet"},
+        {"href":"/globals/bootstrap/css/bootstrap-theme.min.css","rel":"stylesheet"}
     ],
     "jsDefault":[
         {"src":"/globals/angular/angular.min.js"},
