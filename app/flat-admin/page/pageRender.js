@@ -39,5 +39,9 @@ export default function pageRender(dir,permalink,tags,files){
             }
         }
     });
-    fs.writeFileSync(file,container,'utf8');
+    try {
+        fs.writeFileSync(file,container,'utf8');
+    } catch(err){
+        console.log(err);
+    }
 }
