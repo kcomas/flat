@@ -15,7 +15,7 @@ export default function contentsRender(dir,contents){
         try {
             rendered += '<uib-tab heading="'+contnet.name+'">'+fs.readFileSync(dir+content.filename,'utf8')+'</uib-tab>';   
         } catch (err){
-
+            console.log(err);
         }
     });
     return rendered;
