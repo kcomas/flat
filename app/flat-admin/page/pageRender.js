@@ -25,8 +25,12 @@ export default function pageRender(dir,permalink,tags,files){
     var container = loadedFiles.shift().str;
     console.dir(container);
     loadedFiles.forEach(function(file2){
+        try{
             var reg = new RegExp('\['+file2.name+'\]',g);
             container.replace(reg,file2.str);
+        } catch(err){
+            console.log(err);
+        }
     });
     console.dir(container);
     tags.forEach(function(tag){
