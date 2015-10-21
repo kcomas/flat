@@ -23,7 +23,6 @@ export default function pageRender(dir,permalink,tags,files){
         }
     });
     var container = loadedFiles.shift().str;
-    console.dir(container);
     loadedFiles.forEach(function(file2){
         console.log('['+file2.name+']');
         try{
@@ -32,16 +31,14 @@ export default function pageRender(dir,permalink,tags,files){
             console.log(err);
         }
     });
-    console.dir(container);
     tags.forEach(function(tag){
         for(key in tag){
             try {
-                loadedFiles[0].str.replace('['+key+']',tag[key]);
+                container = container.replace('['+key+']',tag[key]);
             } catch(err){
                 console.log(err);
             }
         }
     });
-    console.dir(loadedFiles);
-    fs.writeFileSync(file,string,'utf8');
+    fs.writeFileSync(file,container,'utf8');
 }
