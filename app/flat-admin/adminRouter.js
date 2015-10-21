@@ -25,7 +25,7 @@ function showError(req,res,err,status){
 
 adminRouter.use(function(req,res,next){
    if(req.method === 'GET'){
-        manager.load(req.url,{key:'value'},function(err,page){
+        manager.load(req.url.replace(/^/flat-admin$|^/flat-admin//,'/'),{key:'value'},function(err,page){
             if(err){
                 showError(req,res,err,404);
             } else {
