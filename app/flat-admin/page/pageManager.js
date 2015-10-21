@@ -28,6 +28,7 @@ export default class pageManager {
      * @return {function} the callback function
      */
     load(url,data,callback){
+        console.log(url);
         var page = null;
         for(let i=0,length=this.pages.length; i<length; i++){
             if(this.pages[i].permalink === url){
@@ -35,7 +36,6 @@ export default class pageManager {
                 break;
             }
         }
-        console.dir(page);
         if(page === null){
             return callback(new Error("No Page Found"),null);
         }
