@@ -47,7 +47,7 @@ export default class serverLoop {
             });
             if(currentRouter === null){
                 //run the end function
-                this.end();
+                this.end(req,res);
             } else {
                 //run the route
                 currentRouter(req,res);
