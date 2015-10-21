@@ -126,6 +126,26 @@ export default class page {
     }
 
     /**
+     * Add a js file to the js string
+     * @param {object} js - the js object
+     * @property {string} name - the name of the attribute
+     * @property {string} value - the value of the attribute
+     */
+    addJs(js){
+        this.js.push(js);
+    }
+
+    /**
+     * Add a meta object to the meta array
+     * @param {object} meta - the meta object
+     * @property {string} name - the name of the attribute
+     * @property {string} value - the value of the attribute
+     */
+    addMeta(meta){
+        this.meta.push(meta);
+    }
+
+    /**
      * Add contents to the contents array
      * @param {string} name - the name of the contents section
      * @param {string} filename - the filename of the contents section
