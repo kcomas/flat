@@ -42,7 +42,7 @@ export default class serverLoop {
             var currentRouter = null;
             this.routers.forEach(function(router){
                 if(router.path.indexOf(self.req.url) === 0){
-                    currentRouter = self.router.router;
+                    currentRouter = router.router;
                 }
             });
             if(currentRouter === null){
