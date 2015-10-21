@@ -12,7 +12,11 @@ import fs from 'fs';
 export default function contentsRender(dir,contents){
     var rendered = '';
     contents.forEach(function(content){
+        try {
         rendered += '<uib-tab heading="'+contnet.name+'">'+fs.readFileSync(dir+content.filename,'utf8')+'</uib-tab>';   
+        } catch (err){
+
+        }
     });
     return rendered;
 }

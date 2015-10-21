@@ -166,16 +166,18 @@ export default class page {
      */
     render(){
         var tags = [];
+        console.dir(tags);
         tags.push({'contents':contentsRender(this.config.contentDir,this.contents)});
         //render the tags
+        console.dir(tags);
         tags.push({'meta':tagRender('meta',true,this.meta)});
         tags.push({'css':tagRender('link',true,this.css)});
         tags.push({'headJs':tagRender('script',false,this.headJs)});
         tags.push({'js':tagRender('script',false,this.js)});
+        console.dir(tags);
         if(this.extraTags.length > 0){
             tags = tags.concat(this.extraTags);
         }
-        console.log('here');
         //add files
         var files = [];
         var tpl = this.config.templateDir;
