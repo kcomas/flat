@@ -24,7 +24,7 @@ export default function pageRender(dir,permalink,tags,files){
     });
     var container = loadedFiles.shift();
     loadedFiles.forEach(function(file2){
-            var reg = new RegExp('['+file2.name+']',g);
+            var reg = new RegExp('\['+file2.name+'\]',g);
             container.str.replace(reg,file2.str);
     });
     console.log(container);
