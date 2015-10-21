@@ -214,6 +214,7 @@ export default class page {
      * @param {function(err:error,file:string)} callback - the callback function returns the file after the data is added
      */
     load(data,callback){
+        //test
         console.log(this.config.cacheDir+this.permalink.replace(/\/flat-admin/|/\/flat-admin\//,'~')+'.html');
         fs.readFile(this.config.cacheDir+this.permalink.replace(/\/flat-admin/|/\/flat-admin\//,'~')+'.html','utf8',function(err,file){
             if(err){
