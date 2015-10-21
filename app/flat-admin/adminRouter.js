@@ -24,8 +24,9 @@ function showError(req,res,err,status){
 }
 
 adminRouter.use(function(req,res,next){
+   var reg = new RegExp('^/flat-admin$|^/flat-admin/$');
    if(req.method === 'GET'){
-        manager.load(req.url.replace(/^/flat-admin$|^/flat-admin//,'/'),{key:'value'},function(err,page){
+        manager.load(req.url.replace(reg,'/'),{key:'value'},function(err,page){
             if(err){
                 showError(req,res,err,404);
             } else {
