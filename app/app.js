@@ -19,3 +19,4 @@ app.always(function(req,res){
 });
 
 http.createServer(app.run()).listen(app.get('port'));
+console.log("Server Started");

@@ -37,7 +37,7 @@ export default class page {
      * @parma {string} body - the template of the body filename
      * @param {string} foot - the template of the foot filename
      */
-    constructor(permalink,title,pageConfig,meta,css,js,container,head,headjs,menu,body,foot){
+    constructor(permalink,title,pageConfig,meta,css,js,container,head,headJs,menu,body,foot){
         
         /**
          * The page permalink
