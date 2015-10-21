@@ -83,7 +83,7 @@ export default class pageManager {
                 errors.push(err);
             }
         });
-        return err;
+        return errors;
     }
 
 }
