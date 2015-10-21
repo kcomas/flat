@@ -23,8 +23,8 @@ export default function pageRender(dir,permalink,tags,files){
         }
     });
     var container = loadedFiles.shift();
-    loadedFiles.forEach(function(file){
-            container.str.replace('['+file.name+']',file.string);
+    loadedFiles.forEach(function(file2){
+            container.str.replace('['+file2.name+']',file2.string);
     });
     console.log(container);
     tags.forEach(function(tag){
