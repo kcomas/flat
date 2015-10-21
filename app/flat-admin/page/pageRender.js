@@ -23,11 +23,12 @@ export default function pageRender(dir,permalink,tags,files){
         }
     });
     var container = loadedFiles.shift();
+    console.dir(container);
     loadedFiles.forEach(function(file2){
             var reg = new RegExp('\['+file2.name+'\]',g);
             container.str.replace(reg,file2.str);
     });
-    console.log(container);
+    console.dir(container);
     tags.forEach(function(tag){
         for(key in tag){
             try {
