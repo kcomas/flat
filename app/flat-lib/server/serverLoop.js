@@ -47,10 +47,10 @@ export default class serverLoop {
             });
             if(currentRouter === null){
                 //run the end function
-                this.end(req,res);
+                this.end(this.req,this.res);
             } else {
                 //run the route
-                currentRouter(req,res);
+                currentRouter(this.req,this.res);
             }
         }
     }
