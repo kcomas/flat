@@ -88,7 +88,7 @@ export default class server {
      * @param {router} router - the router to be added
      */
     route(path,router){
-        this.routes.push({path:path,router:router});
+        this.routers.push({path:path,router:router});
     }
 
     /**
