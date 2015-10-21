@@ -9,13 +9,25 @@ import pageManager from './page/pageManager.js';
 var adminRouter = new router();
 var manager = new pageManager(pages);
 
+
+/**
+ * Render a json error page
+ * @param {object} req - the request object
+ * @param {object} res - the response object
+ * @param {error} err - the json error object
+ * @param {number} status - the status code
+ */
+function showError(req,res,err,status){
+    res.statusCode = status;
+    res.setHeader('Content-Type','application/json; charset=utf8');
+    res.end(JSON.stringify(err));
+}
+
 adminRouter.use(function(req,res,next){
    if(req.method === 'GET'){
         manager.load(req.url,{key:'value'},function(err,page){
             if(err){
-                res.statusCode = 404;
-                res.setHeader('Content-Type','application/json; charset=utf8');
-                res.end(JSON.stringify(err));
+                showError(req,res,err,404);
             } else {
                 res.statusCode = 200;
                 res.setHeader('Content-Type','text/html; charset=utf8');
@@ -27,23 +39,31 @@ adminRouter.use(function(req,res,next){
    }
 });
 
-adminRouter.post('/flat-admin/renderAll',function(req,res){
-    var err = manager.renderAll();
-    if(err.length > 0){
-        res.statusCode = 500;
-        res.setHeader('Content-Type','application/json; charset=utf8');
-        res.end(JSON.stringify(err));
+adminRouter.post('/flat-admin/render',function(req,res){
+    var page = req.query.page;
+    var err = pageManager.render(page);
+    if(err){
+        showError(req,res,err,500);
     } else {
         res.statusCode = 200;
         res.setHeader('Content-Type','text/html; charset=utf8');
-        res.end(page);
+        res.end("Page Created");
+    }
+});
+
+adminRouter.post('/flat-admin/renderAll',function(req,res){
+    var err = manager.renderAll();
+    if(err.length > 0){
+        showError(req,res,err,500);
+    } else {
+        res.statusCode = 200;
+        res.setHeader('Content-Type','text/html; charset=utf8');
+        res.end("Pages Created");
     }
 });
 
 adminRouter.always(function(req,res){
-        res.statusCode = 404;
-        res.setHeader('Content-Type','application/json; charset=utf8');
-        res.end(JSON.stringify({status:"Not Found"}));
+        showError(req,res,new Error("Not Found"),404);
 });
 
 export default adminRouter;

@@ -21,6 +21,10 @@ import fs from 'fs';
  */
 var pageConfig = JSON.parse(fs.readFileSync('./flat-config/pageConfig.json'),'utf8');
 
+//make sure the cache dir exists
+if (!fs.existsSync(pageConfig.cacheDir)){
+    fs.mkdirSync(cacheDir);
+}
 
 /**
  * This is the array of all of the admin pages
