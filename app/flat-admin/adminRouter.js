@@ -41,7 +41,7 @@ adminRouter.use(function(req,res,next){
 
 adminRouter.post('/flat-admin/render',function(req,res){
     var page = req.body.page;
-    var err = manager.render(req.url);
+    var err = manager.render(page);
     if(err){
         showError(req,res,err,500);
     } else {
