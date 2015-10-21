@@ -7,7 +7,7 @@ import adminRouter from './flat-admin/adminRouter.js';
 
 var app = new server();
 
-app.load('./flat-config/config.json');
+app.loadConfig('./flat-config/config.json');
 
 app.route('/flat-admin',adminRouter.run());
 
