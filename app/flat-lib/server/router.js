@@ -1,6 +1,7 @@
 "use strict"
 
 import fs from 'fs';
+import routerLoop from './routerLoop.js'
 
 /**
  * The core of the server handels the use and get and post routes  
