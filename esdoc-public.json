@@ -1,5 +1,5 @@
 {
 
-    "source":"./flat-public",
+    "source":"./flat-public/admin",
     "destination":"./docs-public"
 }
