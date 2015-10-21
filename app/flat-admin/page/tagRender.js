@@ -10,6 +10,7 @@
  */
 export default function tagRender(tag,selfClose,objArray){
     var render = '';
+    console.dir(objArray);
     objArray.forEach(function(obj){
         render += '<'+tag;
         for(let key in obj){
