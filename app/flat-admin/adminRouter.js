@@ -40,7 +40,7 @@ adminRouter.use(function(req,res,next){
 });
 
 adminRouter.post('/flat-admin/render',function(req,res){
-    var page = req.query.page;
+    var page = req.body.page;
     var err = pageManager.render(page);
     if(err){
         showError(req,res,err,500);
