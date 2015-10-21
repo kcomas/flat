@@ -23,7 +23,7 @@ var pageConfig = JSON.parse(fs.readFileSync('./flat-config/pageConfig.json'),'ut
 
 //make sure the cache dir exists
 if (!fs.existsSync(pageConfig.cacheDir)){
-    fs.mkdirSync(cacheDir);
+    fs.mkdirSync(pageConfig.cacheDir);
 }
 
 /**
