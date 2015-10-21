@@ -26,7 +26,7 @@ var pageConfig = JSON.parse(fs.readFileSync('./flat-config/pageConfig.json'),'ut
  * This is the array of all of the admin pages
  * @type {array}
  */
-pages = [
+var pages = [
 
     new page('/flat-admin','Admin Home',pageConfig)
 
