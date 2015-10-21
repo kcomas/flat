@@ -175,6 +175,8 @@ export default class page {
         if(this.extraTags.length > 0){
             tags = tags.concat(this.extraTags);
         }
+        console.dir(tags);
+        console.dir(tags.length);
         //add files
         var files = [];
         var tpl = this.config.templateDir;
@@ -183,8 +185,6 @@ export default class page {
         files.push({'head':tpl+this.head});
         files.push({'body':tpl+this.body});
         files.push({'foot':tpl+this.foot});
-        console.dir(tags);
-        console.dir(files);
         //render the page to a file
         pageRender(this.config.cacheDir,this.permalink,tags,files);
     }
