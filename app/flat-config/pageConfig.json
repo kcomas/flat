@@ -1,8 +1,8 @@
 {
 
-    "templateDir":"./flat-content/adminTemplate",
-    "contentDir":"./flat-content/adminContent",
-    "cacheDir":"./flat-content/adminCache",
+    "templateDir":"./flat-content/adminTemplate/",
+    "contentDir":"./flat-content/adminContent/",
+    "cacheDir":"./flat-content/adminCache/",
     "metaDefault":[
             {"charset":"utf-8"},
             {"name":"viewport","content":"width=device-width, initial-scale=1"}
