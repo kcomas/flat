@@ -35,6 +35,7 @@ export default class pageManager {
                 break;
             }
         }
+        console.dir(page);
         if(page === null){
             return callback(new Error("No Page Found"),null);
         }
