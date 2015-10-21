@@ -177,14 +177,12 @@ export default class page {
         }
         //add files
         var files = [];
-        var tpl = this.config.templateDie;
+        var tpl = this.config.templateDir;
         files.push({'container':tpl+this.container});
         files.push({'menu':tpl+this.menu});
         files.push({'head':tpl+this.head});
         files.push({'body':tpl+this.body});
         files.push({'foot':tpl+this.foot});
-        console.dir(tags);
-        console.dir(files);
         //render the page to a file
         pageRender(this.config.cacheDir,this.permalink,tags,files);
     }
