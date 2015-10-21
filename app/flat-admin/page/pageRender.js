@@ -16,6 +16,7 @@ export default function pageRender(dir,permalink,tags,files){
     for(let key in files){
         loadedFiles.push({'name':key,'string':fs.readFileSync(files[key],'utf8')});
     }
+    console.dir(loadedFiles);
     for(var i=0; i<loadedFiles.length; i++){
         for(var x=0; x<loadedFiles.length; x++){
             if(loadedFiles[i].string.indexOf('['+loadedFiles[x].name+']') > 0){
@@ -24,7 +25,6 @@ export default function pageRender(dir,permalink,tags,files){
             }
         }
     }
-    console.dir(loadedFiles);
     var string = loadedFiles.shift();
     fs.writeFileSync(file,string,'utf8');
 }
