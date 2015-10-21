@@ -22,14 +22,11 @@ export default function pageRender(dir,permalink,tags,files){
             }
         }
     });
-    for(var i=1; i<loadedFiles.length; i++){
-        try {
-            loadedFiles[0].str.replace('['+loadedFiles[i].name+']',loadedFiles[i].string);
-        } catch(err){
-            console.log(err);
-        }
-    }
-    console.dir(loadedFiles);
+    var container = loadedFiles.shift();
+    loadedFiles.forEach(function(file){
+            container.str.replace('['+file.name+']',file.string);
+    });
+    console.log(container);
     tags.forEach(function(tag){
         for(key in tag){
             try {
