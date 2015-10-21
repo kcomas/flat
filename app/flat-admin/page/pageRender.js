@@ -12,6 +12,10 @@ import fs from 'fs';
  */
 export default function pageRender(dir,permalink,tags,files){
     var file = dir+permalink + '.html';
+    console.dir(file);
+    console.dir(permalink);
+    console.dir(tags);
+    console.dir(files);
     var loadedFiles = [];
     for(let key in files){
         loadedFiles.push({'name':key,'string':fs.readFileSync(files[key],'utf8')});
@@ -24,7 +28,5 @@ export default function pageRender(dir,permalink,tags,files){
             }
         }
     }
-    var string = loadedFiles.shift();
-    console.log(string);
     fs.writeFileSync(file,string,'utf8');
 }
