@@ -126,14 +126,6 @@ export default class page {
     }
 
     /**
-     * Get permalink
-     * @return {string} the permalink
-     */
-    get permalink(){
-        return this.permalink;
-    }
-
-    /**
      * Get title
      * @return {string} the title
      */
