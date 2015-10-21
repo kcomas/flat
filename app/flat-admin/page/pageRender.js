@@ -23,11 +23,19 @@ export default function pageRender(dir,permalink,tags,files){
         }
     });
     for(var i=1; i<loadedFiles.length; i++){
-        loadedFiles[0].string.replace('['+loadedFiles[i].name+']',loadedFiles[i].string);
+        try {
+            loadedFiles[0].string.replace('['+loadedFiles[i].name+']',loadedFiles[i].string);
+        } catch(err){
+            console.log(err);
+        }
     }
     tags.forEach(function(tag){
         for(key in tag){
-            loadedFiles[0].replace('['+key+']',tag[key]);
+            try {
+                loadedFiles[0].replace('['+key+']',tag[key]);
+            } catch(err){
+                console.log(err);
+            }
         }
     });
     console.dir(loadedFiles);
