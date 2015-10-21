@@ -30,10 +30,11 @@ if (!fs.existsSync(pageConfig.cacheDir)){
  * This is the array of all of the admin pages
  * @type {array}
  */
-var pages = [
+var pages = [];
 
-    new page('/flat-admin','Admin Home',pageConfig)
 
-];
+var index = new page('/flat-admin','Admin Home',pageConfig);
+
+pages.push(index);
 
 export default pages;
