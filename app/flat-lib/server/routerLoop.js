@@ -45,7 +45,7 @@ export default class routerLoop {
     loop(){
         var self = this;
         if(this.usesPosition < this.uses.length){
-            this.uses[this.usesPosition](req,res,function next(){
+            this.uses[this.usesPosition](this.req,this.res,function next(){
                 self.usesPosition++;
                 self.loop();
             });
