@@ -24,8 +24,8 @@ export default function pageRender(dir,permalink,tags,files){
     });
     var container = loadedFiles.shift();
     loadedFiles.forEach(function(file2){
-            console.log(file2.name);
-            container.str.replace('['+file2.name+']',file2.str);
+            var reg = new RegExp('['+file2.name+']',g);
+            container.str.replace(reg,file2.str);
     });
     console.log(container);
     tags.forEach(function(tag){
