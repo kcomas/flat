@@ -41,7 +41,7 @@ export default class serverLoop {
             //loop through the routers
             var currentRouter = null;
             this.routers.forEach(function(router){
-                var index = router.path.indexOf(self.req.url);
+                var index = self.req.url.indexOf(router.path);
                 console.log(index);
                 if(router.path.indexOf(self.req.url) > -1){
                     currentRouter = router.router;
