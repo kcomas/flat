@@ -11,5 +11,5 @@ babel ./app -d lib
 #babel ./flat-public  -d lib-public
 mkdir lib/flat-config
 mkdir lib/flat-content
-cp -R ./app/flat-config ./lib/flat-config
-cp -R ./app/flat-content ./lib/flat-content
+cp -R ./app/flat-config ./lib/
+cp -R ./app/flat-content ./lib/
