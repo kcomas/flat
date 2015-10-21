@@ -198,7 +198,7 @@ export default class page {
             if(err){
                 return callback(err,null);
             }
-            file.replace('[data]','<script>var data = "'+JSON.stringify(data)+'";</script>');
+            file.replace('{data}','<script>var data = "'+JSON.stringify(data)+'";</script>');
             return callback(null,file);
         });
     }
