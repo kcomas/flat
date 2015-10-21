@@ -1,17 +1,18 @@
 {
     "description":"The layout for the admin page controler class"
     "version":"0",
-    "permalink":"The permalink of the page, shows as .page in the cache folder",
+    "permalink":"The permalink of the page, shows as .html in the cache folder",
     "title":"The Title of the page",
     "pageConfig":"The configuration object"
     "meta":"array of objects for the meta info",
     "css":"array of objects for the css",
     "js":"array of objetcs for the js",
-    "container":"The template for the page container",
-    "head":"The template for the header of the page",
-    "menu":"The template for the menu of the page",
-    "body":"The template for the body of the page",
-    "foot":"The template for the footer of the page",
+    "headJs":"array of objects for js in the head",
+    "container":"The template for the page container, .htm",
+    "head":"The template for the header of the page, .htm",
+    "menu":"The template for the menu of the page, .htm",
+    "body":"The template for the body of the page, .htm",
+    "foot":"The template for the footer of the page, .htm",
     "contents":[
             {
                 "filename":"The file name of the contents",
@@ -19,5 +20,12 @@
                 "note":"Rendered By angular, filename .part "
             }
     ],
+    "extraTags":[
+        {
+            "name":"The name of the tag to replace",
+            "content":"The content of the tag to replace"
+        }
+
+    ]
     "data":"The default data to be sent to the page, rendered with angular"
 }

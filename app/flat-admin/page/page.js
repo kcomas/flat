@@ -1,6 +1,8 @@
 
 "use strict"
 
+import fs from 'fs';
+
 /**
  * The class used to define the admin pages
  */
@@ -17,6 +19,7 @@ export default class page {
      * @property {array} metaDefault - the default meta object
      * @property {array} cssDefault - the default css object
      * @property {array} jsDefault - the default js object
+     * @property {array} headJsDefault - the default head js object
      * @property {string} containerDefault - the default container filename
      * @property {string} headDefault - the default head filename
      * @property {string} menuDefault - the default menu filename
@@ -24,13 +27,14 @@ export default class page {
      * @param {array} meta - the array of meta objects
      * @param {array} css - the array of css objects
      * @param {array} js - the array of js objetcs
+     * @param {array} headJs - array of js objects that go in the head
      * @param {string} container - the template of the container filename
      * @param {string} head - the template of the head filename
      * @param {string} menu - the template of the menu filename
      * @parma {string} body - the template of the body filename
      * @param {string} foot - the template of the foot filename
      */
-    constructor(permalink,title,pageConfig,meta,css,js,container,head,menu,body,foot){
+    constructor(permalink,title,pageConfig,meta,css,js,container,head,headjs,menu,body,foot){
         
         /**
          * The page permalink
@@ -69,6 +73,12 @@ export default class page {
         this.js = js || pageConfig.jsDefault;
 
         /**
+         * The page head js properites
+         * @type {array}
+         */
+        this.headJs = headJs || pageConfig.headJsDefault;
+
+        /**
          * The page container template
          * @type {string}
          */
@@ -103,6 +113,12 @@ export default class page {
          * @type {array}
          */
         this.contents = [];
+
+        /**
+         * The extra tags for replacing in the template
+         * @type {array}
+         */
+        this.extraTags = [];
 
     }
 
@@ -139,6 +155,14 @@ export default class page {
     }
 
     /**
+     * Get the extra tags
+     * @return {array} the extra tags array
+     */
+    get tags(){
+        return this.extraTags;
+    }
+
+    /**
      * Add contents to the contents array
      * @param {string} name - the name of the contents section
      * @param {string} filename - the filename of the contents section
@@ -148,6 +172,30 @@ export default class page {
         obj.name = name;
         obj.filename = filename;
         this.contents.push(obj);
+    }
+
+    /**
+     * Add an extra tag with content into the extra tags
+     * @param {string} name - the name of the tag
+     * @param {string} content - the content of the tag
+     */
+    addTag(name,content){
+        var obj = {};
+        obj.name = name;
+        obj.content = content;
+        this.extraTags.push(obj);
+    }
+
+    /**
+     * Remove an extra tag with content
+     * @param {string} name - the name of the tag
+     */
+    removeTag(name){
+        for(let key in this.extraTags){
+            if(key === name){
+                delete this.extraTags[key];
+            }
+        }
     }
 
 }
