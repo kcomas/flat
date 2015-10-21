@@ -168,7 +168,7 @@ export default class page {
         var tags = [];
         tags.push({'contents':contentsRender(this.config.contentDir,this.contents)});
         //render the tags
-        tags.push({'title':tagRender('title',false,this.title)});
+        tags.push({'title':this.title)});
         tags.push({'meta':tagRender('meta',true,this.meta)});
         tags.push({'css':tagRender('link',true,this.css)});
         tags.push({'headJs':tagRender('script',false,this.headJs)});
