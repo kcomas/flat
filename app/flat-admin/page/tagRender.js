@@ -21,5 +21,6 @@ export default function tagRender(tag,selfClose,objArray){
             render += '></'+tag+'>';
         }
     });
+    console.log(render);
     return render;
 }
