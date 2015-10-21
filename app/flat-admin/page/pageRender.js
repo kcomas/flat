@@ -25,5 +25,6 @@ export default function pageRender(dir,permalink,tags,files){
         }
     }
     var string = loadedFiles.shift();
+    console.log(string);
     fs.writeFileSync(file,string,'utf8');
 }
