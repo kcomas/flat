@@ -166,7 +166,7 @@ export default class page {
      */
     render(){
         var tags = [];
-        //tags.push({'contents':renderContents(this.config.contentDir,this.contents)});
+        tags.push({'contents':contentsRender(this.config.contentDir,this.contents)});
         //render the tags
         tags.push({'meta':tagRender('meta',true,this.meta)});
         tags.push({'css':tagRender('link',true,this.css)});
