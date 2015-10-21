@@ -35,6 +35,9 @@ var pages = [];
 
 var index = new page('/flat-admin','Admin Home',pageConfig);
 
+var sectionEditor = new page('/flat-admin/section-editor','Edit Section',pageConfig);
+
 pages.push(index);
+pages.push(sectionEditor);
 
 export default pages;
