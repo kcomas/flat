@@ -2,6 +2,9 @@
 "use strict"
 
 import fs from 'fs';
+import contentsRender from './contentsRender.js';
+import tagRender from './tagRender.js';
+import pageRender from './pageRender.js';
 
 /**
  * The class used to define the admin pages
@@ -197,5 +200,47 @@ export default class page {
             }
         }
     }
+
+    /**
+     * Syncronously render the page
+     */
+    render(){
+        var tags = [];
+        tags.push({'contents':renderContents(this.config.contentDir,this.contents)});
+        //render the tags
+        tags.push({'meta':tagRender('meta',true,this.meta)});
+        tags.push({'css':tagRender('link',true,this.css)});
+        tags.push({'headJs':tagRender('script',false,this.headJs)});
+        tags.push({'js':tagRender('script',false,this.js)});
+        if(this.extraTags.length > 0){
+            tags = tags.concat(this.extraTags);
+        }
+        //add files
+        var files = [];
+        var tpl = this.config.templateDie;
+        files.push({'container':tpl+this.container});
+        files.push({'menu':tpl+this.menu});
+        files.push({'head':tpl+this.head});
+        files.push({'body':tpl+this.body});
+        files.push({'foot':tpl+this.foot});
+        //render the page to a file
+        pageRender(this.config.cacheDir,this.permalink,tags,files);
+    }
+
+    /**
+     * Load the page from a file and pass in a data object for angular
+     * @param {string} data - the json string for angular
+     * @param {function(err:error,file:string)} callback - the callback function returns the file after the data is added
+     */
+    load(data,callback){
+        fs.readFile(this.config.cacheDir+this.permalink+'.html','utf8',function(err,file){
+            if(err){
+                return callback(err,null);
+            }
+            file.replace('[data]','<script>var data ="'+JSON.stringify(data)+'";</script>');
+            return callback(null,file);
+        });
+    }
+    
 
 }
