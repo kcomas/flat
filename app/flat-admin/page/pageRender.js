@@ -16,7 +16,7 @@ export default function pageRender(dir,permalink,tags,files){
     files.forEach(function(file){
         for(var key in file){
             try {
-                loadedFiles.push({'name':key,'string':fs.readFileSync(file[key],'utf8')});
+                loadedFiles.push({'name':key,string:fs.readFileSync(file[key],'utf8')});
             } catch(err){
                 console.log(err);
             }
@@ -33,7 +33,7 @@ export default function pageRender(dir,permalink,tags,files){
     tags.forEach(function(tag){
         for(key in tag){
             try {
-                loadedFiles[0].replace('['+key+']',tag[key]);
+                loadedFiles[0].string.replace('['+key+']',tag[key]);
             } catch(err){
                 console.log(err);
             }
