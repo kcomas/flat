@@ -23,7 +23,7 @@ export default function pageRender(dir,permalink,tags,files){
         }
     });
     for(var i=1; i<loadedFiles.length; i++){
-        loadedFiles[0].replace('['+loadedFiles[i].name+']',loadedFiles[i].string);
+        loadedFiles[0].string.replace('['+loadedFiles[i].name+']',loadedFiles[i].string);
     }
     console.dir(loadedFiles);
     fs.writeFileSync(file,string,'utf8');
