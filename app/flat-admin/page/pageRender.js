@@ -26,8 +26,7 @@ export default function pageRender(dir,permalink,tags,files){
     console.dir(container);
     loadedFiles.forEach(function(file2){
         try{
-            var reg = new RegExp('['+file2.name+']','g');
-            container.replace(reg,file2.str);
+            container.replace('['+file2.name+']',file2.str);
         } catch(err){
             console.log(err);
         }
