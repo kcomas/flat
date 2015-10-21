@@ -172,7 +172,6 @@ export default class page {
         tags.push({'css':tagRender('link',true,this.css)});
         tags.push({'headJs':tagRender('script',false,this.headJs)});
         tags.push({'js':tagRender('script',false,this.js)});
-        console.dir(tags);
         if(this.extraTags.length > 0){
             tags = tags.concat(this.extraTags);
         }
@@ -184,6 +183,7 @@ export default class page {
         files.push({'head':tpl+this.head});
         files.push({'body':tpl+this.body});
         files.push({'foot':tpl+this.foot});
+        console.dir(files);
         //render the page to a file
         pageRender(this.config.cacheDir,this.permalink,tags,files);
     }
