@@ -172,6 +172,7 @@ export default class page {
         tags.push({'css':tagRender('link',true,this.css)});
         tags.push({'headJs':tagRender('script',false,this.headJs)});
         tags.push({'js':tagRender('script',false,this.js)});
+        console.dir(tags);
         if(this.extraTags.length > 0){
             tags = tags.concat(this.extraTags);
         }
