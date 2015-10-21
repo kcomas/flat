@@ -28,7 +28,6 @@ export default class pageManager {
      * @return {function} the callback function
      */
     load(url,data,callback){
-        console.log(url);
         var page = null;
         for(let i=0,length=this.pages.length; i<length; i++){
             if(this.pages[i].permalink === url){
