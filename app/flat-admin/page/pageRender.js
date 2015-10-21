@@ -31,6 +31,6 @@ export default function pageRender(dir,permalink,tags,files){
             }
         }
     }
-    var string = loadedFiles.shift();
+    console.dir(loadedFiles);
     fs.writeFileSync(file,string,'utf8');
 }
