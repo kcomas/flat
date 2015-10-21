@@ -22,10 +22,9 @@ export default function pageRender(dir,permalink,tags,files){
             }
         }
     });
-    console.dir(loadedFiles);
     for(var i=0; i<loadedFiles.length; i++){
         for(var x=0; x<loadedFiles.length; x++){
-            if(loadedFiles[i].string.indexOf('['+loadedFiles[x].name+']') > 0){
+            if(loadedFiles[i].string.indexOf('['+loadedFiles[x].name+']') > -1){
                 loadedFiles[i].string.replace('['+loadedFiles[x].name+']',loadedFiles[x].string);
                 loadedFiles.splice(x,1);
             }
