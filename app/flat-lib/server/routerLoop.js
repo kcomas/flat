@@ -73,7 +73,7 @@ export default class routerLoop {
                     }
                 } else {
                     //end function
-                    this.end(this.next);
+                    this.end(this.req,this.res);
                 }
             } else {
                 //stop the request we do not handel other then get/post
