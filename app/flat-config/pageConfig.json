@@ -19,5 +19,6 @@
     "containerDefault":"container.htm",
     "headDefault":"head.htm",
     "menuDefault":"menu.htm",
-    "bodyDefault":"body.htm"
+    "bodyDefault":"body.htm",
+    "footDefault":"foot.htm"
 }
