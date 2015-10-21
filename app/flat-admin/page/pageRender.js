@@ -30,6 +30,7 @@ export default function pageRender(dir,permalink,tags,files){
             console.log(err);
         }
     });
+    console.dir(tags);
     tags.forEach(function(tag){
         for(key in tag){
             try {
@@ -39,7 +40,6 @@ export default function pageRender(dir,permalink,tags,files){
             }
         }
     });
-    console.log(container);
     try {
         fs.writeFileSync(file,container,'utf8');
     } catch(err){
