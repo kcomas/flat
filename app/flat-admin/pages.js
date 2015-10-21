@@ -33,7 +33,7 @@ if (!fs.existsSync(pageConfig.cacheDir)){
 var pages = [];
 
 
-var index = new page('/flat-admin','Admin Home',pageConfig);
+var index = new page('/','Admin Home',pageConfig);
 
 var sectionEditor = new page('/section-editor','Edit Section',pageConfig);
 sectionEditor.addContents('Edit','sectionEditor.part');
