@@ -9,6 +9,11 @@ import pageManager from './page/pageManager.js';
 var adminRouter = new router();
 var manager = new pageManager(pages);
 
+//load all of the pages into memory
+var renderErr = manager.renderAll();
+if(renderErr.length > 0){
+    console.dir(renderErr);
+}
 
 /**
  * Render a json error page

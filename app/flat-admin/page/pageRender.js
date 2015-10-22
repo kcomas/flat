@@ -9,6 +9,7 @@ import fs from 'fs';
  * @param {string} permalink - the filename/permalink of the page
  * @param {array} tags - the array of tag objets as key:content
  * @param {array} files - the array of files objects as name:filename to render
+ * @return {string} - the string of the file generated
  */
 export default function pageRender(dir,permalink,tags,files){
     var file = dir+permalink.replace('/','~') + '.html';
@@ -46,4 +47,5 @@ export default function pageRender(dir,permalink,tags,files){
     } catch(err){
         console.log(err);
     }
+    return container;
 }

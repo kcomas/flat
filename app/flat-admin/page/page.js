@@ -123,6 +123,17 @@ export default class page {
          */
         this.extraTags = [];
 
+        /**
+         * This defines if we load the page from memory or file
+         * @type {boolean}
+         */
+        this.memory = true;
+
+        /**
+         * This is the string of the page
+         */
+        this.pageString = '';
+
     }
 
     /**
@@ -215,7 +226,7 @@ export default class page {
         files.push({'body':tpl+this.body});
         files.push({'foot':tpl+this.foot});
         //render the page to a file
-        pageRender(this.config.cacheDir,this.permalink,tags,files);
+        this.pageString = pageRender(this.config.cacheDir,this.permalink,tags,files);
     }
 
     /**
@@ -224,19 +235,28 @@ export default class page {
      * @param {function(err:error,file:string)} callback - the callback function returns the file after the data is added
      */
     load(data,callback){
-        fs.readFile(this.config.cacheDir+this.permalink.replace('/','~')+'.html','utf8',function(err,file){
-            if(err){
-                console.log(err);
-                return callback(err,null);
-            }
-            try {
-            file = file.replace('{data}',"<script>var data='"+JSON.stringify(data)+"';</script>");
-            } catch(err){
-                console.log(err);
-                return callback(err,null);
-            }
-            return callback(null,file);
-        });
+        if(this.memory = true){
+                var srting = this.pageString.replace('{data}',"<script>var data='"+JSON.stringify(data)+"';</script>");
+                } catch(err){
+                    console.log(err);
+                    return callback(err,null);
+                }
+                return callback(
+        } else {
+            fs.readFile(this.config.cacheDir+this.permalink.replace('/','~')+'.html','utf8',function(err,file){
+                if(err){
+                    console.log(err);
+                    return callback(err,null);
+                }
+                try {
+                file = file.replace('{data}',"<script>var data='"+JSON.stringify(data)+"';</script>");
+                } catch(err){
+                    console.log(err);
+                    return callback(err,null);
+                }
+                return callback(null,file);
+            });
+        }
     }
     
 
