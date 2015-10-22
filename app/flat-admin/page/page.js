@@ -237,7 +237,7 @@ export default class page {
     load(data,callback){
         if(this.memory === true){
                 try {
-                var srting = this.pageString.replace('{data}',"<script>var data='"+JSON.stringify(data)+"';</script>");
+                var string = this.pageString.replace('{data}',"<script>var data='"+JSON.stringify(data)+"';</script>");
                 } catch(err){
                     console.log(err);
                     return callback(err,null);
