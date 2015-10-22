@@ -6,7 +6,7 @@
             </div>
             <div class="form-group">
                 Section Content: <br />
-                <textarea ui-tinymce ng-model="tinymceModel"></textarea>
+                <textarea ui-tinymce ng-model="current.section.content"></textarea>
             </div>
             <div class="form-group">
                 <button class="btn btn-success" ng-click="save()">Save</button>
