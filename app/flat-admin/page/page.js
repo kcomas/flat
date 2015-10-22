@@ -235,7 +235,8 @@ export default class page {
      * @param {function(err:error,file:string)} callback - the callback function returns the file after the data is added
      */
     load(data,callback){
-        if(this.memory = true){
+        if(this.memory === true){
+                try {
                 var srting = this.pageString.replace('{data}',"<script>var data='"+JSON.stringify(data)+"';</script>");
                 } catch(err){
                     console.log(err);
