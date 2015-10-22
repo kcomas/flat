@@ -79,7 +79,7 @@ export default class page {
          * The page head js properites
          * @type {array}
          */
-        this.headJs = headJs || pageConfig.headJsDefault;
+        this.headJs = headJs || pageConfig.headJsDefault || [];
 
         /**
          * The page container template
