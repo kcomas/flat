@@ -48,8 +48,8 @@ export default class router {
      * set the controller
      * @param {controller} controller - the manager controller
      */
-    set controller(controller){
-       this.controller = controller;
+    set controller(cont){
+       this.controller = cont;
     }
 
     /**

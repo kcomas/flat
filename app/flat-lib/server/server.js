@@ -73,10 +73,10 @@ export default class server {
 
     /**
      * set the controller
-     * @param {controller} controller - the manager controller
+     * @param {controller} cont - the manager controller
      */
-    set controller(controller){
-        this.controller = controller;
+    set controller(cont){
+        this.controller = cont;
     }
 
     /**
