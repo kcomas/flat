@@ -1,7 +1,7 @@
 
 "use strict"
 
-import manager from '../helpers/item/manager.js';
+import manager from '../helpers/items/manager.js';
 import page from './page.js';
 
 /**
