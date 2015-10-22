@@ -5,6 +5,6 @@
     "data":{
         "name":"The name of the section",
         "dateCreated":"The date the section was created",
-        "layout":"The json layout of the section"
+        "layout":"The html layout of the section"
     }
 }

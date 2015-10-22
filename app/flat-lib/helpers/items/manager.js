@@ -64,6 +64,14 @@ export default class manager {
     }
 
     /**
+     * Get all of the items in the array
+     * @return {array} the array of the items
+     */
+    all(){
+        return this.items;
+    }
+
+    /**
      * Add an item to the items array
      * @param {item} item - the item to be added
      */

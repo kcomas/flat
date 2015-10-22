@@ -1,0 +1,11 @@
+{
+
+    "description":"The layout for the page data",
+    "version":"0",
+    "data":{
+        "permalink":"The link of the page",
+        "dateCreated":"The date the page was created",
+        "default":"The default data to pass into the page json{key:value}",
+        "template":"The template of the page"
+    }
+}

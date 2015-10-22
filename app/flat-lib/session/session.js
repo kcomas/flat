@@ -26,14 +26,16 @@ export default class session extends item {
                 return callback(err,null);
             }
             //create a new cookie
-            this.data.dateCreated = new Date();
-            this.data.cookieName = name;
+            self.data.dateCreated = new Date();
+            self.data.cookieName = name;
             var cookieObj = res.setCookie(name,this.id,time);
-            this.data.expires = cookieObj.expires;
-            this.data.userAgent = req.headers['user-agent'];
-            this.data.ip = req.headers['x-real-ip'];
-            this.data.sesData = {};
-            return callback(null,true);
+            self.data.expires = cookieObj.expires;
+            self.data.userAgent = req.headers['user-agent'];
+            self.data.ip = req.headers['x-real-ip'];
+            self.data.sesData = {};
+            self.save(function(err,done){
+                return callback(err,done);
+            }):
         });
     }
 

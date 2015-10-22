@@ -37,7 +37,12 @@ export default class user extends item {
             self.dateCreated = new Date();
             //create a password
             self.password(pass,function(err,done){
-                return callback(err,done);
+                if(err){
+                    return callback(err,null);
+                }
+                self.save(function(err,done){
+                    return callback(err,done);
+                });
             });
         });
     }

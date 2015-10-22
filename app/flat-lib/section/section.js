@@ -22,11 +22,14 @@ export default class section extends item {
         var self = this;
         genId(function(err,done){
             if(err){
-                return callback(err,done);
+                return callback(err,null);
             }
             self.data.name = name;
             self.data.layout = layout;
-            self.dateCreated = new Date();
+            self.data.dateCreated = new Date();
+            self.save(function(err,done){
+                return callback(null,true);
+            });
         });
     }
 
