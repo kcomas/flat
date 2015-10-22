@@ -142,7 +142,7 @@ export default class page {
      * @property {string} value - the value of the attribute
      */
     addHeadJs(js){
-        this.js.push(js);
+        this.headJs.push(js);
     }
 
     /**
