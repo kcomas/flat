@@ -2,11 +2,11 @@
     <div class="col-md-12" ng-controller="adminSectionEdit">
         <form novalidate>
             <div class="form-group">
-                Section Name: <input class="form-control" ng-model="section.name" type="text" /> 
+                Section Name: <input class="form-control" ng-model="current.section.name" type="text" /> 
             </div>
             <div class="form-group">
                 Section Content: <br />
-                <textarea id="tinymce"></textarea>
+                <textarea id="tinymce" ng-model="current.section.content"></textarea>
             </div>
             <div class="form-group">
                 <button class="btn btn-success" ng-click="save()">Save</button>

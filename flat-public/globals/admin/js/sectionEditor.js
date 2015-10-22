@@ -2,6 +2,7 @@
 //init tinymce
 tinymce.init({
     selector:'#tinymce',
+    minHeight:600,
     plugins: [
          "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker",
      "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
@@ -19,5 +20,10 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
 
     //the current section we are edtiting
     $scope.current = {};
+
+    $scope.clear = function(){
+        $scope.current = {};
+    };
+
 
 }]);
