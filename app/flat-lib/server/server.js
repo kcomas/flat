@@ -111,6 +111,7 @@ export default class server {
      * @param {router} router - the router to be added
      */
     route(path,router){
+        console.log('setting');
         router.contoller = this.controller;
         this.routers.push({path:path,router:router});
     }
