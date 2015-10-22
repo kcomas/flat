@@ -15,20 +15,20 @@ export default class section extends item {
      * @param {string} name - the name of the section
      * @param {string} layout - the json layout of the section
      * @param {function(err:error,done:boolean)} callback - the callback function done is true if the section is created
-     * @return {function} 
+     * @return {function} the callback function
      */
     create(name,layout,callback){
         //generate id
         var self = this;
         genId(function(err,done){
             if(err){
-                return callback(err,null);
+                return callback(err,done);
             }
             self.data.name = name;
             self.data.layout = layout;
-            self.data.dateCreated = new Date();
+            self.dateCreated = new Date();
             self.save(function(err,done){
-                return callback(null,true);
+                return callback(err,done);
             });
         });
     }
