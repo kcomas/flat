@@ -66,37 +66,6 @@ export default class item {
 
     }
 
-    /**
-     * Get the directory
-     * @return {string} the directory
-     */
-    get dir(){
-        return this.dir;
-    }
-
-    /**
-     * Get the filename
-     * @return {string} the filname
-     */
-    get fileName(){
-        return this.filename;
-    }
-
-    /**
-     * Get the id
-     * @return {string} the id
-     */
-    get id(){
-        return this.id
-    }
-
-    /**
-     * Get the item data
-     * @return {object} the item data
-     */
-    get data(){
-        return this.data;
-    }
 
     /**
      * Save the object to disk

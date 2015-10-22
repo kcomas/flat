@@ -23,31 +23,31 @@ export default class controller {
          * The page manager
          * @type {pageManager}
          */
-        this.pageManager = pageManager;
+        this._pageManager = pageManager;
 
         /**
          * The Section Manager
          * @type {sectionManager}
          */
-        this.sectionManager = sectionManager;
+        this._sectionManager = sectionManager;
 
         /**
          * The session manager
          * @type {sessionManager}
          */
-        this.sessionManager = sessionManager;
+        this._sessionManager = sessionManager;
 
         /**
          * The template manager
          * @type {templateManager}
          */
-        this.templateManager = templateManager;
+        this._templateManager = templateManager;
 
         /**
          * The user manager
          * @type userManager
          */
-        this.userManager = userManager;
+        this._userManager = userManager;
 
     }
 
@@ -56,15 +56,15 @@ export default class controller {
      * @return {pageManager} the page manager
      */
     get pageManager(){
-        return this.pageManager;
+        return this._pageManager;
     }
 
     /**
      * Set the pageManager
-     * @param {pageManager} pageManager - the page manager
+     * @param {pageManager} manager - the page manager
      */
-    set pageManager(pageManager){
-        this.pageManager = pageManager;
+    set pageManager(manager){
+        this._pageManager = manager;
     }
 
     /**
@@ -72,15 +72,15 @@ export default class controller {
      * @return {sectionManager} the section manager
      */
     get sectionManager(){
-        return this.sectionManager;
+        return this._sectionManager;
     }
 
     /**
      * Set the section manager
-     * @param {sectionManager} sectionManager - the section manager
+     * @param {sectionManager} manager - the section manager
      */
-    set sectionManager(sectionManager){
-        this.sectionManager = sectionManager;
+    set sectionManager(manager){
+        this._sectionManager = manager;
     }
 
     /**
@@ -88,15 +88,15 @@ export default class controller {
      * @return {sessionManager} the session manager
      */
     get sessionManager(){
-        return this.sessionManager;
+        return this._sessionManager;
     }
 
     /**
      * Set the session manager
-     * @param {sessionManager} sessionManager - the session manager
+     * @param {sessionManager} manager - the session manager
      */
     set sessionManager(sessionManager){
-        this.sessionManager = sessionManager;
+        this._sessionManager = manager;
     }
 
     /**
@@ -104,15 +104,15 @@ export default class controller {
      * @return {templateManager} the template manager
      */
     get templateManager(){
-        return this.templateManager;
+        return this._templateManager;
     }
 
     /**
      * Set the template manager
-     * @param {templateManager} templateManager - the template manager
+     * @param {templateManager} manager - the template manager
      */
     set templateManager(templateManager){
-        this.templateManager = templateManager;
+        this._templateManager = manager;
     }
 
     /**
@@ -120,7 +120,7 @@ export default class controller {
      * @return {userManager} the user manager
      */
     get userManager(){
-        return this.userManager;
+        return this._userManager;
     }
 
     /**
@@ -128,18 +128,18 @@ export default class controller {
      * @param {userManager} userManager - the user manager
      */
     set userManager(userManager){
-        this.userManager = userManager;
+        this._userManager = manager;
     }
 
     /**
      * Init all of the managers
      */
     init(){
-        this.pageManager.init();
-        this.sectionManager.init();
-        this.sessionManager.init();
-        this.templateManager.init();
-        this.userManager.init();
+        this._pageManager.init();
+        this._sectionManager.init();
+        this._sessionManager.init();
+        this._templateManager.init();
+        this._userManager.init();
     }
 
 

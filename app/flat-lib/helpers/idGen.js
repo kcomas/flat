@@ -1,7 +1,7 @@
 
 "use strict"
 
-import crytpo from 'crytpo';
+import crypto from 'crypto';
 
 /**
  * Generate a random id used by users and sessions

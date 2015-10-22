@@ -38,14 +38,6 @@ export default class manager {
     }
 
     /**
-     * Get the directory
-     * @return {string} the directory of the items
-     */
-    get dir(){
-        return this.dir;
-    }
-
-    /**
      * Load all of the items from file sync use as an init function
      */
     init(){
