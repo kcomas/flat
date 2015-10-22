@@ -39,6 +39,7 @@ var sectionEditor = new page('/section-editor','Edit Section',pageConfig);
 sectionEditor.addContents('Edit','sectionEditor.part');
 sectionEditor.addContents('List','sectionList.part');
 sectionEditor.addJs({"src":"/globals/admin/js/sectionEditor.js"});
+sectionEditor.addHeadJs({"src":"/globals/tinymce/tinymce.min.js"});
 
 pages.push(index);
 pages.push(sectionEditor);

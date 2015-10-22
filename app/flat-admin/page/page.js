@@ -136,6 +136,16 @@ export default class page {
     }
 
     /**
+     * Add js to the head of the page
+     * @param {object} js - the js object
+     * @property {string} name - the name of the attribute
+     * @property {string} value - the value of the attribute
+     */
+    addHeadJs(js){
+        this.js.push(js);
+    }
+
+    /**
      * Add a meta object to the meta array
      * @param {object} meta - the meta object
      * @property {string} name - the name of the attribute
