@@ -1,5 +1,5 @@
 
-app.controller('adminSectionEdit',['$scope','$http'],function($scope,$http){
+app.controller('adminSectionEdit',function($scope,$http){
     
     $scope.sectionList = [];
     //load all of the sections
