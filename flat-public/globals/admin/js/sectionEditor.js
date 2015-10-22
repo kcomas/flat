@@ -1,5 +1,5 @@
 
-app.controller('adminSectionEdit',function($scope,$http){
+app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     
     $scope.sectionList = [];
     //load all of the sections
@@ -8,4 +8,4 @@ app.controller('adminSectionEdit',function($scope,$http){
     //the current section we are edtiting
     $scope.current = {};
 
-});
+}]);
