@@ -19,7 +19,7 @@ export default class sectionManager extends manager {
      * @return {function} the callback function
      */
     create(name,layout,callback){
-        var sect = nes section(this.dir);
+        var sect = new section(this.dir);
         var self = this;
         sect.create(name,layout,function(err,done){
             if(err){

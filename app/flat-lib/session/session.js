@@ -35,7 +35,7 @@ export default class session extends item {
             self.data.sesData = {};
             self.save(function(err,done){
                 return callback(err,done);
-            }):
+            });
         });
     }
 

@@ -19,8 +19,8 @@ export default class page extends item {
      * @return {function} the callback function
      */
     create(permalink,default,template,callback){
-        var self=this;
-        genId(function(err,done){
+        var self = this;
+        this.genId(function(err,done){
             if(err){
                 return callback(err,null);
             }
