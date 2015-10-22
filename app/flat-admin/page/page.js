@@ -219,7 +219,12 @@ export default class page {
                 console.log(err);
                 return callback(err,null);
             }
+            try {
             file.replace('{data}','<script>var data = "'+JSON.stringify(data)+'";</script>');
+            } catch(err){
+                console.log(err);
+                return callback(err,null);
+            }
             return callback(null,file);
         });
     }
