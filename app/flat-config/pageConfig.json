@@ -14,6 +14,7 @@
     "jsDefault":[
         {"src":"/globals/angular/angular.min.js"},
         {"src":"/globals/angular/bootstrap.ui.min.js"},
+        {"src":"/globals/tinymce/ngtinymce.js"},
         {"src":"/globals/admin/js/backend.js"}
     ],
     "jsHeadDefault":[],
