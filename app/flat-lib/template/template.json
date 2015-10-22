@@ -1,0 +1,13 @@
+{
+
+    "description":"This file describes the template layout",
+    "version":"0",
+    "data":{
+        "name":"The name of the template",
+        "dateCreated":"The date the template was created",
+        "layout":"The JSON layout of the sections"
+    }
+
+
+
+}

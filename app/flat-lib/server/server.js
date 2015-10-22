@@ -46,6 +46,13 @@ export default class server {
          */
         this.done = function(){};
 
+        /**
+         * The controller where all the managers are stored
+         * @type {controller}
+         */
+        this.controller = {};
+
+
     }
 
     /**
@@ -62,6 +69,22 @@ export default class server {
         } catch(err){
             throw err;
         }
+    }
+
+    /**
+     * set the controller
+     * @param {controller} controller - the manager controller
+     */
+    set controller(controller){
+        this.controller = controller;
+    }
+
+    /**
+     * Get the manager controller
+     * @return {controller} the manager controller
+     */
+    get controller(){
+        return this.contoller;
     }
 
     /**
@@ -88,6 +111,7 @@ export default class server {
      * @param {router} router - the router to be added
      */
     route(path,router){
+        router.contoller = this.controller;
         this.routers.push({path:path,router:router});
     }
 

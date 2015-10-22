@@ -36,6 +36,28 @@ export default class router {
          */
         this.doneFn = function(){};
 
+        /**
+         * The manager controller
+         * @type {controller}
+         */
+        this.controller = {};
+
+    }
+
+    /**
+     * set the controller
+     * @param {controller} controller - the manager controller
+     */
+    set controller(controller){
+        this.controller = controller;
+    }
+
+    /**
+     * Get the manager controller
+     * @return {controller} the manager controller
+     */
+    get controller(){
+        return this.controller;
     }
 
     /**
