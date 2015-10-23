@@ -86,7 +86,7 @@ adminRouter.post('/flat-admin/upsert-section',function(req,res){
             res.end("updated/saved");
         });
     } else {
-        section.upsert('layout',content,function(err,done){
+        section.upsert({'layout':content},function(err,done){
             if(err){
                 showerror(req,res,err,500);
             }
