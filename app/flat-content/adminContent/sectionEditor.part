@@ -1,11 +1,5 @@
 <div class="row">
     <div class="col-md-12">
-        <div class="alert alert-success" ng-show="save.status==200">
-            {{save.msg}}
-        </div>
-        <div class="alert alert-danger" ng-show="save.status==500">
-            {{save.msg}}
-        </div>
         <form novalidate>
             <div class="form-group">
                 Section Name: <input class="form-control" ng-model="current.section.name" type="text" /> 

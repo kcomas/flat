@@ -10,10 +10,9 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     //the current section we are edtiting
     $scope.current = {};
     $scope.current.section = {};
-    $scope.save = {};
-    $scope.delete = {};
-    $scope.save.status = null;
-    $scope.save.msg = '';
+    $scope.action = {};
+    $scope.action.status = null;
+    $scope.action.msg = '';
     $scope.sectionList = [];
 
     $scope.load = function(){
@@ -52,21 +51,21 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
                 name : $scope.sectionList[getItem(name)].name
             });
         } catch(err){
-            $scope.delete.status = 500;
-            $scope.delete.msg = err;
+            $scope.action.status = 500;
+            $scope.action.msg = err;
             return;
         }
         $http.post('/flat-admin/remove-section',jsonData).success(function(msg,status){
-            $scope.delete.msg = msg;
-            $scope.delete.status = status;
+            $scope.action.msg = msg;
+            $scope.action.status = status;
             $scope.load();
         });
     };
 
     $scope.clear = function(){
         $scope.current.section = {};
-        $scope.save.status = null;
-        $scope.save.msg = '';
+        $scope.action.status = null;
+        $scope.action.msg = '';
     };
 
     $scope.save = function(){
@@ -76,8 +75,8 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         });
 
         $http.post('/flat-admin/upsert-section',jsonData).success(function(msg,status){
-            $scope.save.msg = msg;
-            $scope.save.status = status;
+            $scope.action.msg = msg;
+            $scope.action.status = status;
             $scope.load();
         });
 
