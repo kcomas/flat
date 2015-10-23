@@ -237,7 +237,7 @@ export default class page {
     load(data,callback){
         if(this.memory === true){
                 try {
-                var string = this.pageString.replace('{data}',"<script>var data='"+JSON.stringify(data)+"';</script>");
+                var string = this.pageString.replace('%data%',"<script>var data='"+JSON.stringify(data)+"';</script>");
                 } catch(err){
                     console.log(err);
                     return callback(err,null);
@@ -250,7 +250,7 @@ export default class page {
                     return callback(err,null);
                 }
                 try {
-                file = file.replace('{data}',"<script>var data='"+JSON.stringify(data)+"';</script>");
+                file = file.replace('%data%',"<script>var data='"+JSON.stringify(data)+"';</script>");
                 } catch(err){
                     console.log(err);
                     return callback(err,null);

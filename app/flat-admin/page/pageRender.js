@@ -26,7 +26,7 @@ export default function pageRender(dir,permalink,tags,files){
     var container = loadedFiles.shift().str;
     loadedFiles.forEach(function(file2){
         try{
-            var reg = new RegExp('{'+file2.name+'}','g');
+            var reg = new RegExp('%'+file2.name+'%','g');
             container = container.replace(reg,file2.str);
         } catch(err){
             console.log(err);
@@ -35,7 +35,7 @@ export default function pageRender(dir,permalink,tags,files){
     tags.forEach(function(tag){
         for(var key in tag){
             try {
-                var reg = new RegExp('{'+key+'}','g');
+                var reg = new RegExp('%'+key+'%','g');
                 container = container.replace(reg,tag[key]);
             } catch(err){
                 console.log(err);

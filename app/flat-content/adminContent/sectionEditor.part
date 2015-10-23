@@ -1,10 +1,10 @@
 <div class="row">
     <div class="col-md-12" ng-controller="adminSectionEdit">
         <div class="alert alert-success" ng-show="save.status==200">
-            {save.msg}
+            {{save.msg}}
         </div>
         <div class="alert alert-danger" ng-show="save.status==500">
-            {save.msg}
+            {{save.msg}}
         </div>
         <form novalidate>
             <div class="form-group">
