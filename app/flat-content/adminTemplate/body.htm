@@ -1,9 +1,7 @@
-<div ng-controller="adminTabs">
-    <uib-tabset justified="true">
-        <div>
-            <div ng-controller="%controller%">
-                %contents%
-            </div>
-        </div>
-    </uib-tabset>
+<div ng-controller="%controller%">
+    <div ng-controller="adminTabs">
+        <uib-tabset justified="true">
+            %contents%
+        </uib-tabset>
+    </div>
 </div>
