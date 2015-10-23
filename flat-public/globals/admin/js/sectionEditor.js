@@ -7,7 +7,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         plugins : "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor autoresize"
     };
 
-    document.querySelector('mce-container').style.height = '400px';
+    document.querySelector('.mce-container').style.minHeight = '400px';
 
 
     //the current section we are edtiting
