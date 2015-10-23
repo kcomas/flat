@@ -166,10 +166,10 @@ export default class manager {
     toString(){
         var str = '['
         this.items.forEach(function(item){
-            str += item.toString();
+            str += item.toString() + ',';
         });
         str += ']';
-        return str;
+        return str.replace(/,(?=[^,]*$)/, '');
     }
 
 }
