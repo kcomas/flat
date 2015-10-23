@@ -74,6 +74,23 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         });
    };
 
+    $scope.delete = function(name){
+        try {
+            var jsonData = JSON.stringify({
+                name : $scope.templateList[getItem(name,$scope.templateList)].name
+            });
+        } catch(err){
+            $scope.action.status = 500;
+            $scope.action.msg = err;
+            return;
+        }
+        $http.post('/flat-admin/remove-template',jsonData).success(function(msg,status){
+            $scope.action.msg = msg;
+            $scope.action.status = status;
+            $scope.load();
+        });
+    };
+
 }]);
 
 

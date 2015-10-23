@@ -161,8 +161,20 @@ adminRouter.post('/flat-admin/list-templates',function(req,res){
     res.statusCode = 200;
     res.setHeader('content-type','application/json; charset=utf8');
     res.end(adminRouter.controller.templateManager.toString());
-})
-;
+});
+
+//delete template
+adminRouter.post('/flat-admin/remove-template',function(req,res){
+    var item = adminRouter.controller.templateManager.removeByParam('name',req.body.name,function(err,done){
+        if(err){
+            showError(req,res,err,500);
+        } else {
+            showSuccess(req,res,"item deleted",200);
+        }
+    });
+
+});
+
 adminRouter.always(function(req,res){
         showError(req,res,new Error("Not Found"),404);
 });
