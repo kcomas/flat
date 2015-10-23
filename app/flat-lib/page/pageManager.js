@@ -8,7 +8,7 @@ import page from './page.js';
  * Manage the pages 
  * @extends {manager}
  */
-export default class pageManager {
+export default class pageManager extends manager {
 
      /**
      * Create a new page
