@@ -47,7 +47,7 @@ function showError(req,res,err,status){
  * @param {string} msg - the html message
  * @param {number} status - the status code
  */
-showSuccess(req,res,msg,status){
+function showSuccess(req,res,msg,status){
     res.statusCode = 200;
     res.setHeader('Content-Type','text/html; charset=utf8');
     res.end(page);
