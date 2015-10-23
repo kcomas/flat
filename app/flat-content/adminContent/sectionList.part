@@ -1,5 +1,11 @@
 <div class="row">
     <div class="col-md-8 col-md-offset-2">
+        <div class="alert alert-success" ng-show="delete.status==200">
+            {{delete.msg}}
+        </div>
+        <div class="alert alert-danger" ng-show="delete.status==500">
+            {{delete.msg}}
+        </div>
         <ul class="list-group" ng-repeat="section in sectionList" />
             <li class="list-group-item">
                 {{section.name}} <button class="btn btn-primary" ng-click="edit(section.name)"/>Edit</button> <button class="btn btn-danger" ng-click="delete(section.name)">Delete</button>

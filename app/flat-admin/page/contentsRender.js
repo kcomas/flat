@@ -11,12 +11,14 @@ import fs from 'fs';
  */
 export default function contentsRender(dir,contents){
     var rendered = '';
+    var i=0;
     contents.forEach(function(content){
         try {
-            rendered += '<uib-tab heading="'+content.name+'">'+fs.readFileSync(dir+content.filename,'utf8')+'</uib-tab>';   
+            rendered += '<uib-tab heading="'+content.name+'" active="tab.'+i+'">'+fs.readFileSync(dir+content.filename,'utf8')+'</uib-tab>';   
         } catch (err){
             console.log(err);
         }
+        i++;
     });
     return rendered;
 }
