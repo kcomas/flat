@@ -39,8 +39,8 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         var index = getItem(name);
         if(index !== -1){
             $scope.current = {};
-            $scope.current.section.name = $scope.sectionList[i].name;
-            $scope.current.section.content = $scope.sectionList[i].layout;
+            $scope.current.section.name = $scope.sectionList[index].name;
+            $scope.current.section.content = $scope.sectionList[index].layout;
         }
     };
 
