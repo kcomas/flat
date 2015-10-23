@@ -31,7 +31,7 @@ tm.init();
 var um = new userManager(app.get('userDir'));
 um.init();
 
-var controll = new controller(new pageManager(pm,sm,ses,tm,um); 
+var controll = new controller(pm,sm,ses,tm,um); 
 
 app.controller = controll;
 adminRouter.controller = controll;
