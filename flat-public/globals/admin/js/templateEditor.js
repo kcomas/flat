@@ -36,13 +36,23 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         }
     };
 
+    function getItem(name,array){
+        var index = -1;
+        for(var i=0,l=array.length; i<l; i++){
+            if(array[i].name === name){
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
     //edit a section
     $scope.edit = function(name){
-        var index = getItem(name);
+        var index = getItem(name,$scope.templateList);
         if(index !== -1){
             $scope.clear();
-            $scope.current.section.name = $scope.sectionList[index].name;
-            $scope.current.section.content = $scope.sectionList[index].layout;
+            $scope.current.template.name = $scope.templateList[index].name;
+            $scope.current.template.layout = $scope.templateList[index].layout;
         }
     };
 
