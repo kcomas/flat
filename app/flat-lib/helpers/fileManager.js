@@ -36,6 +36,7 @@ export default class fileManager {
      */
     save(name,obj,callback){
         var file = dir + name;
+        console.log(file);
         try {
             obj = JSON.stringify(obj);
         } catch(err){
@@ -43,6 +44,7 @@ export default class fileManager {
         }
         fs.writeFile(file,obj,'utf8',function(err){
             if(err){
+                console.log(err);
                 return callback(err,null);
             }
             return callback(null,true);
@@ -64,6 +66,7 @@ export default class fileManager {
             try {
                 var obj = JSON.parse(data);
             } catch(err){
+                console.log(err);
                 return callback(err,null);
             }
             return callback(null,obj);
