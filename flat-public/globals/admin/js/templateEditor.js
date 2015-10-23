@@ -13,7 +13,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     $scope.load = function(){
         //load the templates
-        $http.post('/flat-admin/list-template',function(templates,status){
+        $http.post('/flat-admin/list-templates',function(templates,status){
             $scope.templateList = templates;
         });
         $http.post('/flat-admin/list-sections').success(function(sections,status){
