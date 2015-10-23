@@ -4,6 +4,7 @@
     "sectionDir":"./flat-content/sections/",
     "sessionDir":"./flat-content/sessions/",
     "templateDir":"./flat-content/templates/",
+    "cacheDir":"./flat-content/caches/",
     "userDir":"./flat-content/users/",
     "sessionCookie":"flat-session"
 }

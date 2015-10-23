@@ -14,11 +14,11 @@ export default class page extends item {
      * @overide
      * @param {string} permalink - the link of the page
      * @param {object} def - the default data to be passed into the page object as key:value
-     * @param {string} template - the name of the template file
+     * @param {string} cache - the name of the cache file
      * @param {function(err:err,done:boolean)} callback - returns done true if created
      * @return {function} the callback function
      */
-    create(permalink,def,template,callback){
+    create(permalink,def,cache,callback){
         var self = this;
         this.genId(function(err,done){
             if(err){
@@ -26,7 +26,7 @@ export default class page extends item {
             }
             self.data.permalink = permalink;
             self.data.def = def;
-            self.data.template = template;
+            self.data.cache = cache;
             self.data.dateCreated = new Date();
             self.save(function(err,done){
                 return callback(err,done);

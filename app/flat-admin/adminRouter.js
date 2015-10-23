@@ -9,6 +9,18 @@ import pageManager from './page/pageManager.js';
 var adminRouter = new router();
 var manager = new pageManager(pages);
 
+//show better json errors
+Object.defineProperty(Error.prototype, 'toJSON', {
+        value: function () {
+            var alt = {};
+            Object.getOwnPropertyNames(this).forEach(function (key) {
+                alt[key] = this[key];
+                }, this);
+            return alt;
+                    },
+        configurable: true
+});
+
 //load all of the pages into memory
 var renderErr = manager.renderAll();
 if(renderErr.length > 0){
@@ -28,6 +40,19 @@ function showError(req,res,err,status){
     res.end(JSON.stringify(err));
 }
 
+/**
+ * Show a sucess as html string
+ * @param {object} req - the request object
+ * @param {object} res - the response object
+ * @param {string} msg - the html message
+ * @param {number} status - the status code
+ */
+showSuccess(req,res,msg,status){
+    res.statusCode = 200;
+    res.setHeader('Content-Type','text/html; charset=utf8');
+    res.end(page);
+}
+
 adminRouter.use(function(req,res,next){
    var reg = new RegExp('^/flat-admin$|^/flat-admin/');
    if(req.method === 'GET'){
@@ -35,9 +60,7 @@ adminRouter.use(function(req,res,next){
             if(err){
                 showError(req,res,err,404);
             } else {
-                res.statusCode = 200;
-                res.setHeader('Content-Type','text/html; charset=utf8');
-                res.end(page);
+                showSuccess(req,res,page,200);
             }
         });
    } else {
@@ -52,9 +75,7 @@ adminRouter.post('/flat-admin/render',function(req,res){
     if(err){
         showError(req,res,err,500);
     } else {
-        res.statusCode = 200;
-        res.setHeader('Content-Type','text/html; charset=utf8');
-        res.end("Page Created");
+        showSuccess(req,res,"Page Created",200);
     }
 });
 
@@ -64,9 +85,7 @@ adminRouter.post('/flat-admin/renderAll',function(req,res){
     if(err.length > 0){
         showError(req,res,err,500);
     } else {
-        res.statusCode = 200;
-        res.setHeader('Content-Type','text/html; charset=utf8');
-        res.end("Pages Created");
+        showSuccess(req,res,"Pages Created",200);
     }
 });
 
@@ -81,18 +100,14 @@ adminRouter.post('/flat-admin/upsert-section',function(req,res){
             if(err){
                 showerror(req,res,err,500);
             }
-            res.statusCode = 200;
-            res.setHeader('content-type','text/html; charset=utf8');
-            res.end("updated/saved");
+            showSuccess(req,res,"updated/saved",200);
         });
     } else {
         section.upsert({'layout':content},function(err,done){
             if(err){
                 showerror(req,res,err,500);
             }
-            res.statusCode = 200;
-            res.setHeader('content-type','text/html; charset=utf8');
-            res.end("updated/saved");
+            showSuccess(req,res,"updated/saved",200);
         });
     }
 });
@@ -110,9 +125,7 @@ adminRouter.post('/flat-admin/remove-section',function(req,res){
         if(err){
             showError(req,res,err,500);
         } else {
-            res.statusCode = 200;
-            res.setHeader('content-type','text/html; charset=utf8');
-            res.end("item deleted");           
+            showSuccess(req,res,"item deleted",200);
         }
     });
 
