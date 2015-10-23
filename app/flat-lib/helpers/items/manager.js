@@ -51,7 +51,7 @@ export default class manager {
             var data = fs.readFileSync(self.dir+file,'utf8');
             try {
                 data = JSON.parse(data);
-                var item = new item(dir,file,data);
+                var item = new item(self.dir,file,data);
                 self.items.push(item);
             } catch(err){
                 console.log(err);
