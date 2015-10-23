@@ -52,7 +52,7 @@ export default class manager {
             try {
                 data = JSON.parse(data);
                 var item = new item(self.dir,file,data);
-                self.items.push(item);
+                self.add(item);
             } catch(err){
                 console.log(err);
             }
