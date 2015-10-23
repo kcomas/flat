@@ -10,13 +10,14 @@
             <div class="form-group">
                 Permalink: <input class="form-control" type="text" ng-model="current.page.permalink" />
             </div>
+            <h3>{{part.name}}</h3>
             <div class="form-group" style="min-height:450px" ng-show="current.sectionEditType==1">
                 Section Content: <br />
-                <textarea ui-tinymce="tinymceOptions" ng-model="current.page.data"></textarea>
+                <textarea ui-tinymce="tinymceOptions" ng-model="part.layout"></textarea>
             </div>
             <div class="form-group" ng-show="current.sectionEditType==2">
                 Section Content: <br />
-                <textarea class="form-control" ng-model="current.page.data"></textarea>
+                <textarea class="form-control" ng-model="part.layout"></textarea>
             </div>
             <div class="form-group text-center">
                 <button class="btn btn-primary" ng-click="save()">Save</button>
@@ -26,5 +27,8 @@
     </div>
     <div class="col-md-3">
         <h3>Section Parts</h3>
+        <ul class="list-group" ng-repeat="part in sectionParts">
+            <li>{{part.name}} <button class="btn btn-primary" ng-click="editPart(part.name)">Edit</button>
+        </ul>
     </div>
 </div>
