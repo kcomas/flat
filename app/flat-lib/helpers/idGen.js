@@ -14,8 +14,8 @@ export default function idGen(callback){
             return callback(err,null);
         }
         var id = crypto.createHash('sha512');
-        id.update(bytes.toString('utf8'),'utf8');
-        id.update(new Date().getTime(),'utf8');
+        id.update(bytes.toString(),'utf8');
+        id.update(new Date().getTime().toString(),'utf8');
         return callback(null,id.digest('hex'));
     });
 }
