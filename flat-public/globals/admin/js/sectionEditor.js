@@ -11,6 +11,9 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         }
     };
 
+    $scope.save.status = null;
+    $scope.save.msg = '';
+
     $scope.sectionList = [];
     //load all of the sections
     
@@ -20,11 +23,9 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
 
     $scope.clear = function(){
         $scope.current = {};
+        $scope.save.status = null;
+        $scope.save.msg = '';
     };
-
-
-    $scope.save.status = null;
-    $scope.save.msg = '';
 
     $scope.save = function(){
         var data = $.param({
@@ -33,9 +34,11 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
                 content : $scope.current.section.content
             })
         });
+
         $http.post('/flat-admin/upsert-section',data).success(data,status){
 
         });
+
     };
 
 
