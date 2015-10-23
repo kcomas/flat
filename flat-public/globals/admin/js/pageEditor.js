@@ -18,6 +18,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.templateList = [];
     $scope.pageList = [];
     $scope.sectionParts = [];
+    $scope.part = {};
     $scope.part.name = '';
     $scope.part.layout = '';
 
