@@ -53,7 +53,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
 
     $scope.delete = function(name){
         try {
-            var jsonDate = JSON.stringify({
+            var jsonData = JSON.stringify({
                 name : $scope.sectionList[getItem(name)].name
             });
         } catch(err){
