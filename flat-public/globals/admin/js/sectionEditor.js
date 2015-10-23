@@ -7,8 +7,6 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         minHeight:500,
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons", 
         plugins : "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor",
-        onChange: function(e){
-        }
     };
 
     $scope.save = {};
@@ -29,11 +27,14 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.save = function(){
-        var jsonData = JSON.stringify({
+        var jsonData = $.param({
+            json: JSON.stringify({
                 name : $scope.current.section.name,
                 content : $scope.current.section.content
+            })
         });
-        $http.post('/flat-admin/upsert-section',jsonData).success(data,status){
+
+        $http.post('/flat-admin/upsert-section',jsonData).success(function(data,status){
 
         });
 
