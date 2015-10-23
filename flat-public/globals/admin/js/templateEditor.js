@@ -20,7 +20,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     //valiate the json on change 
     $scope.validate = function(){
         try {
-            $scope.currrent.template.layout = JSON.stringify(JSON.parse($scope.currrent.template.layout));
+            $scope.currrent.template.layout = JSON.stringify(JSON.parse($scope.currrent.template.layout),undefined,4);
             $scope.current.valid = true;
         } catch(err){
              $scope.current.valid = false;
