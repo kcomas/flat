@@ -194,8 +194,7 @@ export default class page {
      */
     addTag(name,content){
         var obj = {};
-        obj.name = name;
-        obj.content = content;
+        obj[name] = content;
         this.extraTags.push(obj);
     }
 
@@ -226,7 +225,6 @@ export default class page {
         if(this.extraTags.length > 0){
             tags = tags.concat(this.extraTags);
         }
-        console.dir(tags);
         //add files
         var files = [];
         var tpl = this.config.templateDir;
