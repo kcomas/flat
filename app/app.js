@@ -18,9 +18,9 @@ app.loadConfig('./flat-config/config.json');
 
 var cont = new controller(new pageManager(app.get('pageDir')),new sectionManager(app.get('sectionDir')),new sessionManager(app.get('sessionDir')),new templateManager(app.get('templateDir')),new userManager(app.get('userDir'))); 
 
-app.controller = cont;
+console.dir(cont);
 
-console.dir(app.controller);
+app.controller = cont;
 
 app.use(function(req,res,next){
     req.sessionCookieName = app.get('sessionCookie');
