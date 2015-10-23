@@ -20,10 +20,6 @@ export default class fileManager {
          */
         this.dir = dir;
         
-        //make sure the directory exists
-        if(!fs.existsSync(dir)){
-            fs.mkdirSync(dir);
-        }
 
     }
 

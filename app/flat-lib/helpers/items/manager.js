@@ -27,6 +27,10 @@ export default class manager {
          */
         this.items = [];
 
+        //make sure the directory exists
+        if(!fs.existsSync(dir)){
+            fs.mkdirSync(dir);
+        }
     }
 
     /**
