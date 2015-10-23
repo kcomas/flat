@@ -81,8 +81,8 @@ adminRouter.post('/flat-admin/upsert-section',function(req,res){
             if(err){
                 showerror(req,res,err,500);
             }
-            res.statuscode = 200;
-            res.setheader('content-type','text/html; charset=utf8');
+            res.statusCode = 200;
+            res.setHeader('content-type','text/html; charset=utf8');
             res.end("updated/saved");
         });
     } else {
@@ -90,8 +90,8 @@ adminRouter.post('/flat-admin/upsert-section',function(req,res){
             if(err){
                 showerror(req,res,err,500);
             }
-            res.statuscode = 200;
-            res.setheader('content-type','text/html; charset=utf8');
+            res.statusCode = 200;
+            res.setHeader('content-type','text/html; charset=utf8');
             res.end("updated/saved");
         });
     }
