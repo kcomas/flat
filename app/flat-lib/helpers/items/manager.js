@@ -50,7 +50,7 @@ export default class manager {
                 var item = new item(dir,file,data);
                 self.items.push(item);
             } catch(err){
-
+                console.log(err);
             }
         });
     }
