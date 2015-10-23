@@ -50,7 +50,7 @@ function showError(req,res,err,status){
 function showSuccess(req,res,msg,status){
     res.statusCode = 200;
     res.setHeader('Content-Type','text/html; charset=utf8');
-    res.end(page);
+    res.end(msg);
 }
 
 adminRouter.use(function(req,res,next){
