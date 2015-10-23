@@ -4,7 +4,7 @@
 app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     
     $scope.tinymceOptions = {
-        height:500,
+        height:'500px',
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons", 
         plugins : "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor"
     };
@@ -22,6 +22,27 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
 
     //load all of the sections
     $scope.load();
+
+    function getItem(name){
+        var index = -1;
+        for(var i=0,l=$scope.sectionList.length; i<l; i++){
+            if($scope.sectionList[i].name === name){
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
+    //edit a section
+    $scope.edit = function(name){
+        var index = getItem(name);
+        if(index !== -1){
+            $scope.current = {};
+            $scope.current.section.name = $scope.sectionList[i].name;
+            $scope.current.section.content = $scope.sectionList[i].layout;
+        }
+    };
 
     //the current section we are edtiting
     $scope.current = {};
