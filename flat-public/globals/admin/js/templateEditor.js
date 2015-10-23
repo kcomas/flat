@@ -12,6 +12,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     $scope.sectionList = [];
 
     $scope.load = function(){
+        //load the templates
     };
 
     //load all of the sections
@@ -45,6 +46,14 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.save = function(){
+        var jsonData = JSON.parse({
+            name : $scope.current.template.name,
+            layout : $scope.current.template.layout
+        });
+        $http.post('/flat-admin/upsert-template',jsonData).success(function(msg,status){
+            $scope.action.status = status;
+            $scope.action.msg = msg;
+        });
    };
 
 }]);

@@ -99,8 +99,9 @@ adminRouter.post('/flat-admin/upsert-section',function(req,res){
         adminRouter.controller.sectionManager.create(name,content,function(err,done){
             if(err){
                 showerror(req,res,err,500);
+            } else {
+                showSuccess(req,res,"updated/saved",200);
             }
-            showSuccess(req,res,"updated/saved",200);
         });
     } else {
         section.upsert({'layout':content},function(err,done){
@@ -131,6 +132,37 @@ adminRouter.post('/flat-admin/remove-section',function(req,res){
 
 });
 
+//add update a template
+adminRouter.post('/flat-admin/upsert-template',function(req,res){
+    var name = req.body.name;
+    var layout = req.body.layout;
+    var template = adminRouter.controller.templateManager.findByParam('name',name);
+    if(template === null){
+        adminRouter.controller.templateManager.create(name,lauout,function(err,done){
+            if(err){
+                showError(req,res,err,500);
+            } else {
+                showSuccess(req,res,'update/saved',200);
+            }
+        });
+    } else {
+        template.upsert({'layout':layout},function(err,done){
+            if(err){
+                showError(req,res,err,500);
+            } else {
+                showSuccess(req,res,'update/saved',200);
+            }
+        });
+    }
+});
+
+//list all of the templates
+adminRouter.post('/flat-admin/list-templates',function(req,res){
+    res.statusCode = 200;
+    res.setHeader('content-type','application/json; charset=utf8');
+    res.end(adminRouter.controller.templateManager.toString());
+})
+;
 adminRouter.always(function(req,res){
         showError(req,res,new Error("Not Found"),404);
 });
