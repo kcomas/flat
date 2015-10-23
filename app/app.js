@@ -16,7 +16,7 @@ var app = new server();
 
 app.loadConfig('./flat-config/config.json');
 
-var conttroll = new controller(new pageManager(app.get('pageDir')),new sectionManager(app.get('sectionDir')),new sessionManager(app.get('sessionDir')),new templateManager(app.get('templateDir')),new userManager(app.get('userDir'))); 
+var controll = new controller(new pageManager(app.get('pageDir')),new sectionManager(app.get('sectionDir')),new sessionManager(app.get('sessionDir')),new templateManager(app.get('templateDir')),new userManager(app.get('userDir'))); 
 
 app.controller = controll;
 
