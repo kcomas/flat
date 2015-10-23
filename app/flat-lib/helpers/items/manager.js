@@ -125,8 +125,8 @@ export default class manager {
                 item = this.items[i];
                 break;
             }
-            return item;
         }
+        return item;
     }
 
     /**
