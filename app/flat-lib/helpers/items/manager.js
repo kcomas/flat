@@ -51,10 +51,10 @@ export default class manager {
             var data = fs.readFileSync(self.dir+file,'utf8');
             try {
                 data = JSON.parse(data);
-                var item = new item(self.dir,file,data);
-                self.add(item);
+                var newItem = new item(self.dir,file,data);
+                self.add(newItem);
             } catch(err){
-                console.log("in mg " +err);
+                console.log(err);
             }
         });
     }
