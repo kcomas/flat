@@ -50,7 +50,7 @@ export default class server {
          * The controller where all the managers are stored
          * @type {controller}
          */
-        this._controller;
+        this._controller = {};
 
 
     }
