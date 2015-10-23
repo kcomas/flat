@@ -36,7 +36,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/upsert-section',data).success(data,status){
 
         });
-    });
+    };
 
 
 }]);
