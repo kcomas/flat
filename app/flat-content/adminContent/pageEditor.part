@@ -22,7 +22,7 @@
                 <button class="btn btn-primary" ng-click="save()">Save</button>
                 <button class="btn btn-danger" ng-click="clear()">Clear</button>
             </div>
-        </div>
+        </form>
     </div>
     <div class="col-md-3">
         <h3>Section Parts</h3>
