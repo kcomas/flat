@@ -141,7 +141,7 @@ export default class page {
          */
         this.controller = controller;
 
-        this.addTag('controller',controller);
+        this.addTag('%controller%',controller);
 
     }
 
