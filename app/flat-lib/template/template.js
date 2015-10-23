@@ -19,7 +19,7 @@ export default class template extends item {
      */
     create(name,layout,callback){
         var self = this;
-        genId(function(err,done){
+        this.genId(function(err,done){
             if(err){
                 return callback(err,null);
             }
