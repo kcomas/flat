@@ -61,7 +61,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
             $scope.delete.msg = err;
             return;
         }
-        $http.post('/flat-admin/delete-section',jsonData).success(function(msg,status){
+        $http.post('/flat-admin/remove-section',jsonData).success(function(msg,status){
             $scope.delete.msg = msg;
             $scope.delete.status = status;
             $scope.load();
