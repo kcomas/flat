@@ -20,7 +20,7 @@ export default class section extends item {
     create(name,layout,callback){
         //generate id
         var self = this;
-        genId(function(err,done){
+        this.genId(function(err,done){
             if(err){
                 return callback(err,done);
             }
