@@ -32,8 +32,13 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
                 content : $scope.current.section.content
         });
 
-        $http.post('/flat-admin/upsert-section',jsonData).success(function(data,status){
-
+        $http.post('/flat-admin/upsert-section',jsonData).success(function(msg,status){
+            $scope.save.msg = msg;
+            if(status === 200){
+                $scope.save.status = true; 
+            } else {
+                $scope.save.status = false;
+            }
         });
 
     };

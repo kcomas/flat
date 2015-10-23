@@ -3,7 +3,7 @@
         <div class="alert alert-success" ng-show="save.status">
             {save.msg}
         </div>
-        <div class="alert alert-danger" ng-show="save.status">
+        <div class="alert alert-danger" ng-show="!save.status">
             {save.msg}
         </div>
         <form novalidate>
