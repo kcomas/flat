@@ -20,13 +20,13 @@ var controll = new controller(new pageManager(app.get('pageDir')),new sectionMan
 
 app.controller = controll;
 
-console.dir(app.controller);
-
 app.use(function(req,res,next){
     req.sessionCookieName = app.get('sessionCookie');
 });
 
 app.route('/flat-admin',adminRouter.run());
+
+console.dir(adminRouter.controller);
 
 app.always(function(req,res){
     res.statusCode = 404;
