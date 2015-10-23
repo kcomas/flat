@@ -48,8 +48,8 @@ export default class router {
      * set the controller
      * @param {controller} controller - the manager controller
      */
-    set controller(cont){
-       this._controller = cont;
+    set controller(controller){
+       this._controller = controller;
     }
 
     /**
@@ -57,7 +57,7 @@ export default class router {
      * @return {controller} the manager controller
      */
     get controller(){
-       return  this._controller;
+       return this._controller;
     }
 
     /**
