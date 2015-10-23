@@ -27,6 +27,7 @@ export default class section extends item {
             self.data.name = name;
             self.data.layout = layout;
             self.dateCreated = new Date();
+            console.log("Saving");
             self.save(function(err,done){
                 return callback(err,done);
             });

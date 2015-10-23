@@ -73,7 +73,6 @@ export default class item {
      * @return {function} the callback if error or if the file saved
      */
     save(callback){
-        console.log("saving");
         this.fileManager.save(this.filename,this.data,function(err,done){
             return callback(err,done);
         });
