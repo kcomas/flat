@@ -22,7 +22,7 @@ pm.init();
 var sm = new sectionManager(app.get('sectionDir'));
 sm.init();
 
-var ses = ew sessionManager(app.get('sessionDir'));
+var ses = new sessionManager(app.get('sessionDir'));
 ses.init();
 
 var tm = new templateManager(app.get('templateDir'));
