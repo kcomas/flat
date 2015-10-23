@@ -45,6 +45,7 @@ adminRouter.use(function(req,res,next){
    }
 });
 
+//render a single admin page
 adminRouter.post('/flat-admin/render',function(req,res){
     var page = req.body.page;
     var err = manager.render(page);
@@ -57,6 +58,7 @@ adminRouter.post('/flat-admin/render',function(req,res){
     }
 });
 
+//render all of the the admin pages
 adminRouter.post('/flat-admin/renderAll',function(req,res){
     var err = manager.renderAll();
     if(err.length > 0){
@@ -66,6 +68,11 @@ adminRouter.post('/flat-admin/renderAll',function(req,res){
         res.setHeader('Content-Type','text/html; charset=utf8');
         res.end("Pages Created");
     }
+});
+
+//add/update a section to the sectionManager
+adminRouter.post('/flat-admin/upsert-section',function(req,res){
+
 });
 
 adminRouter.always(function(req,res){

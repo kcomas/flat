@@ -1,5 +1,11 @@
 <div class="row">
     <div class="col-md-12" ng-controller="adminSectionEdit">
+        <div class="alert alert-success" ng-show="save.status">
+            {save.msg}
+        </div>
+        <div class="alert alert-danger" ng-show="save.status">
+            {save.msg}
+        </div>
         <form novalidate>
             <div class="form-group">
                 Section Name: <input class="form-control" ng-model="current.section.name" type="text" /> 
@@ -8,7 +14,7 @@
                 Section Content: <br />
                 <textarea ui-tinymce ng-model="current.section.content"></textarea>
             </div>
-            <div class="form-group">
+            <div class="form-group text-center">
                 <button class="btn btn-success" ng-click="save()">Save</button>
                 <button class="btn btn-danger" ng-click="clear()">Clear</button>
             </div>
