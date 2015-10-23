@@ -10,7 +10,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     };
 
     //the current section we are edtiting
-    $scope.current = {};
+    $scope.current.section = {};
     $scope.save = {};
     $scope.save.status = null;
     $scope.save.msg = '';
@@ -47,7 +47,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.clear = function(){
-        $scope.current = {};
+        $scope.current.section = {};
         $scope.save.status = null;
         $scope.save.msg = '';
     };
