@@ -63,6 +63,11 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     };
 
 
+	$scope.lastFocused;
+		angular.element("textarea").focus(function() {
+		$scope.lastFocused = document.activeElement;
+	});
+
   $scope.insertText = function(text) {
     var input = $scope.lastFocused;
     console.log(input);
