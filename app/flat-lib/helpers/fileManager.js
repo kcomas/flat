@@ -35,7 +35,7 @@ export default class fileManager {
      * @return {function} the callback function
      */
     save(name,obj,callback){
-        var file = dir + name;
+        var file = this.dir + name;
         try {
             obj = JSON.stringify(obj);
         } catch(err){
@@ -57,7 +57,7 @@ export default class fileManager {
      * @return {function} the callback function
      */
     load(name,callback){
-        var file = dir + file;
+        var file = this.dir + file;
         fs.readFile(file,'utf8',function(err,data){
             if(err){
                 return callback(err,null);
