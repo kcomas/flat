@@ -16,6 +16,7 @@ export default class page {
      * @param {string} permalink - the permalink of the page
      * @param {string} title - the title of the page
      * @param {object} pageConfig - the configuraton of the pages
+     * @param {string} controller - the controller for the content inside the tabs
      * @property {string} templateDir - the directory of the templates
      * @property {string} contentDir - the directory of the content files
      * @property {string} cacheDir - the directory of the built pages
@@ -37,7 +38,7 @@ export default class page {
      * @parma {string} body - the template of the body filename
      * @param {string} foot - the template of the foot filename
      */
-    constructor(permalink,title,pageConfig,meta,css,js,container,head,headJs,menu,body,foot){
+    constructor(permalink,title,pageConfig,controller,meta,css,js,container,head,headJs,menu,body,foot){
         
         /**
          * The page permalink
@@ -133,6 +134,14 @@ export default class page {
          * This is the string of the page
          */
         this.pageString = '';
+
+        /**
+         * The page controller
+         * @type {string}
+         */
+        this.controller = controller;
+
+        this.addTag('controller',controller);
 
     }
 

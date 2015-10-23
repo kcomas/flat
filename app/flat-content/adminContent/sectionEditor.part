@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-12" ng-controller="adminSectionEdit">
+    <div class="col-md-12">
         <div class="alert alert-success" ng-show="save.status==200">
             {{save.msg}}
         </div>

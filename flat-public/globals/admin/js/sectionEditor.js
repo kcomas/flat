@@ -40,3 +40,5 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     };
 
 }]);
+
+
