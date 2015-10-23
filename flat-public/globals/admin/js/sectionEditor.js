@@ -11,6 +11,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         }
     };
 
+    $scope.save = {};
     $scope.save.status = null;
     $scope.save.msg = '';
 
@@ -26,7 +27,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         $scope.save.status = null;
         $scope.save.msg = '';
     };
-/*
+
     $scope.save = function(){
         var jsonData = $.param({
             json: JSON.stringify({
@@ -40,6 +41,5 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         });
 
     };
-*/
 
 }]);
