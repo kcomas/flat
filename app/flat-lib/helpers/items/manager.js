@@ -54,7 +54,7 @@ export default class manager {
                 var item = new item(self.dir,file,data);
                 self.add(item);
             } catch(err){
-                console.log(err);
+                console.log("in mg " +err);
             }
         });
     }

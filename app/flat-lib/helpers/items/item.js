@@ -66,7 +66,6 @@ export default class item {
 
     }
 
-
     /**
      * Save the object to disk
      * @param {function(err:error,done:boolean)} callback - if the file was saved or not
