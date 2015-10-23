@@ -14,6 +14,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     $scope.load = function(){
         //load the templates
         $http.post('/flat-admin/list-templates',function(templates,status){
+            console.dir(templates);
             $scope.templateList = templates;
         });
         $http.post('/flat-admin/list-sections').success(function(sections,status){
