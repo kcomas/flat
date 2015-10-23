@@ -19,6 +19,7 @@ app.loadConfig('./flat-config/config.json');
 var controll = new controller(new pageManager(app.get('pageDir')),new sectionManager(app.get('sectionDir')),new sessionManager(app.get('sessionDir')),new templateManager(app.get('templateDir')),new userManager(app.get('userDir'))); 
 
 app.controller = controll;
+adminRouter.controller = controll;
 
 app.use(function(req,res,next){
     req.sessionCookieName = app.get('sessionCookie');
@@ -26,7 +27,6 @@ app.use(function(req,res,next){
 
 app.route('/flat-admin',adminRouter.run());
 
-console.dir(adminRouter.controller);
 
 app.always(function(req,res){
     res.statusCode = 404;

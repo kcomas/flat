@@ -111,7 +111,6 @@ export default class server {
      * @param {router} router - the router to be added
      */
     route(path,router){
-        router.contoller = this._controller;
         this.routers.push({path:path,router:router});
     }
 
