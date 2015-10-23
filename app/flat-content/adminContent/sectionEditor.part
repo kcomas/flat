@@ -10,7 +10,7 @@
             <div class="form-group">
                 Section Name: <input class="form-control" ng-model="current.section.name" type="text" /> 
             </div>
-            <div class="form-group">
+            <div class="form-group" style="min-height:800px">
                 Section Content: <br />
                 <textarea ui-tinymce ng-model="current.section.content"></textarea>
             </div>
