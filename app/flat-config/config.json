@@ -1,9 +1,9 @@
 {
     "port":3000,
-    "pageDir":"./flat-content/pages",
-    "sectionDir":"./flat-content/sections",
-    "sessionDir":"./flat-content/sessions",
-    "templateDir":"./flat-content/templates",
-    "userDir":"./flat-content/users",
+    "pageDir":"./flat-content/pages/",
+    "sectionDir":"./flat-content/sections/",
+    "sessionDir":"./flat-content/sessions/",
+    "templateDir":"./flat-content/templates/",
+    "userDir":"./flat-content/users/",
     "sessionCookie":"flat-session"
 }
