@@ -45,5 +45,6 @@ var templateEditor = new page('/template-editor','Edit Template',pageConfig,'adm
 
 pages.push(index);
 pages.push(sectionEditor);
+pages.push(templateEditor);
 
 export default pages;
