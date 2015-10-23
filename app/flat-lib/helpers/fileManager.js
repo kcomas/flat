@@ -36,7 +36,6 @@ export default class fileManager {
      */
     save(name,obj,callback){
         var file = dir + name;
-        console.log(file);
         try {
             obj = JSON.stringify(obj);
         } catch(err){
