@@ -76,7 +76,7 @@ export default class server {
      * @param {controller} cont - the manager controller
      */
     set controller(cont){
-        this._controller = cont;
+        this._contoller = cont;
     }
 
     /**
@@ -84,7 +84,7 @@ export default class server {
      * @return {controller} the manager controller
      */
     get controller(){
-        return this._contoller;
+        return this._controller;
     }
 
     /**
