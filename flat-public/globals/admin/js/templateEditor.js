@@ -46,7 +46,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.save = function(){
-        var jsonData = JSON.parse({
+        var jsonData = JSON.stringify({
             name : $scope.current.template.name,
             layout : $scope.current.template.layout
         });
