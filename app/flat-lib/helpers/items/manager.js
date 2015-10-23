@@ -41,7 +41,7 @@ export default class manager {
      * Load all of the items from file sync use as an init function
      */
     init(){
-        var files = fs.readDirSync(this.dir);
+        var files = fs.readdirSync(this.dir);
         var self = this;
         files.forEach(function(file){
             var data = fs.readFileSync(self.dir+file,'utf8');
