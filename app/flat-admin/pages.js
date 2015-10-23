@@ -42,6 +42,9 @@ sectionEditor.addJs({"src":"/globals/admin/js/sectionEditor.js"});
 sectionEditor.addHeadJs({"src":"/globals/tinymce/tinymce.min.js"});
 
 var templateEditor = new page('/template-editor','Edit Template',pageConfig,'adminTemplateEdit');
+templateEditor.addContents('Edit','templateEditor.part');
+templateEditor.addContents('List','templateList.part');
+templateEditor.addJs({"src":"/globals/admin/js/templateEditor.js"});
 
 pages.push(index);
 pages.push(sectionEditor);
