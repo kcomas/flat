@@ -117,10 +117,11 @@ export default class item {
      */
     genId(callback){
         var self = this;
-        if(this.filename === '' && this.id == ''){
+        if(this.filename === '' && this.id === ''){
             this.idGen(function(err,id){
                 self.id = id;
                 self.filename = id+'.json';
+                return callback(null,true);
             });
         } else {
             return callback(new Error("Id allready generated"),null);
