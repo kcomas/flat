@@ -104,6 +104,20 @@ adminRouter.post('/flat-admin/list-sections',function(req,res){
     res.end(adminRouter.controller.sectionManager.toString());
 });
 
+//delete section
+adminRouter.post('/flat-admin/remove-section',function(req,res){
+    var item = adminRouter.controller.sectionManager.removeByParam('name',req.body.name,function(err,done){
+        if(err){
+            showError(req,res,err,500);
+        } else {
+            res.statusCode = 200;
+            res.setHeader('content-type','text/html; charset=utf8');
+            res.end("item deleted");           
+        }
+    });
+
+});
+
 adminRouter.always(function(req,res){
         showError(req,res,new Error("Not Found"),404);
 });

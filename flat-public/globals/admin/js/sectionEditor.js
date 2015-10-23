@@ -9,10 +9,14 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         plugins : "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor"
     };
 
+
     //the current section we are edtiting
+    var tab = {};
+    tab['0'] = true;
     $scope.current = {};
     $scope.current.section = {};
     $scope.save = {};
+    $scope.delete = {};
     $scope.save.status = null;
     $scope.save.msg = '';
     $scope.sectionList = [];
@@ -45,6 +49,23 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
             $scope.current.section.name = $scope.sectionList[index].name;
             $scope.current.section.content = $scope.sectionList[index].layout;
         }
+    };
+
+    $scope.delete = function(name){
+        try {
+            var jsonDate = JSON.stringify({
+                name : $scope.sectionList[getItem(name)].name;
+            });
+        } catch(err){
+            $scope.delete.status = 500;
+            $scope.delete.msg = err;
+            return;
+        }
+        $http.post('/flat-admin/delete-section',jsonData).success(function(msg,status){
+            $scope.delete.msg = msg;
+            $scope.delete.status = status;
+            $scope.load();
+        });
     };
 
     $scope.clear = function(){
