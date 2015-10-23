@@ -16,7 +16,22 @@ var app = new server();
 
 app.loadConfig('./flat-config/config.json');
 
-var controll = new controller(new pageManager(app.get('pageDir')),new sectionManager(app.get('sectionDir')),new sessionManager(app.get('sessionDir')),new templateManager(app.get('templateDir')),new userManager(app.get('userDir'))); 
+var pm = new pageManager(app.get('pageDir'));
+pm.init();
+
+var sm = new sectionManager(app.get('sectionDir'));
+sm.init();
+
+var ses = ew sessionManager(app.get('sessionDir'));
+ses.init();
+
+var tm = new templateManager(app.get('templateDir'));
+tm.init();
+
+var um = new userManager(app.get('userDir'));
+um.init();
+
+var controll = new controller(new pageManager(pm,sm,ses,tm,um); 
 
 app.controller = controll;
 adminRouter.controller = controll;
