@@ -57,7 +57,7 @@ export default class router {
      * @return {controller} the manager controller
      */
     get controller(){
-        return this._controller;
+       return  this._controller;
     }
 
     /**
