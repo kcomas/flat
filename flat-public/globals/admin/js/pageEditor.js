@@ -17,8 +17,6 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.action.msg = '';
     $scope.templateList = [];
     $scope.pageList = [];
-    $scope.sectionList = [];
-    $scope.current.section = [];
     $scope.current.sectionParts = [];
 
     $scope.load = function(){
@@ -29,10 +27,6 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         //load the pages
         $http.post('/flat-admin/list-pages').success(function(pages,status){
             $scope.pageList = pages;
-        });
-        //load the sections
-        $http.post('/flat-admin/list-sections').success(function(sections,status){
-            $scope.sectionList = sections;
         });
     };
 

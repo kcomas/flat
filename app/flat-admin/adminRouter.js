@@ -144,7 +144,7 @@ adminRouter.post('/flat-admin/upsert-template',function(req,res){
     }
     var template = adminRouter.controller.templateManager.findByParam('name',name);
     if(template === null){
-        adminRouter.controller.templateManager.create(name,layout,function(err,done){
+        adminRouter.controller.templateManager.create(name,renderTemplate(layout,function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {

@@ -97,8 +97,8 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     txtarea.scrollTop = scrollPos;
 }
   
-   $scope.insert = function(sectionName){
-        var str = '{"section":"'+sectionName+'"}'
+   $scope.insert = function(sectionLayout){
+        var str = '{"html":"'+sectionLayout+'"}'
 		insertAtCaret('formEdit',str);
    };
 
