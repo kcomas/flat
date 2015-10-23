@@ -6,7 +6,7 @@
                 Template Name: <input class="form-control" ng-model="current.template.name" type="text" />
             </div>
             <div class="form-group">
-                Template JSON: <textarea class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout" ng-change="validate()"></textarea>
+                Template JSON: <textarea id="formEdit" class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout" ng-change="validate()"></textarea>
                 <div class="alert alert-success" ng-show="current.valid">Valid JSON</div>
                 <div class="alert alert-danger" ng-show="!current.valid">Invalid JSON</div>
             </div>

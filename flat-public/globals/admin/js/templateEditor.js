@@ -64,7 +64,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
 
 	$scope.lastFocused;
-		angular.element("textarea").focus(function() {
+		angular.element("#formEdit").focus(function() {
 		$scope.lastFocused = document.activeElement;
 	});
 
