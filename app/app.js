@@ -20,6 +20,8 @@ var cont = new controller(new pageManager(app.get('pageDir')),new sectionManager
 
 app.controller = cont;
 
+console.dir(app.controller);
+
 app.use(function(req,res,next){
     req.sessionCookieName = app.get('sessionCookie');
 });
