@@ -109,6 +109,7 @@ export default class manager {
         var self = this;
         this.items[i].unlink(function(err,done){
             if(err){
+                console.log(err);
                 return callback(err,null);
             }
             self.items.splice(i,1);
@@ -152,6 +153,7 @@ export default class manager {
         var self = this;
         this.items[i].unlink(function(err,done){
             if(err){
+                console.log(err);
                 return callback(err,null);
             }
             self.items.splice(i,1);
