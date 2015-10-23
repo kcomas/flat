@@ -54,7 +54,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     $scope.delete = function(name){
         try {
             var jsonDate = JSON.stringify({
-                name : $scope.sectionList[getItem(name)].name;
+                name : $scope.sectionList[getItem(name)].name
             });
         } catch(err){
             $scope.delete.status = 500;
