@@ -23,6 +23,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             $scope.currrent.template.layout = JSON.stringify(JSON.parse($scope.currrent.template.layout),undefined,4);
             $scope.current.valid = true;
         } catch(err){
+             console.dir(err);
              $scope.current.valid = false;
         }
     };
