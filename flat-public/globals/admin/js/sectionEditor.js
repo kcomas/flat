@@ -17,7 +17,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     $scope.load = function(){
         $http.post('/flat-admin/list-sections',function(sections,status){
             $scope.sectionList = sections;        
-            console.log($scope.sectionList); 
+            console.dir($scope.sectionList); 
         });
     };
 
