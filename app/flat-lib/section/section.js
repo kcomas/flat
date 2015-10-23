@@ -21,6 +21,7 @@ export default class section extends item {
         //generate id
         var self = this;
         this.genId(function(err,done){
+            console.log('here');
             if(err){
                 return callback(err,done);
             }
