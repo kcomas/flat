@@ -13,6 +13,13 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     $scope.load = function(){
         //load the templates
+        $http.post('/flat-admin/list-templates',function(templates,status){
+            $scope.templateList = templates;
+        });
+        $http.post('/flat-admin/list-sections').success(function(sections,status){
+            $scope.sectionList = sections;        
+        });
+       
     };
 
     //load all of the sections
@@ -53,6 +60,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/upsert-template',jsonData).success(function(msg,status){
             $scope.action.status = status;
             $scope.action.msg = msg;
+            $scope.load();
         });
    };
 
