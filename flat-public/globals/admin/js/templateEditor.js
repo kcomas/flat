@@ -63,54 +63,43 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     };
 
 
-	$scope.lastFocused;
-	angular.element(document.querySelector('#formEdit')).on('focus',function() {
-		console.dir(document.activeElement);
-		$scope.lastFocused = document.activeElement;
-	});
+	function insertAtCaret(areaId,text) {
+    var txtarea = document.getElementById(areaId);
+    var scrollPos = txtarea.scrollTop;
+    var strPos = 0;
+    var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ? 
+        "ff" : (document.selection ? "ie" : false ) );
+    if (br == "ie") { 
+        txtarea.focus();
+        var range = document.selection.createRange();
+        range.moveStart ('character', -txtarea.value.length);
+        strPos = range.text.length;
+    }
+    else if (br == "ff") strPos = txtarea.selectionStart;
 
-  $scope.insertText = function(text) {
-    var input = $scope.lastFocused;
-    console.log(input);
-    if (input == undefined) { return; }
-    var scrollPos = input.scrollTop;
-    var pos = 0;
-    var browser = ((input.selectionStart || input.selectionStart == "0") ? 
-                   "ff" : (document.selection ? "ie" : false ) );
-    if (browser == "ie") { 
-      input.focus();
-      var range = document.selection.createRange();
-      range.moveStart ("character", -input.value.length);
-      pos = range.text.length;
+    var front = (txtarea.value).substring(0,strPos);  
+    var back = (txtarea.value).substring(strPos,txtarea.value.length); 
+    txtarea.value=front+text+back;
+    strPos = strPos + text.length;
+    if (br == "ie") { 
+        txtarea.focus();
+        var range = document.selection.createRange();
+        range.moveStart ('character', -txtarea.value.length);
+        range.moveStart ('character', strPos);
+        range.moveEnd ('character', 0);
+        range.select();
     }
-    else if (browser == "ff") { pos = input.selectionStart };
-
-    var front = (input.value).substring(0, pos);  
-    var back = (input.value).substring(pos, input.value.length); 
-    input.value = front+text+back;
-    pos = pos + text.length;
-    if (browser == "ie") { 
-      input.focus();
-      var range = document.selection.createRange();
-      range.moveStart ("character", -input.value.length);
-      range.moveStart ("character", pos);
-      range.moveEnd ("character", 0);
-      range.select();
+    else if (br == "ff") {
+        txtarea.selectionStart = strPos;
+        txtarea.selectionEnd = strPos;
+        txtarea.focus();
     }
-    else if (browser == "ff") {
-      input.selectionStart = pos;
-      input.selectionEnd = pos;
-      input.focus();
-    }
-    input.scrollTop = scrollPos;
-    console.log(angular.element(input).val());
-    angular.element(input).trigger('input');
-  };
+    txtarea.scrollTop = scrollPos;
+}
   
    $scope.insert = function(sectionName){
         var str = '{"section":"'+sectionName+'"}'
-		$scope.insertText(str);
-
+		insertAtCaret('formEdit',str);
    };
 
     $scope.save = function(){
