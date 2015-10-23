@@ -103,15 +103,20 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
    };
 
     $scope.save = function(){
-        var jsonData = JSON.stringify({
-            name : $scope.current.template.name,
-            layout : $scope.current.template.layout
-        });
-        $http.post('/flat-admin/upsert-template',jsonData).success(function(msg,status){
-            $scope.action.status = status;
-            $scope.action.msg = msg;
-            $scope.load();
-        });
+        if(!$scope.current.valid){
+            $scope.action.status = 500;
+            $scope.action.msg = "Invalid JSON";
+        } else {
+            var jsonData = JSON.stringify({
+                name : $scope.current.template.name,
+                layout : $scope.current.template.layout
+            });
+            $http.post('/flat-admin/upsert-template',jsonData).success(function(msg,status){
+                $scope.action.status = status;
+                $scope.action.msg = msg;
+                $scope.load();
+            });
+        }
    };
 
     $scope.delete = function(name){

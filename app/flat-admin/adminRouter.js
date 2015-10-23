@@ -136,6 +136,12 @@ adminRouter.post('/flat-admin/remove-section',function(req,res){
 adminRouter.post('/flat-admin/upsert-template',function(req,res){
     var name = req.body.name;
     var layout = req.body.layout;
+    try {
+        JSON.parse(layout);
+    } catch(err){
+        showError(req,res,err,500);
+        return;
+    }
     var template = adminRouter.controller.templateManager.findByParam('name',name);
     if(template === null){
         adminRouter.controller.templateManager.create(name,layout,function(err,done){
@@ -166,6 +172,25 @@ adminRouter.post('/flat-admin/list-templates',function(req,res){
 //delete template
 adminRouter.post('/flat-admin/remove-template',function(req,res){
     var item = adminRouter.controller.templateManager.removeByParam('name',req.body.name,function(err,done){
+        if(err){
+            showError(req,res,err,500);
+        } else {
+            showSuccess(req,res,"item deleted",200);
+        }
+    });
+
+});
+
+//list all of the pages
+adminRouter.post('/flat-admin/list-pages',function(req,res){
+    res.statusCode = 200;
+    res.setHeader('content-type','application/json; charset=utf8');
+    res.end(adminRouter.controller.pageManager.toString());
+});
+
+//delete page
+adminRouter.post('/flat-admin/remove-page',function(req,res){
+    var item = adminRouter.controller.pageManager.removeByParam('name',req.body.name,function(err,done){
         if(err){
             showError(req,res,err,500);
         } else {

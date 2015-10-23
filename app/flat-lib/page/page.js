@@ -14,11 +14,10 @@ export default class page extends item {
      * @overide
      * @param {string} permalink - the link of the page
      * @param {object} def - the default data to be passed into the page object as key:value
-     * @param {string} cache - the name of the cache file
      * @param {function(err:err,done:boolean)} callback - returns done true if created
      * @return {function} the callback function
      */
-    create(permalink,def,cache,callback){
+    create(permalink,def,callback){
         var self = this;
         this.genId(function(err,done){
             if(err){

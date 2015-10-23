@@ -14,8 +14,25 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
+    $scope.templateList = [];
+    $scope.pageList = [];
+    $scope.sectionList = [];
+    $scope.current.section = [];
+    $scope.current.sectionParts = [];
 
     $scope.load = function(){
+        //load the templates
+        $http.post('/flat-admin/list-templates').success(function(templates,status){
+            $scope.templateList = templates;
+        });
+        //load the pages
+        $http.post('/flat-admin/list-pages').success(function(pages,status){
+            $scope.pageList = pages;
+        });
+        //load the sections
+        $http.post('/flat-admin/list-sections').success(function(sections,status){
+            $scope.sectionList = sections;
+        });
     };
 
     //load all of the sections
