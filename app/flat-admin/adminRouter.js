@@ -97,6 +97,13 @@ adminRouter.post('/flat-admin/upsert-section',function(req,res){
     }
 });
 
+//list all of the sections
+adminRouter.post('/flat-admin/list-sections',function(req,res){
+    res.statusCode = 200;
+    res.writeHead('content-type','application/json; charset=utf8');
+    res.end(adminRouter.controller.sectionManager.toString());
+});
+
 adminRouter.always(function(req,res){
         showError(req,res,new Error("Not Found"),404);
 });

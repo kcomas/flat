@@ -155,4 +155,17 @@ export default class manager {
         });
     }
 
+    /**
+     * Convert all of the items to a JSON sting
+     * @return {string} the string of the json array
+     */
+    toString(){
+        var str = '['
+        this.items.forEach(function(item){
+            str += item.toString();
+        });
+        str += ']';
+        return str;
+    }
+
 }

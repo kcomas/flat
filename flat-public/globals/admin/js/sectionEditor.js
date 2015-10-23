@@ -12,10 +12,16 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     $scope.save = {};
     $scope.save.status = null;
     $scope.save.msg = '';
-
     $scope.sectionList = [];
+
+    $scope.load = function(){
+        $http.post('/flat-admin/list-sections',function(sections,status){
+            $scope.sectionList = JSON.parse(sections);        
+        });
+    };
+
     //load all of the sections
-    
+    $scope.load();
 
     //the current section we are edtiting
     $scope.current = {};
@@ -35,6 +41,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/upsert-section',jsonData).success(function(msg,status){
             $scope.save.msg = msg;
             $scope.save.status = status;
+            $scope.load();
         });
 
     };

@@ -159,4 +159,12 @@ export default class item {
         });
     }
 
+    /**
+     * Convert the item to a json string
+     * @return {string} the json string of the data
+     */
+    toString(){
+        return JSON.stringify(this.data));
+    }
+
 }
