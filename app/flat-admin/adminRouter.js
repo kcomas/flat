@@ -76,6 +76,7 @@ adminRouter.post('/flat-admin/upsert-section',function(req,res){
     var content = req.body.content;
     //find if it exists
     var section = adminRouter.controller.sectionManager.findByParam('name',name);
+    console.dir(section);
     if(section === null){
         adminRouter.controller.sectionManager.create(name,content,function(err,done){
             if(err){
