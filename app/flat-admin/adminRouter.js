@@ -72,7 +72,29 @@ adminRouter.post('/flat-admin/renderAll',function(req,res){
 
 //add/update a section to the sectionManager
 adminRouter.post('/flat-admin/upsert-section',function(req,res){
-
+    var name = req.body.name;
+    var content = req.body.content;
+    //find if it exists
+    var section = adminRouter.controller.sectionManager.findByParam('name',name);
+    if(section === null){
+        adminRouter.controller.sectionManager.create(name,content,function(err,done){
+            if(err){
+                showerror(req,res,err,500);
+            }
+            res.statuscode = 200;
+            res.setheader('content-type','text/html; charset=utf8');
+            res.end("updated/saved");
+        });
+    } else {
+        section.upsert('layout',content,function(err,done){
+            if(err){
+                showerror(req,res,err,500);
+            }
+            res.statuscode = 200;
+            res.setheader('content-type','text/html; charset=utf8');
+            res.end("updated/saved");
+        });
+    }
 });
 
 adminRouter.always(function(req,res){
