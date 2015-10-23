@@ -9,6 +9,8 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
         plugins : "advlist autolink link image lists charmap print preview hr anchor pagebreak spellchecker searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking save table contextmenu directionality emoticons template paste textcolor"
     };
 
+    //the current section we are edtiting
+    $scope.current = {};
     $scope.save = {};
     $scope.save.status = null;
     $scope.save.msg = '';
@@ -38,14 +40,11 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     $scope.edit = function(name){
         var index = getItem(name);
         if(index !== -1){
-            $scope.current = {};
+            $scope.clear();
             $scope.current.section.name = $scope.sectionList[index].name;
             $scope.current.section.content = $scope.sectionList[index].layout;
         }
     };
-
-    //the current section we are edtiting
-    $scope.current = {};
 
     $scope.clear = function(){
         $scope.current = {};
