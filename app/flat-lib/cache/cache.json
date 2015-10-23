@@ -1,0 +1,10 @@
+{
+
+    "description":"This class stores the rendered templates for pages to pass their data into",
+    "version":"0",
+    "data":{
+        "name":"The name of the cache(the template name)",
+        "fileStr":"The file as a string",
+        "dateCreated":"The date the cashe was created"
+    }
+}
