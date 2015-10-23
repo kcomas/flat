@@ -7,6 +7,8 @@
             </div>
             <div class="form-group">
                 Termplate JSON: <textarea class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout" ng-change="validate()"></textarea>
+                <div class="alert alert-success" ng-show="current.valid">Valid JSON</div>
+                <div class="alert alert-danger" ng-show="!current.valid">Invalid JSON</div>
             </div>
             <div class="form-group text-center">
                 <button class="btn btn-success" ng-click="save()">Save</button>
