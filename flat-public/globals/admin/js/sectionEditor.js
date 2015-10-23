@@ -28,14 +28,14 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.save = function(){
-        var data = $.param({
+        var jsonData = $.param({
             json: JSON.stringify({
                 name : $scope.current.section.name,
                 content : $scope.current.section.content
             })
         });
 
-        $http.post('/flat-admin/upsert-section',data).success(data,status){
+        $http.post('/flat-admin/upsert-section',jsonData).success(data,status){
 
         });
 
