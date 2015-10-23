@@ -46,8 +46,15 @@ templateEditor.addContents('Edit','templateEditor.part');
 templateEditor.addContents('List','templateList.part');
 templateEditor.addJs({"src":"/globals/admin/js/templateEditor.js"});
 
+var pageEditor = new page('/page-editor','Edit Page',pageConfig,'adminPageEdit');
+pageEditor.addContents('Edit','pageEditor.part');
+pageEditor.addContents('List','pageList.part');
+pageEditor.addJs({"src":"/globals/admin/js/pageEditor.js"});
+pageEditor.addHeadJs({"src":"/globals/tinymce/tinymce.min.js"});
+
 pages.push(index);
 pages.push(sectionEditor);
 pages.push(templateEditor);
+pages.push(pageEditor);
 
 export default pages;
