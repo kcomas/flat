@@ -24,6 +24,7 @@ export default class page extends item {
      */
     create(permalink,def,template,callback){
         var self = this;
+        console.log('creating');
         this.genId(function(err,done){
             console.log('id');
             if(err){
