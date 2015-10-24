@@ -25,6 +25,7 @@ export default class page extends item {
     create(permalink,def,template,callback){
         var self = this;
         this.genId(function(err,done){
+            console.log('id');
             if(err){
                 return callback(err,null);
             }
@@ -33,7 +34,6 @@ export default class page extends item {
             self.data.dateCreated = new Date();
             self.data.template = template;
             self.save(function(err,done){
-                console.log('saving');
                 return callback(err,done);
             });
         });
