@@ -11,7 +11,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.current = {};
     $scope.page = {};
     $scope.page.template = null;
-    $scope.page.def = {};
+    $scope.page.def = null;
     $scope.page.permalink = '';
     $scope.current.template = null;
     $scope.action = {};
