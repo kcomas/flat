@@ -121,7 +121,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
        });
        var jsonData = JSON.stringify({
             permalink : $scope.page.permalink,
-            template : $scope.template.name,
+            template : $scope.current.template.name,
             def : newArr
        });
        $http.post('/flat-admin/upsert-page',jsonData).success(function(msg,status){
