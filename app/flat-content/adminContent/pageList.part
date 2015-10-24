@@ -2,7 +2,7 @@
     <div class="col-md-8 col-md-offset-2">
         <ul class="list-group" ng-repeat="page in pageList" />
             <li class="list-group-item">
-            {{page.permalink}} <button class="btn btn-primary" ng-click="edit(page)"/>Edit</button> <button class="btn btn-danger" ng-click="delete(page">Delete</button> <button class="btn btn-warning" ng-click="render(page)">Render</button>
+            {{page.permalink}} <button class="btn btn-primary" ng-click="edit(page)"/>Edit</button> <button class="btn btn-danger" ng-click="delete(page)">Delete</button> <button class="btn btn-warning" ng-click="render(page)">Render</button>
             </li>
         </ul>
     </div>
