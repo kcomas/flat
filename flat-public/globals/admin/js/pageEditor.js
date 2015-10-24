@@ -88,7 +88,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
 
     $scope.partUpdate = function(){
         var i = $scope.part.index;
-        $scope.sectionParts[i].layout = $scope.part.layout; 
+        //$scope.sectionParts[i].layout = $scope.part.layout; 
     };
 
 }]);
