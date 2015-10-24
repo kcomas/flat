@@ -18,9 +18,8 @@
                 Section Content: <br />
                 <textarea class="form-control" ng-change="partUpdate()"  ng-model="part.layout"></textarea>
             </div>
-                <button class="btn btn-primary" ng-click="save()">Save Part</button>
+                <button class="btn btn-primary" ng-click="save()">Save</button>
                 <button class="btn btn-danger" ng-click="clear()">Clear</button>
-                <button class="btn btn-warning" ng-click="savePage()">Save Page/button>
             </div>
         </form>
     </div>
