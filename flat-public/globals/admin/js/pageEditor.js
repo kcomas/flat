@@ -34,9 +34,6 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/list-pages').success(function(pages,status){
             $scope.pageList = pages;
         });
-        if($scope.page.template){
-            $scope.current.template = $scope.page.template;
-        }
     };
 
     //load all of the sections
@@ -133,6 +130,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
        $http.post('/flat-admin/upsert-page',jsonData).success(function(msg,status){
             $scope.action.status = status;
             $scope.action.msg = msg;
+            $scope.current.template = $scope.page.template;
             $scope.load();
        });
     };
