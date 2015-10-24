@@ -68,7 +68,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.loadSelections = function(){
         $scope.sectionParts = [];
         if(!$scope.current.template){
-            $scope.current.template = $scope.templateList[getItem($scope.page.template,$scope.templateList];
+            $scope.current.template = $scope.templateList[getItem($scope.page.template,$scope.templateList)];
         }
         var parts = $scope.current.template.layout.match(/(%%)(.*?)\1/g);
         var i=0;
