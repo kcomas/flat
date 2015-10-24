@@ -79,8 +79,8 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             part = part.split('!');
             partA = part[1].split(':');
             //merge the page defs with the part
-            if($scope.page.def.name === part[0]){
-                if($scope.page.def.type === 'text'){
+            if($scope.page.def[i].name === part[0]){
+                if($scope.page.def[i].type === 'text'){
                     var obj = {'name':part[0],'type':partA[0],'text':$scope.page.def[part[0]].text,'html':$scope.page.def[part[0]].text,'index':i}; 
                 } else if($scope.page.def[part[0]].type === 'html'){
                     var obj = {'name':part[0],'type':partA[0],'text':$scope.page.def[part[0]].html,'html':$scope.page.def[part[0]].html,'index':i}; 
