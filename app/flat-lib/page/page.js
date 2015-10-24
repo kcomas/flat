@@ -14,7 +14,11 @@ export default class page extends item {
      * @overide
      * @param {string} permalink - the link of the page
      * @param {object} def - the default data to be passed into the page object as key:value
-     * @param {string} template - the default template
+     * @property {string} name - the name of the string to replace
+     * @property {string} type - the type of the string to replace text or html
+     * @property {string} text - the text string
+     * @property {string} html - the html string
+     * @param {string} template - the default template name
      * @param {function(err:err,done:boolean)} callback - returns done true if created
      * @return {function} the callback function
      */
@@ -26,7 +30,6 @@ export default class page extends item {
             }
             self.data.permalink = permalink;
             self.data.def = def;
-            self.data.cache = cache;
             self.data.dateCreated = new Date();
             self.data.template = template;
             self.save(function(err,done){

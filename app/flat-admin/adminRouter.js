@@ -203,15 +203,10 @@ adminRouter.post('/flat-admin/remove-page',function(req,res){
 adminRouter.post('/flat-admin/upsert-page',function(req,res){
     var permalink = req.body.permalink
     var def = req.body.def;
-    try {
-        JSON.parse(layout);
-    } catch(err){
-        showError(req,res,err,500);
-        return;
-    }
-    var template = adminRouter.controller.templateManager.findByParam('name',name);
+    var template = req.body.template;
+    var template = adminRouter.controller.pageManager.findByParam('permalink',permalink);
     if(template === null){
-        adminRouter.controller.templateManager.create(name,layout,function(err,done){
+        adminRouter.controller.pageManager.create(permalink,def,template,function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {
@@ -219,7 +214,7 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
             }
         });
     } else {
-        template.upsert({'layout':layout},function(err,done){
+        template.upsert({'def':def,'template':template},function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {

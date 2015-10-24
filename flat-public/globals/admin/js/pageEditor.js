@@ -10,7 +10,9 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     //the current section we are edtiting
     $scope.current = {};
     $scope.page = {};
-    $scope.page.layout = null;
+    $scope.page.template = '';
+    $scope.page.def = {};
+    $scope.page.permalink = '';
     $scope.current.template = {};
     $scope.action = {};
     $scope.action.status = null;
@@ -50,7 +52,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
 
     //edit a section
     $scope.edit = function(name){
-        var index = getItem(name);
+        var index = getItem(name,$scope.pageList);
         if(index !== -1){
         }
     };
@@ -72,7 +74,17 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             part = part.replace(/%%/g,'');
             part = part.split('!');
             partA = part[1].split(':');
-            $scope.sectionParts.push({'name':part[0],'type':partA[0],'text':partA[1],'html':partA[1],'index':i});
+            //merge the page defs with the part
+            if($scope.page.def[part[0]]){
+                if($scope.page.def[part[0]].type === 'text'){
+                    var obj = {'name':part[0],'type':partA[0],'text':$scope.page.def[part[0]].text,'html':$scope.page.def[part[0]].text,'index':i}; 
+                } else if($scope.page.def[part[0]].type === 'html'){
+                    var obj = {'name':part[0],'type':partA[0],'text':$scope.page.def[part[0]].html,'html':$scope.page.def[part[0]].html,'index':i}; 
+                }
+            } else {
+                var obj = {'name':part[0],'type':partA[0],'text':partA[1],'html':partA[1],'index':i}; 
+            }
+            $scope.sectionParts.push(obj);
             i++;
         });
 
@@ -92,6 +104,31 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         var i = $scope.part.index;
         $scope.sectionParts[i].text = $scope.part.text; 
         $scope.sectionParts[i].html = $scope.part.html; 
+    };
+
+    $scope.save = function(name){
+       var newArr = [];
+       $scope.sectionParts.forEach(part){
+            var obj = {};
+            obj.name = part.name;
+            if(part.type === 'text'){
+                obj.text = part.text;
+            } else if(part.type === 'html'){
+                obj.html = part.html;
+            }
+            obj.type = part.type;
+            newArr.push(obj);
+       });
+       var jsonData = JSON.stringify({
+            permalink : $scope.page.permalink,
+            template : $scope.template.name,
+            def : newArr
+       });
+       $http.post('/flat-admin/upsert-page',jsonData).success(msg,status){
+            $scope.action.status = status;
+            $scope.action.msg = msg;
+            $scope.load();
+       });
     };
 
 }]);
