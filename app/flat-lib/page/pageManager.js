@@ -21,11 +21,11 @@ export default class pageManager extends manager {
      */
     create(permalink,def,template,callback){
         var self = this;
-        var page = new page(permalink,def,template,function(err,done){
+        var newPage = new page(permalink,def,template,function(err,done){
             if(err){
                 return callback(err,null);
             }
-            self.add(page);
+            self.add(newPage);
             return callback(null,true);
         });
 

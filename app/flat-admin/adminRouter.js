@@ -204,7 +204,7 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
     var permalink = req.body.permalink
     var def = req.body.def;
     var template = req.body.template;
-    var template = adminRouter.controller.pageManager.findByParam('permalink',permalink);
+    var page = adminRouter.controller.pageManager.findByParam('permalink',permalink);
     if(template === null){
         adminRouter.controller.pageManager.create(permalink,def,template,function(err,done){
             if(err){
@@ -214,7 +214,7 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
             }
         });
     } else {
-        template.upsert({'def':def,'template':template},function(err,done){
+        page.upsert({'def':def,'template':template},function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {
