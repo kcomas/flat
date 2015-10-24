@@ -68,7 +68,12 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     //list the replaceable parts in the template
     $scope.loadSelections = function(){
         $scope.sectionParts = [];
-        var parts = $scope.current.template.layout.match(/(%%)(.*?)\1/g);
+        if(!$scope.current.template){
+            var parts = $scope.page.template.layout.match(/(%%)(.*?)\1/g);
+            $scope.current.template = $scope.page.template;
+        } else {
+            var parts = $scope.current.template.layout.match(/(%%)(.*?)\1/g);
+        }
         var i=0;
         parts.forEach(function(part){
             part = part.replace(/%%/g,'');
@@ -129,7 +134,6 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             $scope.action.status = status;
             $scope.action.msg = msg;
             $scope.load();
-            $scope.current.template = $scope.page.template;
        });
     };
 
