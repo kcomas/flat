@@ -11,7 +11,7 @@ import sessionManager from './flat-lib/session/sessionManager.js';
 import templateManager from './flat-lib/template/templateManager.js';
 import userManager from './flat-lib/user/userManager.js'
 import cacheManager from './flat-lib/cache/cacheManager.js';
-import uploadManager from './flat-lib/upload/uploadManger.js';
+import uploadManager from './flat-lib/upload/uploadManager.js';
 import controller from './flat-lib/controller.js';
 
 var app = new server();
