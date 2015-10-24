@@ -9,8 +9,8 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
 
     //the current section we are edtiting
     $scope.current = {};
-    $scope.current.sectionEditType = 0;
     $scope.current.page = {};
+    $scope.page.layout = null;
     $scope.current.template = {};
     $scope.action = {};
     $scope.action.status = null;
@@ -19,6 +19,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.pageList = [];
     $scope.sectionParts = [];
     $scope.part = {};
+    $scope.part.sectionEditType = 'null';
     $scope.part.name = '';
     $scope.part.layout = '';
 
@@ -54,6 +55,13 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         }
     };
 
+    $scope.editPart = function(part){
+       $scope.part.name = part.name;
+       $scope.part.sectionEditType = part.type;
+       if($scope.page.layout === null){
+            $scope.page.layout = part.layout;
+       }
+    };
 
     //list the replaceable parts in the template
     $scope.loadSelections = function(){
@@ -62,8 +70,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         parts.forEach(function(part){
             part = part.replace(/%%/g,'');
             part = part.split(/;|:/);
-            console.dir(part);
-            $scope.sectionParts.push({'name':part[0],'type':part[1],'default':part[2]});
+            $scope.sectionParts.push({'name':part[0],'type':part[1],'layout':part[2]});
         });
 
     };
