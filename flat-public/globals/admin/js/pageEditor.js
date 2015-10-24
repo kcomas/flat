@@ -39,7 +39,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     //load all of the sections
     $scope.load();
 
-    function getItem(name,arr){
+    function getItem(name,key,arr){
         var index = -1;
         for(var i=0,l=arr.length; i<l; i++){
             if(arr[i].name === name){
@@ -67,6 +67,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     //list the replaceable parts in the template
     $scope.loadSelections = function(){
         $scope.sectionParts = [];
+        console.dir($scope.templateList);
         if(!$scope.current.template){
             $scope.current.template = $scope.templateList[getItem($scope.page.template,$scope.templateList)];
         }
