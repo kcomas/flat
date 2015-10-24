@@ -32,7 +32,6 @@ var cm = new cacheManager(app.get('cacheDir'));
 var controll = new controller(pm,sm,ses,tm,um,cm); 
 controll.init();
 
-app.controller = controll;
 adminRouter.controller = controll;
 
 app.use(function(req,res,next){

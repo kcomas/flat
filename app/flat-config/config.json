@@ -6,5 +6,7 @@
     "templateDir":"./flat-content/templates/",
     "cacheDir":"./flat-content/caches/",
     "userDir":"./flat-content/users/",
+    "logDir":"./flat-logs/",
+    "scriptDir":"/flat-scripts",
     "sessionCookie":"flat-session"
 }
