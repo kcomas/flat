@@ -33,7 +33,7 @@ export default class upload extends item {
             self.save(function(err,done){
                 return callback(err,done);
             });
-        }
+        });
     }
 
 }
