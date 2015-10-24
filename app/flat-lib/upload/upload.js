@@ -21,7 +21,7 @@ export default class upload extends item {
      */
     create(name,filename,priv,callback){
         var self = this;
-        this.genId(err,done){
+        this.genId(function(err,done){
             if(err){
                 return callback(err,null);
             }
