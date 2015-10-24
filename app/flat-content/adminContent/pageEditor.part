@@ -7,16 +7,16 @@
                 </select>
             </div>
             <div class="form-group">
-                Permalink: <input class="form-control" type="text" ng-model="current.page.permalink" />
+                Permalink: <input class="form-control" type="text" ng-model="page.permalink" />
             </div>
             <h3>{{part.name}}</h3>
             <div class="form-group" style="min-height:450px" ng-show="part.sectionEditType==html">
                 Section Content: <br />
-                <textarea ui-tinymce="tinymceOptions" ng-model="part.layout"></textarea>
+                <textarea ui-tinymce="tinymceOptions" ng-model="page.layout"></textarea>
             </div>
             <div class="form-group" ng-show="part.sectionEditType==text">
                 Section Content: <br />
-                <textarea class="form-control" ng-model="part.layout"></textarea>
+                <textarea class="form-control" ng-model="page.layout"></textarea>
             </div>
             <div class="form-group text-center">
                 <button class="btn btn-primary" ng-click="save()">Save</button>
