@@ -92,7 +92,7 @@ adminRouter.post('/flat-admin/renderAll',function(req,res){
 //add/update a section to the sectionManager
 adminRouter.post('/flat-admin/upsert-section',function(req,res){
     var name = req.body.name;
-    var content = unescape(req.body.content);
+    var content = req.body.content;
     //find if it exists
     var section = adminRouter.controller.sectionManager.findByParam('name',name);
     if(section === null){
