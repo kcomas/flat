@@ -58,7 +58,9 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     //list the replaceable parts in the template
     $scope.loadSelections = function(){
         $scope.sectionParts = [];
+        console.dir($scope.current.template.name);
         var tmp = getItem($scope.current.template.name,$scope.templateList);
+        console.dir(tmp);
         var parts = tmp.layout.match(/(%%)(.*?)\1/g);
         parts.forEach(function(part){
             part = part.replace(/%%/g,'');
