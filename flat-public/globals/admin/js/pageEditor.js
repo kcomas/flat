@@ -54,6 +54,8 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.edit = function(name){
         var index = getItem(name,$scope.pageList);
         if(index !== -1){
+            $scope.page = $scope.pageList[index];
+            $scope.loadSelections();
         }
     };
 
