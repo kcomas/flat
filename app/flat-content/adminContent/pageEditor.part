@@ -9,7 +9,7 @@
             <div class="form-group">
                 Permalink: <input class="form-control" type="text" ng-model="page.permalink" />
             </div>
-            <h3>{{part.name}}</h3>
+            <h4>{{part.name}}</h4>
             <div class="form-group" style="min-height:450px" ng-show="part.sectionEditType=='html'">
                 Section Content: <br />
                 <textarea ui-tinymce="tinymceOptions" ng-change="partUpdate()"  ng-model="part.layout"></textarea>
@@ -18,6 +18,7 @@
                 Section Content: <br />
                 <textarea class="form-control" ng-change="partUpdate()"  ng-model="part.layout"></textarea>
             </div>
+            <div class="form-group">
                 <button class="btn btn-primary" ng-click="save()">Save</button>
                 <button class="btn btn-danger" ng-click="clear()">Clear</button>
             </div>
