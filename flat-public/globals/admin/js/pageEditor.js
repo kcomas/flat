@@ -10,7 +10,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     //the current section we are edtiting
     $scope.current = {};
     $scope.page = {};
-    $scope.page.template = {};
+    $scope.page.template = null;
     $scope.page.def = {};
     $scope.page.permalink = '';
     $scope.current.template = null;
@@ -34,6 +34,9 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/list-pages').success(function(pages,status){
             $scope.pageList = pages;
         });
+        if($scope.page.template){
+            $scope.current.template = $scope.page.template;
+        }
     };
 
     //load all of the sections
