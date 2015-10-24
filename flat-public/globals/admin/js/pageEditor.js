@@ -58,19 +58,20 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.editPart = function(part){
        $scope.part.name = part.name;
        $scope.part.sectionEditType = part.type;
-       if($scope.page.layout === null){
-            $scope.page.layout = part.layout;
-       }
+       $scope.part.layout = part.layout;
+       $scope.part.index = part.index;
     };
 
     //list the replaceable parts in the template
     $scope.loadSelections = function(){
         $scope.sectionParts = [];
         var parts = $scope.current.template.layout.match(/(%%)(.*?)\1/g);
+        var i=0;
         parts.forEach(function(part){
             part = part.replace(/%%/g,'');
             part = part.split(/;|:/);
-            $scope.sectionParts.push({'name':part[0],'type':part[1],'layout':part[2]});
+            $scope.sectionParts.push({'name':part[0],'type':part[1],'layout':part[2],'index':i});
+            i++;
         });
 
     };
@@ -85,7 +86,9 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         $scope.action.msg = '';
     };
 
-    $scope.save = function(){
+    $scope.partUpdate = function()
+        var i = $scope.part.index;
+        $scope.sectionParts[i].layout = $scope.part.layout; 
     };
 
 }]);

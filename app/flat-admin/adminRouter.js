@@ -197,7 +197,36 @@ adminRouter.post('/flat-admin/remove-page',function(req,res){
             showSuccess(req,res,"item deleted",200);
         }
     });
+});
 
+//add update a template
+adminRouter.post('/flat-admin/upsert-template',function(req,res){
+    var name = req.body.name;
+    var layout = req.body.layout;
+    try {
+        JSON.parse(layout);
+    } catch(err){
+        showError(req,res,err,500);
+        return;
+    }
+    var template = adminRouter.controller.templateManager.findByParam('name',name);
+    if(template === null){
+        adminRouter.controller.templateManager.create(name,layout,function(err,done){
+            if(err){
+                showError(req,res,err,500);
+            } else {
+                showSuccess(req,res,'update/saved',200);
+            }
+        });
+    } else {
+        template.upsert({'layout':layout},function(err,done){
+            if(err){
+                showError(req,res,err,500);
+            } else {
+                showSuccess(req,res,'update/saved',200);
+            }
+        });
+    }
 });
 
 adminRouter.always(function(req,res){
