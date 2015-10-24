@@ -58,7 +58,8 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.editPart = function(part){
        $scope.part.name = part.name;
        $scope.part.sectionEditType = part.type;
-       $scope.part.layout = part.layout;
+       $scope.part.layout.html = part.layout.html;
+       $scope.part.layout.text = part.layout.text;
        $scope.part.index = part.index;
     };
 
@@ -70,7 +71,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         parts.forEach(function(part){
             part = part.replace(/%%/g,'');
             part = part.split(/;|:/);
-            $scope.sectionParts.push({'name':part[0],'type':part[1],'layout':part[2],'index':i});
+            $scope.sectionParts.push({'name':part[0],'type':part[1],'layout.text':part[2],'layout.html':part[2],'index':i});
             i++;
         });
 
@@ -88,7 +89,8 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
 
     $scope.partUpdate = function(){
         var i = $scope.part.index;
-        //$scope.sectionParts[i].layout = $scope.part.layout; 
+        $scope.sectionParts[i].layout.text = $scope.part.layout.text; 
+        $scope.sectionParts[i].layout.html = $scope.part.layout.html; 
     };
 
 }]);

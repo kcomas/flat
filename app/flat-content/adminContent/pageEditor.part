@@ -12,11 +12,11 @@
             <h4>{{part.name}}</h4>
             <div class="form-group" style="min-height:450px" ng-show="part.sectionEditType=='html'">
                 Section Content: <br />
-                <textarea ui-tinymce="tinymceOptions" ng-change="partUpdate()"  ng-model="part.layout"></textarea>
+                <textarea ui-tinymce="tinymceOptions" ng-change="partUpdate()"  ng-model="part.layout.text"></textarea>
             </div>
             <div class="form-group" ng-show="part.sectionEditType=='text'">
                 Section Content: <br />
-                <textarea class="form-control" ng-change="partUpdate()"  ng-model="part.layout"></textarea>
+                <textarea class="form-control" ng-change="partUpdate()"  ng-model="part.layout.html"></textarea>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary" ng-click="save()">Save</button>
