@@ -1,0 +1,12 @@
+{
+
+    "description":"This is the layout for each of the uploads",
+    "version":"0",
+    "data": {
+        "name":"The name of the file",
+        "filename":"The filename",
+        "dateCreated":"The date the file was created",
+        "mime":"The mime type",
+        "private":"booelan indicates if a public file or a private file for internal functions
+    }
+}

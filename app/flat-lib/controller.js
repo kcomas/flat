@@ -17,8 +17,9 @@ export default class controller {
      * @param {templateManager} templateManager - the template manager
      * @param {userManager} userManager - the user manager
      * @param {cacheManager} cacheManager - the cache manager
+     * @param {uploadManager} uploadManger - the uplaod manager
      */
-    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager){
+    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager){
 
         /**
          * The page manager
@@ -55,6 +56,12 @@ export default class controller {
          * @type {cacheManager}
          */
         this._cacheManager = cacheManager;
+
+        /**
+         * The uplaod manager
+         * @type {uploadManager}
+         */
+        this._uploadManager = uplaodManager;
 
     }
 
@@ -155,6 +162,22 @@ export default class controller {
     }
 
     /**
+     * Get the upload manager
+     * @return {uploadManger} the upload manager
+     */
+    get uploadManager(){
+        return this._uploadManager;
+    }
+
+    /**
+     * Set the upload manager
+     * @param {uploadManager} manager - the upload manager
+     */
+    set uploadManager(manager){
+        this._uploadManager = manager;
+    }
+
+    /**
      * Init all of the managers
      */
     init(){
@@ -163,7 +186,8 @@ export default class controller {
         this._sessionManager.init();
         this._templateManager.init();
         this._userManager.init();
-        this.cacheManager.init();
+        this._cacheManager.init();
+        this._uploadManager.init();
     }
 
 
