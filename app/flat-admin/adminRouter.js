@@ -9,7 +9,7 @@ import pageManager from './page/pageManager.js';
 var adminRouter = new router();
 
 //load the admin config
-adminRouter.loadConfig('../flat-config/adminConfig.json');
+adminRouter.loadConfig('./flat-config/adminConfig.json');
 
 var manager = new pageManager(pages);
 
