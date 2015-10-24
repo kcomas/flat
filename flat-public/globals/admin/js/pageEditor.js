@@ -71,8 +71,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         var i=0;
         parts.forEach(function(part){
             part = part.replace(/%%/g,'');
-            part = part.split(/;|:/);
-            console.dir(parts);
+            part = part.split(/;?|:?/);
             $scope.sectionParts.push({'name':part[0],'type':part[1],'text':part[2],'html':part[2],'index':i});
             i++;
         });
