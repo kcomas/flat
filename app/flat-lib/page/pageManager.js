@@ -20,6 +20,7 @@ export default class pageManager extends manager {
      * @return {function} the callback function
      */
     create(permalink,def,template,callback){
+        console.log('creating');
         var self = this;
         var newPage = new page(permalink,def,template,function(err,done){
             if(err){
