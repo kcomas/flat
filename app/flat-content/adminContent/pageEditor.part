@@ -4,7 +4,7 @@
         <form novalidate>
             <h4>Template: {{current.template.name}}</h4>
             <div class="form-group">
-                <select class="form-control" ng-init="$scope.page.template || ''"  ng-model="current.template" ng-change="loadSelections()"  ng-options="template.name for template in templateList">
+                <select class="form-control" ng-model="current.template" ng-change="loadSelections()"  ng-options="template.name for template in templateList">
                 </select>
             </div>
             <div class="form-group">
