@@ -21,7 +21,8 @@ export default class pageManager extends manager {
      */
     create(permalink,def,template,callback){
         var self = this;
-        var newPage = new page(permalink,def,template,function(err,done){
+        var newPage = new page(this.dir);
+        newPage.create(permalink,def,template,function(err,done){
             if(err){
                 return callback(err,null);
             }
