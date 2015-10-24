@@ -13,7 +13,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.page.template = {};
     $scope.page.def = {};
     $scope.page.permalink = '';
-    $scope.current.template = {};
+    $scope.current.template = null;
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
@@ -69,7 +69,6 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         $scope.sectionParts = [];
         if(!$scope.current.template){
             $scope.current.template = $scope.templateList[getItem($scope.page.template,$scope.templateList)];
-            console.dir($scope.current.template);
         }
         var parts = $scope.current.template.layout.match(/(%%)(.*?)\1/g);
         var i=0;
