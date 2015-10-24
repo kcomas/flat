@@ -51,12 +51,9 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     }
 
     //edit a section
-    $scope.edit = function(name){
-        var index = getItem(name,$scope.pageList);
-        if(index !== -1){
-            $scope.page = $scope.pageList[index];
-            $scope.loadSelections();
-        }
+    $scope.edit = function(page){
+        $scope.page = page;
+        $scope.loadSelections();
     };
 
     $scope.editPart = function(part){
