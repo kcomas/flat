@@ -68,11 +68,9 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.loadSelections = function(){
         $scope.sectionParts = [];
         if(!$scope.current.template){
-            var parts = $scope.page.template.layout.match(/(%%)(.*?)\1/g);
             $scope.current.template = $scope.page.template;
-        } else {
-            var parts = $scope.current.template.layout.match(/(%%)(.*?)\1/g);
         }
+        var parts = $scope.current.template.layout.match(/(%%)(.*?)\1/g);
         var i=0;
         parts.forEach(function(part){
             part = part.replace(/%%/g,'');
@@ -94,7 +92,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
 
     };
 
-    $scope.delete = function(name){
+    $scope.delete = function(page){
  
     };
 
