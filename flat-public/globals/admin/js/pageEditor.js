@@ -10,7 +10,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     //the current section we are edtiting
     $scope.current = {};
     $scope.page = {};
-    $scope.page.template = '';
+    $scope.page.template = {};
     $scope.page.def = {};
     $scope.page.permalink = '';
     $scope.current.template = {};
@@ -124,10 +124,12 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             template : $scope.current.template.name,
             def : newArr
        });
+       $scope.page.template = $scope.current.template;
        $http.post('/flat-admin/upsert-page',jsonData).success(function(msg,status){
             $scope.action.status = status;
             $scope.action.msg = msg;
             $scope.load();
+            $scope.current.template = $scope.page.template;
        });
     };
 
