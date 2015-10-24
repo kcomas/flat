@@ -99,7 +99,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 }
   
    $scope.insert = function(sectionLayout){
-        var str = '{"html":"'+sectionLayout+'"}'
+        var str = '"html":"'+sectionLayout+'"';
 		insertAtCaret('formEdit',str);
    };
 
