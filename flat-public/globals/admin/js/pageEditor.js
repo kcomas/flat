@@ -95,7 +95,14 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.delete = function(page){
- 
+        var jsonObj = JSON.stringify({
+            permalink : $scope.page.permalink 
+        });
+       $http.post('/flat-admin/remove-page',jsonData).success(function(msg,status){
+            $scope.action.status = status;
+            $scope.action.msg = msg;
+            $scope.load();
+       });
     };
 
     $scope.clear = function(){
@@ -128,7 +135,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             template : $scope.current.template.name,
             def : newArr
        });
-       $scope.page.template = $scope.current.template;
+
        $http.post('/flat-admin/upsert-page',jsonData).success(function(msg,status){
             $scope.action.status = status;
             $scope.action.msg = msg;

@@ -190,7 +190,7 @@ adminRouter.post('/flat-admin/list-pages',function(req,res){
 
 //delete page
 adminRouter.post('/flat-admin/remove-page',function(req,res){
-    var item = adminRouter.controller.pageManager.removeByParam('name',req.body.name,function(err,done){
+    var item = adminRouter.controller.pageManager.removeByParam('permalink',req.body.permalink,function(err,done){
         if(err){
             showError(req,res,err,500);
         } else {
