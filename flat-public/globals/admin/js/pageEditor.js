@@ -82,7 +82,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             if($scope.page.def[i].name === part[0]){
                 if($scope.page.def[i].type === 'text'){
                     var obj = {'name':part[0],'type':partA[0],'text':$scope.page.def[i].text,'html':$scope.page.def[i].text,'index':i}; 
-                } else if($scope.page.def[part[0]].type === 'html'){
+                } else if($scope.page.def[i].type === 'html'){
                     var obj = {'name':part[0],'type':partA[0],'text':$scope.page.def[i].html,'html':$scope.page.def[i].html,'index':i}; 
                 }
             } else {
