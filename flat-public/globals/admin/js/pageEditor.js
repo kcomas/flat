@@ -108,7 +108,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
 
     $scope.save = function(name){
        var newArr = [];
-       $scope.sectionParts.forEach(part){
+       $scope.sectionParts.forEach(function(part){
             var obj = {};
             obj.name = part.name;
             if(part.type === 'text'){
