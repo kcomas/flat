@@ -10,6 +10,7 @@ import sectionManager from './flat-lib/section/sectionManager.js';
 import sessionManager from './flat-lib/session/sessionManager.js';
 import templateManager from './flat-lib/template/templateManager.js';
 import userManager from './flat-lib/user/userManager.js'
+import cacheManager from './falt-lib/cache/cacheManager.js';
 import controller from './flat-lib/controller.js';
 
 var app = new server();
@@ -17,21 +18,19 @@ var app = new server();
 app.loadConfig('./flat-config/config.json');
 
 var pm = new pageManager(app.get('pageDir'));
-pm.init();
 
 var sm = new sectionManager(app.get('sectionDir'));
-sm.init();
 
 var ses = new sessionManager(app.get('sessionDir'));
-ses.init();
 
 var tm = new templateManager(app.get('templateDir'));
-tm.init();
 
 var um = new userManager(app.get('userDir'));
-um.init();
 
-var controll = new controller(pm,sm,ses,tm,um); 
+var cm = new cacheManager(app.get('cacheDir'));
+
+var controll = new controller(pm,sm,ses,tm,um,cm); 
+controll.init();
 
 app.controller = controll;
 adminRouter.controller = controll;

@@ -16,8 +16,9 @@ export default class controller {
      * @param {sessionManager} sessionManager - the session manager
      * @param {templateManager} templateManager - the template manager
      * @param {userManager} userManager - the user manager
+     * @param {cacheManager} cacheManager - the cache manager
      */
-    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager){
+    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager){
 
         /**
          * The page manager
@@ -45,9 +46,15 @@ export default class controller {
 
         /**
          * The user manager
-         * @type userManager
+         * @type {userManager}
          */
         this._userManager = userManager;
+
+        /**
+         * The cache manager
+         * @type {cacheManager}
+         */
+        this._cacheManager = cacheManager;
 
     }
 
@@ -95,7 +102,7 @@ export default class controller {
      * Set the session manager
      * @param {sessionManager} manager - the session manager
      */
-    set sessionManager(sessionManager){
+    set sessionManager(manager){
         this._sessionManager = manager;
     }
 
@@ -111,7 +118,7 @@ export default class controller {
      * Set the template manager
      * @param {templateManager} manager - the template manager
      */
-    set templateManager(templateManager){
+    set templateManager(manager){
         this._templateManager = manager;
     }
 
@@ -132,6 +139,22 @@ export default class controller {
     }
 
     /**
+     * Get the cache manager
+     * @return {cacheManager} the cache manager
+     */
+    get cacheManager(){
+        return this._cacheManager;
+    }
+
+    /**
+     * Set the cache manager
+     * @param {cacheManager} manager - the cache manager
+     */
+    set cacheManager(manager){
+        this._cacheManager = manager;
+    }
+
+    /**
      * Init all of the managers
      */
     init(){
@@ -140,6 +163,7 @@ export default class controller {
         this._sessionManager.init();
         this._templateManager.init();
         this._userManager.init();
+        this.cacheManager.init();
     }
 
 
