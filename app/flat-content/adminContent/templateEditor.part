@@ -19,7 +19,7 @@
     <div class="col-md-4">
         <h3>Section List</h3>
         <ul class="list-group" ng-repeat="section in sectionList">
-            <li class="list-group-item">{{section.name}} <button class="btn btn-primary" ng-click="insert(section.name)">Insert</button>
+            <li class="list-group-item">{{section.name}} <button class="btn btn-primary" ng-click="insert(section.layout)">Insert</button>
         </ul>
     </div>
 </div>
