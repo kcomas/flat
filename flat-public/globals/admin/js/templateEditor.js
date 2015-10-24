@@ -57,7 +57,8 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     };
 
    $scope.clear = function(){
-        $scope.current.template = {};
+        $scope.current.template.name = '';
+        $scope.current.template.layout = '';
         $scope.action.status = null;
         $scope.action.msg = '';
     };

@@ -54,6 +54,13 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         }
     };
 
+
+    //list the replaceable parts in the template
+    $scope.loadSelections = function(){
+
+
+    };
+
     $scope.delete = function(name){
  
     };
