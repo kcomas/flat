@@ -33,6 +33,7 @@ export default class page extends item {
             self.data.dateCreated = new Date();
             self.data.template = template;
             self.save(function(err,done){
+                console.log('saving');
                 return callback(err,done);
             });
         });
