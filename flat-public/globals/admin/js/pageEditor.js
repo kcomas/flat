@@ -86,7 +86,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         $scope.action.msg = '';
     };
 
-    $scope.partUpdate = function()
+    $scope.partUpdate = function(){
         var i = $scope.part.index;
         $scope.sectionParts[i].layout = $scope.part.layout; 
     };
