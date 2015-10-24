@@ -205,7 +205,7 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
     var def = req.body.def;
     var template = req.body.template;
     var page = adminRouter.controller.pageManager.findByParam('permalink',permalink);
-    if(template === null){
+    if(page === null){
         adminRouter.controller.pageManager.create(permalink,def,template,function(err,done){
             if(err){
                 showError(req,res,err,500);
