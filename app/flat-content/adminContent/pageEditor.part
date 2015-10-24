@@ -28,7 +28,7 @@
     <div class="col-md-3">
         <h3>Section Parts</h3>
         <ul class="list-group" ng-repeat="part in sectionParts">
-            <li>{{part.name}} <button class="btn btn-primary" ng-click="editPart(part.name)">Edit</button>
+            <li>{{part.name}} <button class="btn btn-primary" ng-click="editPart(part)">Edit</button>
         </ul>
     </div>
 </div>
