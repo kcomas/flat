@@ -39,7 +39,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     //load all of the sections
     $scope.load();
 
-    function getItem(name,key,arr){
+    function getItem(name,arr){
         var index = -1;
         for(var i=0,l=arr.length; i<l; i++){
             if(arr[i].name === name){
