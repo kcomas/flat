@@ -61,7 +61,6 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
        $scope.part.html = part.html;
        $scope.part.text = part.text;
        $scope.part.index = part.index;
-       console.dir(part);
     };
 
     //list the replaceable parts in the template
@@ -71,8 +70,9 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         var i=0;
         parts.forEach(function(part){
             part = part.replace(/%%/g,'');
-            part = part.split(/(;?)|(:?)/);
-            $scope.sectionParts.push({'name':part[0],'type':part[1],'text':part[2],'html':part[2],'index':i});
+            part = part.split(';');
+            partA = part[1].split(':');
+            $scope.sectionParts.push({'name':part[0],'type':partA[0],'text':partA[1],'html':partA[1],'index':i});
             i++;
         });
 
