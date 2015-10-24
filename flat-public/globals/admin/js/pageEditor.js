@@ -124,7 +124,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             template : $scope.template.name,
             def : newArr
        });
-       $http.post('/flat-admin/upsert-page',jsonData).success(function((msg,status){
+       $http.post('/flat-admin/upsert-page',jsonData).success(function(msg,status){
             $scope.action.status = status;
             $scope.action.msg = msg;
             $scope.load();
