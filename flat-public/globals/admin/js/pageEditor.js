@@ -59,7 +59,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.loadSelections = function(){
         $scope.sectionParts = [];
         var tmp = getItem($scope.current.template.name,$scope.templateList);
-        var parts = tmp.match(/(%%)(.*?)\1/g);
+        var parts = tmp.layout.match(/(%%)(.*?)\1/g);
         parts.forEach(function(part){
             part = part.replace(/%%/g,'');
             part = part.split(';',';');
