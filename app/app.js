@@ -10,7 +10,7 @@ import sectionManager from './flat-lib/section/sectionManager.js';
 import sessionManager from './flat-lib/session/sessionManager.js';
 import templateManager from './flat-lib/template/templateManager.js';
 import userManager from './flat-lib/user/userManager.js'
-import cacheManager from './falt-lib/cache/cacheManager.js';
+import cacheManager from './flat-lib/cache/cacheManager.js';
 import controller from './flat-lib/controller.js';
 
 var app = new server();
