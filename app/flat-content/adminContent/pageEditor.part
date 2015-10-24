@@ -3,7 +3,7 @@
         <h3>Edit</h3>
         <form novalidate>
             <div class="form-group">
-                <select class="form-control" ng-model="current.template.name" ng-change="loadSelections()"  ng-options="template.name for template in templateList">
+                <select class="form-control" ng-model="current.template" ng-change="loadSelections()"  ng-options="template.name for template in templateList">
                 </select>
             </div>
             <div class="form-group">
