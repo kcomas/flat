@@ -61,7 +61,7 @@ export default class controller {
          * The uplaod manager
          * @type {uploadManager}
          */
-        this._uploadManager = uplaodManager;
+        this._uploadManager = uploadManager;
 
     }
 
