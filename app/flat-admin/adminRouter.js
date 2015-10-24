@@ -92,7 +92,7 @@ adminRouter.post('/flat-admin/renderAll',function(req,res){
 //add/update a section to the sectionManager
 adminRouter.post('/flat-admin/upsert-section',function(req,res){
     var name = req.body.name;
-    var content = req.body.content;
+    var content = unescape(req.body.content);
     //find if it exists
     var section = adminRouter.controller.sectionManager.findByParam('name',name);
     if(section === null){
@@ -199,10 +199,10 @@ adminRouter.post('/flat-admin/remove-page',function(req,res){
     });
 });
 
-//add update a template
-adminRouter.post('/flat-admin/upsert-template',function(req,res){
-    var name = req.body.name;
-    var layout = req.body.layout;
+//add update a page
+adminRouter.post('/flat-admin/upsert-page',function(req,res){
+    var permalink = req.body.permalink
+    var def = req.body.def;
     try {
         JSON.parse(layout);
     } catch(err){
