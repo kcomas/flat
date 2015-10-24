@@ -61,6 +61,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
        $scope.part.layout.html = part.layout.html;
        $scope.part.layout.text = part.layout.text;
        $scope.part.index = part.index;
+       console.dir(part);
     };
 
     //list the replaceable parts in the template
