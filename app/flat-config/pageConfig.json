@@ -10,6 +10,7 @@
     "cssDefault":[
         {"href":"/globals/bootstrap/css/bootstrap.min.css","rel":"stylesheet"},
         {"href":"/globals/bootstrap/css/bootstrap-theme.min.css","rel":"stylesheet"}
+        {"href":"/globals/bootstrap/css/style.css","rel":"stylesheet"}
     ],
     "jsDefault":[
         {"src":"/globals/angular/angular.min.js"},
