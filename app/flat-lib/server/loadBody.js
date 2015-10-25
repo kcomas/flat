@@ -9,52 +9,10 @@ import fs from 'fs';
  * @param {string} formData - the form data to parse
  * @return {object} the form data object
  */
- function parseFormData(formData){
-		var string = formData.split('Content-Disposition:');
- 
-string.shift();
-
-var arr = [];
-
-var reg = new RegExp('(\r\n|)', 'g');
-
-	string.forEach(function (str) {
-	    str = str.replace('form-data;', '')
-	    str = str.substring(0, str.indexOf('\r\n--'));
-	    str = str.split('\r\n\r\n');
-	    var obj = {};
-	    if (str[0].indexOf('"; filename="') > -1) {
-	        obj.type = 'file';
-	        var sub = str[0].split('"; filename="');
-	        obj.name = sub[0].split('="')[1].replace(reg, '');
-	        var type = sub[1].split('"');
-	        obj.filename = type[0].replace(reg, '');
-	        if (type[1].indexOf('text') > -1 || type[1].indexOf('json') > -1) {
-	            obj.value = str[1].replace(reg, '');
-	        } else {
-	            //binary
-	           str[1] = str[1].replace(reg, '');
-	           /*
-	            var idx, len = str[1].length,
-	                arr2 = new Array(len);
-	            for (var idx = 0; idx < len; ++idx) {
-	                arr2[idx] = str[1].charCodeAt(idx) & 0xFF;
-	            }
-	            */
-	            obj.value = str[1].toString('binary');
-	        }
-	    } else {
-	        obj.type = 'string'
-	        var sub = str[0].split('=');
-	        sub = sub[1].replace(/"/g, '');
-	        obj.name = sub.replace(reg, '');
-	        obj.value = str[1].replace(reg,
- '');
-	    }
-	    arr.push(obj);
-	});
-     return arr;
- };
+function parseFormData(formData){
+    var buffer = new Buffer(formData);
+    console.dir(buffer);
+}
 
 /**
  * This function loads the post body data if the method is post
@@ -87,15 +45,7 @@ export default function loadBody(req,res,maxPostSize,callback){
 
     req.on('end',function(){
         if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
-            //var fileData = parseFormData(body);
-            //var fileData = parseFormData(body);
-            var i = 0;
-            body = body.split('\r\n');
-            body.forEach(function(b){
-				fs.writeFileSync('../flat-public/uploads/'+i,b);
-				i++;
-			});
-            return;
+            var fileData = parseFormData(body);
             fileData.forEach(function(file){
                 if(file.type === 'string'){
                     req.body[file.name] = file.value;
