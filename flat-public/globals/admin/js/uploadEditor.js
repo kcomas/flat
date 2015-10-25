@@ -22,7 +22,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
             if(bool){
                 dir = $scope.uploadDirs.private;
             } else {
-                dir = $scope.uploadDirs.private;
+                dir = $scope.uploadDirs.public;
             }
             return dir.replace(/\./g,'')+name;
         }
@@ -32,6 +32,11 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/list-files').success(function(files,status){
             $scope.uploadList = files;
         });
+    };
+
+    //delete a file
+    $scope.delete = function(obj){
+
     };
 
     $scope.load();
