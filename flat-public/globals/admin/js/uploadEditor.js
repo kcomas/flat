@@ -11,8 +11,8 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
 
     //clear the form
     $scope.clear = function(){
-        $scope.current = {};
         $scope.current.public = false;
+        $scope.current.private = false;
         $scope.action.status = null;
         $scope.action.msg = '';
     };
