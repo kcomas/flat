@@ -9,8 +9,9 @@ import qs from 'querystring';
  * @return {object} the form data object
  */
 function parseFormData(formData){
+    var newData = formData;
 
-
+    return newData;
 };
 
 /**
