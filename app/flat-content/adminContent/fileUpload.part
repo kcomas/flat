@@ -6,10 +6,10 @@
             </div>
             <div class="form-group">
                 <label class="radio-inline">
-                    Public: <input type="radio" ng-model="current.public" value="true" class="form-control" />
+                    <input type="radio" ng-model="current.public" value="true" class="form-control" /> Public
                 </label>
                 <label class="radio-inline">
-                    Private: <input type="radio" ng-model="current.public" value="false" class="form-control" />
+                    <input type="radio" ng-model="current.public" value="false" class="form-control" /> Private
                 </label>
             </div>
         </form>
