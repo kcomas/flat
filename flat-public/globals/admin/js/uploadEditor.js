@@ -21,7 +21,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
         var formData = new FormData();
         var files = $scope.fileSelect.files;
         files.forEach(function(file){
-            formData.append('files',file,file.name);
+            formData.append('fileData',file,file.name);
         });
         var xhr = new XMLHttpRequest();
         xhr.xhr.open('POST', '/flat-admin/upload', true);
