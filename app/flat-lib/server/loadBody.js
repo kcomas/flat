@@ -43,6 +43,7 @@ function loadFile(req,maxPostSize,callback){
 		    if (str[0].indexOf('"; filename="') > -1) {
 		        obj.type = 'file';
 		        var sub = str[0].split('"; filename="');
+                var type = sub[1].split('"');
 		        var name = sub[0].split('="')[1].replace(reg, '')
 		        req.body.files[name] = {}; //name
 		        req.body.files[name].filename = type[0].replace(reg, '');
