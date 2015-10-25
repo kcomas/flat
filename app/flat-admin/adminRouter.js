@@ -6,7 +6,7 @@ import router from '../flat-lib/server/router.js';
 import pages from './pages.js';
 import pageManager from './page/pageManager.js';
 import mimeType from '../flat-lib/helpers/mime.js'
-import writeFile from '../flat-lib/helpers/writeFile.js');
+import writeFile from '../flat-lib/helpers/writeFile.js';
 
 var adminRouter = new router();
 
