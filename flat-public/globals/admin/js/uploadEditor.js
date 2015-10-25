@@ -1,5 +1,5 @@
 
-app.module('adminUpload',['$scope','$http',function($scope,$http){
+app.controller('adminUpload',['$scope','$http',function($scope,$http){
 
     $scope.current = {};
     $scope.action = {};
