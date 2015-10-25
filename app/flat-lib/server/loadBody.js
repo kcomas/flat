@@ -14,7 +14,7 @@ function loadFile(req,maxPostSize,callback){
     console.log(req.headers['content-length']);
     var body = new Buffer('');
     req.on('data',function(data){
-        Buffer.concat([body,data]);
+        Buffer.concat([body,new Buffer(data)]);
         if(body.length > maxPostSize){
             //destory the connection
             req.connection.destroy();
