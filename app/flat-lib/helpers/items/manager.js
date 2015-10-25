@@ -135,6 +135,23 @@ export default class manager {
     }
 
     /**
+     * Find many items by a param
+     * @param {string} key - the key of the param
+     * @param {string|number|date|boolean} value - the value of the param
+     * @return {arry} - the items or [] if not found
+     */
+    findManyByParam(key,value){
+        var item = [];
+        this.items.forEach(function(it){
+            if(it.data[key] === value){
+                item.push(it);
+            }
+        });
+        return item;
+    }
+
+
+    /**
      * Delete an item by a param in the item.data only if non array,object
      * @param {string} key - the key of the param
      * @param {string|number|date|boolean} value - the value of the param

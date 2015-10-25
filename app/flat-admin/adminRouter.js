@@ -273,13 +273,12 @@ adminRouter.post('/flat-admin/upload',function(req,res){
     }
 });
 
-//list the public files
-
-//list the private files
-
-//delete a public file
-
-//delete a private file
+//list all of the files
+adminRouter.post('/flat-admin/list-files',function(req,res){
+    res.statusCode = 200;
+    res.setHeader('content-type','application/json; charset=utf8');
+    res.end(adminRouter.controller.uploadManager.toString());
+});
 
 adminRouter.always(function(req,res){
         showError(req,res,new Error("Not Found"),404);
