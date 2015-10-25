@@ -118,8 +118,8 @@ export default class uploadedFiles {
             }
         }
         if(remove.length > 0){
-            remove.forEach(function(i){
-                uploadedItems.splice(i,1);
+            remove.forEach(function(pos){
+                uploadedItems.splice(pos,1);
             });
         }
     }
