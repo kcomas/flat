@@ -23,7 +23,7 @@ export default class uploadManager extends manager {
     create(name,filename,priv,mime,callback){
         var up = new upload(this.dir);
         var self = this;
-        up.create(name,filename,priv,function(err,done){
+        up.create(name,filename,priv,mime,function(err,done){
             if(err){
                 return callback(err,null);
             }

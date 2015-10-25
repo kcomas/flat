@@ -134,6 +134,5 @@ export default function mime(filename){
             break;
         }
     }
-    console.log(default_mime);
     return default_mime;
 }
