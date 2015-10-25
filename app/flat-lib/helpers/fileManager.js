@@ -88,7 +88,11 @@ export default class fileManager {
      * @param {string} name - the name of the file
      */
     unlinkSync(name){
-        fs.unlinkSync(this.dir+name);
+        try {
+            fs.unlinkSync(this.dir+name);
+        } catch(err){
+            console.log(err);
+        }
     }
 
 
