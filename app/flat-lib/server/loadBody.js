@@ -106,11 +106,13 @@ export default function loadBody(req,res,maxPostSize,callback){
     if(req.method !== 'POST'){
         return callback();
     }
-    if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
-        //load form
-        loadFile(req,maxPostSize,function(req){
-            return callback();
-        });
+    if(req.headers['content-type']){
+        if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
+            //load form
+            loadFile(req,maxPostSize,function(req){
+             return callback();
+            });
+        }
     } else {
         //load string
         loadString(req,maxPostSize,function(req){
