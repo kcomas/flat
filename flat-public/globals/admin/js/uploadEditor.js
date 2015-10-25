@@ -6,6 +6,8 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     $scope.action.status = null;
     $scope.action.msg = '';
     $scope.current.private = false;
+    $scope.current.upload = "Upload"
+    $scope.current.uploadDisable = false;
 
     //clear the form
     $scope.clear = function(){
@@ -22,6 +24,8 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
 }]);
 
 function sendFile($scope){
+    $scope.current.upload = "Uploading....."
+    $scope.current.uploadDisable = true;
     fileSelect = document.getElementById('fileToBeUploaded');
     var formData = new FormData();
     var files = fileSelect.files;
@@ -40,6 +44,9 @@ function sendFile($scope){
             $scope.action.msg = "Upload Failed";
             $scope.status = 500;
         }
+        $scope.current.upload = "Upload"
+        $scope.current.uploadDisable = false;
+        $scope.current = {};
     };
     xhr.send(formData);
 }

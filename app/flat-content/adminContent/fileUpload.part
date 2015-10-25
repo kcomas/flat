@@ -15,8 +15,8 @@
                     <input type="file" name="fileData"  id="fileToBeUploaded" class="btn btn-primary" value="Upload" />
                 </div>
                 <div class="form-group text-center">
-                    <button class="btn btn-success" ng-click="upload()">Upload</button>
-                    <button class="btn btn-danger" ng-click="clear()">Clear</button>
+                    <button class="btn btn-success" disabled="current.uploadDisable" ng-click="upload()">{{current.upload}}</button>
+                    <button class="btn btn-danger" disabled="current.uploadDisable" ng-click="clear()">Clear</button>
                 </div>
             </div>
         </form>
