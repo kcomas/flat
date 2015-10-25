@@ -114,7 +114,7 @@ export default class uploadedFiles {
             var dir = this.getDir(uploadedItems[i].private);
             if(!fs.existsSync(dir+uploadedItems[i].filename)){
                 uploadedItems.splice(i,1);
-                return checkSync(uploadedItems);
+                return this.checkSync(uploadedItems);
             }
         }
         return;
