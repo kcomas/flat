@@ -5,18 +5,30 @@ import qs from 'querystring';
 import fs from 'fs';
 
 /**
- * Convert form data to an object as key:value as of now does not nest files,strings only
- * @param {string} formData - the form data to parse
- * @return {object} the form data object
+ * Load a file upload or other multipart data
+ * @param {object} req - the request data
+ * @param {function(req:object)} callback - returns the request obejct in a callback
+ * @return {function} the callback function
  */
-function parseFormData(formData){
-    var f = formData.split('\r\n');
-    var i =0;
-    f.forEach(function(data){
-        fs.writeFileSync('../flat-public/uploads/'+i,data,'binary');
-        i++;
+function loadFile(req,callback){
+    var buf = new Buffer();
+    req.on('data',function(data){
+        buf.write(data);
+        if(buf.length > maxPostSize){
+            //destory the connection
+            req.connection.destroy();
+        }
+    });
+
+    req.on('error',function(){
+        return callback(req);
+    });
+    
+    req.on('end',function(){
+        console.dir(buf.toString());
     });
 }
+
 
 /**
  * This function loads the post body data if the method is post
@@ -32,7 +44,13 @@ export default function loadBody(req,res,maxPostSize,callback){
     if(req.method !== 'POST'){
         return callback();
     }
+    if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
+        //load form
+    } else {
+        //load string
+    }
 
+    /*
     var body = '';
 
     req.on('data',function(data){
@@ -45,24 +63,10 @@ export default function loadBody(req,res,maxPostSize,callback){
     });
 
     req.on('error',function(){
-        callback();
+        return callback();
     });
-
+    
     req.on('end',function(){
-        if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
-            var fileData = parseFormData(body);
-            fileData.forEach(function(file){
-                if(file.type === 'string'){
-                    req.body[file.name] = file.value;
-                } else {
-                    req.body.files = {};
-                    req.body.files[file.name] = {};
-                    req.body.files[file.name]['filename'] = file.filename;
-                    req.body.files[file.name]['data'] = file.value;
-                }
-            });
-            return callback();
-        } else {
             try {
                 req.body = JSON.parse(body);
                 return callback();
@@ -72,4 +76,5 @@ export default function loadBody(req,res,maxPostSize,callback){
             }
         }
     });
+    */
 }
