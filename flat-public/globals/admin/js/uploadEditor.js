@@ -22,7 +22,6 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
         $scope.current.upload = "Uploading....."
         $scope.current.uploadDisable = true;
         sendFile($scope,function(stat,msg){
-            console.log(status);
             $scope.current.upload = "Upload";
             $scope.current.uploadDisable = false;
             $scope.current = {};
@@ -34,6 +33,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
                 $scope.action.status = 500;
             }
             $scope.$apply();
+            console.dir($scope.current.upload);
         });
     }
 }]);
