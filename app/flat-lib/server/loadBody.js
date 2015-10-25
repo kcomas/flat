@@ -31,7 +31,7 @@ function loadFile(req,maxPostSize,callback){
         body = body.split("\r\n");
         var i =0;
         body.forEach(function(b){
-            fs.writeFileSync('../flat-public/uploads/'+i,b);
+            fs.writeFileSync('../flat-public/uploads/'+i,b,'binary');
             i++;
         });
     });
