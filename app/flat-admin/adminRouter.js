@@ -231,7 +231,7 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
 //upload a file
 adminRouter.post('/flat-admin/upload',function(req,res){
     var buf = new Buffer(req.body);
-    console.dir(buf.toString());
+    console.dir(buf);
 });
 
 adminRouter.always(function(req,res){
