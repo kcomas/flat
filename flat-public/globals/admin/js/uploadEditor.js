@@ -16,13 +16,15 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     });
 
 
-    $scope.getDir = function(bool){
+    $scope.getDir = function(bool,name){
         if($scope.uploadDirs.private){
+            var dir = ''
             if(bool){
-                return $scope.uploadDirs.private;
+                dir = $scope.uploadDirs.private;
             } else {
-                return $scope.uploadDirs.private;
+                dir = $scope.uploadDirs.private;
             }
+            return dir.replace(/\./g/,'')+name;
         }
     };
 
