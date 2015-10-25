@@ -6,7 +6,7 @@ import fs from 'fs';
 /**
  * This class handels the uploaded/files io
  */
-class uploadedFiles {
+export default class uploadedFiles {
 
     /**
      * @constructor
