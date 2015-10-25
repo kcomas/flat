@@ -10,7 +10,7 @@ import fs from 'fs';
  * @param {function(req:object)} callback - returns the request obejct in a callback
  * @return {function} the callback function
  */
-function loadFile(req,callback){
+function loadFile(req,maxPostSize,callback){
     console.log(req.headers['content-length']);
     var body = new Buffer('');
     req.on('data',function(data){
@@ -47,7 +47,7 @@ export default function loadBody(req,res,maxPostSize,callback){
     }
     if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
         //load form
-        loadFile(req,function(req){
+        loadFile(req,maxPostSize,function(req){
             return callback();
         });
     } else {
