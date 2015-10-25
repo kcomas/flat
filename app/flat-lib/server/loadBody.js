@@ -11,9 +11,9 @@ import fs from 'fs';
  * @return {function} the callback function
  */
 function loadFile(req,maxPostSize,callback){
-    var body = new Buffer('');
+    var body = '';
     req.on('data',function(data){
-        Buffer.concat([body,new Buffer(data)]);
+        console.log(data);
         if(body.length > maxPostSize){
             //destory the connection
             req.connection.destroy();
@@ -25,7 +25,7 @@ function loadFile(req,maxPostSize,callback){
     });
     
     req.on('end',function(){
-        fs.writeFile('../flat-public/uploads/file',body);
+
     });
 }
 
