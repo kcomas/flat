@@ -11,7 +11,7 @@ import fs from 'fs';
  */
 function parseFormData(formData){
     var buffer = new Buffer(formData);
-    console.dir(buffer);
+    console.log(buffer.toString());
 }
 
 /**
