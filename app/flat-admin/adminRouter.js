@@ -256,10 +256,10 @@ adminRouter.post('/flat-admin/upload',function(req,res){
         var pri = false;
         var dir = adminRouter.getValue('upload').public;
     }
-    var mime = mimeType(req.body.files.fileData.filename);
+    var m = mimeType(req.body.files.fileData.filename);
     var upload = adminRouter.controller.uploadManager.findByParam('name',name);
     if(upload === null){
-        adminRouter.controller.uploadManager.create(name,req.body.files.fileData.filename,pri,mime,function(err,done){
+        adminRouter.controller.uploadManager.create(name,req.body.files.fileData.filename,pri,m,function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {
