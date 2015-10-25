@@ -29,7 +29,7 @@ import qs from 'querystring';
          } else {
             obj.type = 'string'
             var sub = str[0].split('=');
-            sub = sub[1].replace('"','');
+            sub = sub[1].replace(/"/g,'');
             obj.name = sub;
             obj.value = str[1];
          }
