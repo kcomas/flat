@@ -107,24 +107,18 @@ export default class uploadedFiles {
     /**
      * Check the files exists and remove the ones that don't
      * @param {upload} uploadedItems - the files to check
-     * @param {function} callback - the callback function
-     * @return {function} the callback
      */
-    checkSync(uploadedItems,callback){
+    checkSync(uploadedItems){
         //the array of item positions to remove
-        var remove = [];
+        var save = [];
         for(let i=0,l=uploadedItems.length; i<l; i++){
             var dir = this.getDir(uploadedItems[i].private);
             if(!fs.existsSync(dir+uploadedItems[i].filename)){
-                remove.push(i);
+                save.push(uploadedItems[i]);
             }
         }
-        if(remove.length > 0){
-            remove.forEach(function(pos){
-                uploadedItems.splice(pos,1);
-            });
-        }
-        return callback();
+        uploadedItems = save;
+        save = null;
     }
 
     /**

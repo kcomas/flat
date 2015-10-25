@@ -284,9 +284,8 @@ adminRouter.post('/flat-admin/list-files',function(req,res){
 //check all of the files
 adminRouter.post('/flat-admin/check-files',function(req,res){
     //check that the uploaded files match the json data
-    uploader.checkSync(adminRouter.controller.uploadManager.all(),function(){
-        showSuccess(req,res,'files cleaned',200);
-    });
+    uploader.checkSync(adminRouter.controller.uploadManager.all());
+    showSuccess(req,res,'files cleaned',200);
 });
 
 //get the upload dirs
