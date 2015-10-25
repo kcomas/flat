@@ -12,9 +12,9 @@ import fs from 'fs';
  */
 function loadFile(req,callback){
     console.log(req.headers['content-length']);
-    var buf = new Buffer(req.headers['content-length']);
+    var body = new Buffer('');
     req.on('data',function(data){
-        buf.write(data);
+        Buffer.concat([body,data]);
         if(buf.length > maxPostSize){
             //destory the connection
             req.connection.destroy();
@@ -26,7 +26,7 @@ function loadFile(req,callback){
     });
     
     req.on('end',function(){
-        console.dir(buf.toString());
+        console.dir(body);
     });
 }
 
