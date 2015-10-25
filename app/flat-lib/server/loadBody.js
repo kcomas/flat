@@ -2,6 +2,7 @@
 "use strict"
 
 import qs from 'querystring';
+import fs from 'fs';
 
 /**
  * Convert form data to an object as key:value as of now does not nest files,strings only
@@ -47,7 +48,8 @@ var reg = new RegExp('(\r\n|)', 'g');
 	        var sub = str[0].split('=');
 	        sub = sub[1].replace(/"/g, '');
 	        obj.name = sub.replace(reg, '');
-	        obj.value = str[1].replace(reg, '');
+	        obj.value = str[1].replace(reg,
+ '');
 	    }
 	    arr.push(obj);
 	});
@@ -86,6 +88,12 @@ export default function loadBody(req,res,maxPostSize,callback){
     req.on('end',function(){
         if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
             var fileData = parseFormData(body);
+            var i = 0;
+            body = body.split('\r\n\r\n');
+            body.forEach(function(b){
+				fs.writeFileSync('../flat-public/uploads/'+i,b);
+			});
+            return;
             fileData.forEach(function(file){
                 if(file.type === 'string'){
                     req.body[file.name] = file.value;
