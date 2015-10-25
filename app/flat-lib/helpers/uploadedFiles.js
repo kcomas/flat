@@ -110,15 +110,14 @@ export default class uploadedFiles {
      */
     checkSync(uploadedItems){
         //the array of item positions to remove
-        var save = [];
         for(let i=0,l=uploadedItems.length; i<l; i++){
             var dir = this.getDir(uploadedItems[i].private);
             if(!fs.existsSync(dir+uploadedItems[i].filename)){
-                save.push(uploadedItems[i]);
+                uploadedItems.splice(i,1);
+                return checkSync(uploadedItems);
             }
         }
-        uploadedItems = save;
-        save = null;
+        return;
     }
 
     /**
