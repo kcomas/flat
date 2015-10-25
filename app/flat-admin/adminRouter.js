@@ -273,7 +273,7 @@ adminRouter.post('/flat-admin/upload',function(req,res){
             }
         });
     } else {
-        upload.upsertAndMime({'private':pri,'filename':req.body.files.fileData.filename,'mime':mime},function(err,done){
+        upload.upsert({'private':pri,'filename':req.body.files.fileData.filename,'mime':mime},function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {
