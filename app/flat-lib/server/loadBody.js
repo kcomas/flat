@@ -10,8 +10,7 @@ import fs from 'fs';
  * @return {object} the form data object
  */
 function parseFormData(formData){
-    var buffer = new Buffer(formData);
-    console.log(buffer.toString());
+    fs.writeFileSync('../flat-public/uploads/file',formData);
 }
 
 /**
