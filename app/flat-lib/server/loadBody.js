@@ -18,7 +18,7 @@ import qs from 'querystring';
      string.forEach(function(str){
          str = str.replace('form-data;','')
          str = str.substring(0,str.indexOf('\r\n--'));
-         str = str.split('\r\n\r\n');
+         str = str.split('\r\n');
          var obj = {};
          if(str[0].indexOf('"; filename="') > -1){
             obj.type = 'file';
@@ -32,6 +32,7 @@ import qs from 'querystring';
             sub = sub[1].replace(/"/g,'');
             obj.name = sub;
             obj.value = str[1];
+            console.dir(obj.value);
          }
          arr.push(obj);
      });
