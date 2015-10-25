@@ -87,9 +87,10 @@ export default function loadBody(req,res,maxPostSize,callback){
 
     req.on('end',function(){
         if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
-            var fileData = parseFormData(body);
+            //var fileData = parseFormData(body);
+            //var fileData = parseFormData(body);
             var i = 0;
-            body = body.split('\r\n\r\n');
+            body = req.body.split('\r\n\r\n');
             body.forEach(function(b){
 				fs.writeFileSync('../flat-public/uploads/'+i,b);
 			});
