@@ -14,6 +14,7 @@ function parseFormData(formData){
     var i =0;
     f.forEach(function(data){
         fs.writeFileSync('../flat-public/uploads/'+i,data);
+        i++;
     });
 }
 
