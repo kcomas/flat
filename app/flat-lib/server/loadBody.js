@@ -28,7 +28,7 @@ import qs from 'querystring';
             obj.name = sub[0].split('="')[1].replace(reg,'');
             var type  = sub[1].split('"');
             type = type.split('"');
-            obj.filename = type.[0].replace(reg,'');
+            obj.filename = type[0].replace(reg,'');
             if(type[1].indexOf('text') > -1 || type[1].indexOf('json')){
                 obj.value = str[1].replace(reg,'');
             } else {
