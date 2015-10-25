@@ -24,7 +24,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
             } else {
                 dir = $scope.uploadDirs.private;
             }
-            return dir.replace(/\./g/,'')+name;
+            return dir.replace(/\./g,'')+name;
         }
     };
 
