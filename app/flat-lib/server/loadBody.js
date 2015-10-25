@@ -36,6 +36,7 @@ export default function loadBody(req,res,maxPostSize,callback){
     var body = '';
 
     req.on('data',function(data){
+        console.dir(data);
         body += data;
         if(body.length > maxPostSize){
             //destory the connection
