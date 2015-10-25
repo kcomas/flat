@@ -46,6 +46,9 @@ export default function loadBody(req,res,maxPostSize,callback){
     }
     if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
         //load form
+        loadFile(req,function(req){
+            return callback();
+        });
     } else {
         //load string
     }
