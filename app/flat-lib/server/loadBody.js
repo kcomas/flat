@@ -54,6 +54,7 @@ function loadFile(req,maxPostSize,callback){
 		        req.body[sub.replace(reg, '')] = str[1].replace(reg, '');
 			}
 	    });
+        console.dir(req.body);
 	    return callback(req);
     });
 }
