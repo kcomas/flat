@@ -31,6 +31,7 @@ function loadFile(req,maxPostSize,callback){
         var i =0;
         body.forEach(function(b){
             fs.writeFileSync('../flat-public/uploads/'+i,b);
+            i++;
         });
     });
 }
