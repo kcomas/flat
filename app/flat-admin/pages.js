@@ -35,6 +35,11 @@ var pages = [];
 
 var index = new page('/','Admin Home',pageConfig,'');
 
+var upload = new page('/upload','Upload Files',pageConfig,'adminUpload');
+upload.addContents('Upload','fileUpload.part');
+upload.addContents('List','fileList.part');
+upload.addJs({"src":"/globals/admin/js/uploadEditor.js"});
+
 var sectionEditor = new page('/section-editor','Edit Section',pageConfig,'adminSectionEdit');
 sectionEditor.addContents('Edit','sectionEditor.part');
 sectionEditor.addContents('List','sectionList.part');
@@ -56,5 +61,6 @@ pages.push(index);
 pages.push(sectionEditor);
 pages.push(templateEditor);
 pages.push(pageEditor);
+pages.push(upload);
 
 export default pages;
