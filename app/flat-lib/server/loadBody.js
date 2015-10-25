@@ -74,6 +74,8 @@ export default function loadBody(req,res,maxPostSize,callback){
                 if(file.type === 'string'){
                     req.body[file.name] = file.value;
                 } else {
+                    req.body.files = {};
+                    req.body.files[file.name] = {};
                     req.body.files[file.name]['filename'] = file.filename;
                     req.body.files[file.name]['data'] = file.value;
                 }
