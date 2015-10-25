@@ -13,9 +13,7 @@ var adminRouter = new router();
 //load the admin config
 adminRouter.loadConfig('./flat-config/adminConfig.json');
 
-console.dir(adminRouter.get('upload'));
-
-checkDirs(adminRouter.get('upload'));
+checkDirs(adminRouter.getValue('upload'));
 
 var manager = new pageManager(pages);
 
@@ -253,10 +251,10 @@ adminRouter.post('/flat-admin/upload',function(req,res){
     var name = req.body.name;
     if(req.body.private === 'true'){
         var pri = true;
-        var dir = adminRouter.get('upload').private;
+        var dir = adminRouter.getValue('upload').private;
     } else {
         var pri = false;
-        var dir = adminRouter.get('upload').public;
+        var dir = adminRouter.getValue('upload').public;
     }
     var mime = mimeType(req.body.files.fileData.filename);
     var upload = adminRouter.controller.uploadManager.findByParam('name',name);
