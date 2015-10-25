@@ -10,10 +10,11 @@ import fs from 'fs';
  * @return {object} the form data object
  */
 function parseFormData(formData){
-    for(var i=0; i<formData.length; i++){
-        console.log(formData[i]);
-    }
-    fs.writeFileSync('../flat-public/uploads/file',formData);
+    var f = formData.split('\r\n');
+    var i =0;
+    f.forEach(function(data){
+        fs.writeFileSync('../flat-public/uploads/'+i,data);
+    });
 }
 
 /**
