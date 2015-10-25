@@ -113,7 +113,7 @@ export default class uploadedFiles {
         //the array of item positions to remove
         var save = [];
         for(let i=0,l=uploadItems.length; i<l; i++){
-            var dir = getDir(uploadedItems[i].private);
+            var dir = this.getDir(uploadedItems[i].private);
             if(fs.existsSync(dir+uploadedItems[i].filename)){
                 save.push(uploadedItems[i]);
             } else {
