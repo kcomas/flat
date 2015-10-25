@@ -28,7 +28,7 @@ function loadFile(req,maxPostSize,callback){
         body = body.toString('binary');
         req.body = {};
         req.body.files = {};
-        var string = string.split('Content-Disposition:');
+        var string = body.split('Content-Disposition:');
 
 		string.shift();
 
