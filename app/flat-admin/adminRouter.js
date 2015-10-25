@@ -277,7 +277,7 @@ adminRouter.post('/flat-admin/upload',function(req,res){
             if(err){
                 showError(req,res,err,500);
             } else {
-                uploader.writeFile(req.body.files.fileData.filename,mType,req.body.files.fileData.data,function(err,done){
+                uploader.writeFile(pri,req.body.files.fileData.filename,mType,req.body.files.fileData.data,function(err,done){
                     if(err){
                         showError(req,res,err,500);
                     } else {
