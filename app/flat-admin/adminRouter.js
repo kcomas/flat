@@ -15,6 +15,9 @@ var uploadDirs = adminRouter.getValue('upload')
 
 var uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
+//check that the uploaded files match the json data
+uploader.checkSync(adminRouter.controller.uploadManager.all());
+
 var manager = new pageManager(pages);
 
 //show better json errors

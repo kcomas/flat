@@ -71,6 +71,20 @@ export default class uploadedFiles {
     }
 
     /**
+     * Get the direcotry of the file
+     * @param {boolean} priv - is the file private
+     * @return {string} the directory
+     */
+    getDir(priv){
+        if(priv === true){
+            var dir = this._privateDir;
+        } else {
+            var dir = this._publicDir;
+        }
+        return dir;
+    }
+    
+    /**
      * Write a file to disk
      * @param {boolean} priv - if it is a public or private file
      * @param {string} name - the file name
@@ -80,11 +94,7 @@ export default class uploadedFiles {
      * @returns {function} the callback function
      */
     writeFile(priv,name,mime,fileData,callback){
-        if(priv === true){
-            var dir = this._privateDir;
-        } else {
-            var dir = this._publicDir;
-        }
+        var dir = this.getDir(priv);
         var encoding = uploadedFiles.determineEncoding(mime);
         fs.writeFile(dir+name,fileData,encoding,function(err){
             if(err){
@@ -92,6 +102,26 @@ export default class uploadedFiles {
             }
             return callback(null,true);
         });
+    }
+
+    /**
+     * Check the files exists and remove the ones that don't
+     * @param {upload} uploadItems - the files to check
+     */
+    checkSync(uploadItems){
+        //the array of item positions to remove
+        var remove = [];
+        for(let i=0,l=uploadItems.length; i<l; i++){
+            var dir = getDir(uploadedItems[i].private);
+            if(!fs.existsSync(dir+uploadedItems[i].filename){
+                remove.push(i);
+            }
+        }
+        if(remove.length > 0){
+            remove.forEach(function(i){
+                uploadedItems.splice(i,1);
+            });
+        }
     }
 
     /**
