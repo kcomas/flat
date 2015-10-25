@@ -39,7 +39,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
 
     };
 
-    $scope.clean() = function(){
+    $scope.clean = function(){
         $http.post('/flat-admin/check-files').success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
