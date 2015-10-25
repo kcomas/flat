@@ -23,7 +23,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
         $scope.current.uploadDisable = true;
         sendFile($scope,function(stat,msg){
             console.log(status);
-            $scope.current.upload = "Upload"
+            $scope.current.upload = "Upload";
             $scope.current.uploadDisable = false;
             $scope.current = {};
             if(stat === 200){
