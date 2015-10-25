@@ -57,6 +57,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
                 $scope.action.status = 500;
             }
             $scope.$apply();
+            $scope.load();
         });
     }
 }]);
