@@ -17,7 +17,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
 
     //upload the files
     $scope.upload = function(){
-        sendFile.$inject = ['$scope'];
+        sendFile($scope);
     }
 }]);
 
