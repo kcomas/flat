@@ -128,11 +128,12 @@ var mimeTypes =
 export default function mime(filename){
     var default_mime = 'application/octet-stream';
     var ext = filename.split('.').pop();
-    for(let key in mimeTypes){
+    for(var key in mimeTypes){
         if(ext === key){
             default_mime = mimeTypes[key];
             break;
         }
     }
+    console.log(default_mime);
     return default_mime;
 }

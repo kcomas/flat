@@ -256,10 +256,10 @@ adminRouter.post('/flat-admin/upload',function(req,res){
         var pri = false;
         var dir = adminRouter.getValue('upload').public;
     }
-    var m = mimeType(req.body.files.fileData.filename);
+    var mType = mimeType(req.body.files.fileData.filename);
     var upload = adminRouter.controller.uploadManager.findByParam('name',name);
     if(upload === null){
-        adminRouter.controller.uploadManager.create(name,req.body.files.fileData.filename,pri,m,function(err,done){
+        adminRouter.controller.uploadManager.create(name,req.body.files.fileData.filename,pri,mType,function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {
@@ -273,7 +273,7 @@ adminRouter.post('/flat-admin/upload',function(req,res){
             }
         });
     } else {
-        upload.upsert({'private':pri,'filename':req.body.files.fileData.filename,'mime':mime},function(err,done){
+        upload.upsert({'private':pri,'filename':req.body.files.fileData.filename,'mime':mType},function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {
