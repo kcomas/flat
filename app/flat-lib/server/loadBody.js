@@ -26,7 +26,7 @@ function loadFile(req,maxPostSize,callback){
     
     req.on('end',function(){
         body = body.toString('binary');
-        console.log(body);
+        console.dir(body);
     });
 }
 
