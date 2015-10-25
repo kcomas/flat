@@ -24,7 +24,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
             } else {
                 dir = $scope.uploadDirs.public;
             }
-            return dir.replace(/\./g,'')+name;
+            return dir+name;
         }
     };
 
@@ -37,6 +37,14 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     //delete a file
     $scope.delete = function(obj){
 
+    };
+
+    $scope.clean() = function(){
+        $http.post('/flat-admin/check-files').success(function(msg,status){
+            $scope.action.msg = msg;
+            $scope.action.status = status;
+            $scope.load();
+        });
     };
 
     $scope.load();
