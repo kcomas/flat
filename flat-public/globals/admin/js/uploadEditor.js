@@ -6,7 +6,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     $scope.action.status = null;
     $scope.action.msg = '';
     $scope.current.public = false;
-    var fileSelect = document.getElementById('fileToBeUploaded');
+    $scope.fileSelect = document.getElementById('fileToBeUploaded');
 
     //clear the form
     $scope.clear = function(){
@@ -19,7 +19,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     //upload the files
     $scope.upload = function(){
         var formData = new FormData();
-        var files = fileSelect.files;
+        var files = $scope.fileSelect.files;
         files.forEach(function(file){
             formData.append('files',file,file.name);
         });
