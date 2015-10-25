@@ -54,6 +54,7 @@ function loadFile(req,maxPostSize,callback){
 			}
 	    });
 	    return callback(req);
+    });
 }
 
 /**
