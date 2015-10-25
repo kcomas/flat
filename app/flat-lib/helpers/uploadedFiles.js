@@ -106,10 +106,10 @@ export default class uploadedFiles {
 
     /**
      * Check the files exists and remove the ones that don't
-     * @param {upload} uploadItems - the files to check
+     * @param {upload} uploadedItems - the files to check
      * @return {array} the new array of files
      */
-    checkSync(uploadItems){
+    checkSync(uploadedItems){
         //the array of item positions to remove
         var save = [];
         for(let i=0,l=uploadItems.length; i<l; i++){
