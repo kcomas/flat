@@ -8,6 +8,31 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     $scope.current.private = false;
     $scope.current.upload = "Upload"
     $scope.current.uploadDisable = false;
+    $scope.uploadList = [];    
+    $scope.uploadDirs = {};
+
+    $http.post('/flat-admin/upload/dirs').success(jsonData,status){
+        $scope.uploadDirs = jsonData;
+    });
+
+
+    $scope.getDir = function(bool){
+        if(scope.uploadDirs.private){
+            if(bool){
+                return scope.uploadDirs.private;
+            } else {
+                return scope.uploadDirs.private;
+            }
+        }
+    }
+
+    $scope.load = function(){
+        $http.post('/flat-admin/list-files').success(files,status){
+            $scope.uploadList = files;
+        });
+    };
+
+    $scope.load();
 
     //clear the form
     $scope.clear = function(){

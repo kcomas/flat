@@ -15,9 +15,6 @@ var uploadDirs = adminRouter.getValue('upload')
 
 var uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
-//check that the uploaded files match the json data
-uploader.checkSync(adminRouter.controller.uploadManager.all());
-
 var manager = new pageManager(pages);
 
 //show better json errors
@@ -281,6 +278,21 @@ adminRouter.post('/flat-admin/list-files',function(req,res){
     res.statusCode = 200;
     res.setHeader('content-type','application/json; charset=utf8');
     res.end(adminRouter.controller.uploadManager.toString());
+});
+
+
+//check all of the files
+adminRouter.post('/flat-admin/check-files',function(req,res){
+    //check that the uploaded files match the json data
+    uploader.checkSync(adminRouter.controller.uploadManager.all());
+    showSuccess(req,res,'files cleaned',200);
+});
+
+//get the upload dirs
+adminRouter.post('/flat-admin/upload/dirs',function(req,res){
+    res.statusCode = 200;
+    res.setHeader('Content-Type','application/json; charset=utf8');
+    res.end(JSON.stringify(uploadDirs));
 });
 
 adminRouter.always(function(req,res){
