@@ -114,8 +114,8 @@ export default class uploadedFiles {
         var save = [];
         for(let i=0,l=uploadItems.length; i<l; i++){
             var dir = getDir(uploadedItems[i].private);
-            if(fs.existsSync(dir+uploadedItems[i].filename){
-                save.push(i);
+            if(fs.existsSync(dir+uploadedItems[i].filename)){
+                save.push(uploadedItems[i]);
             } else {
                 uploadedItems[i].unlinkSync();
             }
