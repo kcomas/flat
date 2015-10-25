@@ -13,6 +13,8 @@ var adminRouter = new router();
 //load the admin config
 adminRouter.loadConfig('./flat-config/adminConfig.json');
 
+console.dir(adminRouter.get('upload'));
+
 checkDirs(adminRouter.get('upload'));
 
 var manager = new pageManager(pages);
