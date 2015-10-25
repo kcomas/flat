@@ -9,12 +9,13 @@ import qs from 'querystring';
  * @return {object} the form data object
  */
  function parseFormData(formData){
-    console.dir(formData);
     var string = formData.split('Content-Disposition:');
  
      string.shift();
      
      var arr = [];
+     
+     var reg = new RegExp('(\r\n|\r|\n)','g');
      
      string.forEach(function(str){
          str = str.replace('form-data;','')
@@ -24,15 +25,15 @@ import qs from 'querystring';
          if(str[0].indexOf('"; filename="') > -1){
             obj.type = 'file';
             var sub = str[0].split('"; filename="');
-            obj.name = sub[0].split('="')[1];
-            obj.filename = sub[1].split('"')[0];
-            obj.value = str[1];
+            obj.name = sub[0].split('="')[1].replace(reg,'');
+            obj.filename = sub[1].split('"')[0].replace(reg,'');
+            obj.value = str[1].replace(reg,'');
          } else {
             obj.type = 'string'
             var sub = str[0].split('=');
             sub = sub[1].replace(/"/g,'');
-            obj.name = sub;
-            obj.value = str[1];
+            obj.name = sub.replace(reg,'');;
+            obj.value = str[1].replace(reg,'');;
          }
          arr.push(obj);
      });
