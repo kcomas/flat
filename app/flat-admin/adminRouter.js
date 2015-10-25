@@ -5,6 +5,8 @@ import fs from 'fs';
 import router from '../flat-lib/server/router.js';
 import pages from './pages.js';
 import pageManager from './page/pageManager.js';
+import mimeType from '../flat-lib/helpers/mime.js'
+import writeFile from '../flat-lib/helpers/writeFile.js');
 
 var adminRouter = new router();
 
@@ -246,7 +248,45 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
 
 //upload a file
 adminRouter.post('/flat-admin/upload',function(req,res){
-    console.dir(req.body);
+    var name = req.body.name;
+    if(req.body.private === 'true'){
+        var pri = true;
+        var dir = adminRouter.get('upload').private;
+    } else {
+        var pri = false;
+        var dir = adminRouter.get('upload').public;
+    }
+    var mime = mimeType(req.body.files.fileData.filename);
+    var upload = adminRouter.controller.uploadManager.findByParam('name',name);
+    if(upload === null){
+        adminRouter.controller.uploadManager.create(name,req.body.files.fileData.filename,pri,mime,function(err,done){
+            if(err){
+                showError(req,res,err,500);
+            } else {
+                writeFile(dir,req.body.files.fileData.filename,req.body.files.fileData.data,function(err,done){
+                    if(err){
+                        showError(req,res,err,500);
+                    } else {
+                        showSuccess(req,res,'file saved',200);
+                    }
+                });
+            }
+        });
+    } else {
+        upload.upsertAndMime({'private':pri,'filename':req.body.files.fileData.filename,'mime':mime},function(err,done){
+            if(err){
+                showError(req,res,err,500);
+            } else {
+                writeFile(dir,req.body.files.fileData.filename,req.body.files.fileData.data,function(err,done){
+                    if(err){
+                        showError(req,res,err,500);
+                    } else {
+                        showSuccess(req,res,'file saved',200);
+                    }
+                });
+            }
+        });
+    }
 });
 
 adminRouter.always(function(req,res){

@@ -1,6 +1,6 @@
 {
 	"upload":{
-		"public":"../flat-public/uploads",
-		"private":"./flat-content/private"
+		"public":"../flat-public/uploads/",
+		"private":"./flat-content/private/"
 	}
 }

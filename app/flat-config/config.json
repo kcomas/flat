@@ -8,6 +8,6 @@
     "userDir":"./flat-content/users/",
     "uploadDir":"./flat-content/uploads",
     "logDir":"./flat-logs/",
-    "scriptDir":"/flat-scripts",
+    "scriptDir":"/flat-scripts/",
     "sessionCookie":"flat-session"
 }

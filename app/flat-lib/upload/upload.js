@@ -2,7 +2,6 @@
 "use strict"
 
 import item from '../helpers/items/item.js';
-import mime from '../helpers/mime.js';
 
 /**
  * This class contains a single upload
@@ -16,10 +15,11 @@ export default class upload extends item {
      * @param {string} name - the nice name of the file
      * @param {string} filename - the filename of the file
      * @param {boolean} priv - indicates if the file is private or not
+     * @param {string} mime - the mime type
      * @param {function(err:error,done:boolean)} callback - done is true if the obj was created
      * @return {function} the callback function
      */
-    create(name,filename,priv,callback){
+    create(name,filename,priv,mime,callback){
         var self = this;
         this.genId(function(err,done){
             if(err){
@@ -28,7 +28,7 @@ export default class upload extends item {
             self.data.name = name;
             self.data.fileName = filename;
             self.data.private = priv;
-            self.data.mime = mime(filename);
+            self.data.mime = mime;
             self.data.dateCreated = new Date();
             self.save(function(err,done){
                 return callback(err,done);

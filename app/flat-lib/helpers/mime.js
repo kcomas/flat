@@ -102,6 +102,7 @@ var mimeTypes =
   'tr'     : 'application/x-troff',
   'tsv'    : 'text/tab-separated-values',
   'txt'    : 'text/plain',
+  'tpl'    : 'text/html',
   'ustar'  : 'application/x-ustar',
   'vcf'    : 'text/x-vcard',
   'wav'    : 'audio/x-wav',
