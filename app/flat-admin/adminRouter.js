@@ -5,15 +5,18 @@ import fs from 'fs';
 import router from '../flat-lib/server/router.js';
 import pages from './pages.js';
 import pageManager from './page/pageManager.js';
-import mimeType from '../flat-lib/helpers/mime.js'
-import writeFile from '../flat-lib/helpers/writeFile.js';
+import uploadedFiles from '../flat-lib/helpers/uploadedFiles.js';
 
 var adminRouter = new router();
 
 //load the admin config
 adminRouter.loadConfig('./flat-config/adminConfig.json');
 
-checkDirs(adminRouter.getValue('upload'));
+var uploadDirs = adminRouter.getValue('upload')
+
+checkDirs(uploadDirs);
+
+var uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
 var manager = new pageManager(pages);
 
@@ -251,19 +254,17 @@ adminRouter.post('/flat-admin/upload',function(req,res){
     var name = req.body.name;
     if(req.body.private === 'true'){
         var pri = true;
-        var dir = adminRouter.getValue('upload').private;
     } else {
         var pri = false;
-        var dir = adminRouter.getValue('upload').public;
     }
-    var mType = mimeType(req.body.files.fileData.filename);
+    var mType = uploadedFiles.mimeType(req.body.files.fileData.filename);
     var upload = adminRouter.controller.uploadManager.findByParam('filename',name);
     if(upload === null){
         adminRouter.controller.uploadManager.create(req.body.files.fileData.filename,pri,mType,function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {
-                writeFile(dir,req.body.files.fileData.filename,mType,req.body.files.fileData.data,function(err,done){
+                uploader.writeFile(pri,req.body.files.fileData.filename,mType,req.body.files.fileData.data,function(err,done){
                     if(err){
                         showError(req,res,err,500);
                     } else {
@@ -277,7 +278,7 @@ adminRouter.post('/flat-admin/upload',function(req,res){
             if(err){
                 showError(req,res,err,500);
             } else {
-                writeFile(dir,req.body.files.fileData.filename,mType,req.body.files.fileData.data,function(err,done){
+                uploader.writeFile(dir,req.body.files.fileData.filename,mType,req.body.files.fileData.data,function(err,done){
                     if(err){
                         showError(req,res,err,500);
                     } else {
