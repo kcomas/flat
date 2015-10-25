@@ -60,6 +60,14 @@ export default class manager {
     }
 
     /**
+     * Set the items array
+     * @param {array} newItems - the new items to set
+     */
+    set(newItems){
+        this.itmes = newItems;
+    }
+
+    /**
      * Get all of the items in the array
      * @return {array} the array of the items
      */

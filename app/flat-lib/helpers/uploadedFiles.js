@@ -106,24 +106,21 @@ export default class uploadedFiles {
 
     /**
      * Check the files exists and remove the ones that don't
-     * @param {upload} uploadedItems - the files to check
+     * @param {upload} uploadItems - the files to check
+     * @return {array} the new array of files
      */
-    checkSync(uploadedItems){
+    checkSync(uploadItems){
         //the array of item positions to remove
-        var remove = [];
-        for(let i=0,l=uploadedItems.length; i<l; i++){
-            var dir = this.getDir(uploadedItems[i].private);
-            if(!fs.existsSync(dir+uploadedItems[i].filename)){
-                remove.push(i);
+        var save = [];
+        for(let i=0,l=uploadItems.length; i<l; i++){
+            var dir = getDir(uploadedItems[i].private);
+            if(fs.existsSync(dir+uploadedItems[i].filename){
+                save.push(i);
+            } else {
+                uploadedItems[i].unlinkSync();
             }
         }
-        var mod = 0;
-        if(remove.length > 0){
-            remove.forEach(function(pos){
-                uploadedItems.splice(pos-mod,1);
-                mod++;
-            });
-        }
+        return save;
     }
 
     /**
