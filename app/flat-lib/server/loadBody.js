@@ -26,8 +26,14 @@ import qs from 'querystring';
             obj.type = 'file';
             var sub = str[0].split('"; filename="');
             obj.name = sub[0].split('="')[1].replace(reg,'');
-            obj.filename = sub[1].split('"')[0].replace(reg,'');
-            obj.value = str[1].replace(reg,'');
+            var type  = sub[1].split('"');
+            type = type.split('"');
+            obj.filename = type.[0].replace(reg,'');
+            if(type[1].indexOf('text') > -1 || type[1].indexOf('json')){
+                obj.value = str[1].replace(reg,'');
+            } else {
+                //binary
+            }
          } else {
             obj.type = 'string'
             var sub = str[0].split('=');
