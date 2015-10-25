@@ -37,12 +37,13 @@ function sendFile($scope){
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/flat-admin/upload', true);
     xhr.onload = function () {
+        console.log("DONE");
         if(xhr.status === 200){
             $scope.action.msg = xhr.responseText;
             $scope.action.status = 200;
         } else {
             $scope.action.msg = xhr.statusText;
-            $scope.cation.status = 500;
+            $scope.action.status = 500;
         }
         $scope.current.upload = "Upload"
         $scope.current.uploadDisable = false;
