@@ -8,11 +8,35 @@ import qs from 'querystring';
  * @param {string} formData - the form data to parse
  * @return {object} the form data object
  */
-function parseFormData(formData){
-    var newData = formData;
-
-    return newData;
-};
+ function parseFormData(formData){
+    string = string.split('Content-Disposition:');
+ 
+     string.shift();
+     
+     var arr = [];
+     
+     string.forEach(function(str){
+         str = str.replace('form-data;','')
+         str = str.substring(0,str.indexOf('\r\n--'));
+         str = str.split('\r\n\r\n');
+         var obj = {};
+         if(str[0].indexOf('"; filename="') > -1){
+            obj.type = 'file';
+            var sub = str[0].split('"; filename="');
+            obj.name = sub[0].split('="')[1];
+            obj.filename = sub[1].split('"')[0];
+            obj.value = str[1];
+         } else {
+            obj.type = 'string'
+            var sub = str[0].split('=');
+            sub = sub[1].replace('"','');
+            obj.name = sub;
+            obj.value = str[1];
+         }
+         arr.push(obj);
+     });
+     return arr;
+ };
 
 /**
  * This function loads the post body data if the method is post
@@ -45,7 +69,15 @@ export default function loadBody(req,res,maxPostSize,callback){
 
     req.on('end',function(){
         if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
-            req.body = parseFormData(body);
+            var fileData = parseFormData(body);
+            fileData.forEach(function(file){
+                if(file.type === 'string'){
+                    req.body[file.name] = file.value;
+                } else {
+                    req.body.files[file.name]['filename'] = file.filename;
+                    req.body.files[file.name]['data'] = file.value;
+                }
+            });
             return callback();
         } else {
             try {
