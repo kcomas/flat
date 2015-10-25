@@ -44,7 +44,6 @@ function sendFile($scope,callback){
     for(var i=0,l=files.length; i<l; i++){
         formData.append('fileData',files[i],files[i].name);
     }
-    formData.append('name',$scope.current.name);
     formData.append('private',$scope.current.private);
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/flat-admin/upload', true);

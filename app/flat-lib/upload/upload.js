@@ -12,20 +12,18 @@ export default class upload extends item {
     /**
      * Create a new file upload object
      * @override
-     * @param {string} name - the nice name of the file
      * @param {string} filename - the filename of the file
      * @param {boolean} priv - indicates if the file is private or not
      * @param {string} mime - the mime type
      * @param {function(err:error,done:boolean)} callback - done is true if the obj was created
      * @return {function} the callback function
      */
-    create(name,filename,priv,mime,callback){
+    create(filename,priv,mime,callback){
         var self = this;
         this.genId(function(err,done){
             if(err){
                 return callback(err,null);
             }
-            self.data.name = name;
             self.data.fileName = filename;
             self.data.private = priv;
             self.data.mime = mime;
