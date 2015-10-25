@@ -111,7 +111,7 @@ export default class uploadedFiles {
     checkSync(uploadedItems){
         //the array of item positions to remove
         var remove = [];
-        for(let i=0,l=uploadItems.length; i<l; i++){
+        for(let i=0,l=uploadedItems.length; i<l; i++){
             var dir = this.getDir(uploadedItems[i].private);
             if(!fs.existsSync(dir+uploadedItems[i].filename)){
                 remove.push(i);
