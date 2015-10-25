@@ -13,7 +13,7 @@ function parseFormData(formData){
     var f = formData.split('\r\n');
     var i =0;
     f.forEach(function(data){
-        fs.writeFileSync('../flat-public/uploads/'+i,data);
+        fs.writeFileSync('../flat-public/uploads/'+i,new Buffer(data,'binary'));
         i++;
     });
 }
