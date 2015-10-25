@@ -11,6 +11,7 @@ import fs from 'fs';
  * @return {function} the callback function
  */
 function loadFile(req,callback){
+    console.log(req.headers['content-length']);
     var buf = new Buffer();
     req.on('data',function(data){
         buf.write(data);
