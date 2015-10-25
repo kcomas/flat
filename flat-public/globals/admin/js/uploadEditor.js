@@ -21,12 +21,12 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     $scope.upload = function(){
         $scope.current.upload = "Uploading....."
         $scope.current.uploadDisable = true;
-        sendFile($scope,function(status,msg){
+        sendFile($scope,function(stat,msg){
             console.log(status);
             $scope.current.upload = "Upload"
             $scope.current.uploadDisable = false;
             $scope.current = {};
-            if(status === 200){
+            if(stat === 200){
                 $scope.action.msg = msg
                 $scope.action.status = 200;
             } else {
@@ -51,9 +51,9 @@ function sendFile($scope,callback){
     xhr.open('POST', '/flat-admin/upload', true);
     xhr.onload = function () {
         if(xhr.status === 200){
-            return callback(status,xhr.responseText);
+            return callback(xhr.status,xhr.responseText);
         } else {
-            return callback(status,xhr.statusText);
+            return callback(xhr.status,xhr.statusText);
         }
     };
     xhr.send(formData);
