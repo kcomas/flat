@@ -11,6 +11,13 @@
                 <label class="radio-inline">
                     <input type="radio" ng-model="current.public" value="false" /> Private
                 </label>
+                <div class="form-group">
+                    <input type="file" id="fileToBeUploaded"  class="form-control" value="Upload" />
+                </div>
+                <div class="form-group text-center">
+                    <button class="btn btn-success" ng-click="upload()">Upload</button>
+                    <button class="btn btn-danger" ng-click="clear()">Clear</button>
+                </div>
             </div>
         </form>
     </div>
