@@ -20,6 +20,7 @@ export default class upload extends item {
      * @return {function} the callback function
      */
     create(name,filename,priv,mime,callback){
+        console.dir(mime);
         var self = this;
         this.genId(function(err,done){
             if(err){
