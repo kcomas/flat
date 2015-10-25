@@ -40,7 +40,7 @@ var reg = new RegExp('(\r\n|\r|\n)', 'g');
 	                arr2[idx] = str[1].charCodeAt(idx) & 0xFF;
 	            }
 	            */
-	            obj.value = new Uint8Array(str[1]).buffer;
+	            obj.value = str[1];
 	        }
 	    } else {
 	        obj.type = 'string'
