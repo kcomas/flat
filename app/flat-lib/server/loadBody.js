@@ -33,7 +33,7 @@ function loadFile(req,maxPostSize,callback){
 		string.shift();
 
 
-		var reg = new RegExp('(\r\n|\r|\n)', 'g');
+		//var reg = new RegExp('(\r\n|\r|\n)', 'g');
 
 		string.forEach(function (str) {
 			str = str.replace('form-data;', '')
@@ -44,14 +44,14 @@ function loadFile(req,maxPostSize,callback){
 		        obj.type = 'file';
 		        var sub = str[0].split('"; filename="');
                 var type = sub[1].split('"');
-		        var name = sub[0].split('="')[1].replace(reg, '')
+		        var name = sub[0].split('="')[1];
 		        req.body.files[name] = {}; //name
-		        req.body.files[name].filename = type[0].replace(reg, '');
-		        req.body.files[name].data = str[1].replace(reg, '');
+		        req.body.files[name].filename = type[0];
+		        req.body.files[name].data = str[1];
 		    } else {
 		        var sub = str[0].split('=');
 		        sub = sub[1].replace(/"/g, '');
-		        req.body[sub.replace(reg, '')] = str[1].replace(reg, '');
+		        req.body[sub.replace(reg, '')] = str[1];
 			}
 	    });
 	    return callback(req);
