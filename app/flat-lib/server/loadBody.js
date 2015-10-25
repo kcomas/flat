@@ -27,7 +27,7 @@ function loadFile(req,maxPostSize,callback){
     req.on('end',function(){
         body = body.toString('binary');
         console.dir(body);
-        fs.writeFileSync('../public/uploads/file',body,'binary');
+        fs.writeFileSync('../flat-public/uploads/file',body,'binary');
     });
 }
 
