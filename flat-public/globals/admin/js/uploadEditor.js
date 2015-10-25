@@ -19,6 +19,8 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
 
     //upload the files
     $scope.upload = function(){
+        $scope.current.upload = "Uploading....."
+        $scope.current.uploadDisable = true;
         sendFile($scope,function(status,msg){
             $scope.current.upload = "Upload"
             $scope.current.uploadDisable = false;
@@ -30,13 +32,12 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
                 $scope.action.msg = msg
                 $scope.action.status = 500;
             }
+            $scope.$apply();
         });
     }
 }]);
 
 function sendFile($scope,callback){
-    $scope.current.upload = "Uploading....."
-    $scope.current.uploadDisable = true;
     fileSelect = document.getElementById('fileToBeUploaded');
     var formData = new FormData();
     var files = fileSelect.files;
