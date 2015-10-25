@@ -2,7 +2,7 @@
     <div class="col-md-8 col-md-offset-2">
         <ul class="list-group" ng-repeat="up in uploadList" />
             <li class="list-group-item">
-            {{getDir(upload.private,up.filename)}}  ,Private:{{up.private}}  <button class="btn btn-danger" ng-click="delete(upload)">Delete</button>
+            {{getDir(upload.private,up.fileName)}}  ,Private:{{up.private}}  <button class="btn btn-success" ng-click="view(up)">View</button> <button class="btn btn-danger" ng-click="delete(up)">Delete</button>
             </li>
         </ul>
     </div>
