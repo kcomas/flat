@@ -9,7 +9,7 @@ import qs from 'querystring';
  * @return {object} the form data object
  */
  function parseFormData(formData){
-    string = string.split('Content-Disposition:');
+    var string = formData.split('Content-Disposition:');
  
      string.shift();
      
