@@ -6,10 +6,10 @@
             </div>
             <div class="form-group">
                 <label class="radio-inline">
-                    <input type="radio" ng-model="current.public" ng-value="true"  /> Public
+                    <input type="radio" ng-model="current.public" ng-value="false"  /> Public
                 </label>
                 <label class="radio-inline">
-                    <input type="radio" ng-model="current.public" ng-value="false" /> Private
+                    <input type="radio" ng-model="current.public" ng-value="true" /> Private
                 </label>
                 <div class="form-group">
                     <input type="file" id="fileToBeUploaded"  class="form-control" value="Upload" />
