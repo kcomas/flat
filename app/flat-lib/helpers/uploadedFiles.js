@@ -63,7 +63,7 @@ export default class uploadedFiles {
 
     /**
      * Write a file to disk
-     * @param {boolean} pr - if it is a public or private file
+     * @param {boolean} prv - if it is a public or private file
      * @param {string} name - the file name
      * @param {string} mime - the file encoding to use
      * @param {string} fileData - the file data
