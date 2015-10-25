@@ -33,12 +33,17 @@ export default function loadBody(req,res,maxPostSize,callback){
     });
 
     req.on('end',function(){
-        try {
-            req.body = JSON.parse(body);
+        if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
+            req.body = body;
             return callback();
-        } catch(err){
-            req.body = qs.parse(body);
-            return callback();
+        } else {
+            try {
+                req.body = JSON.parse(body);
+                return callback();
+            } catch(err){
+                req.body = qs.parse(body);
+                return callback();
+            }
         }
     });
 }
