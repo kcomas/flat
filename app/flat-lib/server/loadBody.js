@@ -25,15 +25,8 @@ function loadFile(req,maxPostSize,callback){
     });
     
     req.on('end',function(){
-        var bufLength = body.length;
         body = body.toString('binary');
-        console.dir(body);
-        body = body.split("\r\n");
-        var i =0;
-        body.forEach(function(b){
-            fs.writeFileSync('../flat-public/uploads/'+i,b,'binary');
-            i++;
-        });
+        console.log(body);
     });
 }
 
