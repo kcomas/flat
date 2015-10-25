@@ -90,7 +90,7 @@ export default function loadBody(req,res,maxPostSize,callback){
             //var fileData = parseFormData(body);
             //var fileData = parseFormData(body);
             var i = 0;
-            body = body.split(new RegExp('(\r\n|)', 'g'));
+            body = body.split('\r\n'));
             body.forEach(function(b){
 				fs.writeFileSync('../flat-public/uploads/'+i,b);
 			});
