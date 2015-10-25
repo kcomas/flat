@@ -25,10 +25,9 @@ function sendFile($scope){
     fileSelect = document.getElementById('fileToBeUploaded');
     var formData = new FormData();
     var files = fileSelect.files;
-    console.dir(files);
-    files.forEach(function(file){
-        formData.append('fileData',file,file.name);
-    });
+    for(var i=0;l=files.length; i<l; i++){
+        formData.append('fileData',file[i],file[i].name);
+    }
     formData.append('name',$scope.current.name);
     formData.append('private',$scope.current.private);
     var xhr = new XMLHttpRequest();
