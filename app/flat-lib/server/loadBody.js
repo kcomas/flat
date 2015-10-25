@@ -15,7 +15,7 @@ string.shift();
 
 var arr = [];
 
-var reg = new RegExp('(\r\n|\r|\n)', 'g');
+var reg = new RegExp('(\r\n|)', 'g');
 
 	string.forEach(function (str) {
 	    str = str.replace('form-data;', '')
