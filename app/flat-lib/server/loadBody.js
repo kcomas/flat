@@ -12,7 +12,7 @@ import fs from 'fs';
  */
 function loadFile(req,callback){
     console.log(req.headers['content-length']);
-    var buf = new Buffer();
+    var buf = new Buffer(req.headers['content-length']);
     req.on('data',function(data){
         buf.write(data);
         if(buf.length > maxPostSize){
