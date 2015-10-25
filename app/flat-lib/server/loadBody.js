@@ -34,9 +34,6 @@ export default function loadBody(req,res,maxPostSize,callback){
 
     req.on('end',function(){
         if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
-            res.statusCode = 306;
-            res.end();
-            return;
             req.body = body;
             return callback();
         } else {
