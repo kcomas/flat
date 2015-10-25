@@ -21,12 +21,21 @@ export default class uploadedFiles {
          */
         this._publicDir = publicDir;
 
+        //make sure the directory exists
+        if(!fs.existsSync(this._publicDir)){
+            fs.mkdirSync(this._publicDir);
+        }
+
         /**
          * The private uploaded file dir
          * @type {string}
          */
         this._privateDir = privateDir;
 
+        //make sure the directory exists
+        if(!fs.existsSync(this._privateDir)){
+            fs.mkdirSync(this._privateDir);
+        }
     }
 
     /**

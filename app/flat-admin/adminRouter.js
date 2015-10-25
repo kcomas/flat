@@ -1,7 +1,6 @@
 
 "use strict"
 
-import fs from 'fs';
 import router from '../flat-lib/server/router.js';
 import pages from './pages.js';
 import pageManager from './page/pageManager.js';
@@ -13,8 +12,6 @@ var adminRouter = new router();
 adminRouter.loadConfig('./flat-config/adminConfig.json');
 
 var uploadDirs = adminRouter.getValue('upload')
-
-checkDirs(uploadDirs);
 
 var uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
@@ -38,19 +35,6 @@ if(renderErr.length > 0){
     console.dir(renderErr);
 }
 
-/**
- * Make sure directories exist
- * @param {object} dirs - the directories to check
- * @property {string} key - the app name of the direcotry
- * @property {string} directory - the directory to make sure is there
- */
-function checkDirs(obj){
-    for(let key in obj){
-        if(!fs.existsSync(obj[key])){
-            fs.mkdirSync(obj[key]);
-        }
-    }
-}
 
 /**
  * Render a json error page
@@ -288,6 +272,14 @@ adminRouter.post('/flat-admin/upload',function(req,res){
         });
     }
 });
+
+//list the public files
+
+//list the private files
+
+//delete a public file
+
+//delete a private file
 
 adminRouter.always(function(req,res){
         showError(req,res,new Error("Not Found"),404);
