@@ -19,9 +19,9 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     $scope.getDir = function(bool){
         if($scope.uploadDirs.private){
             if(bool){
-                return scope.uploadDirs.private;
+                return $scope.uploadDirs.private;
             } else {
-                return scope.uploadDirs.private;
+                return $scope.uploadDirs.private;
             }
         }
     };
