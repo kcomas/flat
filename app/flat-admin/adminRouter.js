@@ -11,6 +11,8 @@ var adminRouter = new router();
 //load the admin config
 adminRouter.loadConfig('./flat-config/adminConfig.json');
 
+checkDirs(adminRouter.get('upload'));
+
 var manager = new pageManager(pages);
 
 //show better json errors
@@ -29,6 +31,20 @@ Object.defineProperty(Error.prototype, 'toJSON', {
 var renderErr = manager.renderAll();
 if(renderErr.length > 0){
     console.dir(renderErr);
+}
+
+/**
+ * Make sure directories exist
+ * @param {object} dirs - the directories to check
+ * @property {string} key - the app name of the direcotry
+ * @property {string} directory - the directory to make sure is there
+ */
+function checkDirs(obj){
+    for(let keys in obj){
+        if(!fs.existsSync(obj[key])){
+            fs.mkdirSync(obj[key]);
+        }
+    }
 }
 
 /**
