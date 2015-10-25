@@ -9,40 +9,46 @@ import qs from 'querystring';
  * @return {object} the form data object
  */
  function parseFormData(formData){
-    var string = formData.split('Content-Disposition:');
+		var string = formData.split('Content-Disposition:');
  
-     string.shift();
-     
-     var arr = [];
-     
-     var reg = new RegExp('(\r\n|\r|\n)','g');
-     
-     string.forEach(function(str){
-         str = str.replace('form-data;','')
-         str = str.substring(0,str.indexOf('\r\n--'));
-         str = str.split('\r\n\r\n');
-         var obj = {};
-         if(str[0].indexOf('"; filename="') > -1){
-            obj.type = 'file';
-            var sub = str[0].split('"; filename="');
-            obj.name = sub[0].split('="')[1].replace(reg,'');
-            var type  = sub[1].split('"');
-            type = type.split('"');
-            obj.filename = type[0].replace(reg,'');
-            if(type[1].indexOf('text') > -1 || type[1].indexOf('json')){
-                obj.value = str[1].replace(reg,'');
-            } else {
-                //binary
-            }
-         } else {
-            obj.type = 'string'
-            var sub = str[0].split('=');
-            sub = sub[1].replace(/"/g,'');
-            obj.name = sub.replace(reg,'');;
-            obj.value = str[1].replace(reg,'');;
-         }
-         arr.push(obj);
-     });
+string.shift();
+
+var arr = [];
+
+var reg = new RegExp('(\r\n|\r|\n)', 'g');
+
+	string.forEach(function (str) {
+	    str = str.replace('form-data;', '')
+	    str = str.substring(0, str.indexOf('\r\n--'));
+	    str = str.split('\r\n\r\n');
+	    var obj = {};
+	    if (str[0].indexOf('"; filename="') > -1) {
+	        obj.type = 'file';
+	        var sub = str[0].split('"; filename="');
+	        obj.name = sub[0].split('="')[1].replace(reg, '');
+	        var type = sub[1].split('"');
+	        obj.filename = type[0].replace(reg, '');
+	        if (type[1].indexOf('text') > -1 || type[1].indexOf('json') > -1) {
+	            obj.value = str[1].replace(reg, '');
+	        } else {
+	            //binary
+	            str[1] = str[1].replace(reg, '');
+	            var idx, len = str.length,
+	                arr2 = new Array(len);
+	            for (idx = 0; idx < len; ++idx) {
+	                arr2[idx] = str[1].charCodeAt(idx) & 0xFF;
+	            }
+	            obj.value = new Uint8Array(arr2).buffer;
+	        }
+	    } else {
+	        obj.type = 'string'
+	        var sub = str[0].split('=');
+	        sub = sub[1].replace(/"/g, '');
+	        obj.name = sub.replace(reg, '');
+	        obj.value = str[1].replace(reg, '');
+	    }
+	    arr.push(obj);
+	});
      return arr;
  };
 
