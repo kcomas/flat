@@ -31,7 +31,7 @@ function sendFile($scope){
     formData.append('name',$scope.current.name);
     formData.append('private',$scope.current.private);
     var xhr = new XMLHttpRequest();
-    xhr.xhr.open('POST', '/flat-admin/upload', true);
+    xhr.open('POST', '/flat-admin/upload', true);
     xhr.onload = function () {
         if(xhr.status === 200){
             $scope.action.msg = "File Uploaded";
