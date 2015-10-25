@@ -230,9 +230,7 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
 
 //upload a file
 adminRouter.post('/flat-admin/upload',function(req,res){
-    console.log(req.body.name);
-    console.log(req.body.private);
-    console.dir(req.body.fileData);
+    console.log(req.body);
 });
 
 adminRouter.always(function(req,res){
