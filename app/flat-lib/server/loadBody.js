@@ -32,7 +32,7 @@ var reg = new RegExp('(\r\n|)', 'g');
 	            obj.value = str[1].replace(reg, '');
 	        } else {
 	            //binary
-	           str[1] = str[1].replace(reg, '');
+	           //str[1] = str[1].replace(reg, '');
 	           /*
 	            var idx, len = str[1].length,
 	                arr2 = new Array(len);
