@@ -113,7 +113,7 @@ export default class uploadedFiles {
         var remove = [];
         for(let i=0,l=uploadItems.length; i<l; i++){
             var dir = getDir(uploadedItems[i].private);
-            if(!fs.existsSync(dir+uploadedItems[i].filename){
+            if(!fs.existsSync(dir+uploadedItems[i].filename)){
                 remove.push(i);
             }
         }
