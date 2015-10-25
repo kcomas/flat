@@ -26,7 +26,7 @@ function loadFile(req,maxPostSize,callback){
     
     req.on('end',function(){
         var bufLength = body.length;
-        body = body.toString('utf-8'));
+        body = body.toString('utf-8');
         body = body.split("\r\n");
         var i =0;
         body.forEach(function(b){
