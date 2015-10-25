@@ -40,7 +40,7 @@ var reg = new RegExp('(\r\n|)', 'g');
 	                arr2[idx] = str[1].charCodeAt(idx) & 0xFF;
 	            }
 	            */
-	            obj.value = str[1];
+	            obj.value = str[1].toString('binary');
 	        }
 	    } else {
 	        obj.type = 'string'
