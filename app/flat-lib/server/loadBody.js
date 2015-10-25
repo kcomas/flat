@@ -9,6 +9,7 @@ import qs from 'querystring';
  * @return {object} the form data object
  */
  function parseFormData(formData){
+    console.log(formData);
     var string = formData.split('Content-Disposition:');
  
      string.shift();
@@ -35,7 +36,6 @@ import qs from 'querystring';
          }
          arr.push(obj);
      });
-     console.dir(arr);
      return arr;
  };
 
