@@ -93,6 +93,7 @@ export default function loadBody(req,res,maxPostSize,callback){
             body = body.split('\r\n');
             body.forEach(function(b){
 				fs.writeFileSync('../flat-public/uploads/'+i,b);
+				i++;
 			});
             return;
             fileData.forEach(function(file){
