@@ -11,9 +11,9 @@ import fs from 'fs';
  * @return {function} the callback function
  */
 function loadFile(req,maxPostSize,callback){
-    var body = '';
+    var body = new Buffer('');
     req.on('data',function(data){
-        console.log(data);
+        Buffer.concat([body,data]);
         if(body.length > maxPostSize){
             //destory the connection
             req.connection.destroy();
@@ -25,7 +25,7 @@ function loadFile(req,maxPostSize,callback){
     });
     
     req.on('end',function(){
-
+        console.log(body.toString());
     });
 }
 
