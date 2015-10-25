@@ -22,6 +22,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
         $scope.current.upload = "Uploading....."
         $scope.current.uploadDisable = true;
         sendFile($scope,function(status,msg){
+            console.log(status);
             $scope.current.upload = "Upload"
             $scope.current.uploadDisable = false;
             $scope.current = {};
