@@ -228,6 +228,11 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
     }
 });
 
+//upload a file
+adminRouter.post('/flat-admin/upload',function(req,res){
+    console.dir(req.body);
+});
+
 adminRouter.always(function(req,res){
         showError(req,res,new Error("Not Found"),404);
 });
