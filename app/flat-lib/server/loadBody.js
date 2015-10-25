@@ -25,7 +25,8 @@ function loadFile(req,maxPostSize,callback){
     });
     
     req.on('end',function(){
-        console.log(body.toString());
+        var bufLength = body.length;
+        console.log(body.toString('utf-8'));
     });
 }
 
