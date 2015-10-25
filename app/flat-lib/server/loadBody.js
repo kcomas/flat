@@ -32,10 +32,10 @@ var reg = new RegExp('(\r\n|\r|\n)', 'g');
 	            obj.value = str[1].replace(reg, '');
 	        } else {
 	            //binary
-	            str[1] = str[1].replace(reg, '');
+	           // str[1] = str[1].replace(reg, '');
 	            var idx, len = str[1].length,
 	                arr2 = new Array(len);
-	            for (idx = 0; idx < len; ++idx) {
+	            for (var idx = 0; idx < len; ++idx) {
 	                arr2[idx] = str[1].charCodeAt(idx) & 0xFF;
 	            }
 	            obj.value = new Uint8Array(arr2).buffer;
