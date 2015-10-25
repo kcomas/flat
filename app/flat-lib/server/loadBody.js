@@ -32,10 +32,10 @@ import qs from 'querystring';
             sub = sub[1].replace(/"/g,'');
             obj.name = sub;
             obj.value = str[1];
-            console.dir(obj.value);
          }
          arr.push(obj);
      });
+     console.dir(arr);
      return arr;
  };
 
