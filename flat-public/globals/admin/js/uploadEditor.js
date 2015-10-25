@@ -19,11 +19,22 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
 
     //upload the files
     $scope.upload = function(){
-        sendFile($scope);
+        sendFile($scope,function(status,msg){
+            $scope.current.upload = "Upload"
+            $scope.current.uploadDisable = false;
+            $scope.current = {};
+            if(status === 200){
+                $scope.action.msg = msg
+                $scope.action.status = 200;
+            } else {
+                $scope.action.msg = msg
+                $scope.action.status = 500;
+            }
+        });
     }
 }]);
 
-function sendFile($scope){
+function sendFile($scope,callback){
     $scope.current.upload = "Uploading....."
     $scope.current.uploadDisable = true;
     fileSelect = document.getElementById('fileToBeUploaded');
@@ -37,17 +48,11 @@ function sendFile($scope){
     var xhr = new XMLHttpRequest();
     xhr.open('POST', '/flat-admin/upload', true);
     xhr.onload = function () {
-        console.log("DONE");
         if(xhr.status === 200){
-            $scope.action.msg = xhr.responseText;
-            $scope.action.status = 200;
+            return callback(status,xhr.responseText);
         } else {
-            $scope.action.msg = xhr.statusText;
-            $scope.action.status = 500;
+            return callback(status,xhr.statusText);
         }
-        $scope.current.upload = "Upload"
-        $scope.current.uploadDisable = false;
-        $scope.current = {};
     };
     xhr.send(formData);
 }
