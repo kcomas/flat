@@ -25,6 +25,7 @@ function sendFile($scope){
     fileSelect = document.getElementById('fileToBeUploaded');
     var formData = new FormData();
     var files = fileSelect.files;
+    console.dir(files);
     files.forEach(function(file){
         formData.append('fileData',file,file.name);
     });
