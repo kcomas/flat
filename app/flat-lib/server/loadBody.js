@@ -13,7 +13,7 @@ import fs from 'fs';
 function loadFile(req,maxPostSize,callback){
     var body = new Buffer('');
     req.on('data',function(data){
-        var body = Buffer.concat([body,data]);
+        body = Buffer.concat([body,data]);
         if(body.length > maxPostSize){
             //destory the connection
             req.connection.destroy();
@@ -25,7 +25,7 @@ function loadFile(req,maxPostSize,callback){
     });
     
     req.on('end',function(){
-        console.log(body);
+        console.log(body.toString());
     });
 }
 
