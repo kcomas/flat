@@ -35,6 +35,6 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
             }
         };
         xhr.send(formData);
-    });
+    }
 
 }]);
