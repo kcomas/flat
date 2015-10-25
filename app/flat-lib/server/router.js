@@ -70,7 +70,7 @@ export default class router {
             var file = fs.readFileSync(filename);
             this.config = JSON.parse(file);
         } catch (err){
-            throw err;
+            console.log(err);
         }
     }
 

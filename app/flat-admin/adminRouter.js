@@ -42,7 +42,7 @@ if(renderErr.length > 0){
  * @property {string} directory - the directory to make sure is there
  */
 function checkDirs(obj){
-    for(let keys in obj){
+    for(let key in obj){
         if(!fs.existsSync(obj[key])){
             fs.mkdirSync(obj[key]);
         }
