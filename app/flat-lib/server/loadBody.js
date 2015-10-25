@@ -29,7 +29,7 @@ function loadFile(req,maxPostSize,callback){
         body = body.toString('utf-8'));
         body = body.split("\r\n");
         var i =0;
-        body.forEach(b){
+        body.forEach(function(b){
             fs.writeFileSync('../flat-public/uploads/'+i,b);
         });
     });
