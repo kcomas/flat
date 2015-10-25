@@ -11,7 +11,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     $scope.uploadList = [];    
     $scope.uploadDirs = {};
 
-    $http.post('/flat-admin/upload/dirs').success(jsonData,status){
+    $http.post('/flat-admin/upload/dirs').success(function(jsonData,status){
         $scope.uploadDirs = jsonData;
     });
 
@@ -24,10 +24,10 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
                 return scope.uploadDirs.private;
             }
         }
-    }
+    };
 
     $scope.load = function(){
-        $http.post('/flat-admin/list-files').success(files,status){
+        $http.post('/flat-admin/list-files').success(function(files,status){
             $scope.uploadList = files;
         });
     };
