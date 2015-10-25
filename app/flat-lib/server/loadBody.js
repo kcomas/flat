@@ -33,7 +33,7 @@ var reg = new RegExp('(\r\n|\r|\n)', 'g');
 	        } else {
 	            //binary
 	            str[1] = str[1].replace(reg, '');
-	            var idx, len = str.length,
+	            var idx, len = str[1].length,
 	                arr2 = new Array(len);
 	            for (idx = 0; idx < len; ++idx) {
 	                arr2[idx] = str[1].charCodeAt(idx) & 0xFF;
