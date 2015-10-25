@@ -26,7 +26,7 @@ function sendFile($scope){
     var formData = new FormData();
     var files = fileSelect.files;
     for(var i=0;l=files.length; i<l; i++){
-        formData.append('fileData',file[i],file[i].name);
+        formData.append('fileData',files[i],files[i].name);
     }
     formData.append('name',$scope.current.name);
     formData.append('private',$scope.current.private);
