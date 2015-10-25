@@ -51,7 +51,7 @@ function loadFile(req,maxPostSize,callback){
 		    } else {
 		        var sub = str[0].split('=');
 		        sub = sub[1].replace(/"/g, '');
-		        req.body[sub.replace(reg, '')] = str[1];
+		        req.body[sub] = str[1];
 			}
 	    });
 	    return callback(req);
