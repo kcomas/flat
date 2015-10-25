@@ -12,8 +12,7 @@ import fs from 'fs';
  * @returns {function} the callback function
  */
 export default function writeFile(dir,name,fileData,callback){
-    var buf = new Buffer(fileData);
-    fs.writeFile(dir+name,buf,function(err){
+    fs.writeFile(dir+name,fileData,function(err){
         if(err){
             return callback(err,null);
         }
