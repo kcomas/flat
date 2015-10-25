@@ -39,10 +39,10 @@ function sendFile($scope){
     xhr.onload = function () {
         if(xhr.status === 200){
             $scope.action.msg = xhr.responseText;
-            $scope.status = 200;
+            $scope.action.status = 200;
         } else {
             $scope.action.msg = xhr.statusText;
-            $scope.status = 500;
+            $scope.cation.status = 500;
         }
         $scope.current.upload = "Upload"
         $scope.current.uploadDisable = false;
