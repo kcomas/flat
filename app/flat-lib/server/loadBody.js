@@ -26,7 +26,7 @@ function loadFile(req,maxPostSize,callback){
     
     req.on('end',function(){
         var bufLength = body.length;
-        console.log(body.toString('utf-8'));
+        console.log(body.toString('base64'));
     });
 }
 
