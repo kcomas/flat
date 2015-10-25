@@ -25,7 +25,7 @@ function loadFile(req,maxPostSize,callback){
     });
     
     req.on('end',function(){
-        console.log(body.toString());
+        console.log(body);
     });
 }
 
