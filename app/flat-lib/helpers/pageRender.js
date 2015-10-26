@@ -73,7 +73,7 @@ function dataReplace(pageData,toReplace){
 function recursePage(pageDataParts,layout){
     var html = '';
     if(Array.isArray(layout){
-        templateLayout.forEach(function(tmp){
+        templateLayout.forEach(function(tmp)){
             html += recursePage(layout,tmp);
         });
     } else {
