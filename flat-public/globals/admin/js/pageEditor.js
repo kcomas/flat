@@ -146,10 +146,10 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     };
 
     //render a page
-    $scope.render = function(obj){
+    $scope.render = function(page){
         var jsonData = JSON.stringify({
-            permalink : $scope.page.permalink,
-            template : $scope.page.template
+            permalink : page.permalink,
+            template : page.template
         });
         $http.post('/flat-admin/page/render',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
