@@ -47,8 +47,8 @@ export default class manager {
     init(){
         var files = fs.readdirSync(this.dir);
         var self = this;
+        console.log("INT");
         files.forEach(function(file){
-            console.log(file);
             var data = fs.readFileSync(self.dir+file,'utf8');
             try {
                 data = JSON.parse(data);
