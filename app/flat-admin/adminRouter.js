@@ -264,10 +264,25 @@ adminRouter.post('/flat-admin/page/render',function(req,res){
             showError(req,res,new Error('Page Template Not Found'),500);
         } else {
             var cache = adminRouter.controller.cacheManager.findByParam('permalink',permalink);
+            //var fileStr = //make cache
             if(cache === null){
                 //create
+                adminRouter.controller.cacheManager.create(permalink,fileStr,function(err,done){
+                    if(err){
+                        showError(req,res,err,500);
+                    } else {
+                        showSuccess(req,res,"Page Rendered",200);
+                    }
+                });
             } else {
                 //update
+                cache.upsert({'fileStr',fileStr},function(err,done){
+                    if(err){
+                        showError(req,res,err,500);
+                    } else {
+                        showSuccess(req,res,"Page Rendered",200);
+                    }
+                });
             }
         }
     }
@@ -280,7 +295,6 @@ adminRouter.post('/flat-admin/upload',function(req,res){
     } else {
         var pri = false;
     }
-    console.dir(req.body);
     var mType = uploadedFiles.mimeType(req.body.files.fileData.filename);
     var upload = adminRouter.controller.uploadManager.findByParam('fileName',req.body.files.fileData.filename);
     if(upload === null){
