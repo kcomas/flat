@@ -255,6 +255,7 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
 //create a page and add it to the cache
 adminRouter.post('/flat-admin/page/render',function(req,res){
     var permalink = req.body.permalink;
+    console.log(permalink);
     var page = adminRouter.controller.pageManager.findByParam('permalink',permalink);
     if(page === null){
         showError(req,res,new Error('No Page Found'),500);
