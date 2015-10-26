@@ -26,13 +26,13 @@ var ses = new sessionManager(app.get('sessionDir'));
 
 var tm = new templateManager(app.get('templateDir'));
 
-var um = new userManager(app.get('userDir'));
+var usm = new userManager(app.get('userDir'));
 
 var cm = new cacheManager(app.get('cacheDir'));
 
 var um = new uploadManager(app.get('uploadDir'));
 
-var controll = new controller(pm,sm,ses,tm,um,cm,um); 
+var controll = new controller(pm,sm,ses,tm,usm,cm,um); 
 controll.init();
 
 adminRouter.controller = controll;
