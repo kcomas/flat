@@ -197,7 +197,13 @@ adminRouter.post('/flat-admin/render-template',function(req,res){
         showError(req,res,new Error('private file not found'),500);
     } else {
         uploader.readFile(uploader.privateDir+filename,function(err,mime,file){
-
+            if(err){
+                showError(req,res,err,500);
+            } else {
+                res.statusCode = 200;
+                res.setHeader('content-type',mime + '; charset=utf-8');
+                res.end(file);
+            }
         });
     }
 });
