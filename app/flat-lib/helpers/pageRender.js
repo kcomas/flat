@@ -41,6 +41,7 @@ function dataReplace(pageData,toReplace){
     toReplace = toReplace.replace(/!/,' ');
     toReplace = toReplace.replace(/:/,' ');
     toReplace = toReplace.split(' ');
+    console.dir(toReplace);
     /**
      * three parts
      * 1 the name of the item to replace
