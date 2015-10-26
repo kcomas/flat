@@ -56,7 +56,6 @@ function dataReplace(pageData,toReplace){
             } else if(pageData.type === 'html'){
                 html = pageData[i].html;
             }
-            console.log(html);
             toReplace = html;
             break;
         }
@@ -81,7 +80,6 @@ function recursePage(pageDataParts,layout){
         var tag = layout.tag;
         var subHtml = '<'+tag;
         if(layout.atts){
-            console.log(layout.atts);
             //render the attibutes
             for(let k in layout.atts){
                 subHtml += ' ' + dataReplace(pageDataParts,k) + '="' + dataReplace(pageDataParts,layout.atts[k]) + '"';
@@ -108,7 +106,6 @@ function recursePage(pageDataParts,layout){
         if(x < selfCloseLength){
             subHtml += '</' + tag + '>';
         }
-        console.log(subHtml);
         //add to html
         html += subHtml;
     }
