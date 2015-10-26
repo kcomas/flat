@@ -34,7 +34,6 @@ var selfCloseLength = selfClose.length;
  * @return {string} the replaced string or inputed string
  */
 function dataReplace(pageData,toReplace){
-    console.log(toReplace);
     if(toReplace.indexOf('%%') === -1){
         return toReplace;
     }
@@ -84,8 +83,8 @@ function recursePage(pageDataParts,layout){
             for(let k in layout.atts){
                 subHtml += ' ' + dataReplace(pageDataParts,k) + '="' + dataReplace(pageDataParts,layout.atts[k]) + '"';
             }
-            subHtml += '>';
         }
+        subHtml += '>';
         //render the html
         if(layout.html){
             subHtml += dataReplace(pageDataParts,layout.html);
@@ -109,7 +108,6 @@ function recursePage(pageDataParts,layout){
         //add to html
         html += subHtml;
     }
-    console.log(html);
     return html;
 
 }
