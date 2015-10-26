@@ -196,6 +196,7 @@ adminRouter.post('/flat-admin/load-private',function(req,res){
     if(item === null){
         showError(req,res,new Error('private file not found'),500);
     } else {
+        console.log(uploader.privateDir+filename);
         uploader.readFile(uploader.privateDir+filename,function(err,mime,file){
             if(err){
                 showError(req,res,err,500);
