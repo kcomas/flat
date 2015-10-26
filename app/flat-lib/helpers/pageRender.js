@@ -17,7 +17,7 @@ export default function pageRender(pageData,templateLayout){
  * list of self closing tags
  * @type {array}
  */
-var selfClose = ['br','hr','meta','link','input','img']; 
+var selfClose = ['br','hr','meta','link','input','img','!DOCTYPE html']; 
 
 /**
  * Length of the self close, cache for loops
@@ -73,7 +73,7 @@ function dataReplace(pageData,toReplace){
 function recursePage(pageDataParts,layout){
     var html = '';
     if(Array.isArray(layout)){
-        templateLayout.forEach(function(tmp){
+        layout.forEach(function(tmp){
             html += recursePage(layout,tmp);
         });
     } else {
