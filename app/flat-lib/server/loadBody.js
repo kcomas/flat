@@ -111,18 +111,15 @@ export default function loadBody(req,res,maxPostSize,callback){
             //load form
             loadFile(req,maxPostSize,function(req){
                 return callback();
-            });
+            }); 
         } else {
             //load string
             loadString(req,maxPostSize,function(req){
                 return callback();
             });
         }   
-    }  else {
-            //load string
-            loadString(req,maxPostSize,function(req){
-                return callback();
-            });
-        }
+    } else {
+		return callback();
+	}
 
 }
