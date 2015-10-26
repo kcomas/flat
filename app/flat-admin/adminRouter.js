@@ -280,6 +280,24 @@ adminRouter.post('/flat-admin/list-files',function(req,res){
     res.end(adminRouter.controller.uploadManager.toString());
 });
 
+//remove a file
+adminRouter.post('/flat-admin/remove-file',function(req,res){
+    var filename = req.body.name;
+    adminRouter.controller.uploadManager.removeByParam('filename',filename,function(err,itemArr){
+        if(err){
+            showError(req,res,err,500);
+            return;
+        }
+        uploader.removeFile(itemArr[0].get('private'),itemArr[0].get('fileName'),function(err,done){
+            if(err){
+                showError(req,res,err,500);
+                return;
+            }
+            showSuccess(req,res,'file deleted',200);
+        });
+    });
+});
+
 
 //check all of the files
 adminRouter.post('/flat-admin/check-files',function(req,res){

@@ -102,7 +102,7 @@ export default class manager {
     /**
      * Remove an item by id also delete from disk
      * @param {string} id - the id to match
-     * @param {function(err:error,done:boolean)} callback - the callback function returns true if item was removed from mem and disk
+     * @param {function(err:error,done:array)} callback - the callback function returns an array of the items removed
      * @return {function} the callback function
      */
     removeById(id,callback){
@@ -120,8 +120,8 @@ export default class manager {
                 console.log(err);
                 return callback(err,null);
             }
-            self.items.splice(i,1);
-            return callback(null,true);
+            var removed = self.items.splice(i,1);
+            return callback(null,removed);
         });
     }
 
@@ -163,7 +163,7 @@ export default class manager {
      * Delete an item by a param in the item.data only if non array,object
      * @param {string} key - the key of the param
      * @param {string|number|date|boolean} value - the value of the param
-     * @param {function(err:error,done:boolean)} callback - callback function true if sucessful or err if error
+     * @param {function(err:error,done:array)} callback - callback function returns array of removed items
      * @return {function} the callback function
      */
     removeByParam(key,value,callback){
@@ -181,8 +181,8 @@ export default class manager {
                 console.log(err);
                 return callback(err,null);
             }
-            self.items.splice(i,1);
-            return callback(null,true);
+            var removed = self.items.splice(i,1);
+            return callback(null,removed);
         });
     }
 

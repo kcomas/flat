@@ -159,6 +159,15 @@ export default class item {
     }
 
     /**
+     * Get a key value from the data obj
+     * @param {string} key - the key of the value to get
+     * @return {object|array|string|number|date|null|undefined} the value of the key
+     */
+    get(key){
+        return this.data[key];
+    }
+
+    /**
      * Convert the item to a json string
      * @return {string} the json string of the data
      */

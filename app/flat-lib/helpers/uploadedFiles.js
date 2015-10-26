@@ -105,6 +105,23 @@ export default class uploadedFiles {
     }
 
     /**
+     * Remove a file from disk
+     * @param {boolean} priv - is the file private or not
+     * @param {string} name - the name of the file
+     * @param {function(err:error,done:boolean)} callback - done is true if the file was deleted
+     * @return {function} the callback
+     */
+    removeFile(priv,name,callback){
+        var dir = this.getDir(priv);
+        fs.unlink(dir+name,function(err){
+            if(err){
+                return callback(err,null);
+            }
+            return callback(null,true);
+        });
+    }
+
+    /**
      * Check the files exists and remove the ones that don't
      * @param {upload} uploadedItems - the files to check
      * @return {array} the new array of files
