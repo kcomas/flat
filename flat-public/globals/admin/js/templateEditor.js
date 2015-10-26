@@ -31,13 +31,15 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     //load a converted json template
     $scope.loadPrivate = function(){
-        var jsonData = JSON.stringify({
-            filename : $scope.current.loadFile.fileName
-        });
-        $http.post('/flat-admin/load-private',jsonData).success(function(file,status){
-            $scope.current.template.layout = JSON.stringify(file);
-            $scope.validate();
-        });
+        if($scope.current.loadFile !== null){
+            var jsonData = JSON.stringify({
+                filename : $scope.current.loadFile.fileName
+            });
+            $http.post('/flat-admin/load-private',jsonData).success(function(file,status){
+                $scope.current.template.layout = JSON.stringify(file);
+                $scope.validate();
+            });
+        }
     };
 
     //valiate the json on change 
