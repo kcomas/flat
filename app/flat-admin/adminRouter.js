@@ -211,7 +211,6 @@ adminRouter.post('/flat-admin/load-private',function(req,res){
 
 //list all of the pages
 adminRouter.post('/flat-admin/list-pages',function(req,res){
-    console.log('listing');
     res.statusCode = 200;
     res.setHeader('content-type','application/json; charset=utf8');
     res.end(adminRouter.controller.pageManager.toString());
