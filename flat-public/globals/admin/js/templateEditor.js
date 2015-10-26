@@ -30,11 +30,11 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     $scope.load();
 
     //load a converted json template
-    $scope.renderHTML2JSON = function(){
+    $scope.loadPrivate = function(){
         var jsonData = JSON.stringify({
             filename : $scope.current.loadFile.fileName
         });
-        $http.post('/flat-admin/render-template',jsonData).success(function(file,status){
+        $http.post('/flat-admin/load-private',jsonData).success(function(file,status){
             $scope.current.template.layout = file;
             $scope.validate();
         });

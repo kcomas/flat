@@ -189,8 +189,8 @@ adminRouter.post('/flat-admin/remove-template',function(req,res){
 
 });
 
-//redner a html template to a json template
-adminRouter.post('/flat-admin/render-template',function(req,res){
+//load a private file
+adminRouter.post('/flat-admin/load-private',function(req,res){
     var filename = req.body.filename;
     var item = adninRouter.controller.uploadManager.findByManyParams({'fileName':filename,'private':true});
     if(item === null){

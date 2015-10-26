@@ -3,7 +3,7 @@
         <h3>Edit</h3>
         <form novalidate>
             <div class="form-group">
-                <select class="form-control" ng-model="current.loadFile" ng-change="renderHTML2JSON()" ng-options="file.fileName for file in fileList"></select>               
+                <select class="form-control" ng-model="current.loadFile" ng-change="loadPrivate()" ng-options="file.fileName for file in fileList"></select>               
             </div>
             <div class="form-group">
                 Template Name: <input class="form-control" ng-model="current.template.name" type="text" />
