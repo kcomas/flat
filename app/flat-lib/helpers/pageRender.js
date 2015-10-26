@@ -49,6 +49,7 @@ function dataReplace(pageData,toReplace){
      * 2 the type of the item to replace
      * 3 the html to replace with
      */
+    console.dir(toReplace);
     for(let i=0,l=pageData.length; i<l; i++){
         if(pageData[i].name === toReplace[1]){
             var html = '';
@@ -57,6 +58,7 @@ function dataReplace(pageData,toReplace){
             } else if(pageData.type === 'html'){
                 html = pageData[i].html;
             }
+            console.log(html);
             toReplace = html;
             break;
         }
