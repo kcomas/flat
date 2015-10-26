@@ -24,7 +24,7 @@ mainRouter.use(function(req,res,next){
 
 
 //404 page
-mainRouter.allways(function(req,res){
+mainRouter.always(function(req,res){
     res.statusCode = 404;
     res.setHeader('content-type','text/html; charset=utf-8');
     res.end('<h1>Main 404</h1>');
