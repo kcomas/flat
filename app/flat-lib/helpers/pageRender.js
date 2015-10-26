@@ -1,5 +1,5 @@
 
-'use strict"
+"use strict"
 
 /**
  * Redner a cached page based on data and the template

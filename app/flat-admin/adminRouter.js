@@ -4,7 +4,7 @@ import router from '../flat-lib/server/router.js';
 import pages from './pages.js';
 import pageManager from './page/pageManager.js';
 import uploadedFiles from '../flat-lib/helpers/uploadedFiles.js';
-import pageRender form '../flat-lib/helpers/pageRender.js';
+import pageRender from '../flat-lib/helpers/pageRender.js';
 
 var adminRouter = new router();
 
