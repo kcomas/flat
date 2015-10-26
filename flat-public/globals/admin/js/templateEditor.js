@@ -5,11 +5,13 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     $scope.current = {};
     $scope.current.template = {};
     $scope.current.valid = true;
+    $scope.current.loadFile = '';
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
     $scope.templateList = [];
     $scope.sectionList = [];
+    $scope.fileList = [];
 
     $scope.load = function(){
         //load the templates
@@ -19,7 +21,9 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/list-sections').success(function(sections,status){
             $scope.sectionList = sections;        
         });
-       
+        $http.post('/flat-admin/list-files/private').success(function(files,status){
+            $scope.fileList = [];
+        });
     };
 
     //load all of the sections

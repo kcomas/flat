@@ -105,6 +105,23 @@ export default class uploadedFiles {
     }
 
     /**
+     * Read a file from disk
+     * @param {string} file - the file to be loaded
+     * @param {function(err:error,mime:string,fileStr:string)} callback - the callback function returns error or the file string
+     * @return {function} the callback function
+     */
+    readFile(file,callback){
+        var mime = uploadedFiles.mimeType(file);
+        var encoding = uploadedFiles.determineEncoding(mime);
+        fs.readFile(file,encoding,function(err,mime,fileStr){
+            if(err){
+                return callback(err,null,null);
+            }
+            return callback(err,mime,fileStr);
+        });
+    }
+
+    /**
      * Remove a file from disk
      * @param {boolean} priv - is the file private or not
      * @param {string} name - the name of the file

@@ -293,6 +293,20 @@ adminRouter.post('/flat-admin/list-files/private',function(req,res){
     res.end(str);
 });
 
+//load a private file
+adminRouter.post('/flat-admin/load-file',function(req,res){
+    var file = req.body.file;
+    uploader.readFile(file,function(err,mime,file){
+       if(err){
+            showError(req,res,err,500);
+       } else {
+            res.statusCode = 200;
+            res.setHeader('content-type',mime + ';charset=utf-8');
+            res.end(file);
+       }
+    });
+});
+
 //remove a file
 adminRouter.post('/flat-admin/remove-upload',function(req,res){
     var filename = req.body.name;
