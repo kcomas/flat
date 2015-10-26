@@ -69,7 +69,6 @@ function loadString(req,maxPostSize,callback){
     var body = '';
 
     req.on('data',function(data){
-        console.dir(data);
         body += data;
         if(body.length > maxPostSize){
             //destory the connection
@@ -119,7 +118,10 @@ export default function loadBody(req,res,maxPostSize,callback){
             });
         }   
     } else {
-		return callback();
+	    //load string
+		loadString(req,maxPostSize,function(req){
+			return callback();
+		});
 	}
 
 }
