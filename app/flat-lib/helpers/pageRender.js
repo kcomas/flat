@@ -38,9 +38,9 @@ function dataReplace(pageData,toReplace){
         return toReplace;
     }
     toReplace = toReplace.replace(/%%/g,'');
-    toReplace = toReplace.replace(/!/,' ');
-    toReplace = toReplace.replace(/:/,' ');
-    toReplace = toReplace.split(' ');
+    toReplace = toReplace.replace(/!/,'<>');
+    toReplace = toReplace.replace(/:/,'<>');
+    toReplace = toReplace.split('<>');
     console.dir(toReplace);
     /**
      * three parts
@@ -50,7 +50,7 @@ function dataReplace(pageData,toReplace){
      */
     for(let i=0,l=pageData.length; i<l; i++){
         if(pageData[i].name === toReplace[1]){
-            var html = '';
+            var html = toReplace[2];
             if(pageDatap[i].type === 'text'){
                 html = pageData[i].text;
             } else if(pageData.type === 'html'){
@@ -103,7 +103,7 @@ function recursePage(pageDataParts,layout){
             }
         }
 
-        if(x < selfCloseLength){
+        if(x === selfCloseLength){
             subHtml += '</' + tag + '>';
         }
         //add to html
