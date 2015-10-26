@@ -82,12 +82,12 @@ function loadString(req,maxPostSize,callback){
     
     req.on('end',function(){
         try {
-            req.body = JSON.parse(body);
-            return callback(req);
+            body = JSON.parse(body);
         } catch(err){
-            req.body = qs.parse(body);
-            return callback(req);
+            body = qs.parse(body);
         }
+        req.body = body;
+        return callback(req);
     });
 }
 
@@ -118,10 +118,8 @@ export default function loadBody(req,res,maxPostSize,callback){
             });
         }   
     } else {
-	    //load string
-		loadString(req,maxPostSize,function(req){
-			return callback();
-		});
+        //don't load
+		return callback();
 	}
 
 }
