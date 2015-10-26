@@ -8,8 +8,6 @@
  * @return {string} the created page string
  */
 export default function pageRender(pageData,templateLayout){
-    console.dir(pageData);
-    console.dir(templateLayout);
     return recursePage(pageData,templateLayout);
 }
 
@@ -76,6 +74,8 @@ function dataReplace(pageData,toReplace){
  * @return {string} the html string
  */
 function recursePage(pageDataParts,layout){
+    console.dir(pageDataParts);
+    console.dir(layout);
     var html = '';
     if(Array.isArray(layout)){
         layout.forEach(function(tmp){
