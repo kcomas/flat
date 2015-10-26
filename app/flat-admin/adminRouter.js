@@ -218,12 +218,13 @@ adminRouter.post('/flat-admin/list-pages',function(req,res){
 
 //delete page
 adminRouter.post('/flat-admin/remove-page',function(req,res){
-    var item = adminRouter.controller.pageManager.removeByParam('permalink',req.body.permalink,function(err,done){
+    adminRouter.controller.pageManager.removeByParam('permalink',req.body.permalink,function(err,done){
         if(err){
             showError(req,res,err,500);
         } else {
             showSuccess(req,res,"item deleted",200);
         }
+        console.log(adminRouter.contoller.pageManager.toString());
     });
 });
 
