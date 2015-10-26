@@ -16,7 +16,6 @@ export default class page extends item {
      * @param {object} def - the default data to be passed into the page object as key:value
      * @property {string} name - the name of the string to replace
      * @property {string} type - the type of the string to replace text or html
-     * @property {string} text - the text string
      * @property {string} html - the html string
      * @param {string} template - the default template name
      * @param {function(err:err,done:boolean)} callback - returns done true if created
