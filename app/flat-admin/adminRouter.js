@@ -284,11 +284,13 @@ adminRouter.post('/flat-admin/list-files',function(req,res){
 adminRouter.post('/flat-admin/remove-file',function(req,res){
     var filename = req.body.name;
     adminRouter.controller.uploadManager.removeByParam('fileName',filename,function(err,itemArr){
+        console.log('1');
         if(err){
             showError(req,res,err,500);
             return;
         }
         uploader.removeFile(itemArr[0].get('private'),itemArr[0].get('fileName'),function(err,done){
+            console.log('2');
             if(err){
                 showError(req,res,err,500);
                 return;
