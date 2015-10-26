@@ -110,14 +110,19 @@ export default function loadBody(req,res,maxPostSize,callback){
         if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
             //load form
             loadFile(req,maxPostSize,function(req){
-             return callback();
+                return callback();
             });
         } else {
             //load string
             loadString(req,maxPostSize,function(req){
-              return callback();
+                return callback();
             });
         }   
-    }
+    }  else {
+            //load string
+            loadString(req,maxPostSize,function(req){
+                return callback();
+            });
+        }
 
 }
