@@ -51,7 +51,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     //view a public or private file
     $scope.view = function(obj){
         var dir = $scope.getDir(obj.private,obj.fileName);
-        if(obj.private === false){
+        if(obj.private === true){
 
         } else {
             dir = dir.replace(public_remove,'');
