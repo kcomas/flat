@@ -55,7 +55,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
 
         } else {
             dir = dir.replace(public_remove,'');
-            var win = window.open(dir+fileName);
+            var win = window.open(dir+obj.fileName);
             win.focus();
         }
     };
