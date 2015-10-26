@@ -299,13 +299,6 @@ adminRouter.post('/flat-admin/remove-upload',function(req,res){
 });
 
 
-//check all of the files
-adminRouter.post('/flat-admin/check-files',function(req,res){
-    //check that the uploaded files match the json data
-    adminRouter.controller.uploadManager.set(uploader.checkSync(adminRouter.controller.uploadManager.all()));
-    showSuccess(req,res,'files cleaned',200);
-});
-
 //get the upload dirs
 adminRouter.post('/flat-admin/upload/dirs',function(req,res){
     res.statusCode = 200;
