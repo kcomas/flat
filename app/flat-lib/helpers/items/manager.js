@@ -157,6 +157,32 @@ export default class manager {
         return item;
     }
 
+    /**
+     * Find a single item by many params
+     * @param {object} obj - the object to be used in the search
+     * @property {string} key - the key of the param to find
+     * @property {string|number|boolean|null} value - the value to match
+     * @return {item} item - the matched item or null if not found
+     */
+    findByManyParams(obj){
+        var item = null;
+        //obj keys
+        var keys = Object.keys(obj);
+        var keyLength = keys.length;
+        for(var i=0,l=this.items.length; i<l; i++){
+            for(var x=0; x<keyLength; x++){
+                if(this.items[i][keys[x]] !== obj[keys[x]]){
+                    break;
+                }
+            }
+            if(x === keyLength){
+                item = this.items[i];
+                break;
+            }
+        }
+        return item;
+    }
+
 
     /**
      * Delete an item by a param in the item.data only if non array,object

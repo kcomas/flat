@@ -189,6 +189,19 @@ adminRouter.post('/flat-admin/remove-template',function(req,res){
 
 });
 
+//redner a html template to a json template
+adminRouter.post('/flat-admin/render-template',function(req,res){
+    var filename = req.body.filename;
+    var item = adninRouter.controller.uploadManager.findByManyParams({'fileName':filename,'private':true});
+    if(item === null){
+        showError(req,res,new Error('private file not found'),500);
+    } else {
+        uploader.readFile(uploader.privateDir+filename,function(err,mime,file){
+
+        });
+    }
+});
+
 //list all of the pages
 adminRouter.post('/flat-admin/list-pages',function(req,res){
     res.statusCode = 200;
@@ -331,6 +344,7 @@ adminRouter.post('/flat-admin/upload/dirs',function(req,res){
     res.setHeader('Content-Type','application/json; charset=utf8');
     res.end(JSON.stringify(uploadDirs));
 });
+
 
 adminRouter.always(function(req,res){
         showError(req,res,new Error("Not Found"),404);
