@@ -74,6 +74,7 @@ function dataReplace(pageData,toReplace){
  * @return {string} the html string
  */
 function recursePage(pageDataParts,layout){
+    console.log(layout);
     var html = '';
     if(Array.isArray(layout)){
         layout.forEach(function(tmp){
