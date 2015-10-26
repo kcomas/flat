@@ -241,7 +241,7 @@ adminRouter.post('/flat-admin/upload',function(req,res){
         var pri = false;
     }
     var mType = uploadedFiles.mimeType(req.body.files.fileData.filename);
-    var upload = adminRouter.controller.uploadManager.findByParam('filename',req.body.files.fileData.filename);
+    var upload = adminRouter.controller.uploadManager.findByParam('fileName',req.body.files.fileData.filename);
     if(upload === null){
         adminRouter.controller.uploadManager.create(req.body.files.fileData.filename,pri,mType,function(err,done){
             if(err){
@@ -257,7 +257,7 @@ adminRouter.post('/flat-admin/upload',function(req,res){
             }
         });
     } else {
-        upload.upsert({'private':pri,'filename':req.body.files.fileData.filename,'mime':mType},function(err,done){
+        upload.upsert({'private':pri,'fileName':req.body.files.fileData.filename,'mime':mType},function(err,done){
             if(err){
                 showError(req,res,err,500);
             } else {
@@ -283,12 +283,11 @@ adminRouter.post('/flat-admin/list-files',function(req,res){
 //remove a file
 adminRouter.post('/flat-admin/remove-file',function(req,res){
     var filename = req.body.name;
-    adminRouter.controller.uploadManager.removeByParam('filename',filename,function(err,itemArr){
+    adminRouter.controller.uploadManager.removeByParam('fileName',filename,function(err,itemArr){
         if(err){
             showError(req,res,err,500);
             return;
         }
-        console.dir(itemArr);
         uploader.removeFile(itemArr[0].get('private'),itemArr[0].get('fileName'),function(err,done){
             if(err){
                 showError(req,res,err,500);
