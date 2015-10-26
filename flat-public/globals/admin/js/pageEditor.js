@@ -98,7 +98,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
 
     $scope.delete = function(page){
         var jsonData = JSON.stringify({
-            permalink : $scope.page.permalink 
+            permalink : page.permalink 
         });
        $http.post('/flat-admin/remove-page',jsonData).success(function(msg,status){
             $scope.action.status = status;

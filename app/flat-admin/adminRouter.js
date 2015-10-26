@@ -224,7 +224,6 @@ adminRouter.post('/flat-admin/remove-page',function(req,res){
         } else {
             showSuccess(req,res,"item deleted",200);
         }
-        console.log(adminRouter.controller.pageManager.toString());
     });
 });
 
