@@ -108,7 +108,7 @@ function recursePage(pageDataParts,layout){
         } else {
             subHtml += '</' + tag + '>';
         }
-
+        console.log(subHtml);
         //add to html
         html += subHtml;
     }
