@@ -36,6 +36,7 @@ var selfCloseLength = selfClose.length;
  * @return {string} the replaced string or inputed string
  */
 function dataReplace(pageData,toReplace){
+    console.log(toReplace);
     if(toReplace.indexOf('%%') === -1){
         return toReplace;
     }
