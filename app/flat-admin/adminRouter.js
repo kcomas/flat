@@ -280,6 +280,20 @@ adminRouter.post('/flat-admin/list-files',function(req,res){
     res.end(adminRouter.controller.uploadManager.toString());
 });
 
+//list the private files
+adminRouter.post('/flat-admin/list-files/private',function(req,rs){
+    var privateItems = adminRouter.uploadManager.findManyByParam('private',true);
+    var str = '[';
+    privateItems.forEach(function(item){
+        str += item.toString();
+    });
+    str += ']';
+    str = str.replace(/,(?=[^,]*$)/, '');
+    res.statusCode = 200;
+    res.setHeadr('content-type','application/json; charset=utf-8');
+    res.end(str);
+});
+
 //remove a file
 adminRouter.post('/flat-admin/remove-upload',function(req,res){
     var filename = req.body.name;
@@ -297,7 +311,6 @@ adminRouter.post('/flat-admin/remove-upload',function(req,res){
         }
     });
 });
-
 
 //get the upload dirs
 adminRouter.post('/flat-admin/upload/dirs',function(req,res){
