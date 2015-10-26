@@ -52,10 +52,9 @@ function dataReplace(pageData,toReplace){
             var html = '';
             if(pageData[i].type === 'text'){
                 html = pageData[i].text;
-            } else if(pageData.type === 'html'){
+            } else if(pageDatai[i].type === 'html'){
                 html = pageData[i].html;
             }
-            console.log(html);
             return html;
         }
     }
