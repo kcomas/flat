@@ -145,6 +145,18 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
        });
     };
 
+    //render a page
+    $scope.render = function(obj){
+        var jsonData = JSON.stringify({
+            permalink : $scope.page.permalink,
+            template : $scope.page.template
+        });
+        $http.post('/flat-admin/page/render',jsonData).success(function(msg,status){
+            $scope.action.msg = msg;
+            $scope.action.status = status;
+        });
+    };
+
 }]);
 
 
