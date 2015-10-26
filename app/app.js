@@ -4,6 +4,7 @@
 import http from 'http';
 import server from './flat-lib/server/server.js';
 import adminRouter from './flat-admin/adminRouter.js';
+import mainRouter from './flat-routers/index.js';
 
 import pageManager from './flat-lib/page/pageManager.js';
 import sectionManager from './flat-lib/section/sectionManager.js';
@@ -37,12 +38,15 @@ controll.init();
 
 adminRouter.controller = controll;
 
+mainRouter.controller = controll;
+
 app.use(function(req,res,next){
     req.sessionCookieName = app.get('sessionCookie');
 });
 
-app.route('/flat-admin',adminRouter.run());
+app.route('/',mainRouter.run());
 
+app.route('/flat-admin',adminRouter.run());
 
 app.always(function(req,res){
     res.statusCode = 404;
