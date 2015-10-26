@@ -74,8 +74,6 @@ function dataReplace(pageData,toReplace){
  * @return {string} the html string
  */
 function recursePage(pageDataParts,layout){
-    console.dir(pageDataParts);
-    console.dir(layout);
     var html = '';
     if(Array.isArray(layout)){
         layout.forEach(function(tmp){
@@ -84,8 +82,10 @@ function recursePage(pageDataParts,layout){
     } else {
         //make the part string
         var tag = layout.tag;
+        console.log(layout.tag);
         var subHtml = '<'+tag;
         if(layout.atts){
+            console.log(atts);
             //render the attibutes
             for(let k in layout.atts){
                 subHtml += ' ' + dataReplace(pageDataParts,k) + '="' + dataReplace(pageDataParts,layout.atts[k]) + '"';
