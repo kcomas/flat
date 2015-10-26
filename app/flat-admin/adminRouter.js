@@ -256,7 +256,7 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
 adminRouter.post('/flat-admin/page/render',function(req,res){
     var permalink = req.body.permalink;
     var page = adminRouter.controller.pageManager.findByParam('permalink',permalink);
-    console.dir(page);
+    console.log(page);
     if(page === null){
         showError(req,res,new Error('No Page Found'),500);
     } else {

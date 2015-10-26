@@ -151,7 +151,6 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             permalink : page.permalink,
             template : page.template
         });
-        console.log("SENDING");
         $http.post('/flat-admin/page/render',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
