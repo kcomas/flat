@@ -23,7 +23,7 @@ var selfClose = ['br','hr','meta','link','input','img'];
  * Length of the self close, cache for loops
  * @type {number}
  */
-var selfCloseLength = selfColse.length;
+var selfCloseLength = selfClose.length;
 
 /**
  * Replace the %%name!type:default%% with the page data
