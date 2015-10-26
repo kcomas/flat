@@ -52,7 +52,7 @@ function dataReplace(pageData,toReplace){
             var html = '';
             if(pageData[i].type === 'text'){
                 html = pageData[i].text;
-            } else if(pageDatai[i].type === 'html'){
+            } else if(pageData[i].type === 'html'){
                 html = pageData[i].html;
             }
             return html;
