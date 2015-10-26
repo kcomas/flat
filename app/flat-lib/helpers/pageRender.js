@@ -49,17 +49,16 @@ function dataReplace(pageData,toReplace){
      */
     for(let i=0,l=pageData.length; i<l; i++){
         if(pageData[i].name === toReplace[0]){
-            console.log(pageData[i].name + ' ' + toReplace[0]);
             var html = '';
             if(pageData[i].type === 'text'){
                 html = pageData[i].text;
             } else if(pageData.type === 'html'){
                 html = pageData[i].html;
             }
-            break;
+            console.log(html);
+            return html;
         }
     }
-    return html;
 }
 
 /**
