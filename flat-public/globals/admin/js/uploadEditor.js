@@ -49,7 +49,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
 
     var public_remove = '../flat-public';
     //view a public or private file
-    $scope.view(obj){
+    $scope.view = function(obj){
         var dir = $scope.getDir(obj.private,obj.fileName);
         if(obj.private === false){
 
@@ -58,7 +58,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
             var win = window.open(dir+fileName);
             win.focus();
         }
-    }
+    };
 
     $scope.clean = function(){
         $http.post('/flat-admin/check-files').success(function(msg,status){
