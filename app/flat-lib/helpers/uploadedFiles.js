@@ -118,7 +118,6 @@ export default class uploadedFiles {
         var encoding = uploadedFiles.determineEncoding(mime);
         fs.readFile(file,encoding,function(err,mime,fileStr){
             if(err){
-                console.dir(err);
                 return callback(err,null,null);
             }
             return callback(err,mime,fileStr);
