@@ -35,7 +35,7 @@ var selfCloseLength = selfClose.length;
  */
 function dataReplace(pageData,toReplace){
     console.log(toReplace);
-    /*if(toReplace.indexOf('%%') === -1){
+    if(toReplace.indexOf('%%') === -1){
         return toReplace;
     }
     toReplace = toReplace.replace(/%%/g,'');
@@ -48,8 +48,6 @@ function dataReplace(pageData,toReplace){
      * 2 the type of the item to replace
      * 3 the html to replace with
      */
-    /*
-    console.dir(toReplace);
     for(let i=0,l=pageData.length; i<l; i++){
         if(pageData[i].name === toReplace[1]){
             var html = '';
@@ -63,7 +61,6 @@ function dataReplace(pageData,toReplace){
             break;
         }
     }
-    */
     return toReplace;
 }
 
@@ -74,7 +71,6 @@ function dataReplace(pageData,toReplace){
  * @return {string} the html string
  */
 function recursePage(pageDataParts,layout){
-    console.log(layout);
     var html = '';
     if(Array.isArray(layout)){
         layout.forEach(function(tmp){
