@@ -253,7 +253,7 @@ adminRouter.post('/flat-admin/upsert-page',function(req,res){
 });
 
 //create a page and add it to the cache
-adminRouter.post('/flat-admin/page/render',function(req,res){
+adminRouter.post('/flat-admin/page-render',function(req,res){
     var permalink = req.body.permalink;
     var page = adminRouter.controller.pageManager.findByParam('permalink',permalink);
     console.log('fire'+page);
