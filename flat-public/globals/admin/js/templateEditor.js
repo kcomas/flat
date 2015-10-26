@@ -32,7 +32,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     //load a converted json template
     $scope.renderHTML2JSON = function(){
         var jsonData = JSON.stringify({
-            filename : $scope.current.loadFile.fileName;
+            filename : $scope.current.loadFile.fileName
         });
         $http.post('/flat-admin/render-template',jsonData).success(function(file,status){
             $scope.current.template.layout = file;
