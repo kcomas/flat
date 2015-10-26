@@ -286,15 +286,15 @@ adminRouter.post('/flat-admin/remove-upload',function(req,res){
     adminRouter.controller.uploadManager.removeByParam('fileName',filename,function(err,itemArr){
         if(err){
             showError(req,res,err,500);
-            return;
+        } else {
+            uploader.removeFile(itemArr[0].get('private'),itemArr[0].get('fileName'),function(err,done){
+                if(err){
+                    showError(req,res,err,500);
+                } else {
+                    showSuccess(req,res,'file deleted',200);
+                }
+            });
         }
-        uploader.removeFile(itemArr[0].get('private'),itemArr[0].get('fileName'),function(err,done){
-            if(err){
-                showError(req,res,err,500);
-                return;
-            }
-            showSuccess(req,res,'file deleted',200);
-        });
     });
 });
 
