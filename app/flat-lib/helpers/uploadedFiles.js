@@ -4,7 +4,7 @@
 import fs from 'fs';
 
 
-var mimeTypes = fs.readFileSync('./flat-config/mime.json');
+var mimeTypes = fs.readFileSync('./flat-config/mime.json','utf8');
 
 /**
  * This class handels the uploaded/files io
