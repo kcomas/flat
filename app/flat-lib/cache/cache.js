@@ -23,7 +23,6 @@ export default class cache extends item {
             if(err){
                 return callback(err,null);
             }
-            self.name = name;
             self.fileStr = fileStr;
             self.dateCreated = new Date();
             self.save(function(err,done){

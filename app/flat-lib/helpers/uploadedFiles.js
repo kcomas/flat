@@ -3,7 +3,12 @@
 
 import fs from 'fs';
 
-
+/**
+ * Object list of the mime types
+ * @type {array}
+ * @property {string} ext - the file extension
+ * @property {string} mime - the mime type
+ */
 var mimeTypes = fs.readFileSync('./flat-config/mime.json','utf8');
 
 /**
