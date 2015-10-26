@@ -282,7 +282,7 @@ adminRouter.post('/flat-admin/list-files',function(req,res){
 
 //remove a file
 adminRouter.post('/flat-admin/remove-file',function(req,res){
-    var filename = req.body.name;
+    /*var filename = req.body.name;
     adminRouter.controller.uploadManager.removeByParam('fileName',filename,function(err,itemArr){
         if(err){
             showError(req,res,err,500);
@@ -295,7 +295,7 @@ adminRouter.post('/flat-admin/remove-file',function(req,res){
             }
             showSuccess(req,res,'file deleted',200);
         });
-    });
+    });*/
 });
 
 
