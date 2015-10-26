@@ -266,7 +266,6 @@ adminRouter.post('/flat-admin/page-render',function(req,res){
         } else {
             var cache = adminRouter.controller.cacheManager.findByParam('permalink',permalink);
             var fileStr = pageRender(page.get('def'),template.get('layout'));
-            console.dir(fileStr);
             if(cache === null){
                 //create
                 adminRouter.controller.cacheManager.create(permalink,fileStr,function(err,done){

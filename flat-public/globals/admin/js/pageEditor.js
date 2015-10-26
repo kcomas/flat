@@ -111,6 +111,8 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         $scope.current.page = {};
         $scope.action.status = null;
         $scope.action.msg = '';
+        $scope.page = {};
+        $scope.loadSelections();
     };
 
     $scope.partUpdate = function(){
