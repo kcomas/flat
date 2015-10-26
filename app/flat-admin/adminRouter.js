@@ -280,9 +280,8 @@ adminRouter.post('/flat-admin/list-files',function(req,res){
 });
 
 //list the private files
-adminRouter.post('/flat-admin/list-private-files',function(req,res){
+adminRouter.post('/flat-admin/list-files/private',function(req,res){
     var privateItems = adminRouter.controller.uploadManager.findManyByParam('private',true);
-    res.end(str);
     var str = '[';
     privateItems.forEach(function(item){
         str += item.toString();
