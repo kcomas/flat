@@ -81,7 +81,7 @@ function recursePage(pageDataParts,layout){
         var tag = layout.tag;
         var subHtml = '<'+tag;
         if(layout.atts){
-            console.log(atts);
+            console.log(layout.atts);
             //render the attibutes
             for(let k in layout.atts){
                 subHtml += ' ' + dataReplace(pageDataParts,k) + '="' + dataReplace(pageDataParts,layout.atts[k]) + '"';
