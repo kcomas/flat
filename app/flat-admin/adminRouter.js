@@ -288,6 +288,7 @@ adminRouter.post('/flat-admin/remove-file',function(req,res){
             showError(req,res,err,500);
             return;
         }
+        console.dir(itemArr);
         uploader.removeFile(itemArr[0].get('private'),itemArr[0].get('fileName'),function(err,done){
             if(err){
                 showError(req,res,err,500);
