@@ -283,7 +283,6 @@ adminRouter.post('/flat-admin/list-files',function(req,res){
 //remove a file
 adminRouter.post('/flat-admin/remove-file',function(req,res){
     var filename = req.body.name;
-    console.log('here');
     adminRouter.controller.uploadManager.removeByParam('fileName',filename,function(err,itemArr){
         if(err){
             showError(req,res,err,500);
