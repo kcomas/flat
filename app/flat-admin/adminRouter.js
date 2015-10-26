@@ -192,7 +192,7 @@ adminRouter.post('/flat-admin/remove-template',function(req,res){
 //load a private file
 adminRouter.post('/flat-admin/load-private',function(req,res){
     var filename = req.body.filename;
-    var item = adninRouter.controller.uploadManager.findByManyParams({'fileName':filename,'private':true});
+    var item = adminRouter.controller.uploadManager.findByManyParams({'fileName':filename,'private':true});
     if(item === null){
         showError(req,res,new Error('private file not found'),500);
     } else {
@@ -349,19 +349,6 @@ adminRouter.post('/flat-admin/list-files/private',function(req,res){
     res.end(str);
 });
 
-//load a private file
-adminRouter.post('/flat-admin/load-file',function(req,res){
-    var file = req.body.file;
-    uploader.readFile(file,function(err,mime,file){
-       if(err){
-            showError(req,res,err,500);
-       } else {
-            res.statusCode = 200;
-            res.setHeader('content-type',mime + ';charset=utf-8');
-            res.end(file);
-       }
-    });
-});
 
 //remove a file
 adminRouter.post('/flat-admin/remove-upload',function(req,res){
