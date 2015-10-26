@@ -74,7 +74,7 @@ function recursePage(pageDataParts,layout){
     var html = '';
     if(Array.isArray(layout)){
         layout.forEach(function(tmp){
-            html += recursePage(layout,tmp);
+            html += recursePage(pageDataParts,tmp);
         });
     } else {
         //make the part string
