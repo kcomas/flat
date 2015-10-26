@@ -36,7 +36,14 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
 
     //delete a file
     $scope.delete = function(obj){
-
+        var jsonData = JSON.stringify({
+            name : obj.fileName
+        });
+        $http.post('/flat-admin/remove-file',jsonData).success(function(msg,status){
+            $scope.action.msg = msg;
+            $scope.action.status = status;
+            $scope.load();
+        });
     };
 
     $scope.clean = function(){
