@@ -46,8 +46,8 @@ export default class manager {
      */
     init(){
         var files = fs.readdirSync(this.dir);
+        console.dir(files);
         var self = this;
-        console.log("INT");
         files.forEach(function(file){
             var data = fs.readFileSync(self.dir+file,'utf8');
             try {
