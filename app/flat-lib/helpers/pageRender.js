@@ -8,7 +8,7 @@
  * @return {string} the created page string
  */
 export default function pageRender(pageData,templateLayout){
-    return recursePage(pageData,templateLayout);
+    return recursePage(pageData,JSON.parse(templateLayout));
 }
 
 /*

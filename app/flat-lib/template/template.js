@@ -13,7 +13,7 @@ export default class template extends item {
      * Create a new template
      * @overrride
      * @param {string} name - the name of the template
-     * @param {object} layout - the layout of the template
+     * @param {string} layout - the layout of the template
      * @param {function(err:error,done:booelan)} callback - done is true if the template was created
      * @return {function} the callback function
      */

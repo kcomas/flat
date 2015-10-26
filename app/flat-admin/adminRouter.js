@@ -146,7 +146,7 @@ adminRouter.post('/flat-admin/upsert-template',function(req,res){
     var name = req.body.name;
     var layout = req.body.layout;
     try {
-      layout = JSON.parse(layout);
+      JSON.parse(layout);
     } catch(err){
         showError(req,res,err,500);
         return;
