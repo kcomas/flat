@@ -276,7 +276,7 @@ adminRouter.post('/flat-admin/page/render',function(req,res){
                 });
             } else {
                 //update
-                cache.upsert({'fileStr',fileStr},function(err,done){
+                cache.upsert({'fileStr':fileStr},function(err,done){
                     if(err){
                         showError(req,res,err,500);
                     } else {
