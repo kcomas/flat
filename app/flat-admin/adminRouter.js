@@ -287,7 +287,7 @@ adminRouter.post('/flat-admin/list-files/private',function(req,res){
         str += item.toString();
     });
     str += ']';
-    str = str.replace(/,(?=[^,]*$)/, '');
+    //str = str.replace(/,(?=[^,]*$)/, '');
     res.statusCode = 200;
     res.setHeader('content-type','application/json; charset=utf-8');
     res.end(str);
