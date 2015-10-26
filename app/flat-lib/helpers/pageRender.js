@@ -79,7 +79,6 @@ function recursePage(pageDataParts,layout){
     } else {
         //make the part string
         var tag = layout.tag;
-        console.log(layout.tag);
         var subHtml = '<'+tag;
         if(layout.atts){
             console.log(atts);
@@ -87,6 +86,7 @@ function recursePage(pageDataParts,layout){
             for(let k in layout.atts){
                 subHtml += ' ' + dataReplace(pageDataParts,k) + '="' + dataReplace(pageDataParts,layout.atts[k]) + '"';
             }
+            subHtml += '>';
         }
         //render the html
         if(layout.html){
@@ -105,11 +105,10 @@ function recursePage(pageDataParts,layout){
             }
         }
 
-        if(x === selfCloseLength){
-            subHtml += '>';
-        } else {
+        if(x < selfCloseLength){
             subHtml += '</' + tag + '>';
         }
+        console.lof(subHtml);
         //add to html
         html += subHtml;
     }
