@@ -4,6 +4,7 @@ import router from '../flat-lib/server/router.js';
 import pages from './pages.js';
 import pageManager from './page/pageManager.js';
 import uploadedFiles from '../flat-lib/helpers/uploadedFiles.js';
+import pageRender form '../flat-lib/helpers/pageRender.js';
 
 var adminRouter = new router();
 
@@ -264,7 +265,7 @@ adminRouter.post('/flat-admin/page/render',function(req,res){
             showError(req,res,new Error('Page Template Not Found'),500);
         } else {
             var cache = adminRouter.controller.cacheManager.findByParam('permalink',permalink);
-            //var fileStr = //make cache
+            var fileStr = pageRender(page.get('def'),template.get('layout'));
             if(cache === null){
                 //create
                 adminRouter.controller.cacheManager.create(permalink,fileStr,function(err,done){
