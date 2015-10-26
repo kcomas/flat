@@ -34,7 +34,6 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         var jsonData = JSON.stringify({
             filename : $scope.current.loadFile.fileName
         });
-        console.dir(jsonData);
         $http.post('/flat-admin/load-private',jsonData).success(function(file,status){
             $scope.current.template.layout = file;
             $scope.validate();
