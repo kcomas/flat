@@ -8,7 +8,6 @@
  * @return {string} the created page string
  */
 export default function pageRender(pageData,templateLayout){
-    console.dir(pageData);
     return recursePage(pageData,JSON.parse(templateLayout));
 }
 
@@ -42,7 +41,6 @@ function dataReplace(pageData,toReplace){
     toReplace = toReplace.replace(/!/,'<>');
     toReplace = toReplace.replace(/:/,'<>');
     toReplace = toReplace.split('<>');
-    console.dir(toReplace);
     /**
      * three parts
      * 1 the name of the item to replace
@@ -51,7 +49,8 @@ function dataReplace(pageData,toReplace){
      */
     for(let i=0,l=pageData.length; i<l; i++){
         if(pageData[i].name === toReplace[0]){
-            var html = toReplace[2];
+            console.log(pageData[i].name + ' ' + toReplace[0]);
+            var html = '';
             if(pageData[i].type === 'text'){
                 html = pageData[i].text;
             } else if(pageData.type === 'html'){
