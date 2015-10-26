@@ -171,6 +171,7 @@ export default class manager {
         var keyLength = keys.length;
         for(var i=0,l=this.items.length; i<l; i++){
             for(var x=0; x<keyLength; x++){
+                console.dir(this.items[i]);
                 console.log(this.items[i][keys[x]] + ' ' + obj[keys[x]]);
                 if(this.items[i][keys[x]] !== obj[keys[x]]){
                     break;
