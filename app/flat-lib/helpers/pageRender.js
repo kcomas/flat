@@ -49,18 +49,17 @@ function dataReplace(pageData,toReplace){
      * 3 the html to replace with
      */
     for(let i=0,l=pageData.length; i<l; i++){
-        if(pageData[i].name === toReplace[1]){
+        if(pageData[i].name === toReplace[0]){
             var html = toReplace[2];
             if(pageDatap[i].type === 'text'){
                 html = pageData[i].text;
             } else if(pageData.type === 'html'){
                 html = pageData[i].html;
             }
-            toReplace = html;
             break;
         }
     }
-    return toReplace;
+    return html;
 }
 
 /**
