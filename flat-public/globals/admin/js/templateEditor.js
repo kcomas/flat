@@ -22,7 +22,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             $scope.sectionList = sections;        
         });
         $http.post('/flat-admin/list-files/private').success(function(files,status){
-            $scope.fileList = [];
+            $scope.fileList = files;
         });
     };
 
