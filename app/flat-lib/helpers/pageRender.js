@@ -108,7 +108,7 @@ function recursePage(pageDataParts,layout){
         if(x < selfCloseLength){
             subHtml += '</' + tag + '>';
         }
-        console.lof(subHtml);
+        console.log(subHtml);
         //add to html
         html += subHtml;
     }
