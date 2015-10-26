@@ -152,6 +152,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             template : page.template
         });
         $http.post('/flat-admin/page/render',jsonData).success(function(msg,status){
+            console.log("SENDING");
             $scope.action.msg = msg;
             $scope.action.status = status;
         });
