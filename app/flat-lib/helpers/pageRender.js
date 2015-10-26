@@ -66,7 +66,7 @@ function dataReplace(pageData,toReplace){
 
 /**
  * Sub recursive function
- * @param {object} pageData - page data
+ * @param {object} pageDataParts - page data
  * @param {object} layout - template layout
  * @return {string} the html string
  */
@@ -83,12 +83,12 @@ function recursePage(pageDataParts,layout){
         if(layout.atts){
             //render the attibutes
             for(let k in layout.atts){
-                subHtml += ' ' + dataReplace(k) + '="' + dataReplace(layout.atts[k]) + '"';
+                subHtml += ' ' + dataReplace(pageDataParts,k) + '="' + dataReplace(pageDataParts,layout.atts[k]) + '"';
             }
         }
         //render the html
         if(layout.html){
-            subHtml += dataReplace(pageData,layout.html);
+            subHtml += dataReplace(pageDataParts,layout.html);
         }
         //render the children
         if(layout.children){
@@ -108,7 +108,6 @@ function recursePage(pageDataParts,layout){
         } else {
             subHtml += '</' + tag + '>';
         }
-        console.log(subHtml);
         //add to html
         html += subHtml;
     }
