@@ -63,6 +63,20 @@ function showSuccess(req,res,msg,status){
 }
 
 adminRouter.use((req,res,next)=>{
+    //check if the user has a logged in session
+    var ses = signinRouter.controller.sessionManager.getSession(req);
+    if(ses !== null){
+        if(ses.sesData.username){
+            res.redirect('/flat-login');
+        } else {
+            next();
+        }
+    } else {
+        next();
+    }
+});
+
+adminRouter.use((req,res,next)=>{
    var reg = new RegExp('^/flat-admin$|^/flat-admin/');
    if(req.method === 'GET'){
         manager.load(req.url.replace(reg,'/'),{key:'value'},(err,page)=>{

@@ -49,10 +49,5 @@ signinRouter.post('/flat-login',(req,res)=>{
 });
 
 
-signinRouter.always((req,res)=>{
-    res.statusCode = 404;
-    res.setHeader('content-type','text/html; charset=utf-8');
-    res.end('<h1>Not Found</h1>');
-});
 
 export default signinRouter;
