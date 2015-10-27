@@ -10,5 +10,6 @@
     "logDir":"./flat-logs/",
     "staticDir":"./flat-static/",
     "scriptDir":"/flat-scripts/",
-    "sessionCookie":"flat-session"
+    "sessionCookie":"flat-session",
+    "sessionTime":"1.21e+9"
 }
