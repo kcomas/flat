@@ -38,7 +38,7 @@ signinRouter.post('/flat-login',function(req,res){
             res.end('<h1>No User Found</h1>');
         } else {
             //set session
-            var sesData = {'username',username};
+            var sesData = {'username':username};
             signinRouter.controller.sessionManager.create(req,res,sesData,function(err,done){
                 if(err){
                     res.setHeader = 500;
