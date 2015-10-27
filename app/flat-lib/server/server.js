@@ -141,7 +141,7 @@ export default class server {
             urlMods(req);
             responseMods(req,res,this.getValue('staticDir'),this.getValue('port'));
             cookies(req,res);
-            loadBody(req,res,this.config.maxPostSize,function(){
+            loadBody(req,res,this.config.maxPostSize,()=>{
                     var loop = new serverLoop(req,res,this.uses,this.routers,this.done);
                     loop.loop();
             });
