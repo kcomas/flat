@@ -62,7 +62,7 @@ export default class flatLog {
                     ms : (done - req.startTime),
                     url : req.url,
                     ip : req.headers['x-real-ip'],
-                    userAgent : req.headers['user-agnet'],
+                    userAgent : req.headers['user-agent'],
                     date : done    
                 };
                 if(self._console === true){
