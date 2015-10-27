@@ -43,6 +43,7 @@ app.use(logger.log());
 
 app.use(function(req,res,next){
     req.sessionCookieName = app.get('sessionCookie');
+    next();
 });
 
 app.route('/',mainRouter.run(controll));
