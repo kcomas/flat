@@ -14,6 +14,7 @@ import userManager from './flat-lib/user/userManager.js'
 import cacheManager from './flat-lib/cache/cacheManager.js';
 import uploadManager from './flat-lib/upload/uploadManager.js';
 import controller from './flat-lib/controller.js';
+import flatLog from './flat/lib/helpers/flatLog.js';
 
 var app = new server();
 
@@ -35,6 +36,10 @@ var um = new uploadManager(app.get('uploadDir'));
 
 var controll = new controller(pm,sm,ses,tm,usm,cm,um); 
 controll.init();
+
+var logger = new flatLog(app.get('logDir'),true);
+
+app.use(log.logger());
 
 app.use(function(req,res,next){
     req.sessionCookieName = app.get('sessionCookie');
