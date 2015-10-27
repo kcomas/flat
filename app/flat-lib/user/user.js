@@ -80,7 +80,7 @@ export default class user extends item {
         hash.update(this.data.salt,'utf8');
         hash = hash.digest('base64');
         console.dir(hash);
-        console.dir(this,data.hash);
+        console.dir(this.data.hash);
         if(hash !== this.data.hash){
             return false;
         }
