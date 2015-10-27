@@ -6,10 +6,10 @@ import fs from 'fs';
 
 /**
  * This function adds new methods to the response object
- * @return {function(req:object,res:object,next:function)} the middlewear function
+ * @param {object} req - the request object
+ * @param {object} res - the response object
  */
-export default function responseMods(){
-    return function(req,res,next){
+export default function responseMods(req,res){
         //redirect to a url on the site
         res.redirect = function(){
             //@TODO redirect
@@ -36,5 +36,4 @@ export default function responseMods(){
             });
         };
         next();
-    }
 }
