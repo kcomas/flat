@@ -6,6 +6,7 @@ import serverLoop from './serverLoop.js';
 import loadBody from './loadBody';
 import urlMods from './urlMods.js';
 import cookies from './cookies.js';
+import responseModes from './responseMods.js';
 
 /**
  * The main server that accepts uses and routers
@@ -139,6 +140,7 @@ export default class server {
         return function(req,res){
             //load post data
             urlMods(req);
+            responseMods(req,res);
             cookies(req,res);
             loadBody(req,res,self.config.maxPostSize,function(){
                     var loop = new serverLoop(req,res,self.uses,self.routers,self.done);
