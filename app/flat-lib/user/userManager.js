@@ -24,7 +24,7 @@ export default class userManager extends manager {
             if(err){
                 return callback(err,null);
             }
-            this.add(usr);
+            self.add(usr);
             return callback(null,true);
         });
     }
