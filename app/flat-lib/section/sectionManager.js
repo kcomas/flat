@@ -20,12 +20,11 @@ export default class sectionManager extends manager {
      */
     create(name,layout,callback){
         var sect = new section(this.dir);
-        var self = this;
-        sect.create(name,layout,function(err,done){
+        sect.create(name,layout,(err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.add(sect);
+            this.add(sect);
             return callback(null,true);
         });
     }

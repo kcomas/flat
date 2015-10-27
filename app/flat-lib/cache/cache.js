@@ -18,15 +18,14 @@ export default class cache extends item {
      * @return {function} the callback function
      */
     create(permalink,fileStr,callback){
-        var self = this;
-        this.genId(function(err,done){
+        this.genId((err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.data.permalink = permalink
-            self.data.fileStr = fileStr;
-            self.data.dateCreated = new Date();
-            self.save(function(err,done){
+            this.data.permalink = permalink
+            this.data.fileStr = fileStr;
+            this.data.dateCreated = new Date();
+            this.save((err,done)=>{
                 return callback(err,done);
             });
         });

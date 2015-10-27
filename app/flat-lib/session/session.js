@@ -19,20 +19,19 @@ export default class session extends item {
      * @return {function} the callback function
      */
     create(req,res,sesData,callback){
-        var self = this;
-        this.genId(function(err,done){
+        this.genId((err,done)=>{
             if(err){
                 return callback(err,null);
             }
             //create a new cookie
-            self.data.dateCreated = new Date();
-            self.data.cookieName = req.sessionCookieName;
-            var cookieObj = res.setCookie(req.sessionCookieName,self.id,req.sessionCookieTime);
-            self.data.expires = cookieObj.expires;
-            self.data.userAgent = req.headers['user-agent'];
-            self.data.ip = req.headers['x-real-ip'];
-            self.data.sesData = sesData;
-            self.save(function(err,done){
+            this.data.dateCreated = new Date();
+            this.data.cookieName = req.sessionCookieName;
+            var cookieObj = res.setCookie(req.sessionCookieName,this.id,req.sessionCookieTime);
+            this.data.expires = cookieObj.expires;
+            this.data.userAgent = req.headers['user-agent'];
+            this.data.ip = req.headers['x-real-ip'];
+            this.data.sesData = sesData;
+            this.save((err,done)=>{
                 return callback(err,done);
             });
         });

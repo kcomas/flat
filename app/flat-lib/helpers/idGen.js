@@ -9,7 +9,7 @@ import crypto from 'crypto';
  * @return {function} the callback function
  */
 export default function idGen(callback){
-    crypto.randomBytes(5,function(err,bytes){
+    crypto.randomBytes(5,(err,bytes)=>{
         if(err){
             return callback(err,null);
         }

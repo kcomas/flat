@@ -104,7 +104,7 @@ export default class uploadedFiles {
     writeFile(priv,name,mime,fileData,callback){
         var dir = this.getDir(priv);
         var encoding = uploadedFiles.determineEncoding(mime);
-        fs.writeFile(dir+name,fileData,encoding,function(err){
+        fs.writeFile(dir+name,fileData,encoding,(err)=>{
             if(err){
                 return callback(err,null);
             }
@@ -121,7 +121,7 @@ export default class uploadedFiles {
     readFile(file,callback){
         var mime = uploadedFiles.mimeType(file);
         var encoding = uploadedFiles.determineEncoding(mime);
-        fs.readFile(file,encoding,function(err,fileStr){
+        fs.readFile(file,encoding,(err,fileStr)=>{
             if(err){
                 return callback(err,null,null);
             }
@@ -138,7 +138,7 @@ export default class uploadedFiles {
      */
     removeFile(priv,name,callback){
         var dir = this.getDir(priv);
-        fs.unlink(dir+name,function(err){
+        fs.unlink(dir+name,(err)=>{
             if(err){
                 return callback(err,null);
             }

@@ -37,7 +37,7 @@ export default class fileManager {
         } catch(err){
             return callback(err,null);
         }
-        fs.writeFile(file,obj,'utf8',function(err){
+        fs.writeFile(file,obj,'utf8',(err)=>{
             if(err){
                 console.log(err);
                 return callback(err,null);
@@ -54,7 +54,7 @@ export default class fileManager {
      */
     load(name,callback){
         var file = this.dir + file;
-        fs.readFile(file,'utf8',function(err,data){
+        fs.readFile(file,'utf8',(err,data)=>{
             if(err){
                 return callback(err,null);
             }
@@ -75,7 +75,7 @@ export default class fileManager {
      * @return {function} the callback function
      */
     unlink(name,callback){
-        fs.unlink(this.dir+name,function(err){
+        fs.unlink(this.dir+name,(err)=>{
             if(err){
                 return callback(err,null);
             }

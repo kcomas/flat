@@ -21,12 +21,11 @@ export default class sessionManager extends manager {
      */
     create(req,res,sesData,callback){
         var ses = new session(this.dir);
-        var self = this;
-        ses.create(req,res,sesData,function(err,done){
+        ses.create(req,res,sesData,(err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.add(ses);
+            this.add(ses);
             return callback(null,true);
         });
     }
@@ -54,7 +53,7 @@ export default class sessionManager extends manager {
      * Syncronously remove all of the expired sessions
      */
     clean(){
-        this.items.forEach(function(ses){
+        this.items.forEach((ses)=>{
             if(ses.expired()){
                 ses.unlinkSync();
             }

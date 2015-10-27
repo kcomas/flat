@@ -20,13 +20,12 @@ export default class pageManager extends manager {
      * @return {function} the callback function
      */
     create(permalink,def,template,callback){
-        var self = this;
         var newPage = new page(this.dir);
-        newPage.create(permalink,def,template,function(err,done){
+        newPage.create(permalink,def,template,(err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.add(newPage);
+            this.add(newPage);
             return callback(null,true);
         });
 

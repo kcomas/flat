@@ -11,7 +11,7 @@ import fs from 'fs';
  */
 export default function contentsRender(dir,contents){
     var rendered = '';
-    contents.forEach(function(content){
+    contents.forEach((content)=>{
         try {
             rendered += '<uib-tab heading="'+content.name+'" >'+fs.readFileSync(dir+content.filename,'utf8')+'</uib-tab>';   
         } catch (err){

@@ -14,7 +14,7 @@ import fs from 'fs';
 export default function pageRender(dir,permalink,tags,files){
     var file = dir+permalink.replace('/','~') + '.html';
     var loadedFiles = [];
-    files.forEach(function(file){
+    files.forEach((file)=>{
         for(var key in file){
             try {
                 loadedFiles.push({name:key,str:fs.readFileSync(file[key],'utf8')});
@@ -24,7 +24,7 @@ export default function pageRender(dir,permalink,tags,files){
         }
     });
     var container = loadedFiles.shift().str;
-    loadedFiles.forEach(function(file2){
+    loadedFiles.forEach((file2)=>{
         try{
             var reg = new RegExp('%'+file2.name+'%','g');
             container = container.replace(reg,file2.str);
@@ -32,7 +32,7 @@ export default function pageRender(dir,permalink,tags,files){
             console.log(err);
         }
     });
-    tags.forEach(function(tag){
+    tags.forEach((tag)=>{
         for(var key in tag){
             try {
                 var reg = new RegExp('%'+key+'%','g');

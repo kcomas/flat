@@ -22,16 +22,15 @@ export default class page extends item {
      * @return {function} the callback function
      */
     create(permalink,def,template,callback){
-        var self = this;
-        this.genId(function(err,done){
+        this.genId((err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.data.permalink = permalink;
-            self.data.def = def;
-            self.data.dateCreated = new Date();
-            self.data.template = template;
-            self.save(function(err,done){
+            this.data.permalink = permalink;
+            this.data.def = def;
+            this.data.dateCreated = new Date();
+            this.data.template = template;
+            this.save(function(err,done){
                 return callback(err,done);
             });
         });

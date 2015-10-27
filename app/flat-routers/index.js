@@ -6,7 +6,7 @@ import router from '../flat-lib/server/router.js';
 var mainRouter = new router();
 
 //load a page form the cache
-mainRouter.use(function(req,res,next){
+mainRouter.use((req,res,next)=>{
     if(req.method === 'GET'){
         var cache = mainRouter.controller.cacheManager.findByParam('permalink',req.url);
             res.setHeader('content-type','text/html; charset=utf-8');
@@ -24,7 +24,7 @@ mainRouter.use(function(req,res,next){
 
 
 //404 page
-mainRouter.always(function(req,res){
+mainRouter.always((req,res)=>{
     res.statusCode = 404;
     res.setHeader('content-type','text/html; charset=utf-8');
     res.end('<h1>Main 404</h1>');

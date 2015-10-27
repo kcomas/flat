@@ -27,20 +27,19 @@ export default class user extends item {
             return callback(new Error("Invalid Email"),null);
         }
         //generate id
-        var self = this;
-        this.genId(function(err,done){
+        this.genId((err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.data.username = username;
-            self.data.email = email;
-            self.dateCreated = new Date();
+            this.data.username = username;
+            this.data.email = email;
+            this.dateCreated = new Date();
             //create a password
-            self.password(pass,function(err,done){
+            this.password(pass,(err,done)=>{
                 if(err){
                     return callback(err,null);
                 }
-                self.save(function(err,done){
+                this.save((err,done)=>{
                     return callback(err,done);
                 });
             });
@@ -55,16 +54,15 @@ export default class user extends item {
      * @return {function} the callback function
      */
     password(pass,callback){
-        var self = this;
-        crypto.randomBytes(12,function(err,bytes){
+        crypto.randomBytes(12,(err,bytes)=>{
             if(err){
                 return callback(err,null);
             }
-            self.data.salt = bytes.toString();
+            this.data.salt = bytes.toString();
             var hash = crypto.createHash('sha512');
             hash.update(pass,'utf8');
-            hash.update(self.data.salt,'utf8');
-            self.data.hash = hash.digest('base64');
+            hash.update(this.data.salt,'utf8');
+            this.data.hash = hash.digest('base64');
             return callback(null,true);
         });
     }

@@ -38,7 +38,7 @@ export default class pageManager {
         if(page === null){
             return callback(new Error("No Page Found"),null);
         }
-        page.load(data,function(err,string){
+        page.load(data,(err,string)=>{
             if(err){
                 return callback(err,null);
             }
@@ -76,7 +76,7 @@ export default class pageManager {
      */
     renderAll(){
         var errors = [];
-        this.pages.forEach(function(page){
+        this.pages.forEach((page)=>{
             try {
                 page.render();
             } catch(err){

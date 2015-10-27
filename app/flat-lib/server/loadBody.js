@@ -12,7 +12,7 @@ import qs from 'querystring';
  */
 function loadFile(req,maxPostSize,callback){
     var body = new Buffer('');
-    req.on('data',function(data){
+    req.on('data',(data)=>{
         body = Buffer.concat([body,data]);
         if(body.length > maxPostSize){
             //destory the connection
@@ -20,11 +20,11 @@ function loadFile(req,maxPostSize,callback){
         }
     });
 
-    req.on('error',function(){
+    req.on('error',()=>{
         return callback(req);
     });
     
-    req.on('end',function(){
+    req.on('end',()=>{
         body = body.toString('binary');
         req.body = {};
         req.body.files = {};
@@ -35,7 +35,7 @@ function loadFile(req,maxPostSize,callback){
 
 		//var reg = new RegExp('(\r\n|\r|\n)', 'g');
 
-		string.forEach(function (str) {
+		string.forEach((str)=>{
 			str = str.replace('form-data;', '')
 		    str = str.substring(0, str.indexOf('\r\n--'));
 		    str = str.split('\r\n\r\n');
@@ -68,7 +68,7 @@ function loadFile(req,maxPostSize,callback){
 function loadString(req,maxPostSize,callback){
     var body = '';
 
-    req.on('data',function(data){
+    req.on('data',(data)=>{
         body += data;
         if(body.length > maxPostSize){
             //destory the connection
@@ -76,11 +76,11 @@ function loadString(req,maxPostSize,callback){
         }
     });
 
-    req.on('error',function(){
+    req.on('error',()=>{
         return callback(req);
     });
     
-    req.on('end',function(){
+    req.on('end',()=>{
         try {
             body = JSON.parse(body);
         } catch(err){
@@ -108,12 +108,12 @@ export default function loadBody(req,res,maxPostSize,callback){
     if(req.headers['content-type']){
         if(req.headers['content-type'].indexOf('multipart/form-data')  > -1){
             //load form
-            loadFile(req,maxPostSize,function(req){
+            loadFile(req,maxPostSize,(req)=>{
                 return callback();
             }); 
         } else {
             //load string
-            loadString(req,maxPostSize,function(req){
+            loadString(req,maxPostSize,(req)=>{
                 return callback();
             });
         }   

@@ -46,12 +46,11 @@ export default class manager {
      */
     init(){
         var files = fs.readdirSync(this.dir);
-        var self = this;
-        files.forEach(function(file){
-            var data = fs.readFileSync(self.dir+file,'utf8');
+        files.forEach((file)=>{
+            var data = fs.readFileSync(this.dir+file,'utf8');
             try {
                 data = JSON.parse(data);
-                var newItem = new item(self.dir,file,data);
+                var newItem = new item(this.dir,file,data);
                 self.add(newItem);
             } catch(err){
                 console.log(err);
@@ -114,12 +113,11 @@ export default class manager {
         if(i === length){
             return callback(new Error("Item Not Found"),null);
         }
-        var self = this;
-        this.items[i].unlink(function(err,done){
+        this.items[i].unlink((err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            var removed = self.items.splice(i,1);
+            var removed = this.items.splice(i,1);
             return callback(null,removed);
         });
     }
@@ -149,7 +147,7 @@ export default class manager {
      */
     findManyByParam(key,value){
         var item = [];
-        this.items.forEach(function(it){
+        this.items.forEach((it)=>{
             if(it.data[key] === value){
                 item.push(it);
             }
@@ -200,12 +198,11 @@ export default class manager {
         if(i === length){
             return callback(new Error("Item Not Found"),null);
         }
-        var self = this;
-        this.items[i].unlink(function(err,done){
+        this.items[i].unlink((err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            var removed = self.items.splice(i,1);
+            var removed = this.items.splice(i,1);
             return callback(null,removed);
         });
     }
@@ -216,7 +213,7 @@ export default class manager {
      */
     toString(){
         var str = '['
-        this.items.forEach(function(item){
+        this.items.forEach((item)=>{
             str += item.toString() + ',';
         });
         str += ']';

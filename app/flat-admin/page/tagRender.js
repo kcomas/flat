@@ -11,7 +11,7 @@
 export default function tagRender(tag,selfClose,objArray){
     var render = '';
     try {
-        objArray.forEach(function(obj){
+        objArray.forEach((obj)=>{
             render += '<'+tag;
             for(let key in obj){
                 render += ' '+key+'="'+obj[key]+'"';

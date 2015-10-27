@@ -143,10 +143,9 @@ export default class router {
      * @return {function} returns a function to the server it was added to
      */
     run(control){
-        var self = this;
         this._controller = control;
-        return function(req,res){
-            var loop = new routerLoop(req,res,self.uses,self.gets,self.posts,self.doneFn);
+        return (req,res)=>{
+            var loop = new routerLoop(req,res,this.uses,this.gets,this.posts,this.doneFn);
             loop.loop();
         }
     }

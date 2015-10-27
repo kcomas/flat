@@ -19,16 +19,15 @@ export default class upload extends item {
      * @return {function} the callback function
      */
     create(filename,priv,mime,callback){
-        var self = this;
-        this.genId(function(err,done){
+        this.genId((err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.data.fileName = filename;
-            self.data.private = priv;
-            self.data.mime = mime;
-            self.data.dateCreated = new Date();
-            self.save(function(err,done){
+            this.data.fileName = filename;
+            this.data.private = priv;
+            this.data.mime = mime;
+            this.data.dateCreated = new Date();
+            this.save((err,done)=>{
                 return callback(err,done);
             });
         });

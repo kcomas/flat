@@ -51,10 +51,9 @@ export default class flatLog {
      * @return {function(req:object,res:object,next:function)} - the standard for middlewear
      */
     log(){
-        var self = this;
         return function(req,res,next){
             req.startTime = new Date();
-            res.on('finish',function(){
+            res.on('finish',()=>{
                 var done = new Date();
                 var logObj = {
                     status: res.statusCode,
@@ -65,16 +64,16 @@ export default class flatLog {
                     userAgent : req.headers['user-agent'],
                     date : done    
                 };
-                if(self._console === true){
+                if(this._console === true){
                     console.dir(logObj);
                 }
                 var strCode = res.statusCode.toString();
                 if(strCode[0] === '3' || strCode[0] === '2'){
-                    var file = self.accessLog;
+                    var file = this.accessLog;
                 } else {
-                    var file = self.errorLog;
+                    var file = this.errorLog;
                 }
-                fs.appendFile(self._dir+file,JSON.stringify(logObj)+'\n','utf8',function(err){
+                fs.appendFile(this._dir+file,JSON.stringify(logObj)+'\n','utf8',function(err){
                     if(err){
                         console.dir(err);
                     }

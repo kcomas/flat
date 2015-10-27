@@ -72,7 +72,7 @@ export default class item {
      * @return {function} the callback if error or if the file saved
      */
     save(callback){
-        this.fileManager.save(this.filename,this.data,function(err,done){
+        this.fileManager.save(this.filename,this.data,(err,done)=>{
             return callback(err,done);
         });
     }
@@ -83,7 +83,7 @@ export default class item {
      * @return {function} the callack if the file loaded or not
      */
     load(callback){
-        this.fileManager.load(this.filename,function(err,obj){
+        this.fileManager.load(this.filename,(err,obj)=>{
             if(err){
                 return callback(err,null);
             }
@@ -98,7 +98,7 @@ export default class item {
      * @return {function} the callback function
      */
     unlink(callback){
-        this.fileManager.unlink(this.filename,function(err,done){
+        this.fileManager.unlink(this.filename,(err,done)=>{
             return callback(err,done);
         });
     }
@@ -115,11 +115,10 @@ export default class item {
      * @return {function(err:error,done:boolean)} the callback if the id was generated or not
      */
     genId(callback){
-        var self = this;
         if(this.filename === '' && this.id === ''){
-            this.idGen(function(err,id){
-                self.id = id;
-                self.filename = id+'.json';
+            this.idGen((err,id)=>{
+                this.id = id;
+                this.filename = id+'.json';
                 return callback(null,true);
             });
         } else {
@@ -149,9 +148,8 @@ export default class item {
      * @return {function} the callback function
      */
     del(keys,callback){
-        var self = this;
-        keys.forEach(function(key){
-            delete self.data[key];
+        keys.forEach((key)=>{
+            delete this.data[key];
         });
         this.save(function(err,done){
             return callback(err,done);

@@ -31,17 +31,16 @@ export default class serverLoop {
      * the loop function to run through all the uses and routers
      */
     loop(){
-        var self = this;
         if(this.usesPosition < this.uses.length){
-            this.uses[this.usesPosition](this.req,this.res,function next(){
-                self.usesPosition++;
-                self.loop();
+            this.uses[this.usesPosition](this.req,this.res,()=>{
+                this.usesPosition++;
+                this.loop();
             });
         } else {
             //loop through the routers
             var currentRouter = null;
-            this.routers.forEach(function(router){
-                if(self.req.url.indexOf(router.path) > -1){
+            this.routers.forEach((router)=>{
+                if(this.req.url.indexOf(router.path) > -1){
                     currentRouter = router.router;
                 }
             });

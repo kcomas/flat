@@ -43,11 +43,10 @@ export default class routerLoop {
      * Run though all of the uses/gets/posts and call end if nessacary
      */
     loop(){
-        var self = this;
         if(this.usesPosition < this.uses.length){
-            this.uses[this.usesPosition](this.req,this.res,function next(){
-                self.usesPosition++;
-                self.loop();
+            this.uses[this.usesPosition](this.req,this.res,()=>{
+                this.usesPosition++;
+                this.loop();
             });
         } else {
             if(this.req.method === 'GET'){

@@ -19,7 +19,7 @@ export default function responseMods(req,res,staticDir,port){
 
         //send a static file without modifications
         res.sendStatic = function(file){
-            fs.readFile(staticDir+file,'utf8',function(err,fileStr){
+            fs.readFile(staticDir+file,'utf8',(err,fileStr)=>{
                 res.setHeader('content-type','text/html; charset=utf-8');
                 if(err){
                     console.dir(err);

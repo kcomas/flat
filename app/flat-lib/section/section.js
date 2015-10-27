@@ -19,15 +19,14 @@ export default class section extends item {
      */
     create(name,layout,callback){
         //generate id
-        var self = this;
-        this.genId(function(err,done){
+        this.genId((err,done)=>{
             if(err){
                 return callback(err,done);
             }
-            self.data.name = name;
-            self.data.layout = layout;
-            self.dateCreated = new Date();
-            self.save(function(err,done){
+            this.data.name = name;
+            this.data.layout = layout;
+            this.dateCreated = new Date();
+            this.save(function(err,done){
                 return callback(err,done);
             });
         });

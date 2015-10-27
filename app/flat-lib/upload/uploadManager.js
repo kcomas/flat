@@ -21,12 +21,11 @@ export default class uploadManager extends manager {
      */
     create(filename,priv,mime,callback){
         var up = new upload(this.dir);
-        var self = this;
-        up.create(filename,priv,mime,function(err,done){
+        up.create(filename,priv,mime,(err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.add(up);
+            this.add(up);
             return callback(null,true);
         });
     }

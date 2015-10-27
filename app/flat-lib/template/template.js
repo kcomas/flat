@@ -18,15 +18,14 @@ export default class template extends item {
      * @return {function} the callback function
      */
     create(name,layout,callback){
-        var self = this;
-        this.genId(function(err,done){
+        this.genId((err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.data.name = name;
-            self.data.layout = layout;
-            self.data.dateCreated = new Date();
-            self.save(function(err,done){
+            this.data.name = name;
+            this.data.layout = layout;
+            this.data.dateCreated = new Date();
+            this.save((err,done)=>{
                 return callback(err,done);
             });
         });

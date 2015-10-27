@@ -19,13 +19,12 @@ export default class templateManager extends manager {
      * @return {function} the callback function
      */
     create(name,layout,callback){
-        var self = this;
         var tmp = new template(this.dir);
-        tmp.create(name,layout,function(err,done){
+        tmp.create(name,layout,(err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.add(tmp);
+            this.add(tmp);
             return callback(null,true);
         });
     }

@@ -20,12 +20,11 @@ export default class cacheManager extends manager {
      */
     create(permalink,fileStr,callback){
         var newCache = new cache(this.dir);
-        var self = this;
-        newCache.create(permalink,fileStr,function(err,done){
+        newCache.create(permalink,fileStr,(err,done)=>{
             if(err){
                 return callback(err,null);
             }
-            self.add(newCache);
+            this.add(newCache);
             return callback(null,true);
         });
     }

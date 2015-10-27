@@ -5,7 +5,7 @@ import router from '../flat-lib/server/router.js';
 
 var signinRouter = new router();
 
-signinRouter.use(function(req,res,next){
+signinRouter.use((req,res,next)=>{
     //check if the user has a logged in session
     var ses = signinRouter.controller.sessionManager.getSession(req);
     if(ses !== null){
@@ -19,11 +19,11 @@ signinRouter.use(function(req,res,next){
     }
 });
 
-signinRouter.get('/flat-login',function(req,res){
+signinRouter.get('/flat-login',(req,res)=>{
     res.sendStatic('signin.html');
 });
 
-signinRouter.post('/flat-login',function(req,res){
+signinRouter.post('/flat-login',(req,res)=>{
     var username = req.body.username;
     var pass = req.body.password;
     res.statusCode = 500;
@@ -39,7 +39,7 @@ signinRouter.post('/flat-login',function(req,res){
     }
     //set session
     var sesData = {'username':username};
-    signinRouter.controller.sessionManager.create(req,res,sesData,function(err,done){
+    signinRouter.controller.sessionManager.create(req,res,sesData,(err,done)=>{
         if(err){
             res.end('<h1>Unable to create session</h1>');
         } else {
@@ -49,5 +49,10 @@ signinRouter.post('/flat-login',function(req,res){
 });
 
 
+installRouter.always((req,res)=>{
+    res.statusCode = 404;
+    res.setHeader('content-type','text/html; charset=utf-8');
+    res.end('<h1>Not Found</h1>');
+});
 
 export default signinRouter;

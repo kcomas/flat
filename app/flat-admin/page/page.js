@@ -252,7 +252,7 @@ export default class page {
                 }
                 return callback(null,string);
         } else {
-            fs.readFile(this.config.cacheDir+this.permalink.replace('/','~')+'.html','utf8',function(err,file){
+            fs.readFile(this.config.cacheDir+this.permalink.replace('/','~')+'.html','utf8',(err,file)=>{
                 if(err){
                     console.log(err);
                     return callback(err,null);

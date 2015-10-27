@@ -136,14 +136,13 @@ export default class server {
      * @returns {function} the function to be passed to the http/s
      */
     run(){
-        var self = this;
-        return function(req,res){
+        return (req,res)=>{
             //load post data
             urlMods(req);
-            responseMods(req,res,self.getValue('staticDir'),self.getValue('port'));
+            responseMods(req,res,this.getValue('staticDir'),this.getValue('port'));
             cookies(req,res);
-            loadBody(req,res,self.config.maxPostSize,function(){
-                    var loop = new serverLoop(req,res,self.uses,self.routers,self.done);
+            loadBody(req,res,this.config.maxPostSize,function(){
+                    var loop = new serverLoop(req,res,this.uses,this.routers,this.done);
                     loop.loop();
             });
         }
