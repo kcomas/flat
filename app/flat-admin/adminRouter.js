@@ -67,12 +67,12 @@ adminRouter.use((req,res,next)=>{
     var ses = adminRouter.controller.sessionManager.getSession(req);
     if(ses !== null){
         if(ses.sesData.username){
-            res.redirect('/flat-login');
-        } else {
             next();
+        } else {
+            res.redirect('/flat-login');
         }
     } else {
-        next();
+        res.redirect('/flat-login');
     }
 });
 
