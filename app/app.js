@@ -46,11 +46,6 @@ app.use(function(req,res,next){
     next();
 });
 
-app.use(function(req,res,next){
-    //stop server
-    console.log("in app func");
-});
-
 app.route('/',mainRouter.run(controll));
 
 app.route('/flat-admin',adminRouter.run(controll));

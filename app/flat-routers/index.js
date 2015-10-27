@@ -5,10 +5,6 @@ import router from '../flat-lib/server/router.js';
 
 var mainRouter = new router();
 
-mainRouter.use(function(req,res,next){
-    //break router
-});
-
 //load a page form the cache
 mainRouter.use(function(req,res,next){
     if(req.method === 'GET'){
