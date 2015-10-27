@@ -23,7 +23,7 @@ export default class cache extends item {
             if(err){
                 return callback(err,null);
             }
-            self.permalink = permalink
+            self.data.permalink = permalink
             self.data.fileStr = fileStr;
             self.data.dateCreated = new Date();
             self.save(function(err,done){
