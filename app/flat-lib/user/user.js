@@ -60,7 +60,7 @@ export default class user extends item {
             if(err){
                 return callback(err,null);
             }
-            this.data.salt = bytes.toString();
+            self.data.salt = bytes.toString();
             var hash = crypto.createHash('sha512');
             hash.update(self.data.salt,'utf8');
             hash.update(pass,'utf8');
