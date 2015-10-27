@@ -74,7 +74,7 @@ export default class flatLog {
                 } else {
                     var file = self.errorLog;
                 }
-                fs.appendFile(self._dir+file,JSON.stringify(logObj),'utf8',function(err){
+                fs.appendFile(self._dir+file,JSON.stringify(logObj)+'\n','utf8',function(err){
                     if(err){
                         console.dir(err);
                     }
