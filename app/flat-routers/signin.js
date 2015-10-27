@@ -26,23 +26,19 @@ signinRouter.get('/flat-login',function(req,res){
 signinRouter.post('/flat-login',function(req,res){
     var username = req.body.username;
     var pass = req.body.password;
+    res.statusCode = 500;
+    res.setHeader('content-type','text/html; charset=utf8');   
     var user = signinRouter.controller.userManager.findByParam('username',username);
     if(user === null){ 
-        res.statusCode = 500;
-        res.setHeader('content-type','text/html; charset=utf8');
         res.end('<h1>No User Found</h1>');
     } else {
         if(!user.auth(pass)){
-            res.statusCode = 500;
-            res.setHeader('content-type','text/html; charset=utf8');
-            res.end('<h1>No User Found</h1>');
+            res.end('<h1>Pass auth failed</h1>');
         } else {
             //set session
             var sesData = {'username':username};
             signinRouter.controller.sessionManager.create(req,res,sesData,function(err,done){
                 if(err){
-                    res.statusCode = 500;
-                    res.setHeader('content-type','text/html; charset=utf8');
                     res.end('<h1>Unable to create session</h1>');
                 } else {
                     res.redirect('/flat-admin');
