@@ -142,7 +142,6 @@ export default class server {
             req.serverConfig = self.config;
             cookies(req,res);
             loadBody(req,res,self.config.maxPostSize,function(){
-                    console.dir(self.uses);
                     var loop = new serverLoop(req,res,self.uses,self.routers,self.done);
                     loop.loop();
             });
