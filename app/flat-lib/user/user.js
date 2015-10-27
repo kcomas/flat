@@ -62,8 +62,8 @@ export default class user extends item {
             }
             self.data.salt = bytes.toString();
             var hash = crypto.createHash('sha512');
-            hash.update(self.data.salt,'utf8');
             hash.update(pass,'utf8');
+            hash.update(self.data.salt,'utf8');
             self.data.hash = hash.digest('base64');
             return callback(null,true);
         });
@@ -75,7 +75,7 @@ export default class user extends item {
      * @return {boolean} if the password matches or not
      */
     auth(pass){
-        console.dir(pass + ' ' + this.data);
+        console.dir(pass + ' ' + JSON.stringify(this.data));
         var hash = crypto.createHash('sha512');
         hash.update(pass,'utf8');
         hash.update(this.data.salt,'utf8');
