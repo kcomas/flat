@@ -14,7 +14,6 @@ export default class flatLog {
      * @param {boolean} console - log to console if true
      */
     constructor(dir,console){
-        
         /**
          * The dir we save the logs to
          * @type {string}
@@ -22,7 +21,7 @@ export default class flatLog {
         this._dir = dir;
 
         //make sure the dir exists
-        if(fs.existsSync(dir)){
+        if(!fs.existsSync(dir)){
             fs.mkdirSync(dir);
         }
 
@@ -53,7 +52,6 @@ export default class flatLog {
     log(){
         var self = this;
         return function(req,res,next){
-            console.log("LOGGING?");
             req.startTime = new Date();
             res.on('finish',function(){
                 var done = new Date();
@@ -84,7 +82,6 @@ export default class flatLog {
             next();
         }
     }
-
 
 
 }
