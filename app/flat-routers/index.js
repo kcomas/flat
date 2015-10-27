@@ -9,7 +9,6 @@ var mainRouter = new router();
 mainRouter.use(function(req,res,next){
     if(req.method === 'GET'){
         var cache = mainRouter.controller.cacheManager.findByParam('permalink',req.url);
-            console.dir(mainRouter.controller.cacheManager);
             res.setHeader('content-type','text/html; charset=utf-8');
         if(cache === null){
             res.statusCode = 404;
