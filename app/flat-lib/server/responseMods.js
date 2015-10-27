@@ -1,7 +1,7 @@
 
 "use strict"
 
-import fs from fs;
+import fs from 'fs';
 
 /**
  * This function adds new methods to the response object
