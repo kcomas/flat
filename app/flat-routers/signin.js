@@ -16,7 +16,7 @@ signinRouter.get('/flat-login',function(req,res){
 signinRouter.post('/flat-login',function(req,res){
     var username = req.body.username;
     var pass = req.body.pass;
-    var user signinRouter.controller.userManager.findByParam('username',username);
+    var user = signinRouter.controller.userManager.findByParam('username',username);
     if(user === null){ 
         res.setHeader = 500;
         res.setHeader('content-type','text/html; charset=utf8');
