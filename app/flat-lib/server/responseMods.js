@@ -20,7 +20,7 @@ export default function responseMods(req,res){
         //send a static file without modifications
         res.sendStatic = function(file){
             //determine the mime type
-            var mime = uploadedFiles.mime(file);
+            var mime = uploadedFiles.mimeType(file);
             //determine encoding
             var encoding = uploadedFiles.determineEncoding(mime);
             fs.readFile(file,encoding,function(err,fileStr){
