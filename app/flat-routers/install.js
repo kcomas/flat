@@ -11,7 +11,7 @@ var installRouter = new router();
 installRouter.loadConfig('./flat-config/installConfig.json');
 
 installRouter.use(function(req,res,next){
-    if(installRouter.get('installed') === 'true'){
+    if(installRouter.get('installed') === 'yes'){
         //redirect to index
         res.redirect('/');
     } else {
@@ -35,7 +35,7 @@ installRouter.post('/flat-install',function(req,res){
             res.setHeader('content-type','text/html; charset=utf8');
             res.end('Failed To Install');
         } else {
-           installRouter.setValue('installed',true);
+           installRouter.setValue('installed','yes');
            installRouter.writeConfig('./flat-config/installConfig.json');
            res.redirect('/');
         }
