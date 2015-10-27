@@ -49,7 +49,7 @@ app.use(function(req,res,next){
 
 app.route('/',mainRouter.run(controll));
 
-app.router('/flat-install',installRouter.run(controll));
+app.route('/flat-install',installRouter.run(controll));
 
 app.route('/flat-admin',adminRouter.run(controll));
 
