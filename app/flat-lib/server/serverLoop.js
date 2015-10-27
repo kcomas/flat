@@ -35,7 +35,7 @@ export default class serverLoop {
         if(this.usesPostion < this.uses.length){
             this.uses[usesPosition](req,res,function next(){
                 self.usesPosition++;
-                //self.loop();
+                self.loop();
             });
         } else {
             //loop through the routers
