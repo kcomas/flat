@@ -45,7 +45,7 @@ app.use(logger.log());
 
 app.use(function(req,res,next){
     req.sessionCookieName = app.getValue('sessionCookie');
-    req.sessionCookieTime = parseInt(app.getValue('sessionTime'));
+    req.sessionCookieTime = 1000 * 60 * 60 * 24 * parseInt(app.getValue('sessionTime'));
     next();
 });
 
