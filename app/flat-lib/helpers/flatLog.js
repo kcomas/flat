@@ -51,7 +51,7 @@ export default class flatLog {
      * @return {function(req:object,res:object,next:function)} - the standard for middlewear
      */
     log(){
-        return function(req,res,next){
+        return (req,res,next)=>{
             req.startTime = new Date();
             res.on('finish',()=>{
                 var done = new Date();
