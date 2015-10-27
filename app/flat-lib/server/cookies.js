@@ -51,7 +51,7 @@ export default function cookies(req,res){
         if(path){
             cookie.path = path;
         }
-        cookieStr = qs.stringify(cookie,';','=');
+        var cookieStr = qs.stringify(cookie,';','=');
         res.cookies.push(qs.unescape(cookieStr));
         res.setHeader('Set-Cookie',res.cookies);
         return cookie;
