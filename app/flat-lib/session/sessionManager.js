@@ -39,11 +39,9 @@ export default class sessionManager extends manager {
     getSession(req){
         var ses = null;
         if(!req.cookies[req.sessionCookieName]){
-            console.log("cookies not found");
             return null;
         }
         for(var i=0,l=this.items.length; i<l; i++){
-            console.dir(this.items[i]);
             if(this.items[i].id === req.cookies[req.sessionCookieName]){
                 ses = this.items[i];
                 break;

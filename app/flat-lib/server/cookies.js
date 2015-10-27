@@ -19,7 +19,6 @@ export default function cookies(req,res){
      * @type {object}
      */
     req.cookies = qs.parse(req.headers.cookie,';','=');
-    console.dir(req.cookies);
     
     /*
      *  Set up for cookie sending
@@ -43,7 +42,7 @@ export default function cookies(req,res){
      */
     res.setCookie = function(name,value,expires,domain,path){
         var cookie = {};
-        cookie.name = value;
+        cookie[name] = value;
         cookie.expires = (new Date(Date.now() + expires)).toUTCString();
         if(domain){
             cookie.domain = domain;
