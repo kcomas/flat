@@ -93,7 +93,7 @@ export default class server {
      * @param {string} name - the name of the value
      * @param {*} value - the value to be set
      */
-    set(name,value){
+    setValue(name,value){
         this.config[name] = value;
     }
 

@@ -35,7 +35,7 @@ installRouter.post('/flat-install',function(req,res){
             res.setHeader('content-type','text/html; charset=utf8');
             res.end('Failed To Install');
         } else {
-           installRouter.set('installed',true);
+           installRouter.setValue('installed',true);
            installRouter.writeConfig('./flat-config/installConfig.json');
            res.redirect('/');
         }
