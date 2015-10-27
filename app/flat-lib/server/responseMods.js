@@ -1,7 +1,6 @@
 
 "use strict"
 
-import uploadedFiles from '../helpers/uploadedFiles.js';
 import fs from 'fs';
 
 /**
@@ -20,19 +19,14 @@ export default function responseMods(req,res,staticDir){
 
         //send a static file without modifications
         res.sendStatic = function(file){
-            //determine the mime type
-            var mime = uploadedFiles.mimeType(file);
-            //determine encoding
-            var encoding = uploadedFiles.determineEncoding(mime);
-            fs.readFile(staticDir+file,encoding,function(err,fileStr){
+            fs.readFile(staticDir+file,'utf8',function(err,fileStr){
+                res.setHeader('content-type','text/html; charset=utf-8');
                 if(err){
                     console.dir(err);
                     res.statusCode = 500;
-                    res.setHeader('content-type','text/html; charset=utf-8');
                     res.end('Failed To Load Static File');
                 } else {
                     res.statusCode = 200;
-                    res.setHeader('content-type',mime+'; charset=utf-8');
                     res.end(fileStr);
                 }
             });
