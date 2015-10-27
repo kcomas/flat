@@ -22,8 +22,8 @@ export default class flatLog {
         this._dir = dir;
 
         //make sure the dir exists
-        if(fs.existsSync(this._dir)){
-            fs.mkdirSync(this._dir);
+        if(fs.existsSync(dir)){
+            fs.mkdirSync(dir);
         }
 
         /**
