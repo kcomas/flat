@@ -25,6 +25,7 @@ export default function responseMods(req,res){
             var encoding = uploadedFiles.determineEncoding(mime);
             fs.readFile(file,encoding,function(err,fileStr){
                 if(err){
+                    console.dir(err);
                     res.statusCode = 500;
                     res.setHeader('content-type','text/html; charset=utf-8');
                     res.end('Failed To Load Static File');
