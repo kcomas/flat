@@ -40,6 +40,7 @@ signinRouter.post('/flat-login',function(req,res){
     //set session
     var sesData = {'username':username};
     signinRouter.controller.sessionManager.create(req,res,sesData,function(err,done){
+        console.dir(res.cookies);
         if(err){
             res.end('<h1>Unable to create session</h1>');
         } else {
