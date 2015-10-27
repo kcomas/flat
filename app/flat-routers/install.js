@@ -11,7 +11,7 @@ var installRouter = new router();
 installRouter.loadConfig('./flat-config/installConfig.json');
 
 installRouter.use(function(req,res,next){
-    if(installRouter.get('installed') === 'yes'){
+    if(installRouter.getValue('installed') === 'yes'){
         //redirect to index
         res.redirect('/');
     } else {

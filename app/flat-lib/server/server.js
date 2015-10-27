@@ -102,7 +102,7 @@ export default class server {
      * @param {string} name - the name of the value
      * @return {*} the value of the config[name]
      */
-    get(name){
+    getValue(name){
        return this.config[name]; 
     }
 
