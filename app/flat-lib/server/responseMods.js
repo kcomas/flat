@@ -5,8 +5,6 @@ import fs from 'fs';
 
 /**
  * This function adds new methods to the response object
- * @param {object} req - the request object
- * @param {object} res - the response object
  * @return {function(req:object,res:object,next:function)} the middlewear function
  */
 export default function responseMods(){
