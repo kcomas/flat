@@ -6,6 +6,7 @@ import server from './flat-lib/server/server.js';
 import adminRouter from './flat-admin/adminRouter.js';
 import mainRouter from './flat-routers/index.js';
 import installRouter from './flat-routers/install.js';
+import signinRouter from './flat-routers/signin.js';
 
 import pageManager from './flat-lib/page/pageManager.js';
 import sectionManager from './flat-lib/section/sectionManager.js';
@@ -48,6 +49,8 @@ app.use(function(req,res,next){
 });
 
 app.route('/',mainRouter.run(controll));
+
+app.route('/flat-login',signinRouter.run(controll));
 
 app.route('/flat-install',installRouter.run(controll));
 
