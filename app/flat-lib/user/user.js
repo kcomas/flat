@@ -75,13 +75,10 @@ export default class user extends item {
      * @return {boolean} if the password matches or not
      */
     auth(pass){
-        console.dir(pass + ' ' + JSON.stringify(this.data));
         var hash = crypto.createHash('sha512');
         hash.update(pass,'utf8');
         hash.update(this.data.salt,'utf8');
         hash = hash.digest('base64');
-        console.dir(hash);
-        console.dir(this.data.hash);
         if(hash !== this.data.hash){
             return false;
         }
