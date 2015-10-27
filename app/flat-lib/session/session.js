@@ -20,7 +20,7 @@ export default class session extends item {
      */
     create(req,res,sesData,callback){
         var self = this;
-        this.idGen(function(err,done){
+        this.genId(function(err,done){
             if(err){
                 return callback(err,null);
             }
@@ -32,7 +32,6 @@ export default class session extends item {
             self.data.userAgent = req.headers['user-agent'];
             self.data.ip = req.headers['x-real-ip'];
             self.data.sesData = sesData;
-            console.dir(self);
             self.save(function(err,done){
                 return callback(err,done);
             });
