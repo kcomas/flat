@@ -6,7 +6,7 @@ import serverLoop from './serverLoop.js';
 import loadBody from './loadBody';
 import urlMods from './urlMods.js';
 import cookies from './cookies.js';
-import responseModes from './responseMods.js';
+import responseMods from './responseMods.js';
 
 /**
  * The main server that accepts uses and routers
