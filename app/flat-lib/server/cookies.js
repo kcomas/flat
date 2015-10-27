@@ -19,6 +19,7 @@ export default function cookies(req,res){
      * @type {object}
      */
     req.cookies = qs.parse(req.headers.cookie,';','=');
+    console.dir(req.cookies);
     
     /*
      *  Set up for cookie sending
