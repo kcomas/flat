@@ -34,7 +34,7 @@ export default class serverLoop {
         var self = this;
         if(this.usesPostion < this.uses.length){
             this.uses[usesPosition](req,res,function next(){
-                self.usesPosition++;
+                //self.usesPosition++;
                 self.loop();
             });
         } else {
