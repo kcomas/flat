@@ -27,7 +27,7 @@ export default class session extends item {
             //create a new cookie
             self.data.dateCreated = new Date();
             self.data.cookieName = req.sessionCookieName;
-            var cookieObj = res.setCookie(name,self.id,req.sessionCookieTime);
+            var cookieObj = res.setCookie(req.sessionCookieName,self.id,req.sessionCookieTime);
             self.data.expires = cookieObj.expires;
             self.data.userAgent = req.headers['user-agent'];
             self.data.ip = req.headers['x-real-ip'];
