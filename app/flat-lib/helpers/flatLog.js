@@ -14,6 +14,7 @@ export default class flatLog {
      * @param {boolean} console - log to console if true
      */
     constructor(dir,console){
+
         /**
          * The dir we save the logs to
          * @type {string}
@@ -64,7 +65,7 @@ export default class flatLog {
                     userAgent : req.headers['user-agnet'],
                     date : done    
                 };
-                if(self._console){
+                if(self._console === true){
                     console.dir(logObj);
                 }
                 var strCode = res.statusCode.toString();
@@ -73,7 +74,7 @@ export default class flatLog {
                 } else {
                     var file = self.errorLog;
                 }
-                fs.appendFile(self._dir+file,'utf8',function(err){
+                fs.appendFile(self._dir+file,JSON.stringify(logObj),'utf8',function(err){
                     if(err){
                         console.dir(err);
                     }
