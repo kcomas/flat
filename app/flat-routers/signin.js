@@ -7,6 +7,7 @@ var signinRouter = new router();
 
 signinRouter.use(function(req,res,next){
     //check if the user has a logged in session
+    next();
 });
 
 signinRouter.get('/flat-login',function(req,res){
