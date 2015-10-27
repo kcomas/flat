@@ -13,7 +13,7 @@ export default function responseMods(){
         //redirect to a url on the site
         res.redirect = function(){
             //@TODO redirect
-            res.writeHead(302,'Location':'');
+            res.writeHead(302,{'Location':''});
             res.end();
         };
 
