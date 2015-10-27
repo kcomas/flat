@@ -39,7 +39,7 @@ controll.init();
 
 var logger = new flatLog(app.get('logDir'),true);
 
-app.use(log.logger());
+app.use(logger.log());
 
 app.use(function(req,res,next){
     req.sessionCookieName = app.get('sessionCookie');
