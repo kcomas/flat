@@ -20,18 +20,13 @@ export default class userManager extends manager {
     create(username,email,pass,callback){
         var usr = new user(this.dir);
         var self = this;
-        var match = this.findByParam('username',username);
-        if(match !== null){
-            return callback(new Error("User allready exists"),null);
-        } else {
-            usr.create(username,email,pass,function(err,done){
-                if(err){
-                    return callback(err,null);
-                }
-                self.add(usr);
-                return callback(null,true);
-            });
-        }
+        usr.create(username,email,pass,function(err,done){
+            if(err){
+                return callback(err,null);
+            }
+            self.add(usr);
+            return callback(null,true);
+        });
     }
 
 }
