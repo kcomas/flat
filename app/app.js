@@ -57,7 +57,7 @@ app.route('/flat-install',installRouter.run(controll));
 
 app.route('/flat-admin',adminRouter.run(controll));
 
-app.always(function(req,res){
+app.always((req,res) =>  {
     res.statusCode = 404;
     res.setHeader('Content-Type','text/html; charset=utf8');
     res.end('<h1>404</h1>');
