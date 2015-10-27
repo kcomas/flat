@@ -52,6 +52,7 @@ export default function cookies(req,res){
             cookie.path = path;
         }
         var cookieStr = qs.stringify(cookie,';','=');
+        console.log(cookeStr);
         res.cookies.push(qs.unescape(cookieStr));
         res.setHeader('Set-Cookie',res.cookies);
         return cookie;
