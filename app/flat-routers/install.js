@@ -37,7 +37,7 @@ installRouter.post('/flat-install',function(req,res){
         } else {
            installRouter.setValue('installed','yes');
            installRouter.writeConfig('./flat-config/installConfig.json');
-           res.redirect('/');
+           res.redirect('/flat-login');
         }
     });
 });

@@ -14,12 +14,11 @@ export default class session extends item {
      * @override
      * @param {object} req - the request object
      * @param {object} res - the response object
-     * @param {string} name - the name of the cookie
-     * @param {number} time - the time in ms of the cookie
+     * @param {object} sesData - the session data
      * @param {function(err:error,done:boolean)} callback - the callback function done is true if created
      * @return {function} the callback function
      */
-    create(req,res,name,time,callback){
+    create(req,res,sesData,callback){
         var self = this;
         this.idGen(function(err,done){
             if(err){
@@ -27,12 +26,12 @@ export default class session extends item {
             }
             //create a new cookie
             self.data.dateCreated = new Date();
-            self.data.cookieName = name;
-            var cookieObj = res.setCookie(name,self.id,time);
+            self.data.cookieName = req.sessionCookieName;
+            var cookieObj = res.setCookie(name,self.id,req.sessionCookieTime);
             self.data.expires = cookieObj.expires;
             self.data.userAgent = req.headers['user-agent'];
             self.data.ip = req.headers['x-real-ip'];
-            self.data.sesData = {};
+            self.data.sesData = sesData;
             self.save(function(err,done){
                 return callback(err,done);
             });
@@ -45,6 +44,23 @@ export default class session extends item {
      */
     get sesData(){
         return this.data.sesData;
+    }
+
+    /**
+     * Add to the session data
+     * @param {string} key - the key for the new data
+     * @param {string|object|number|date,array,null} value - the new data
+     */
+    addData(key,value){
+        this.data.sesData[key] = value;
+    }
+
+    /**
+     * Remove from the session data
+     * @param {string} key - the key for the data to delete
+     */
+    deleteData(key){
+        delete this.data.sesData[key];
     }
 
     /**

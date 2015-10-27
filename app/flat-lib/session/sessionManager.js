@@ -15,15 +15,14 @@ export default class sessionManager extends manager {
      * @override
      * @param {object} req - the request object
      * @param {object} res - the response object
-     * @param {string} name - the name of the cookie
-     * @param {number} time - the time of the cookie in ms
+     * @param {object} sesData - the session data 
      * @param {function(err:error,done:boolean)} callback - done is true if the session was created
      * @return {function} the callback function
      */
-    create(req,res,name,time,callback){
+    create(req,res,sesData,callback){
         var ses = new session(this.dir);
         var self = this;
-        ses.create(req,res,name,time,function(err,done){
+        ses.create(req,res,sesData,function(err,done){
             if(err){
                 return callback(err,null);
             }
@@ -35,16 +34,15 @@ export default class sessionManager extends manager {
     /**
      * Get a session from a cookie
      * @param {object} req - the request object
-     * @param {string} name - the name of the cookie
      * @return {session} return a session object or null if not found
      */
-    getSession(req,name){
+    getSession(req){
         var ses = null;
-        if(!req.cookies[name]){
+        if(!req.cookies[req.sessionCookieName]){
             return null;
         }
         for(var i=0,l=this.items.length; i<l; i++){
-            if(this.items[i].id === req.cookies[name]){
+            if(this.items[i].id === req.cookies[req.sessionCookieName]){
                 ses = this.items[i];
                 break;
             }
