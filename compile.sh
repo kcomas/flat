@@ -14,3 +14,4 @@ mkdir lib/flat-config
 mkdir lib/flat-content
 cp -R ./app/flat-config ./lib/
 cp -R ./app/flat-content ./lib/
+cp -R ./app/flat-static ./lib/
