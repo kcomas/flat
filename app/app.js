@@ -36,17 +36,13 @@ var um = new uploadManager(app.get('uploadDir'));
 var controll = new controller(pm,sm,ses,tm,usm,cm,um); 
 controll.init();
 
-adminRouter.controller = controll;
-
-mainRouter.controller = controll;
-
 app.use(function(req,res,next){
     req.sessionCookieName = app.get('sessionCookie');
 });
 
-app.route('/',mainRouter.run());
+app.route('/',mainRouter.run(controll));
 
-app.route('/flat-admin',adminRouter.run());
+app.route('/flat-admin',adminRouter.run(controll));
 
 app.always(function(req,res){
     res.statusCode = 404;

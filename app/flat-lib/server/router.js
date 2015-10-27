@@ -130,8 +130,9 @@ export default class router {
      * The function to loop through the routes, should export the class with this method
      * @return {function} returns a function to the server it was added to
      */
-    run(){
+    run(control){
         var self = this;
+        this._controller = control;
         return function(req,res){
             req.routerConfig = self.config;
             var loop = new routerLoop(req,res,self.uses,self.gets,self.posts,self.doneFn);
