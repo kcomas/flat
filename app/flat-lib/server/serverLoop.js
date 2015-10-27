@@ -32,7 +32,6 @@ export default class serverLoop {
      */
     loop(){
         var self = this;
-        console.dir(this.usesPosition + ' ' +  this.uses.length);
         if(this.usesPostion < this.uses.length){
             this.uses[usesPosition](req,res,function next(){
                 self.usesPosition++;
