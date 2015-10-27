@@ -42,8 +42,7 @@ export default function cookies(req,res){
      */
     res.setCookie = function(name,value,expires,domain,path){
         var cookie = {};
-        cookie.name = name;
-        cookie.value = value;
+        cookie.name = value;
         cookie.expires = (new Date(Date.now() + expires)).toUTCString();
         if(domain){
             cookie.domain = domain;
