@@ -9,7 +9,7 @@ import fs from 'fs';
  * @param {object} req - the request object
  * @param {object} res - the response object
  */
-export default function responseMods(req,res){
+export default function responseMods(req,res,staticDir){
         //redirect to a url on the site
         res.redirect = function(){
             //@TODO redirect
@@ -23,7 +23,7 @@ export default function responseMods(req,res){
             var mime = uploadedFiles.mimeType(file);
             //determine encoding
             var encoding = uploadedFiles.determineEncoding(mime);
-            fs.readFile(file,encoding,function(err,fileStr){
+            fs.readFile(staticDir+file,encoding,function(err,fileStr){
                 if(err){
                     console.dir(err);
                     res.statusCode = 500;
