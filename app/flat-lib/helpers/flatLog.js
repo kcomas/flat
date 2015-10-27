@@ -48,8 +48,6 @@ export default class flatLog {
 
     /**
      * Log a request
-     * @param {object} req - the request object
-     * @param {object} res - the response object
      * @return {function(req:object,res:object,next:function)} - the standard for middlewear
      */
     log(){
