@@ -61,7 +61,7 @@ export default class flatLog {
                 var logObj = {
                     status: res.statusCode,
                     method : req.method,
-                    ms : done - req.startTime
+                    ms : (done - req.startTime),
                     url : req.url,
                     ip : req.headers['x-real-ip'],
                     userAgent : req.headers['user-agnet'],
