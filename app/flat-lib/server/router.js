@@ -80,7 +80,7 @@ export default class router {
      */
     writeConfig(filename){
         try {
-            fs.writeFileSync(filename,'utf8');
+            fs.writeFileSync(filename,this.config,'utf8');
         } catch(err){
             console.log(err);
         }
