@@ -139,7 +139,6 @@ export default class server {
         return function(req,res){
             //load post data
             urlMods(req);
-            req.serverConfig = self.config;
             cookies(req,res);
             loadBody(req,res,self.config.maxPostSize,function(){
                     var loop = new serverLoop(req,res,self.uses,self.routers,self.done);
