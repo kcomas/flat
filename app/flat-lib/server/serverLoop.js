@@ -32,8 +32,8 @@ export default class serverLoop {
      */
     loop(){
         var self = this;
-        if(this.usesPostion < this.uses.length){
-            this.uses[usesPosition](this.req,this.res,function next(){
+        if(this.usesPosition < this.uses.length){
+            this.uses[this.usesPosition](this.req,this.res,function next(){
                 self.usesPosition++;
                 self.loop();
             });
