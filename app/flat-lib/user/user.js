@@ -75,6 +75,7 @@ export default class user extends item {
      * @return {boolean} if the password matches or not
      */
     auth(pass){
+        console.dir(pass + ' ' this.data);
         var hash = crypto.createHash('sha512');
         hash.update(pass,'utf8');
         hash.update(this.data.salt,'utf8');
