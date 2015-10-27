@@ -53,6 +53,7 @@ export default class flatLog {
     log(){
         var self = this;
         return function(req,res,next){
+            console.log("LOGGING?");
             req.startTime = new Date();
             res.on('finish',function(){
                 var done = new Date();
