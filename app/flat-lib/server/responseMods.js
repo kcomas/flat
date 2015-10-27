@@ -8,12 +8,12 @@ import fs from 'fs';
  * @param {object} req - the request object
  * @param {object} res - the response object
  * @param {string} staticDir - the static file dir
+ * @param {number} port - the server port number
  */
-export default function responseMods(req,res,staticDir){
+export default function responseMods(req,res,staticDir,port){
         //redirect to a url on the site
-        res.redirect = function(){
-            //@TODO redirect
-            res.writeHead(302,{'Location':''});
+        res.redirect = function(path){
+            res.writeHead(302,{'Location':path});
             res.end();
         };
 

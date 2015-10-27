@@ -24,6 +24,22 @@ installRouter.get('/flat-install',function(req,res){
     res.sendStatic('install.html');
 });
 
+installRouter.post('/flat-install',function(req,res){
+    var username = req.body.username;
+    var email = req.body.email;
+    var pass = req.body.password;
+    installRouter.controller.userManager.create(username,email,pass,function(err,done){
+        if(err){
+            console.dir(err);
+            res.statusCode = 500;
+            res.setHeader('content-type','text/html; charset=utf8');
+            res.end('Failed To Install');
+        } else {
+           res.redirect('/');
+        }
+    });
+});
+
 installRouter.always(function(req,res){
     res.statusCode = 404;
     res.setHeader('content-type','text/html; charset=utf-8');

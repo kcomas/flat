@@ -67,9 +67,21 @@ export default class router {
      */
     loadConfig(filename){
         try {
-            var file = fs.readFileSync(filename);
+            var file = fs.readFileSync(filename,'utf8');
             this.config = JSON.parse(file);
         } catch (err){
+            console.log(err);
+        }
+    }
+
+    /**
+     * Writes the configuration to a file
+     * @param {string} filename - the filename to write to
+     */
+    writeConfig(filename){
+        try {
+            fs.writeFileSync(filename,'utf8');
+        } catch(err){
             console.log(err);
         }
     }
