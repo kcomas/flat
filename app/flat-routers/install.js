@@ -13,7 +13,7 @@ installRouter.loadConfig('./flat-config/installConfig.json');
 installRouter.use(function(req,res,next){
     if(installRouter.getValue('installed') === 'yes'){
         //redirect to index
-        res.redirect('/');
+        res.redirect('/flat-login');
     } else {
         next();
     }
