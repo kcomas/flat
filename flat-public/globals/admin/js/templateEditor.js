@@ -51,16 +51,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     //delete a att from the visual atts object
     $scope.deleteAtts = function(arr,index){
-        arr.slice(index,1);
-    };
-
-    //upadte an atts in the atts object
-    $scope.upadateAtts = function(obj,oldKey,newKey,newValue){
-        console.log("Changing");
-        console.dir(obj);
-        console.dir(oldKey);
-        console.dir(newKey);
-        console.dir(newValue);
+        arr.splice(index,1);
     };
 
     $scope.load = function(){
