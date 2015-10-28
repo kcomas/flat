@@ -18,13 +18,13 @@
             </div>
             <div class="form-group" ng-show="current.visual==true">
                 <div id="visualEditor">
-                    <div   ng-repeat="visualItem in visualItems" ng-include="'visualEditorLayout'">
+                    <div ng-repeat="visualItem in visualItems" ng-include="'visualEditorLayout'">
 
                     </div>
                 </div>
             </div>
             <div class="form-group" ng-show="current.visual==false">
-                Template JSON: <textarea id="formEdit"   class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout"></textarea>
+                Template JSON: <textarea id="formEdit" class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout"></textarea>
                 <div class="alert alert-success" ng-show="current.valid">Valid JSON</div>
                 <div class="alert alert-danger" ng-show="!current.valid">Invalid JSON</div>
             </div>
@@ -47,9 +47,9 @@
     Tag: <input type="text" class="itemTag" ng-value="visualItem.tag" /><br />
     Atts:
     <div ng-repeat="(key,value) in visualItem.atts">
-        <input type="text" class="itemAttKey" ng-model="key" /> : <input type="text" class="itemAttValue" ng-model="value" />
+        <input type="hidden" ng-value="key" ng-model="oldKey"/>
+        <input type="text" class="itemAttKey" ng-value="key" ng-model="newKey" /> : <input type="text" class="itemAttValue" ng-value="value"  ng-model="newValue" />
         <button class="btn btn-warning" ng-click="deleteAtts(visualItem.atts,key)">-</button>
-        <button class="btn btn-success" ng-click="updateAtts(visualIem.atts,key,value,$index)">Save</button>
     </div><br>
     <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button>
     Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />
