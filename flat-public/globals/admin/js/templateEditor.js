@@ -190,6 +190,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     $scope.save = function(){
         if($scope.current.visual === true){
                 $scope.current.template.layout = angular.toJson($scope.visualItems);
+                $scope.current.valid = true;
         }
         if(!$scope.current.valid){
             $scope.action.status = 500;
