@@ -17,7 +17,17 @@
                 </label>
             </div>
             <div class="form-group" ng-show="current.visual==true">
-                <div id="visualEditor"></div>
+                <div id="visualEditor">
+                    <div class="visualListItem">
+                        Tag: <input type="text" class="itemTag" /><br />
+                        Atts: <input type="text" class="itemAtts" /><br />
+                        Html: <input type="text" class="itemHtml" /><br />
+                        <div>
+                            <button class="btn btn-success addItem">+</button><button class="btn btn-danger removeItem">-</button> 
+                        </div>
+                        <div class="visualListItemChildren"></div>
+                    </div>
+                </div>
             </div>
             <div class="form-group" ng-show="current.visual==false">
                 Template JSON: <textarea id="formEdit" class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout"></textarea>

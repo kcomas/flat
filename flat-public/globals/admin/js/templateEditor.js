@@ -30,6 +30,12 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     //load all of the sections
     $scope.load();
 
+    //initalize the visual editor
+    $scope.visualEditorInit = function(){
+
+
+    };
+
     //load a converted json template
     $scope.loadPrivate = function(){
         if($scope.current.loadFile !== null){
