@@ -43,6 +43,8 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             } else {
                 $scope.validate();
                 if($scope.current.valid === true){
+                    $scope.currentVisualItem = null;
+                    $scope.currentVisualKey = null;
                     $scope.visualItems = angular.fromJson($scope.current.template.layout);
                     $scope.current.template.layout = '';
                 }

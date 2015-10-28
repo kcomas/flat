@@ -57,6 +57,12 @@ pageEditor.addContents('List','pageList.part');
 pageEditor.addJs({"src":"/globals/admin/js/pageEditor.js"});
 pageEditor.addHeadJs({"src":"/globals/tinymce/tinymce.min.js"});
 
+var userEditor = new page('/user-editor','Edit User',pageConfig,'userPageEdit');
+userEditor.addContents('Edit','userEditor.part');
+userEditor.addContents('List','userList.part');
+userEditor.addContents('Add','userAdd.part');
+userEditor.addJs({"src":"/globals/admin/js/userEditor.js"});
+
 pages.push(index);
 pages.push(sectionEditor);
 pages.push(templateEditor);
