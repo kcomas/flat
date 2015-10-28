@@ -146,6 +146,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         var index = getItem(name,$scope.templateList);
         if(index !== -1){
             $scope.clear();
+            $scope.visual = false;
             $scope.current.template.name = $scope.templateList[index].name;
             $scope.current.template.layout = $scope.templateList[index].layout;
         }
@@ -154,6 +155,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
    $scope.clear = function(){
         $scope.current.template.name = '';
         $scope.current.template.layout = '';
+        $scope.visualItems = [];
         $scope.action.status = null;
         $scope.action.msg = '';
     };
