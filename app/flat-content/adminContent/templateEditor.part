@@ -46,8 +46,8 @@
 <div class="visualListItem">
     Tag: <input type="text" class="itemTag" ng-value="visualItem.tag" /><br />
     Atts:
-    <div ng-repeat="(key,value) in visualItem.atts">
-        <input type="text" class="itemAttKey" ng-value="key" /> : <input type="text" class="itemAttValue" ng-value="value" />
+    <div ng-repeat="value in visualItem.atts">
+        <input type="hidden" ng-model="$index"/> <input type="text" class="itemAttKey" ng-model="visutalItem.atts[$index]"/> : <input type="text" class="itemAttValue" ng-model="value" />
     </div><br>
     <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button>
     Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />
