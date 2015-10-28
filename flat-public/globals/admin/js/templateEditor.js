@@ -196,8 +196,8 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 }
     
     $scope.currentVisual = null;
-    $scope.currentVisualBox = function(event){
-        $scope.currentVisual = event.target;
+    $scope.currentVisualBox = function(model){
+        $scope.currentVisual = model;
         console.dir($scope.currentVisual);
     };
 
