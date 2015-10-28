@@ -19,9 +19,9 @@
             <div class="form-group" ng-show="current.visual==true">
                 <div id="visualEditor">
                     <div class="visualListItem">
-                        Tag: <input type="text" class="itemTag" /><br />
-                        Atts: <input type="text" class="itemAtts" /><br />
-                        Html: <input type="text" class="itemHtml" /><br />
+                        Tag: <input type="text" class="itemTag" />
+                        Atts: <input type="text" class="itemAtts" />
+                        Html: <input type="text" class="itemHtml" />
                         <div>
                             <button class="btn btn-success addItem">+</button><button class="btn btn-danger removeItem">-</button> 
                         </div>
