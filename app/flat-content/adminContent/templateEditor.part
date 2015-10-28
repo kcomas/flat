@@ -56,7 +56,7 @@
         <button class="btn btn-success addItem" ng-click="addChild(visualItem)">+</button> 
     </div>
     <div ng-if"visualItem.children">
-        <div class="visualListItemChildren" style="margin-left:10px;" ng-repeat="visualItem in visualItem.children" ng-include="'visualEditorLayout'"></div>
+        <div class="visualListItemChildren" style="pading-left:20px; background:#ccc;" ng-repeat="visualItem in visualItem.children" ng-include="'visualEditorLayout'"></div>
     <div>
 </div>
 </script>

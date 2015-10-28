@@ -63,6 +63,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.removeElement = function(index){
+        console.log(index);
         if(index > 0){
             $scope.visualItems.splice(index,1);
         }
