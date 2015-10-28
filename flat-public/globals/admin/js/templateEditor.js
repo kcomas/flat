@@ -92,8 +92,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         if(!item.atts){
             item.atts = {};
         }
-        var newAtt = {'key':'value'};
-        item.push(newAtt);
+        item.atts['key'] = 'value';
     };
 
     function getItem(name,array){
