@@ -3,6 +3,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     
     //the current section we are edtiting
     $scope.current = {};
+    $sope.current.visual = true;
     $scope.current.template = {};
     $scope.current.valid = true;
     $scope.current.loadFile = '';

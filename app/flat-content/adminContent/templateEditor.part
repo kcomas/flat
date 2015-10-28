@@ -9,6 +9,17 @@
                 Template Name: <input class="form-control" ng-model="current.template.name" type="text" />
             </div>
             <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" ng-model="current.visual" ng-value="true"> Visual Editor                  
+                </div>
+                <label class="radio-inline">
+                    <input type="radio" ng-model="current.visual" ng-value="false"> Text Editor                  
+                </div>
+            </div>
+            <div class="form-group" ng-show="current.visual==true">
+
+            </div>
+            <div class="form-group" ng-show="current.visual==false">
                 Template JSON: <textarea id="formEdit" class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout"></textarea>
                 <div class="alert alert-success" ng-show="current.valid">Valid JSON</div>
                 <div class="alert alert-danger" ng-show="!current.valid">Invalid JSON</div>
