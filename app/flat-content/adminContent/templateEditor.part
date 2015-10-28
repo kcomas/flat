@@ -53,7 +53,7 @@
     <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button>
     Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />
     <div>
-        <button class="btn btn-success addItem">+</button><button class="btn btn-danger removeItem">-</button> 
+        <button class="btn btn-success addItem" ng-click="addChild(visualItem)">+</button><button class="btn btn-danger removeItem" ng-click="removeElement($index)" >-</button> 
     </div>
     <div ng-if"visualItem.children">
         <div class="visualListItemChildren" style="margin-left:10px;" ng-repeat="visualItem in visualItem.children" ng-include="'visualEditorLayout'"></div>

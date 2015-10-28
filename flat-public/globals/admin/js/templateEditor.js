@@ -54,6 +54,14 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         arr.splice(index,1);
     };
 
+    //add a child to the json template
+    $scope.addChild = function(obj){
+        if(!obj.children){
+            obj.children = [];
+        }
+        obj.children.push({});
+    };
+
     $scope.load = function(){
         //load the templates
         $http.post('/flat-admin/list-templates').success(function(templates,status){
