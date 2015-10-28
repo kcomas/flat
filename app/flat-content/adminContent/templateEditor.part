@@ -17,7 +17,7 @@
                 </label>
             </div>
             <div class="form-group" ng-show="current.visual==true">
-                <div id="visualEditorLayout" ng-visable="false">
+                <div id="visualEditorLayout" ng-show="false">
                     <div class="visualListItem">
                         Tag: <input type="text" class="itemTag" />
                         Atts: <input type="text" class="itemAtts" />
