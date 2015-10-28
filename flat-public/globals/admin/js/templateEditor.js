@@ -34,6 +34,19 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         }
     ];
 
+    $scope.$watch(
+        'current.visual',function(newValue,oldValue){
+            if(newValue === false){
+                $scope.current.template.layout = JSON.stringify($scope.visualItems);
+                $scope.validate();
+            } else {
+                $scope.validate();
+                if($scope.current.valid === true){
+                    $scope.visualItems = JSON.parse($scope.current.template.layout);
+                }
+            }
+        });
+
     $scope.load = function(){
         //load the templates
         $http.post('/flat-admin/list-templates').success(function(templates,status){
@@ -45,8 +58,6 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/list-files/private').success(function(files,status){
             $scope.fileList = files;
         });
-        $scope.current.template.layout = JSON.stringify($scope.viusualItems);
-        $scope.validate();
     };
 
     //load all of the sections
