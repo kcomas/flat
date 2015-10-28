@@ -86,14 +86,15 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         }
         $scope.validate();
     };
+    
     var attPosition = 0;
     //add an attribute
     $scope.addAtts = function(item){
         if(!item.atts){
             item.atts = {};
         }
-        item.atts[attPosition] = 'value';
-        i++;
+        item.atts['key'+attPosition] = 'value';
+        attPosition++;
     };
 
     function getItem(name,array){
@@ -106,6 +107,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         }
         return index;
     }
+    
     //edit a section
     $scope.edit = function(name){
         var index = getItem(name,$scope.templateList);
