@@ -78,8 +78,10 @@ function recursePage(pageDataParts,layout){
         var subHtml = '<'+tag;
         if(layout.atts){
             //render the attibutes
-            for(let k in layout.atts){
-                subHtml += ' ' + dataReplace(pageDataParts,k) + '="' + dataReplace(pageDataParts,layout.atts[k]) + '"';
+            for(let i=0,l=layout.atts.length; i<l; i++){
+                for(let k in layout.atts[i]){
+                    subHtml += ' ' + dataReplace(pageDataParts,k) + '="' + dataReplace(pageDataParts,layout.atts[i][k]) + '"';
+                }
             }
         }
         subHtml += '>';

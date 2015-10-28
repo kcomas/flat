@@ -46,10 +46,11 @@
 <div class="visualListItem">
     Tag: <input type="text" class="itemTag" ng-value="visualItem.tag" /><br />
     Atts:
-    <div ng-repeat="(key,value) in visualItem.atts">
-        <input type="hidden" ng-value="key" ng-model="oldKey"/>
-        <input type="text" class="itemAttKey" ng-change="updateAtts()" ng-value="key" ng-model="newKey" /> : <input type="text" class="itemAttValue"  ng-change="updateAtts()" ng-value="value" ng-model="newValue"/>
-        <button class="btn btn-warning" ng-click="deleteAtts(visualItem.atts,key)">-</button>
+    <div ng-repeat="item in visualItem.atts">
+        <div ng-repeat="(key,value) in item">
+            <input ng-model="key" type="text" /> : <input type="text" ng-model="value" />
+        </div>
+        <button class="btn btn-warning" ng-click="deleteAtts(visualItem.atts,$index)">-</button>
     </div><br>
     <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button>
     Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />

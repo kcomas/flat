@@ -50,8 +50,8 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         });
 
     //delete a att from the visual atts object
-    $scope.deleteAtts = function(obj,key){
-        delete obj[key];
+    $scope.deleteAtts = function(arr,index){
+        arr.slice(index,1);
     };
 
     //upadte an atts in the atts object
@@ -115,14 +115,13 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         $scope.validate();
     };
     
-    var attPosition = 0;
     //add an attribute
     $scope.addAtts = function(item){
         if(!item.atts){
-            item.atts = {};
+            item.atts = [];
         }
-        item.atts['key'+attPosition] = 'value';
-        attPosition++;
+        var obj = {key:'value'};
+        item.atts.push(obj);
     };
 
     function getItem(name,array){
