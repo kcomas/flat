@@ -198,7 +198,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
    $scope.insert = function(sectionLayout){
         var str = sectionLayout;
         if($scope.current.visual === true){
-
+            insertAtCaret('visualEditor',str);
         } else {
 		    insertAtCaret('formEdit',str);
         }
