@@ -13,6 +13,26 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     $scope.templateList = [];
     $scope.sectionList = [];
     $scope.fileList = [];
+    //the defualt itme list
+    $scope.visualItems = [
+        {
+            tag:"!DOCTYPE html"
+            children:[
+                {
+                    tag:"html"
+                    children:[
+                        {
+                            tag:"head"
+                        },
+                        {
+                            tag:"body"
+                        }   
+                    ]
+                }
+
+            ]
+        }
+    ];
 
     $scope.load = function(){
         //load the templates
@@ -30,11 +50,6 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     //load all of the sections
     $scope.load();
 
-    //initalize the visual editor
-    $scope.visualEditorInit = function(){
-
-
-    };
 
     //load a converted json template
     $scope.loadPrivate = function(){

@@ -17,19 +17,10 @@
                 </label>
             </div>
             <div class="form-group" ng-show="current.visual==true">
-                <div id="visualEditorLayout" ng-show="false">
-                    <div class="visualListItem">
-                        Tag: <input type="text" class="itemTag" />
-                        Atts: <input type="text" class="itemAtts" />
-                        Html: <input type="text" class="itemHtml" />
-                        <div>
-                            <button class="btn btn-success addItem">+</button><button class="btn btn-danger removeItem">-</button> 
-                        </div>
-                        <div class="visualListItemChildren"></div>
-                    </div>
-                </div>
                 <div id="visualEditor">
-                    
+                    <div ng-repeat="visualItem in visualItems">
+
+                    </div>
                 </div>
             </div>
             <div class="form-group" ng-show="current.visual==false">
@@ -51,3 +42,16 @@
         </ul>
     </div>
 </div>
+<script type="text/ng-template" id="visualEditorLayout">
+<div class="visualListItem">
+    Tag: <input type="text" class="itemTag" />{{visualItem.tag}}
+    Atts: <input type="text" class="itemAtts" />{{visualItem.atts}}
+    Html: <input type="text" class="itemHtml" />{{visualItem.html}}
+    <div>
+        <button class="btn btn-success addItem">+</button><button class="btn btn-danger removeItem">-</button> 
+    </div>
+    <div ng-if"visualItem.children">
+        <div class="visualListItemChildren" ng-repeat="visualItem in visualItem.children" ng-include="'visualEditorLayout'"></div>
+    <div>
+</div>
+<script>
