@@ -69,10 +69,13 @@ adminRouter.use((req,res,next)=>{
         if(ses.sesData.username){
             next();
         } else {
-            res.redirect('/flat-login');
+            //disable tmp for more edits
+            //res.redirect('/flat-login');
+            next();
         }
     } else {
-        res.redirect('/flat-login');
+        //res.redirect('/flat-login');
+        next();
     }
 });
 
