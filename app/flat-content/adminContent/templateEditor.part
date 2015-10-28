@@ -11,10 +11,10 @@
             <div class="form-group">
                 <label class="radio-inline">
                     <input type="radio" ng-model="current.visual" ng-value="true"> Visual Editor                  
-                </div>
+                </label>
                 <label class="radio-inline">
                     <input type="radio" ng-model="current.visual" ng-value="false"> Text Editor                  
-                </div>
+                </label>
             </div>
             <div class="form-group" ng-show="current.visual==true">
 
