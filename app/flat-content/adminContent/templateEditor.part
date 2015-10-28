@@ -18,13 +18,13 @@
             </div>
             <div class="form-group" ng-show="current.visual==true">
                 <div id="visualEditor">
-                    <div ng-change="updateTemplate(visualItems)"  ng-repeat="visualItem in visualItems" ng-include="'visualEditorLayout'">
+                    <div   ng-repeat="visualItem in visualItems" ng-include="'visualEditorLayout'">
 
                     </div>
                 </div>
             </div>
             <div class="form-group" ng-show="current.visual==false">
-                Template JSON: <textarea id="formEdit" ng-change="upadateTemplate(current.template.layout)"  class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout"></textarea>
+                Template JSON: <textarea id="formEdit"   class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout"></textarea>
                 <div class="alert alert-success" ng-show="current.valid">Valid JSON</div>
                 <div class="alert alert-danger" ng-show="!current.valid">Invalid JSON</div>
             </div>
@@ -48,7 +48,7 @@
     Atts:
     <div ng-repeat="(key,value) in visualItem.atts">
         <input type="text" class="itemAttKey" ng-value="key" /> : <input type="text" class="itemAttValue" ng-value="value" />
-    </div>
+    </div><br>
     <button class="btn btn-primary addAtt" ng-click="addAtts(visualItem.atts)">+</button>
     Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />
     <div>
