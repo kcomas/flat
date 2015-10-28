@@ -117,8 +117,12 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 }
   
    $scope.insert = function(sectionLayout){
-        var str = '"html":"'+sectionLayout+'"';
-		insertAtCaret('formEdit',str);
+        if($scope.current.visual === true){
+
+        } else {
+            var str = '"html":"'+sectionLayout+'"';
+		    insertAtCaret('formEdit',str);
+        }
    };
 
     $scope.save = function(){
