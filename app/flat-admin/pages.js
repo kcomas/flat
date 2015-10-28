@@ -67,6 +67,7 @@ pages.push(index);
 pages.push(sectionEditor);
 pages.push(templateEditor);
 pages.push(pageEditor);
+pages.push(userEditor);
 pages.push(upload);
 
 export default pages;
