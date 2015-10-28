@@ -37,12 +37,12 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     $scope.$watch(
         'current.visual',function(newValue,oldValue){
             if(newValue === false){
-                $scope.current.template.layout = JSON.stringify($scope.visualItems);
+                $scope.current.template.layout = angular.toJson($scope.visualItems);
                 $scope.validate();
             } else {
                 $scope.validate();
                 if($scope.current.valid === true){
-                    $scope.visualItems = JSON.parse($scope.current.template.layout);
+                    $scope.visualItems = angular.copy($scope.current.template.layout);
                 }
             }
         });
