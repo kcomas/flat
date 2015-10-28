@@ -54,6 +54,11 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         delete obj[key];
     };
 
+    //upadte an atts in the atts object
+    $scope.upadateAtts = function(obj,key,value,index){
+        console.log(index);
+    };
+
     $scope.load = function(){
         //load the templates
         $http.post('/flat-admin/list-templates').success(function(templates,status){

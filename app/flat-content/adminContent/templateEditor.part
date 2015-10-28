@@ -47,8 +47,9 @@
     Tag: <input type="text" class="itemTag" ng-value="visualItem.tag" /><br />
     Atts:
     <div ng-repeat="(key,value) in visualItem.atts">
-        <input type="text" class="itemAttKey" ng-value="key" ng-change="updateAtts(visualItem.atts,key,value,oldKey)" /> : <input type="text" class="itemAttValue" ng-value="value" ng-change="updateAtts(visualItem.atts,key,value,null)">
+        <input type="text" class="itemAttKey" ng-value="key" : <input type="text" class="itemAttValue" ng-value="value" />
         <button class="btn btn-warning" ng-click="deleteAtts(visualItem.atts,key)">-</button>
+        <button class="btn btn-success" ng-click="updateAtts(visualIem.atts,key,value,$index)"
     </div><br>
     <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button>
     Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />
