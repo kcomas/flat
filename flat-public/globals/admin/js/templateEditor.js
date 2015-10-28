@@ -68,20 +68,30 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     //valiate the json on change 
     $scope.validate = function(){
-        if($scope.current.visual === true){
-
-        } else {
-            try {
-                $scope.current.template.layout = JSON.stringify(JSON.parse($scope.current.template.layout),undefined,4);
-                $scope.current.valid = true;
-            } catch(err){
-                 //console.dir(err);
-                 $scope.current.valid = false;
-            }
+        try {
+            $scope.current.template.layout = JSON.stringify(JSON.parse($scope.current.template.layout),undefined,4);
+            $scope.current.valid = true;
+        } catch(err){
+             //console.dir(err);
+             $scope.current.valid = false;
         }
     };
 
     //make sure the text editor and the visual editor have the same data
+    $scope.upadateTemplate = function(newTemplate){
+        if(typeof newTemplate === 'string'){
+            $scope.visualItems = JSON.parse(newTemplate);
+        } else {
+            $scope.current.template.layout = JSON.stringify(newTemplate);
+        }
+        $scope.validate();
+    };
+
+    //add an attribute
+    $scope.addAtts(item){
+        var newAtt = {'key':'value'};
+        item.push(newAtt);
+    };
 
     function getItem(name,array){
         var index = -1;
