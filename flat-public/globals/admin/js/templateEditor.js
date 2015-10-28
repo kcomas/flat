@@ -16,10 +16,10 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     //the defualt itme list
     $scope.visualItems = [
         {
-            tag:"!DOCTYPE html"
+            tag:"!DOCTYPE html",
             children:[
                 {
-                    tag:"html"
+                    tag:"html",
                     children:[
                         {
                             tag:"head"
@@ -59,6 +59,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             });
             $http.post('/flat-admin/load-private',jsonData).success(function(file,status){
                 $scope.current.template.layout = JSON.stringify(file);
+                $scope.visualItems = file;
                 $scope.validate();
             });
         }
