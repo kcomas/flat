@@ -241,11 +241,7 @@ adminRouter.post('/flat-admin/remove-page',(req,res)=>{
         } else {
             //delete the cached page if it exists
             adminRouter.controller.cacheManager.removeByParam('permalink',req.body.permalink,(err,done)=>{
-                if(err){
-                    showError(req,res,err,500);
-                } else {
-                    showSuccess(req,res,"item deleted",200);
-                }
+                showSuccess(req,res,"item deleted",200);
             });
         }
     });
