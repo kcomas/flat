@@ -44,14 +44,17 @@
 </div>
 <script type="text/ng-template" id="visualEditorLayout">
 <div class="visualListItem">
-    Tag: <input type="text" class="itemTag" ng-value="visualItem.tag" />
-    Atts: <input type="text" class="itemAtts" ng-value="visualItem.atts" />
-    Html: <input type="text" class="itemHtml" ng-value="visualItem.html" />
+    Tag: <input type="text" class="itemTag" ng-value="visualItem.tag" /><br />
+    Atts:
+    <div ng-repeat="(key,value) in visualItem.atts">
+        <input type="text class="itemAttKey" ng-value="key" /> : <input type="text" class="itemAttValue" ng-value="value" />
+    </div>
+    Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />
     <div>
         <button class="btn btn-success addItem">+</button><button class="btn btn-danger removeItem">-</button> 
     </div>
     <div ng-if"visualItem.children">
-        <div class="visualListItemChildren" ng-repeat="visualItem in visualItem.children" ng-include="'visualEditorLayout'"></div>
+        <div class="visualListItemChildren" style="margin-left:10px;" ng-repeat="visualItem in visualItem.children" ng-include="'visualEditorLayout'"></div>
     <div>
 </div>
 </script>
