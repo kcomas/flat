@@ -86,13 +86,14 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         }
         $scope.validate();
     };
-
+    var attPosition = 0;
     //add an attribute
     $scope.addAtts = function(item){
         if(!item.atts){
             item.atts = {};
         }
-        item.atts['key'] = 'value';
+        item.atts[attPosition] = 'value';
+        i++;
     };
 
     function getItem(name,array){
