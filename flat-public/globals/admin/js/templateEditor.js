@@ -56,6 +56,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     //upadte an atts in the atts object
     $scope.upadateAtts = function(obj,oldKey,newKey,newValue){
+        console.log("Changing");
         console.dir(obj);
         console.dir(oldKey);
         console.dir(newKey);
