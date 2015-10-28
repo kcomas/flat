@@ -44,9 +44,9 @@
 </div>
 <script type="text/ng-template" id="visualEditorLayout">
 <div class="visualListItem">
-    Tag: <input type="text" class="itemTag" />{{visualItem.tag}}
-    Atts: <input type="text" class="itemAtts" />{{visualItem.atts}}
-    Html: <input type="text" class="itemHtml" />{{visualItem.html}}
+    Tag: <input type="text" class="itemTag" ng-value="visualItem.tag" />
+    Atts: <input type="text" class="itemAtts" ng-value="visualItem.atts" />
+    Html: <input type="text" class="itemHtml" ng-value="visualItem.html" />
     <div>
         <button class="btn btn-success addItem">+</button><button class="btn btn-danger removeItem">-</button> 
     </div>
