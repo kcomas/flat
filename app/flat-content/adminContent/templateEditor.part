@@ -45,13 +45,13 @@
 <script type="text/ng-template" id="visualEditorLayout">
 <div class="visualListItem">
     <button class="btn btn-danger removeItem" ng-click="removeElement($index)" >-</button><br />
-    Tag: <input type="text" class="itemTag" ng-value="visualItem.tag" /><br />
+    Tag: <input type="text" class="itemTag" ng-model="visualItem.tag" /><br />
     Atts: <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button><br />
     <div ng-repeat="item in visualItem.atts">
         <input ng-model="item.key" type="text" /> : <input type="text" ng-model="item.value" />
         <button class="btn btn-warning" ng-click="deleteAtts(visualItem.atts,$index)">-</button>
     </div>
-    Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />
+    Html: <input type="text" class="itemHtml" ng-model="visualItem.html" /><br />
     <div>
         <button class="btn btn-success addItem" ng-click="addChild(visualItem)">+</button> 
     </div>
