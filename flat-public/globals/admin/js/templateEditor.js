@@ -194,11 +194,17 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     }
     txtarea.scrollTop = scrollPos;
 }
-  
+    
+    $scope.currentVisual = null;
+    $scope.currentVisualBox = function(event){
+        $scope.currentVisual = $event.target;
+        console.dir($scope.currentVisual);
+    };
+
    $scope.insert = function(sectionLayout){
         var str = sectionLayout;
         if($scope.current.visual === true){
-            insertAtCaret('visualEditor',str);
+            $scope.c
         } else {
 		    insertAtCaret('formEdit',str);
         }
