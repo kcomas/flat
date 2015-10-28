@@ -33,6 +33,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             ]
         }
     ];
+    $scope.current.template.layout = JSON.stringify($scope.viusualItems);
 
     $scope.load = function(){
         //load the templates
@@ -79,6 +80,8 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             }
         }
     };
+
+    //make sure the text editor and the visual editor have the same data
 
     function getItem(name,array){
         var index = -1;
