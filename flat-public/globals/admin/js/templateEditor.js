@@ -38,11 +38,13 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         'current.visual',function(newValue,oldValue){
             if(newValue === false){
                 $scope.current.template.layout = angular.toJson($scope.visualItems);
+                $scope.visualItems = [];
                 $scope.validate();
             } else {
                 $scope.validate();
                 if($scope.current.valid === true){
                     $scope.visualItems = angular.copy($scope.current.template.layout);
+                    $scope.current.template.layout = '';
                 }
             }
         });
