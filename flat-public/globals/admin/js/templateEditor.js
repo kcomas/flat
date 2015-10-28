@@ -62,6 +62,12 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         obj.children.push({});
     };
 
+    $scope.removeElement = function(index){
+        if(index > 0){
+            $scope.visualItems.splice(index,1);
+        }
+    };
+
     $scope.load = function(){
         //load the templates
         $http.post('/flat-admin/list-templates').success(function(templates,status){
