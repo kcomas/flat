@@ -54,4 +54,4 @@
         <div class="visualListItemChildren" ng-repeat="visualItem in visualItem.children" ng-include="'visualEditorLayout'"></div>
     <div>
 </div>
-<script>
+</script>
