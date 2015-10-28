@@ -88,7 +88,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     };
 
     //add an attribute
-    $scope.addAtts(item){
+    $scope.addAtts = function(item){
         var newAtt = {'key':'value'};
         item.push(newAtt);
     };
