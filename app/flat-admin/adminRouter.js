@@ -396,6 +396,9 @@ adminRouter.post('/flat-admin/upload/dirs',(req,res)=>{
     res.end(JSON.stringify(uploadDirs));
 });
 
+//get the cuurent user
+
+
 
 adminRouter.always((req,res)=>{
         showError(req,res,new Error("Not Found"),404);
