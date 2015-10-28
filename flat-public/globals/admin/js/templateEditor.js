@@ -195,10 +195,13 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     txtarea.scrollTop = scrollPos;
 }
     
-    $scope.currentVisual = null;
-    $scope.currentVisualBox = function(model){
-        $scope.currentVisual = model;
-        console.dir($scope.currentVisual);
+    $scope.currentVisualItem = null;
+    $scope.currentVisualKey = null;
+    $scope.currentVisualBox = function(model,key){
+        $scope.currentVisualItem = model;
+        $scope.currentVisualKey = key;
+        console.dir($scope.currentVisualItem);
+        console.dir($scope.currentVisualKey);
     };
 
    $scope.insert = function(sectionLayout){
