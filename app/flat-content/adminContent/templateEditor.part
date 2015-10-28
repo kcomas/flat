@@ -44,16 +44,16 @@
 </div>
 <script type="text/ng-template" id="visualEditorLayout">
 <div class="visualListItem">
+    <button class="btn btn-danger removeItem" ng-click="removeElement($index)" >-</button><br />
     Tag: <input type="text" class="itemTag" ng-value="visualItem.tag" /><br />
-    Atts:
+    Atts: <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button><br />
     <div ng-repeat="item in visualItem.atts">
         <input ng-model="item.key" type="text" /> : <input type="text" ng-model="item.value" />
         <button class="btn btn-warning" ng-click="deleteAtts(visualItem.atts,$index)">-</button>
-    </div><br>
-    <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button>
+    </div>
     Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />
     <div>
-        <button class="btn btn-success addItem" ng-click="addChild(visualItem)">+</button><button class="btn btn-danger removeItem" ng-click="removeElement($index)" >-</button> 
+        <button class="btn btn-success addItem" ng-click="addChild(visualItem)">+</button> 
     </div>
     <div ng-if"visualItem.children">
         <div class="visualListItemChildren" style="margin-left:10px;" ng-repeat="visualItem in visualItem.children" ng-include="'visualEditorLayout'"></div>
