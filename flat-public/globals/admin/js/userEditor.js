@@ -1,5 +1,5 @@
 
-app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
+app.controller('userPageEdit',['$scope','$http',function($scope,$http){
     
 
     //the current section we are edtiting
