@@ -59,7 +59,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         if(!obj.children){
             obj.children = [];
         }
-        obj.children.push({});
+        obj.children.push({tag:'',atts:[],children:[]});
     };
 
     $scope.removeElement = function(index){
