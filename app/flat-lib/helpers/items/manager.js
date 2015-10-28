@@ -62,7 +62,7 @@ export default class manager {
      * Set the items array
      * @param {array} newItems - the new items to set
      */
-    set(newItems){
+    setAll(newItems){
         this.itmes = newItems;
     }
 

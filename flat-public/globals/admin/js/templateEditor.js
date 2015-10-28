@@ -45,12 +45,16 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     //valiate the json on change 
     $scope.validate = function(){
-        try {
-             $scope.current.template.layout = JSON.stringify(JSON.parse($scope.current.template.layout),undefined,4);
-            $scope.current.valid = true;
-        } catch(err){
-             //console.dir(err);
-             $scope.current.valid = false;
+        if($scope.current.visual === true){
+
+        } else {
+            try {
+                $scope.current.template.layout = JSON.stringify(JSON.parse($scope.current.template.layout),undefined,4);
+                $scope.current.valid = true;
+            } catch(err){
+                 //console.dir(err);
+                 $scope.current.valid = false;
+            }
         }
     };
 
@@ -117,10 +121,10 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 }
   
    $scope.insert = function(sectionLayout){
+        var str = sectionLayout;
         if($scope.current.visual === true){
 
         } else {
-            var str = '"html":"'+sectionLayout+'"';
 		    insertAtCaret('formEdit',str);
         }
    };

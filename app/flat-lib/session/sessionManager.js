@@ -50,14 +50,17 @@ export default class sessionManager extends manager {
     }
 
     /**
-     * Syncronously remove all of the expired sessions
+     * Syncronously remove all of the expired and orphaned sessions
      */
     clean(){
-        this.items.forEach((ses)=>{
-            if(ses.expired()){
-                ses.unlinkSync();
-            }
-        });
+      for(let i=0,l=this.items.length; i<l; i++){
+        if(this.items[i].expired){
+            this.items[i].unlinkSync();
+            this.items.splice(i,1);
+            i--;
+        }
+      }
+      //removes the nulls from the array
     }
 
 
