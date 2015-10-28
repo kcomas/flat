@@ -49,6 +49,11 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             }
         });
 
+    //delete a att from the visual atts object
+    $scope.deleteAtts = function(obj,key){
+        delete obj[key];
+    };
+
     $scope.load = function(){
         //load the templates
         $http.post('/flat-admin/list-templates').success(function(templates,status){
