@@ -49,7 +49,7 @@
     <div ng-repeat="(key,value) in visualItem.atts">
         <input type="text" class="itemAttKey" ng-value="key" /> : <input type="text" class="itemAttValue" ng-value="value" />
     </div>
-    <button class="btn btn primary addAtt" ng-click="addAtts(visualItem.atts)"></button>
+    <button class="btn btn-primary addAtt" ng-click="addAtts(visualItem.atts)">+</button>
     Html: <input type="text" class="itemHtml" ng-value="visualItem.html" /><br />
     <div>
         <button class="btn btn-success addItem">+</button><button class="btn btn-danger removeItem">-</button> 
