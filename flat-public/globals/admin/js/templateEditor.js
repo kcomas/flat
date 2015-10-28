@@ -33,7 +33,6 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             ]
         }
     ];
-    $scope.current.template.layout = JSON.stringify($scope.viusualItems);
 
     $scope.load = function(){
         //load the templates
@@ -46,6 +45,8 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/list-files/private').success(function(files,status){
             $scope.fileList = files;
         });
+        $scope.current.template.layout = JSON.stringify($scope.viusualItems);
+        $scope.validate();
     };
 
     //load all of the sections
