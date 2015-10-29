@@ -38,7 +38,7 @@ export default class userManager extends manager {
      * @override
      */
     init(){
-        var itemArr = subInt();
+        var itemArr = this.subInt();
         itemArr.forEach((obj)=>{
             var newItem = new user(this.dir,obj.file,obj.data);
             this.add(newItem);

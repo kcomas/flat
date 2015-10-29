@@ -35,7 +35,7 @@ export default class sessionManager extends manager {
      * @override
      */
     init(){
-        var itemArr = subInt();
+        var itemArr = this.subInt();
         itemArr.forEach((obj)=>{
             var newItem = new session(this.dir,obj.file,obj.data);
             this.add(newItem);

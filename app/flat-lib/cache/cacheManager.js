@@ -34,7 +34,7 @@ export default class cacheManager extends manager {
      * @override
      */
     init(){
-        var itemArr = subInt();
+        var itemArr = this.subInt();
         itemArr.forEach((obj)=>{
             var newItem = new cache(this.dir,obj.file,obj.data);
             this.add(newItem);
