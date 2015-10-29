@@ -4,10 +4,10 @@
         <h5>Sign Up Date {{current.user.dateCreated}}<h5>
         <form novalidate>
             <div class="form-group">
-                <input type="email" class="form-control" ng-model="current.user.email" />
+                Email: <input type="email" class="form-control" ng-model="current.user.email" />
             </div>
             <div class="checkbox">
-                    <input type="checkboc" ng-model="current.updatePassword" ng-value="true" /> Private
+                    <input type="checkbox" ng-model="current.updatePassword" ng-value="true" /> Private
             </div>
         </form>
     </div>
