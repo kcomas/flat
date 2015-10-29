@@ -454,7 +454,7 @@ adminRouter.post('/flat-admin/current-user/update',(req,res)=>{
     var changePass = req.body.changePass;
     var passA = req.body.passA;
     var passB = req.body.passB;
-    req.user.upsert({'email',email},(err,done)=>{
+    req.user.upsert({'email':email},(err,done)=>{
         if(err){
             showError(req,res,err,500);
             return;
