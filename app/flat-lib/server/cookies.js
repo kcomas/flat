@@ -65,6 +65,7 @@ export default function cookies(req,res){
         cookie[name] = '';
         cookie.expires = "Thu, 01 Jan 1970 00:00:00 GMT";
         var cookieStr = qs.stringify(cookie,';','=');
+        console.log(cookieStr);
         res.cookies.push(qs.unescape(cookieStr));
         res.setHeader('Set-Cookie',res.cookies);
     }
