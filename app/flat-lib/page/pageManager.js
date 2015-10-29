@@ -31,6 +31,16 @@ export default class pageManager extends manager {
 
     }    
 
-
+    /**
+     * Int all of the pages
+     * @override
+     */
+    init(){
+        var itemArr = subInt();
+        itemArr.forEach(obj){
+            var newItem = new page(this.dir,obj.file,obj.data);
+            this.add(newItem);
+        });
+    }
 
 }

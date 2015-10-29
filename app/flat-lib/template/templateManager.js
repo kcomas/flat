@@ -29,4 +29,16 @@ export default class templateManager extends manager {
         });
     }
 
+    /**
+     * Int all of the templates
+     * @override
+     */
+    init(){
+        var itemArr = subInt();
+        itemArr.forEach(obj){
+            var newItem = new template(this.dir,obj.file,obj.data);
+            this.add(newItem);
+        });
+    }
+
 }

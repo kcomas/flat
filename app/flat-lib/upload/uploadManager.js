@@ -30,4 +30,16 @@ export default class uploadManager extends manager {
         });
     }
 
+    /**
+     * Int all of the uploads
+     * @override
+     */
+    init(){
+        var itemArr = subInt();
+        itemArr.forEach(obj){
+            var newItem = new upload(this.dir,obj.file,obj.data);
+            this.add(newItem);
+        });
+    }
+
 }

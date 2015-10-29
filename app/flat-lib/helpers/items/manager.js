@@ -43,19 +43,32 @@ export default class manager {
 
     /**
      * Load all of the items from file sync use as an init function
+     * @abstract
      */
     init(){
+        
+    }
+
+    /**
+     * sub int function to read all files and return data
+     * @return {array} the array of the file name and file data for each manager
+     */
+    subInt(){
+        var arr = [];
         var files = fs.readdirSync(this.dir);
         files.forEach((file)=>{
             var data = fs.readFileSync(this.dir+file,'utf8');
             try {
                 data = JSON.parse(data);
-                var newItem = new item(this.dir,file,data);
-                this.add(newItem);
+                //var newItem = new item(this.dir,file,data);
+                //this.add(newItem);
+                var obj = {file,data}
+                arr.push(obj);
             } catch(err){
                 console.log(err);
             }
         });
+        return arr;
     }
 
     /**

@@ -29,6 +29,16 @@ export default class sectionManager extends manager {
         });
     }
 
-
+    /**
+     * Int all of the sections
+     * @override
+     */
+    init(){
+        var itemArr = subInt();
+        itemArr.forEach(obj){
+            var newItem = new section(this.dir,obj.file,obj.data);
+            this.add(newItem);
+        });
+    }
 
 }

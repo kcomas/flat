@@ -31,6 +31,20 @@ export default class userManager extends manager {
                 return callback(null,true);
             });
         }
+    }    
+
+    /**
+     * Int all of the users
+     * @override
+     */
+    init(){
+        var itemArr = subInt();
+        itemArr.forEach(obj){
+            var newItem = new user(this.dir,obj.file,obj.data);
+            this.add(newItem);
+        });
     }
+
+
 
 }

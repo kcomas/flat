@@ -29,4 +29,16 @@ export default class cacheManager extends manager {
         });
     }
 
+    /**
+     * Int all of the caches 
+     * @override
+     */
+    init(){
+        var itemArr = subInt();
+        itemArr.forEach(obj){
+            var newItem = new cache(this.dir,obj.file,obj.data);
+            this.add(newItem);
+        });
+    }
+
 }

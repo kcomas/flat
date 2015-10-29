@@ -29,6 +29,18 @@ export default class sessionManager extends manager {
             return callback(null,true);
         });
     }
+    
+    /**
+     * Int all of the sessions
+     * @override
+     */
+    init(){
+        var itemArr = subInt();
+        itemArr.forEach(obj){
+            var newItem = new session(this.dir,obj.file,obj.data);
+            this.add(newItem);
+        });
+    }
 
     /**
      * Get a session from a cookie

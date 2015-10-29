@@ -46,7 +46,6 @@ export default class user extends item {
         });
     }
 
-
     /**
      * Create or change a password sets hash and salt
      * @param {string} pass - the password to add
