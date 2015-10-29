@@ -50,6 +50,34 @@ export default class sessionManager extends manager {
     }
 
     /**
+     * Remove a session from memoery and disk
+     * @param {object} req - the request object
+     * @param {object} res - the response object
+     * @param {function(err:error,done:boolean)} callback - done is true if the session was removed
+     * @return {function} the callback function
+     */
+    destroy(req,res,callback){
+        if(!req.cookies[req.sessionCookieName]){
+            return callback(new Error('No session found'),null);
+        }
+        for(var i=0,l=this.items.length; i<l; i++){
+            if(this.items[i].id === req.cookies[req.sessionCookieName]){
+                break;
+            }
+        }
+        if(i === l){
+            return callback(new Error('No session found'),null);
+        }
+        this.items[i].destroy(res,(err,done)=>{
+            if(err){
+                return callback(err,null);
+            }
+            this.items.splice(i,1);
+            return callback(null,true);
+        });
+    }
+
+    /**
      * Syncronously remove all of the expired and orphaned sessions
      */
     clean(){

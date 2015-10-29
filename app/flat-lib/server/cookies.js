@@ -62,8 +62,8 @@ export default function cookies(req,res){
      */
     res.removeCookie = function(name){
         var cookie = {};
-        cookie[name] = null;
-        cookie.expires = (new Date(Date.now() - 3)).toUTCString();
+        cookie[name] = '';
+        cookie.expires = "Thu, 01 Jan 1970 00:00:00 GMT";
         var cookieStr = qs.stringify(cookie,';','=');
         res.cookies.push(qs.unescape(cookieStr));
         res.setHeader('Set-Cookie',res.cookies);
