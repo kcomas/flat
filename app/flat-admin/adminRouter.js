@@ -19,14 +19,14 @@ var manager = new pageManager(pages);
 
 //show better json errors
 Object.defineProperty(Error.prototype, 'toJSON', {
-        value: function () {
-            var alt = {};
-            Object.getOwnPropertyNames(this).forEach((key)=>{
-                alt[key] = this[key];
-                }, this);
-            return alt;
-                    },
-        configurable: true
+    value: function () {
+        var alt = {};
+        Object.getOwnPropertyNames(this).forEach((key)=>{
+            alt[key] = this[key];
+        }, this);
+        return alt;
+    },
+    configurable: true
 });
 
 //load all of the pages into memory
@@ -69,13 +69,10 @@ adminRouter.use((req,res,next)=>{
         if(ses.sesData.username){
             next();
         } else {
-            //disable tmp for more edits
-            //res.redirect('/flat-login');
-            next();
+            res.redirect('/flat-login');
         }
     } else {
-        //res.redirect('/flat-login');
-        next();
+        res.redirect('/flat-login');
     }
 });
 
@@ -396,8 +393,22 @@ adminRouter.post('/flat-admin/upload/dirs',(req,res)=>{
     res.end(JSON.stringify(uploadDirs));
 });
 
-//get the cuurent user
+//logout
+adminRouter.post('/flat-admin/logout',(req,res)=>{
+    var ses = adminRouter.controller.sessionManager.getSession(req);
+    ses.destroy((err,done)=>{
+        if(err){
+            showError(req,res,err,500);
+            return;
+        }
+        res.redirect('/flat-login');
+    });
+});
 
+//get the cuurent user
+adminRouter.post('/flat-admin/current-user',(req,res)=>{
+
+});
 
 
 adminRouter.always((req,res)=>{

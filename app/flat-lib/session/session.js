@@ -75,10 +75,18 @@ export default class session extends item {
     }
 
     /**
-     * Remove a session cookie
+     * Remove a session
+     * @param {function(error:err,done:boolean)} callback - done is true if the session was deleted
+     * @return {function} - the callback function
      */
-    destory(){
+    destory(callback){
         res.removeCookie(this.data.cookieName);
+        this.unlink((err,done)=>{
+            if(err){
+                return callback(err,null)
+            }
+            return callback(null,true);
+        });
     }
 
 }
