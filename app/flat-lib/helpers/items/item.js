@@ -151,7 +151,7 @@ export default class item {
         keys.forEach((key)=>{
             delete this.data[key];
         });
-        this.save(function(err,done){
+        this.save((err,done)=>{
             return callback(err,done);
         });
     }
