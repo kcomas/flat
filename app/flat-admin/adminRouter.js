@@ -448,6 +448,28 @@ adminRouter.post('/flat-admin/current-user',(req,res)=>{
     res.end(req.user.toString());
 });
 
+//update the current user
+adminRouter.post('/flat-admin/current-user/update',(req,res)=>{
+    var email = req.body.email;
+    var changePass = req.body.changePass;
+    var passA = req.body.passA;
+    var passB = req.body.passB;
+    req.user.upsert('email',email);
+    if(changePass === 'true'){
+        if(passA === passB){
+            req.user.password(passA,(err,done)=>{
+                if(err){
+                    showError(req,res,err,500);
+                    return;
+                }
+                showSuccess(req,res,"Email/Password Updated",200);
+            });
+        }
+    } else {
+        showSuccess(req,res,"Email Updated",200);
+    }
+});
+
 adminRouter.always((req,res)=>{
         showError(req,res,new Error("Not Found"),404);
 });

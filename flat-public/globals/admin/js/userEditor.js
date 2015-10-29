@@ -44,7 +44,16 @@ app.controller('userPageEdit',['$scope','$http',function($scope,$http){
 
 
     $scope.save = function(name){
-       
+        var jsonData = JSON.stringify({
+            email : $scope.current.user.email,
+            changePass : $scope.updatePassword,
+            passA : $scope.current.newPasswordA,
+            passB : $scope.current.newPasswordB
+        });
+        $http.post('flat-admin/current-user/update',jsonData).success(function(msg,status){
+            $scope.action.msg = msg;
+            $scope.action.status = status;
+        });
     };
 
 }]);

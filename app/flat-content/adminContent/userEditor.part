@@ -6,8 +6,17 @@
             <div class="form-group">
                 Email: <input type="email" class="form-control" ng-model="current.user.email" />
             </div>
-            <div class="checkbox">
-                    <input type="checkbox" ng-model="current.updatePassword" ng-value="true" /> Private
+            <div class="form-group">
+                <div class="checkbox">
+                    <input type="checkbox" ng-model="current.updatePassword" ng-true-value="'true'" ng-false-value="'false'" /> Update Password
+                </div>
+            </div>
+            <div class="form-group">
+                New Password: <input type="text" class="form-control" ng-model="current.newPasswordA" />
+                Verify: <input type="text" class="form-control" ng-model="current.newPasswordB" />
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-success" ng-click="save()">Save</button>
             </div>
         </form>
     </div>
