@@ -450,7 +450,6 @@ adminRouter.post('/flat-admin/current-user',(req,res)=>{
 
 //update the current user
 adminRouter.post('/flat-admin/current-user/update',(req,res)=>{
-    console.dir(req.body);
     var email = req.body.email;
     var changePass = req.body.changePass;
     var passA = req.body.passA;

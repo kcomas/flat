@@ -46,7 +46,7 @@ app.controller('userPageEdit',['$scope','$http',function($scope,$http){
     $scope.save = function(name){
         var jsonData = JSON.stringify({
             email : $scope.current.user.email,
-            changePass : $scope.updatePassword,
+            changePass : $scope.current.updatePassword,
             passA : $scope.current.newPasswordA,
             passB : $scope.current.newPasswordB
         });
