@@ -35,7 +35,7 @@ export default class sectionManager extends manager {
      */
     init(){
         var itemArr = subInt();
-        itemArr.forEach(obj){
+        itemArr.forEach((obj)=>{
             var newItem = new section(this.dir,obj.file,obj.data);
             this.add(newItem);
         });

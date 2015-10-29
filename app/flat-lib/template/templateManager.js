@@ -35,7 +35,7 @@ export default class templateManager extends manager {
      */
     init(){
         var itemArr = subInt();
-        itemArr.forEach(obj){
+        itemArr.forEach((obj)=>{
             var newItem = new template(this.dir,obj.file,obj.data);
             this.add(newItem);
         });

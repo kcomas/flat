@@ -36,7 +36,7 @@ export default class uploadManager extends manager {
      */
     init(){
         var itemArr = subInt();
-        itemArr.forEach(obj){
+        itemArr.forEach((obj)=>{
             var newItem = new upload(this.dir,obj.file,obj.data);
             this.add(newItem);
         });

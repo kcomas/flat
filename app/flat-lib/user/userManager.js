@@ -39,7 +39,7 @@ export default class userManager extends manager {
      */
     init(){
         var itemArr = subInt();
-        itemArr.forEach(obj){
+        itemArr.forEach((obj)=>{
             var newItem = new user(this.dir,obj.file,obj.data);
             this.add(newItem);
         });
