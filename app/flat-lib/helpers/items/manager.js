@@ -52,6 +52,7 @@ export default class manager {
                 data = JSON.parse(data);
                 var newItem = new item(this.dir,file,data);
                 this.add(newItem);
+                console.dir(newItem.data);
             } catch(err){
                 console.log(err);
             }
