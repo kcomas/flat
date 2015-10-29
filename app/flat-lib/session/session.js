@@ -80,7 +80,7 @@ export default class session extends item {
      * @param {function(error:err,done:boolean)} callback - done is true if the session was deleted
      * @return {function} - the callback function
      */
-    destory(res,callback){
+    destroy(res,callback){
         res.removeCookie(this.data.cookieName);
         this.unlink((err,done)=>{
             if(err){
