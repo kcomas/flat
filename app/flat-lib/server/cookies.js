@@ -60,8 +60,8 @@ export default function cookies(req,res){
      * Remove an existing cookie
      * @param {string} name - the name of the cookie
      */
-    res.removeCookie = function(name){
-        res.setCookie(name,'',0);
+    res.removeCookie = function(name,path){
+        res.setCookie(name,'',0,path);
     }
 
 
