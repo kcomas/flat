@@ -12,8 +12,8 @@
                 </div>
             </div>
             <div class="form-group">
-                New Password: <input type="text" class="form-control" ng-model="current.newPasswordA" />
-                Verify: <input type="text" class="form-control" ng-model="current.newPasswordB" />
+                New Password: <input type="password" class="form-control" ng-model="current.newPasswordA" />
+                Verify: <input type="password" class="form-control" ng-model="current.newPasswordB" />
             </div>
             <div class="form-group text-center">
                 <button class="btn btn-success" ng-click="save()">Save</button>
