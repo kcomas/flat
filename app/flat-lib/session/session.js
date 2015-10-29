@@ -39,10 +39,11 @@ export default class session extends item {
 
     /**
      * Get the session data
-     * @return {object} the session data
+     * @param {string} name - the name of the session var to get
+     * @return {object|array|string|number|null|date} the session data item
      */
-    get sesData(){
-        return this.data.sesData;
+    getData(name){
+        return this.data.sesData[name] || null;
     }
 
     /**

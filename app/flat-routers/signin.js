@@ -9,12 +9,8 @@ signinRouter.use((req,res,next)=>{
     //check if the user has a logged in session
     var ses = signinRouter.controller.sessionManager.getSession(req);
     if(ses !== null){
-        if(ses.sesData){
-            if(ses.sesData.username){
-                res.redirect('/flat-admin');
-            } else {
-                next();
-            }
+        if(ses.getData('username')){
+            res.redirect('/flat-admin');
         } else {
             next();
         }

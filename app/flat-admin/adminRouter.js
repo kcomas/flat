@@ -65,17 +65,12 @@ function showSuccess(req,res,msg,status){
 adminRouter.use((req,res,next)=>{
     //check if the user has a logged in session
     var ses = adminRouter.controller.sessionManager.getSession(req);
-    console.dir(ses);
     if(ses !== null){
-        if(ses.sesData){
-            if(ses.sesData.username){
-                next();
-            } else {
-                res.redirect('/flat-login');
-            }
+        if(ses.getData('username')){
+            next();
         } else {
             res.redirect('/flat-login');
-        }
+        }       
     } else {
         res.redirect('/flat-login');
     }
