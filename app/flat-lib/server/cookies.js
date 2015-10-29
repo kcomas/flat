@@ -64,7 +64,7 @@ export default function cookies(req,res){
         var cookie = {};
         cookie[name] = null;
         cookie.expires = (new Date(Date.now() - 3)).toUTCString();
-        cookieStr = qs.stringify(cookie,';','=');
+        var cookieStr = qs.stringify(cookie,';','=');
         res.cookies.push(qs.unescape(cookieStr));
         res.setHeader('Set-Cookie',res.cookies);
     }
