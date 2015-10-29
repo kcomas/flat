@@ -128,7 +128,7 @@ adminRouter.get('/flat-admin/logout',(req,res)=>{
         showError(req,res,new Error("Session Not Found"),500);
         return;
     }
-    ses.destory((err,done)=>{
+    ses.destory(res,(err,done)=>{
         if(err){
             showError(req,res,err,500);
             return;
