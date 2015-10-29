@@ -8,7 +8,7 @@
             </div>
             <div class="form-group">
                 <div class="checkbox">
-                    <input type="checkbox" ng-model="current.updatePassword" ng-true-value="'true'" ng-false-value="'false'" /> Update Password
+                    <input type="checkbox" ng-model="current.updatePassword" ng-true-value="true" ng-false-value="false" /> Update Password
                 </div>
             </div>
             <div class="form-group">
