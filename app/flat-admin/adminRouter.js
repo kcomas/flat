@@ -67,6 +67,7 @@ adminRouter.use((req,res,next)=>{
     var ses = adminRouter.controller.sessionManager.getSession(req);
     if(ses !== null){
         if(ses.sesData){
+            console.dir(ses);
             if(ses.sesData.username){
                 next();
             } else {
