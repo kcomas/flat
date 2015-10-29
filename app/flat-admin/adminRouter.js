@@ -123,7 +123,7 @@ adminRouter.use((req,res,next)=>{
 });
 
 adminRouter.get('/flat-admin/logout',(req,res)=>{
-    adminRouter.controller.sessionManager.destory(req,res,(err,done)=>{
+    adminRouter.controller.sessionManager.destroy(req,res,(err,done)=>{
         if(err){
             showError(req,res,err,500);
             return;
