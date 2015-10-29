@@ -469,7 +469,7 @@ adminRouter.post('/flat-admin/current-user/update',(req,res)=>{
                     showSuccess(req,res,"Email/Password Updated",200);
                 });
             } else {
-                showError(req,res,newError("Passwords Do Not Match"),500);
+                showError(req,res,new Error("Passwords Do Not Match"),500);
             }
         } else {
             showSuccess(req,res,"Email Updated",200);
