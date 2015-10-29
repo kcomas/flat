@@ -93,7 +93,7 @@ var denyListLength = denyList.length;
  * @param {string} url - the url to check
  * @return {boolean} true if the url is not in the deny list
  */
-funtion isAllowed(url){
+function isAllowed(url){
     for(let i=0; i<denyListLength; i++){
         if(url === denyList[i]){
             return false;
