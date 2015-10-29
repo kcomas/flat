@@ -445,7 +445,7 @@ adminRouter.post('/flat-admin/upload/dirs',(req,res)=>{
 adminRouter.post('/flat-admin/current-user',(req,res)=>{            
     res.statusCode = 200;
     res.setHeader('Content-Type','application/json; charset=utf8');
-    res.end(JSON.stringify(req.user);
+    res.end(JSON.stringify(req.user));
 });
 
 adminRouter.always((req,res)=>{
