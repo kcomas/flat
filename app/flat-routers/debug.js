@@ -17,16 +17,13 @@ debugRouter.use((req,res,next)=>{
 
 
 debugRouter.get('/flat-debug/view',(req,res)=>{
-    res.setHeader('content-type','application/json; charset=utf-8');
+    res.setHeader('content-type','text/plain; charset=utf-8');
     var jsonString = '';
     try {
         var manager = req.query.manager;
         jsonString = debugRouter.controller[manager].toString();
     } catch(err){
-        res.statusCode = 500;
-        console.dir(err);
-        res.end(JSON.stringify(err));
-        return;
+        jsonString = JSON.stringify(debugRouter.controller,null,2);
     }
     res.statusCode = 200;
     res.end(jsonString);
