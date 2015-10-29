@@ -62,11 +62,8 @@ export default function cookies(req,res){
      */
     res.removeCookie = function(name){
         var cookie = {};
-        cookie.name = name;
-        cookie.value = null;
-        var exdate = new Date;
-        exdate = exdate.getTime - 1;
-        cookie.expires = exdate.toUTCString();
+        cookie[name] = null;
+        cookie.expires = (new Date(Date.now() - 3)).toUTCString();
         cookieStr = qs.stringify(cookie,';','=');
         res.cookies.push(qs.unescape(cookieStr));
         res.setHeader('Set-Cookie',res.cookies);
