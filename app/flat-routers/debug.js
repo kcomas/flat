@@ -17,9 +17,9 @@ debugRouter.use((req,res,next)=>{
 
 
 debugRouter.get('/flat-debug/view',(req,res)=>{
-    var manager = req.query.manager;
     res.setHeader('content-type','application/json; charset=utf-8');
     try {
+        var manager = req.query.manager;
         var jsonString = debugRouter.controller[manager].toString();
     } catch(err){
         res.statusCode = 500;
