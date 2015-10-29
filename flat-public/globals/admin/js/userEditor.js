@@ -10,7 +10,7 @@ app.controller('userPageEdit',['$scope','$http',function($scope,$http){
     $scope.action.msg = '';
 
     //load the user
-    $http.post('/flat-admin/current-user').success(user,status){
+    $http.post('/flat-admin/current-user').success(function(user,status){
         $scope.current.user = user;
     });
     
