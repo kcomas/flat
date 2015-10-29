@@ -68,7 +68,7 @@ adminRouter.use((req,res,next)=>{
     if(ses !== null){
         if(ses.getData('username')){
             req.session = ses;
-            var user = adminRoiter.controller.userManager.findByParam(ses.getData('username'));
+            var user = adminRouter.controller.userManager.findByParam(ses.getData('username'));
             if(user === null){
                 res.redirect('/flat-login');
                 return;
