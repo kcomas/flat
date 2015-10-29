@@ -124,6 +124,10 @@ adminRouter.use((req,res,next)=>{
 
 adminRouter.get('/flat-admin/logout',(req,res)=>{
     var ses = adminRouter.controller.sessionManager.getSession(req);
+    if(ses === null){
+        showError(req,res,new Error("Session Not Found"),500);
+        return;
+    }
     ses.destroy((err,done)=>{
         if(err){
             showError(req,res,err,500);
