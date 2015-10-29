@@ -65,9 +65,9 @@ function showSuccess(req,res,msg,status){
 adminRouter.use((req,res,next)=>{
     //check if the user has a logged in session
     var ses = adminRouter.controller.sessionManager.getSession(req);
+    console.dir(ses);
     if(ses !== null){
         if(ses.sesData){
-            console.dir(ses);
             if(ses.sesData.username){
                 next();
             } else {
