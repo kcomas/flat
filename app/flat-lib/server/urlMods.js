@@ -13,5 +13,5 @@ import url from 'url';
 export default function urlMods(req){
     req.parsedUrl = url.parse(req.url,true);
     req.url = req.parsedUrl.pathname;
-    req.query = req.url.query;
+    req.query = req.parsedUrl.query;
 }
