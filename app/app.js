@@ -7,6 +7,7 @@ import adminRouter from './flat-admin/adminRouter.js';
 import mainRouter from './flat-routers/index.js';
 import installRouter from './flat-routers/install.js';
 import signinRouter from './flat-routers/signin.js';
+import debugRouter from './flat-routers/debug.js';
 
 import pageManager from './flat-lib/page/pageManager.js';
 import sectionManager from './flat-lib/section/sectionManager.js';
@@ -56,6 +57,8 @@ app.route('/flat-login',signinRouter.run(controll));
 app.route('/flat-install',installRouter.run(controll));
 
 app.route('/flat-admin',adminRouter.run(controll));
+
+app.route('/flat-debug',debugRouter.run(controll));
 
 app.always((req,res)=>{
     res.statusCode = 404;

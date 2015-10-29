@@ -38,7 +38,7 @@ export default class session extends item {
     }
 
     /**
-     * Get the session data
+     * Get the session data by a param
      * @param {string} name - the name of the session var to get
      * @return {object|array|string|number|null|date} the session data item
      */
