@@ -454,20 +454,27 @@ adminRouter.post('/flat-admin/current-user/update',(req,res)=>{
     var changePass = req.body.changePass;
     var passA = req.body.passA;
     var passB = req.body.passB;
-    req.user.upsert('email',email);
-    if(changePass === 'true'){
-        if(passA === passB){
-            req.user.password(passA,(err,done)=>{
-                if(err){
-                    showError(req,res,err,500);
-                    return;
-                }
-                showSuccess(req,res,"Email/Password Updated",200);
-            });
+    req.user.upsert({'email',email},(err,done)=>{
+        if(err){
+            showError(req,res,err,500);
+            return;
         }
-    } else {
-        showSuccess(req,res,"Email Updated",200);
-    }
+        if(changePass === 'true'){
+            if(passA === passB){
+                req.user.password(passA,(err,done)=>{
+                    if(err){
+                        showError(req,res,err,500);
+                        return;
+                    }
+                    showSuccess(req,res,"Email/Password Updated",200);
+                });
+            } else {
+                showError(req,res,newError("Passwords Do Not Match"),500);
+            }
+        } else {
+            showSuccess(req,res,"Email Updated",200);
+        }
+    });
 });
 
 adminRouter.always((req,res)=>{

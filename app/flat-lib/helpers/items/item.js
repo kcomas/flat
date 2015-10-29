@@ -136,7 +136,7 @@ export default class item {
         for(let key in obj){
            this.data[key] = obj[key]; 
         }
-        this.save(function(err,done){
+        this.save((err,done)=>{
             return callback(err,done);
         });
     }
