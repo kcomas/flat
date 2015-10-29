@@ -39,6 +39,9 @@ var um = new uploadManager(app.getValue('uploadDir'));
 var controll = new controller(pm,sm,ses,tm,usm,cm,um); 
 controll.init();
 
+//debug
+console.dir(controll);
+
 var logger = new flatLog(app.getValue('logDir'),true);
 
 app.use(logger.log());
