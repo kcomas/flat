@@ -76,10 +76,41 @@ adminRouter.use((req,res,next)=>{
     }
 });
 
+/**
+ * List of get routes not to auto lookup
+ * @type {array}
+ */
+var denyList = ['/flat-admin/logout'];
+
+/**
+ * Length of the deny list
+ * @type {number}
+ */
+var denyListLength = denyList.length;
+
+/**
+ * Check if a url is in the deny list
+ * @param {string} url - the url to check
+ * @return {boolean} true if the url is not in the deny list
+ */
+funtion isAllowed(url){
+    for(let i=0; i<denyListLength; i++){
+        if(url === denyList[i]){
+            return false;
+        }
+    }
+    return true;
+}
+
+/**
+ * The expression to check the urls in the next use
+ * @type {regexp}
+ */
+var urlReg = new RegExp('^/flat-admin$|^/flat-admin/');
+
 adminRouter.use((req,res,next)=>{
-   var reg = new RegExp('^/flat-admin$|^/flat-admin/');
-   if(req.method === 'GET'){
-        manager.load(req.url.replace(reg,'/'),{key:'value'},(err,page)=>{
+   if(req.method === 'GET' && isAllowed(req.url)){
+        manager.load(req.url.replace(urlReg,'/'),{key:'value'},(err,page)=>{
             if(err){
                 showError(req,res,err,404);
             } else {
@@ -89,6 +120,17 @@ adminRouter.use((req,res,next)=>{
    } else {
         next();
    }
+});
+
+adminRouter.get('/flat-admin/logout',(req,res)=>{
+    var ses = adminRouter.controller.sessionManager.getSession(req);
+    ses.destroy((err,done)=>{
+        if(err){
+            showError(req,res,err,500);
+            return;
+        }
+        res.redirect('/flat-login');
+    });
 });
 
 //render a single admin page
@@ -393,23 +435,10 @@ adminRouter.post('/flat-admin/upload/dirs',(req,res)=>{
     res.end(JSON.stringify(uploadDirs));
 });
 
-//logout
-adminRouter.post('/flat-admin/logout',(req,res)=>{
-    var ses = adminRouter.controller.sessionManager.getSession(req);
-    ses.destroy((err,done)=>{
-        if(err){
-            showError(req,res,err,500);
-            return;
-        }
-        res.redirect('/flat-login');
-    });
-});
-
 //get the cuurent user
 adminRouter.post('/flat-admin/current-user',(req,res)=>{
 
 });
-
 
 adminRouter.always((req,res)=>{
         showError(req,res,new Error("Not Found"),404);
