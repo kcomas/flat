@@ -40,7 +40,7 @@ export default function cookies(req,res){
      * @property {string} domain the domain of the cookie
      * @property {sting} path the path of the cookie
      */
-    res.setCookie = function(name,value,expires,domain,path){
+    res.setCookie = function(name,value,expires,path,domain){
         var cookie = {};
         cookie[name] = value;
         cookie.expires = (new Date(Date.now() + expires)).toUTCString();

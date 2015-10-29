@@ -26,7 +26,7 @@ export default class session extends item {
             //create a new cookie
             this.data.dateCreated = new Date();
             this.data.cookieName = req.sessionCookieName;
-            var cookieObj = res.setCookie(req.sessionCookieName,this.id,req.sessionCookieTime);
+            var cookieObj = res.setCookie(req.sessionCookieName,this.id,req.sessionCookieTime,'/');
             this.data.expires = cookieObj.expires;
             this.data.userAgent = req.headers['user-agent'];
             this.data.ip = req.headers['x-real-ip'];
@@ -81,7 +81,7 @@ export default class session extends item {
      * @return {function} - the callback function
      */
     destroy(res,callback){
-        res.removeCookie(this.data.cookieName);
+        res.removeCookie(this.data.cookieName,'/');
         this.unlink((err,done)=>{
             if(err){
                 return callback(err,null)
