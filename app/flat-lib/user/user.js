@@ -33,7 +33,7 @@ export default class user extends item {
             }
             this.data.username = username;
             this.data.email = email;
-            this.dateCreated = new Date();
+            this.data.dateCreated = new Date();
             //create a password
             this.password(pass,(err,done)=>{
                 if(err){

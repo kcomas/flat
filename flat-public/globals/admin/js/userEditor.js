@@ -4,9 +4,16 @@ app.controller('userPageEdit',['$scope','$http',function($scope,$http){
 
     //the current section we are edtiting
     $scope.current = {};
+    $scope.current.user = {};
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
+
+    //load the user
+    $http.post('/flat-admin/current-user').success(user,status){
+        $scope.current.user = user;
+    });
+    
 
     $scope.load = function(){
         

@@ -67,6 +67,13 @@ adminRouter.use((req,res,next)=>{
     var ses = adminRouter.controller.sessionManager.getSession(req);
     if(ses !== null){
         if(ses.getData('username')){
+            req.session = ses;
+            var user = adminRoiter.controller.userManager.findByParam(ses.getData('username'));
+            if(user === null){
+                res.redirect('/flat-login');
+                return;
+            }
+            req.user = user;
             next();
         } else {
             res.redirect('/flat-login');
@@ -435,8 +442,10 @@ adminRouter.post('/flat-admin/upload/dirs',(req,res)=>{
 });
 
 //get the cuurent user
-adminRouter.post('/flat-admin/current-user',(req,res)=>{
-
+adminRouter.post('/flat-admin/current-user',(req,res)=>{            
+    res.statusCode = 200;
+    res.setHeader('Content-Type','application/json; charset=utf8');
+    res.end(JSON.stringify(req.user);
 });
 
 adminRouter.always((req,res)=>{
