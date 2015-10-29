@@ -170,7 +170,7 @@ export default class item {
      * @return {string} the json string of the data
      */
     toString(){
-        return JSON.stringify(this.data);
+        return JSON.stringify(this.data,null,2);
     }
 
 }
