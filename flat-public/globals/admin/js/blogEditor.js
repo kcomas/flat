@@ -19,7 +19,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
 
     $scope.load = function(){
         $http.post('/flat-admin/blog/list').success(function(blogs,status){
-
+            $scope.blogList = blogs;
         });
     };
 

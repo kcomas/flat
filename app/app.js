@@ -63,7 +63,7 @@ app.use((req,res,next)=>{
     next();
 });
 
-app.use(auth(controll));
+//app.use(auth(controll));
 
 app.route('/',mainRouter.run(controll));
 
