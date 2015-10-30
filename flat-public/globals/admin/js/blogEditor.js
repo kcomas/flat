@@ -68,8 +68,6 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
        });
     };
 
-    
-
 }]);
 
 
