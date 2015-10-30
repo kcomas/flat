@@ -8,7 +8,7 @@
  * @param {string} msg - the html message
  * @param {number} status - the status code
  */
-function showSuccess(req,res,msg,status){
+export default function showSuccess(req,res,msg,status){
     res.statusCode = 200;
     res.setHeader('Content-Type','text/html; charset=utf8');
     res.end(msg);
