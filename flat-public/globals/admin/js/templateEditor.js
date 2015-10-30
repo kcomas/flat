@@ -17,18 +17,15 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     $scope.visualItems = [
         {
             tag:"!DOCTYPE html",
-            id:'0',
             children:[
                 {
                     tag:"html",
                     children:[
                         {
-                            tag:"head",
-                            id:'1'
+                            tag:"head"
                         },
                         {
-                            tag:"body",
-                            id:'2'
+                            tag:"body"
                         }   
                     ]
                 }
@@ -64,8 +61,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         if(!obj.children){
             obj.children = [];
         }
-        var _id = new Date().getTime();
-        obj.children.push({id:_id,tag:'',atts:[],children:[]});
+        obj.children.push({tag:'',atts:[],children:[]});
     };
 
     //remove from the array via the object itself
