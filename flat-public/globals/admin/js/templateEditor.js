@@ -66,8 +66,9 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     //remove from the array via the object itself
     $scope.removeElement = function(visualItem,index){
-        console.dir(arguments);
-        visualItem.splice(index,1);        
+        console.dir(visualItem);
+        console.dir(index);
+        //visualItem.splice(index,1);        
     };
 
     $scope.load = function(){
