@@ -6,7 +6,7 @@ import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
 import pageRender from '../../flat-lib/helpers/pageRender.js';
 
-var pageRouter = new router();
+const pageRouter = new router();
 
 //list all of the pages
 pageRouter.post('/flat-admin/page/list',(req,res)=>{

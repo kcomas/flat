@@ -5,7 +5,7 @@ import router from '../../flat-lib/server/router.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
 
-var templateRouter = new router();
+const templateRouter = new router();
 
 //add update a template
 templateRouter.post('/flat-admin/template/upsert',(req,res)=>{

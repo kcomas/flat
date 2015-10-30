@@ -3,7 +3,7 @@
 
 import router from '../flat-lib/server/router.js';
 
-var signinRouter = new router();
+const signinRouter = new router();
 
 signinRouter.use((req,res,next)=>{
     //check if the user has a logged in session

@@ -3,7 +3,7 @@
 
 import router from '../flat-lib/server/router.js';
 
-var debugRouter = new router();
+const debugRouter = new router();
 
 debugRouter.loadConfig('./flat-config/debug.json');
 

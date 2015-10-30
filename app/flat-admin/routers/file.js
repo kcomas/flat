@@ -6,14 +6,14 @@ import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
 import uploadedFiles from '../../flat-lib/helpers/uploadedFiles.js';
 
-var fileRouter = new router();
+const fileRouter = new router();
 
 //load the admin config
 fileRouter.loadConfig('./flat-config/adminConfig.json');
 
-var uploadDirs = fileRouter.getValue('upload')
+const uploadDirs = fileRouter.getValue('upload')
 
-var uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
+const uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
 //upload a file
 fileRouter.post('/flat-admin/file/upload',(req,res)=>{

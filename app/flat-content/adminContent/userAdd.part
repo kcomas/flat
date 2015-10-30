@@ -9,7 +9,10 @@
                 Email: <input class="form-control" ng-model="newUser.email" type="email" />
             </div>
             <div class="form-group">
-
+                Passowrd: <input class="form-control" ng-model="newUser.passwordA" type="password" />
+            </div>
+            <div class="form-group">
+                
             </div>
         </form>
     </div>

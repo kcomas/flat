@@ -3,7 +3,7 @@
 
 import router from '../flat-lib/server/router.js';
 
-var mainRouter = new router();
+const mainRouter = new router();
 
 //load a page form the cache
 mainRouter.use((req,res,next)=>{

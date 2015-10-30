@@ -5,7 +5,7 @@ import router from '../../flat-lib/server/router.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js'
 
-var sectionRouter = new router();
+const sectionRouter = new router();
 
 //add/update a section to the sectionManager
 sectionRouter.post('/flat-admin/section/upsert',(req,res)=>{

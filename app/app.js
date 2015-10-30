@@ -28,28 +28,28 @@ import controller from './flat-lib/controller.js';
 
 import flatLog from './flat-lib/helpers/flatLog.js';
 
-var app = new server();
+const app = new server();
 
 app.loadConfig('./flat-config/config.json');
 
-var pm = new pageManager(app.getValue('pageDir'));
+const pm = new pageManager(app.getValue('pageDir'));
 
-var sm = new sectionManager(app.getValue('sectionDir'));
+const sm = new sectionManager(app.getValue('sectionDir'));
 
-var ses = new sessionManager(app.getValue('sessionDir'));
+const ses = new sessionManager(app.getValue('sessionDir'));
 
-var tm = new templateManager(app.getValue('templateDir'));
+const tm = new templateManager(app.getValue('templateDir'));
 
-var usm = new userManager(app.getValue('userDir'));
+const usm = new userManager(app.getValue('userDir'));
 
-var cm = new cacheManager(app.getValue('cacheDir'));
+const cm = new cacheManager(app.getValue('cacheDir'));
 
-var um = new uploadManager(app.getValue('uploadDir'));
+const um = new uploadManager(app.getValue('uploadDir'));
 
-var controll = new controller(pm,sm,ses,tm,usm,cm,um); 
+const controll = new controller(pm,sm,ses,tm,usm,cm,um); 
 controll.init();
 
-var logger = new flatLog(app.getValue('logDir'),true);
+const logger = new flatLog(app.getValue('logDir'),true);
 
 app.use(logger.log());
 

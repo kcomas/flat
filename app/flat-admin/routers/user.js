@@ -5,7 +5,7 @@ import router from '../../flat-lib/server/router.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
 
-var userRouter = new router();
+const userRouter = new router();
 
 //get the cuurent user
 userRouter.post('/flat-admin/user/current',(req,res)=>{            

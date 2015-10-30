@@ -7,9 +7,9 @@ import auth from './helpers/auth.js';
 import showError from './helpers/showError.js';
 import showSuccess from './helpers/showSuccess.js';
 
-var adminRouter = new router();
+const adminRouter = new router();
 
-var manager = new pageManager(pages);
+const manager = new pageManager(pages);
 
 //load all of the pages into memory
 var renderErr = manager.renderAll();

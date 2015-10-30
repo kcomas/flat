@@ -5,7 +5,7 @@
 
 import router from '../flat-lib/server/router.js';
 
-var installRouter = new router();
+const installRouter = new router();
 
 //load the install config
 installRouter.loadConfig('./flat-config/installConfig.json');
