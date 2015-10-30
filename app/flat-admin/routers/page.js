@@ -2,14 +2,11 @@
 "use strict"
 
 import router from '../../flat-lib/server/router.js';
-import auth from '../helpers/auth.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
 import pageRender from '../../flat-lib/helpers/pageRender.js';
 
 var pageRouter = new router();
-
-pageRouter.use(auth(pageRouter.controller.sessionManager,pageRouter.controller.userManager));
 
 //list all of the pages
 pageRouter.post('/flat-admin/page/list',(req,res)=>{

@@ -17,9 +17,6 @@ if(renderErr.length > 0){
     console.dir(renderErr);
 }
 
-//auth
-adminRouter.use(auth(adminRouter.controller.sessionManager,adminRouter.controller.userManager));
-
 /**
  * List of get routes not to auto lookup
  * @type {array}

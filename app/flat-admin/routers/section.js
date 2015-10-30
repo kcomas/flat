@@ -2,13 +2,10 @@
 "use strict"
 
 import router from '../../flat-lib/server/router.js';
-import auth from '../helpers/auth.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js'
 
 var sectionRouter = new router();
-
-sectionRouter.use(auth(sectionRouter.controller.sessionManager,sectionRouter.controller.userManager));
 
 //add/update a section to the sectionManager
 sectionRouter.post('/flat-admin/section/upsert',(req,res)=>{

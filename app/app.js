@@ -4,6 +4,7 @@
 import http from 'http';
 import server from './flat-lib/server/server.js';
 
+import auth from './flat-admin/helpers/auth.js';
 import adminRouter from './flat-admin/adminRouter.js';
 import sectionRouter from './flat-admin/routers/section.js';
 import fileRouter from './flat-admin/routers/file.js';
@@ -57,6 +58,8 @@ app.use((req,res,next)=>{
     req.sessionCookieTime = 1000 * 60 * 60 * 24 * parseInt(app.getValue('sessionTime'));
     next();
 });
+
+app.use(auth(controll));
 
 app.route('/',mainRouter.run(controll));
 

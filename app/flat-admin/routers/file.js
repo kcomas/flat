@@ -2,7 +2,6 @@
 "use strict"
 
 import router from '../../flat-lib/server/router.js';
-import auth from '../helpers/auth.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
 import uploadedFiles from '../../flat-lib/helpers/uploadedFiles.js';
@@ -15,8 +14,6 @@ fileRouter.loadConfig('./flat-config/adminConfig.json');
 var uploadDirs = fileRouter.getValue('upload')
 
 var uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
-
-fileRouter.use(auth(fileRouter.controller.sessionManager,fileRouter.controller.userManager));
 
 //upload a file
 fileRouter.post('/flat-admin/file/upload',(req,res)=>{

@@ -2,13 +2,10 @@
 "use strict"
 
 import router from '../../flat-lib/server/router.js';
-import auth from '../helpers/auth.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
 
 var userRouter = new router();
-
-userRouter.use(auth(userRouter.controller.sessionManager,userRouter.controller.userManager));
 
 //get the cuurent user
 userRouter.post('/flat-admin/user/current',(req,res)=>{            
