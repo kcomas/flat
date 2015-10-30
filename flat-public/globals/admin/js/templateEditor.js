@@ -17,15 +17,18 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     $scope.visualItems = [
         {
             tag:"!DOCTYPE html",
+            id:'0',
             children:[
                 {
                     tag:"html",
                     children:[
                         {
-                            tag:"head"
+                            tag:"head",
+                            id:'1'
                         },
                         {
-                            tag:"body"
+                            tag:"body",
+                            id:'2'
                         }   
                     ]
                 }
@@ -61,12 +64,14 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         if(!obj.children){
             obj.children = [];
         }
-        obj.children.push({tag:'',atts:[],children:[]});
+        var _id = new Date().getTime();
+        obj.children.push({id:_id,tag:'',atts:[],children:[]});
     };
 
     //remove from the array via the object itself
-    $scope.removeElement = function(elm){
-        delete elm;
+    $scope.removeElement = function(visualItem,index){
+        console.dir(arguments);
+        visualItem.children.splice(index,1);        
     };
 
     $scope.load = function(){
