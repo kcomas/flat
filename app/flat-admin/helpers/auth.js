@@ -10,6 +10,7 @@
 function needsAuth(authList,url){
     for(let i=0,l=authList.length; i<l; i++){
         if(url.indexOf(authList[i]) === 0){
+            console.log("needs auth");
             return true;
         }
     }
