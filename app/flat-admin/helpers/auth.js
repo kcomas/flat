@@ -4,8 +4,7 @@
 
 /**
  * Function for authentication the admin routes
- * @param {object} sessionManager - the session manager
- * @param {object} userManager - the user manager
+ * @param {object} controller - the memoery file controller
  * @return {function(req:object,req:object,next:function)} the middlewear function
  */
 export default function auth(controller){
