@@ -9,6 +9,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
 
     //the current section we are edtiting
     $scope.current = {};
+    $scope.current.blog = {};
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
