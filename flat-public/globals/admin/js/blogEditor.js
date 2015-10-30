@@ -46,13 +46,25 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.clear = function(){
+        $scope.current.blog = {};
+        $scope.current.blog.permalink = '';
+        $scope.action.msg = '';
+        $scope.action.status = null;
     };
 
 
     $scope.save = function(name){
        var jsonData = JSON.stringify({
-
-
+            name : $scope.current.blog.name,
+            title : $scope.current.blog.title,
+            exceprt : $scope.current.blog.excerpt,
+            tags : $scope.current.blog.tags.split(',');
+            content : $scope.current.blog.content
+       });
+       $http.post('/flat-admin/blog/upsert',jsonData).success(msg,status){
+            $scope.action.msg = msg;
+            $scope.action.status = status;
+            $scope.load();
        });
     };
 
