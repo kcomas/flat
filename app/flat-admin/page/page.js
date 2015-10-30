@@ -239,27 +239,15 @@ export default class page {
 
     /**
      * Load the page from a file and pass in a data object for angular
-     * @param {string} data - the json string for angular
      * @param {function(err:error,file:string)} callback - the callback function returns the file after the data is added
      */
-    load(data,callback){
+    load(callback){
         if(this.memory === true){
-                try {
-                var string = this.pageString.replace('%data%',"<script>var data='"+JSON.stringify(data)+"';</script>");
-                } catch(err){
-                    console.log(err);
-                    return callback(err,null);
-                }
+                var string = this.pageString;
                 return callback(null,string);
         } else {
             fs.readFile(this.config.cacheDir+this.permalink.replace('/','~')+'.html','utf8',(err,file)=>{
                 if(err){
-                    console.log(err);
-                    return callback(err,null);
-                }
-                try {
-                file = file.replace('%data%',"<script>var data='"+JSON.stringify(data)+"';</script>");
-                } catch(err){
                     console.log(err);
                     return callback(err,null);
                 }

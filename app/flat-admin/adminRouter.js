@@ -51,7 +51,7 @@ var urlReg = new RegExp('^/flat-admin$|^/flat-admin/');
 
 adminRouter.use((req,res,next)=>{
    if(req.method === 'GET' && isAllowed(req.url)){
-        manager.load(req.url.replace(urlReg,'/'),{key:'value'},(err,page)=>{
+        manager.load(req.url.replace(urlReg,'/'),(err,page)=>{
             if(err){
                 showError(req,res,err,404);
             } else {

@@ -23,11 +23,10 @@ export default class pageManager {
     /**
      * Load a page based on the url
      * @param {string} url - the url of the page
-     * @param {object} data - the data if any to be passed to the page
      * @param {function(err:error,page:string)} callback - the page if found or error if not
      * @return {function} the callback function
      */
-    load(url,data,callback){
+    load(url,callback){
         var page = null;
         for(let i=0,length=this.pages.length; i<length; i++){
             if(this.pages[i].permalink === url){
@@ -38,7 +37,7 @@ export default class pageManager {
         if(page === null){
             return callback(new Error("No Page Found"),null);
         }
-        page.load(data,(err,string)=>{
+        page.load((err,string)=>{
             if(err){
                 return callback(err,null);
             }
