@@ -28,4 +28,10 @@ debugRouter.get('/flat-debug/view',(req,res)=>{
     res.end(jsonString);
 });
 
+debugRouter.always((req,res)=>{
+    res.statusCode = 404;
+    res.setHeader('content-type','text/html; charset=utf-8');
+    res.end('<h1>Not Found</h1>');
+});
+
 export default debugRouter;
