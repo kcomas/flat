@@ -17,7 +17,7 @@ if(renderErr.length > 0){
     console.dir(renderErr);
 }
 
-console.log(JSON.stringify(adminRouter.controller,null,2);
+console.log(JSON.stringify(adminRouter.controller,null,2));
 
 //auth
 adminRouter.use(auth(adminRouter.controller.sessionManager,adminRouter.controller.userManager));
