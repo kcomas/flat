@@ -18,7 +18,7 @@
         {"src":"/globals/tinymce/ngtinymce.js"},
         {"src":"/globals/admin/js/backend.js"}
     ],
-    "jsHeadDefault":[],
+    "headJsDefault":[],
     "containerDefault":"container.htm",
     "headDefault":"head.htm",
     "menuDefault":"menu.htm",
