@@ -11,6 +11,7 @@ import fileRouter from './flat-admin/routers/file.js';
 import pageRouter from './flat-admin/routers/page.js';
 import templateRouter from './flat-admin/routers/template.js';
 import userRouter from './flat-admin/routers/user.js';
+import blogRouter from './flat-admin/routers/blog.js'
 
 import mainRouter from './flat-routers/index.js';
 import installRouter from './flat-routers/install.js';
@@ -76,6 +77,7 @@ app.route('/flat-admin/page/',pageRouter.run(controll));
 app.route('/flat-admin/section/',sectionRouter.run(controll));
 app.route('/flat-admin/template/',templateRouter.run(controll));
 app.route('/flat-admin/user/',userRouter.run(controll));
+app.route('/flat-admin/blog/',blogRouter.run(controll));
 
 app.route('/flat-debug',debugRouter.run(controll));
 

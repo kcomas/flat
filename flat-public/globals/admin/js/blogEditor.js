@@ -10,12 +10,17 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     //the current section we are edtiting
     $scope.current = {};
     $scope.current.blog = {};
+    $scope.current.blog.permalink = '';
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
+    $scope.blogList =[];
 
 
     $scope.load = function(){
+        $http.post('/flat-admin/blog/list').success(function(blogs,status){
+
+        });
     };
 
     //load all of the sections
