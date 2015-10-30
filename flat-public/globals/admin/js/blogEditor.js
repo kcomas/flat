@@ -61,7 +61,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
             tags : $scope.current.blog.tags.split(',');
             content : $scope.current.blog.content
        });
-       $http.post('/flat-admin/blog/upsert',jsonData).success(msg,status){
+       $http.post('/flat-admin/blog/upsert',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
             $scope.load();
