@@ -1,6 +1,6 @@
 <div class="row">
     <div class="col-md-12">
-        <ul class="list-group" ng-repeat="users in userList">
+        <ul class="list-group" ng-repeat="user in userList">
             <li class="list-group-item">{{user.username}} - {{user.email}}</li>
         </ul>
     </div>

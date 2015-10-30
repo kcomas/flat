@@ -79,7 +79,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/section/list').success(function(sections,status){
             $scope.sectionList = sections;        
         });
-        $http.post('/flat-admin/template/file/list/private').success(function(files,status){
+        $http.post('/flat-admin/file/list/private').success(function(files,status){
             $scope.fileList = files;
         });
     };

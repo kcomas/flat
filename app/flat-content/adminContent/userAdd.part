@@ -3,7 +3,7 @@
         <h2>Add User</h2>
         <form novalidate>
             <div class="form-group">
-                Username: <input class="form-conrol" ng-model="newUser.name" type="text" />
+                Username: <input class="form-control" ng-model="newUser.name" type="text" />
             </div>
             <div class="form-group">
                 Email: <input class="form-control" ng-model="newUser.email" type="email" />
