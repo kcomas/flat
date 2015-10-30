@@ -6,10 +6,10 @@
                 Name: <input class="form-control" type="text" ng-model="current.blog.name" />
             </div>
             <div class="form-group">
-                Excerpt: <textarea class="form-control" ng-model="current.blog.excerpt" />
+                Excerpt: <textarea class="form-control" ng-model="current.blog.excerpt"></textarea>
             </div>
             <div class="form-group">
-                Tags (spreated by comma): <input class="form-control" ng-model="current.blog.tags" />
+                Tags (spreated by comma): <input class="form-control" ng-model="current.blog.tags"></textarea>
             </div>
             <div class="form-group" style="min-height:450px">
                 Content: <br />
