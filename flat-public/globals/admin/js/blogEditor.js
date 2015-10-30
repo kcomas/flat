@@ -62,11 +62,17 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.save = function(name){
+       var tmpTags = [];
+       try {
+            tmpTags = $scope.current.blog.tags.split(',');
+       } catch(err){
+
+       }
        var jsonData = JSON.stringify({
             name : $scope.current.blog.name,
             title : $scope.current.blog.title,
             exceprt : $scope.current.blog.excerpt,
-            tags : $scope.current.blog.tags.split(','),
+            tags : tmpTags,
             content : $scope.current.blog.content
        });
        $http.post('/flat-admin/blog/upsert',jsonData).success(function(msg,status){
