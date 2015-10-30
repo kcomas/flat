@@ -62,55 +62,55 @@ export default class page {
          * The page meta properties
          * @type {array}
          */
-        this.meta = meta || pageConfig.metaDefault;
+        this.meta = meta || pageConfig.metaDefault.slice();
 
         /**
          * The page css properties
          * @type {array}
          */
-        this.css = css || pageConfig.cssDefault;
+        this.css = css || pageConfig.cssDefault.slice();
 
         /**
          * The page js properties
          * @type {array}
          */
-        this.js = js || pageConfig.jsDefault;
+        this.js = js || pageConfig.jsDefault.slice();
 
         /**
          * The page head js properites
          * @type {array}
          */
-        this.headJs = headJs || pageConfig.headJsDefault || [];
+        this.headJs = headJs || pageConfig.headJsDefault.slice() || [];
 
         /**
          * The page container template
          * @type {string}
          */
-        this.container = container || pageConfig.containerDefault;
+        this.container = container || pageConfig.containerDefault.slice();
 
         /**
          * The page head template
          * @type {string}
          */
-        this.head = head || pageConfig.headDefault;
+        this.head = head || pageConfig.headDefault.slice();
 
         /**
          * The page menu template
          * @type {string}
          */
-        this.menu = menu || pageConfig.menuDefault;
+        this.menu = menu || pageConfig.menuDefault.slice();
 
         /**
          * The page body template
          * @type {string}
          */
-        this.body = body || pageConfig.bodyDefault;
+        this.body = body || pageConfig.bodyDefault.slice();
 
         /**
          * The page foot template
          * @type {string}
          */
-        this.foot = foot || pageConfig.footDefault;
+        this.foot = foot || pageConfig.footDefault.slice();
 
         /**
          * The page tab sections contents
@@ -225,7 +225,6 @@ export default class page {
         if(this.extraTags.length > 0){
             tags = tags.concat(this.extraTags);
         }
-        console.dir(tags);
         //add files
         var files = [];
         var tpl = this.config.templateDir;
