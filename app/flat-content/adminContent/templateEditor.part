@@ -44,7 +44,7 @@
 </div>
 <script type="text/ng-template" id="visualEditorLayout">
 <div class="visualListItem">
-    <button class="btn btn-danger removeItem" ng-click="removeElement(visualItem,$parent.$index)" >-</button><br />
+    <button class="btn btn-danger removeItem" ng-click="removeElement($parent.children,$index)" >-</button><br />
     Tag: <input type="text" class="itemTag" ng-click="currentVisualBox(visualItem,'tag')" ng-model="visualItem.tag" /><br />
     Atts: <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button><br />
     <div ng-repeat="item in visualItem.atts">
