@@ -12,7 +12,10 @@
                 Passowrd: <input class="form-control" ng-model="newUser.passwordA" type="password" />
             </div>
             <div class="form-group">
-                
+                Verify Password: <input class="form-control" ng-model="newUser.passwordB" type="password" /> 
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-success" ng-click="addUser()">Add</button> <button class="btn btn-danger" ng-click="clearUser()">Clear</button>
             </div>
         </form>
     </div>

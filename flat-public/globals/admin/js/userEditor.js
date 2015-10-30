@@ -36,10 +36,6 @@ app.controller('userPageEdit',['$scope','$http',function($scope,$http){
         return index;
     }
 
-    $scope.delete = function(page){
-    
-    };
-
     $scope.clear = function(){
         $scope.action.status = null;
         $scope.action.msg = '';
@@ -56,6 +52,27 @@ app.controller('userPageEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/user/current/update',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
+        });
+    };
+
+    //new user functions
+    //clear the new user
+    $scope.clearUser = function(){
+        $scope.newUser = {};
+    };
+
+    //add the new user
+    $scope.addUser = function(){
+        var jsonData = JSON.stringify({
+            username : $scope.newUser.name,
+            email : $scope.newUser.email,
+            passA : $scope.newUser.passwordA,
+            passB : $scope.newUser.passwordB
+        });
+        $http.post('/flat-admin/user/add',jsonData).success(msg,status){
+            $scope.action.status = status;
+            $scope.action.msg = msg;
+            $scope.load();
         });
     };
 

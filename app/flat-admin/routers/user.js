@@ -50,6 +50,25 @@ userRouter.post('/flat-admin/user/list',(req,res)=>{
     res.end(userRouter.controller.userManager.toString());
 });
 
+//add a new user
+userRouter.post('/flat-admin/user/add',(req,res)=>{
+    var username = req.body.username;
+    var email = req.body.email;
+    var passA = req.body.passA;
+    var passB = req.body.passB;
+    if(passA !== passB){
+        showError(req,res,new Error("Passwords Do Not Match",500);
+        return;
+    }
+    userRouter.controller.userManager.create(username,email,passA,(err,done)=>{
+        if(err){
+            showError(req,res,err,500);
+            return;
+        }
+        showSuccess(req,res,"User Created",200);
+    });
+});
+
 
 userRouter.always((req,res)=>{
     showError(req,res,new Error("Not Found"),404);

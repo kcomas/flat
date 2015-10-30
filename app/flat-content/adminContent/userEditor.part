@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-md-12">
-        <h2>Hello, {{current.user.username}}</h1> 
-        <h5>Sign Up Date {{current.user.dateCreated}}<h5>
+        <h2>Hello, {{current.user.username}}</h2> 
+        <h5>Sign Up Date {{current.user.dateCreated}}</h5>
         <form novalidate>
             <div class="form-group">
                 Email: <input type="email" class="form-control" ng-model="current.user.email" />
             </div>
             <div class="form-group">
                 <div class="checkbox">
-                    <input type="checkbox" ng-model="current.updatePassword" ng-true-value="true" ng-false-value="false" /> Update Password
+                    Update Password <input type="checkbox" ng-model="current.updatePassword" ng-true-value="true" ng-false-value="false" /> 
                 </div>
             </div>
             <div class="form-group">
