@@ -1,5 +1,5 @@
 
-app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
+app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     
     $scope.tinymceOptions = {
         height: 400,
