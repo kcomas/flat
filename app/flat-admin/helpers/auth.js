@@ -5,7 +5,7 @@
 /**
  * Function for authentication the admin routes
  * @param {object} controller - the main controller
- * @return {function(req:object,req:object,next:function} the middlewear function
+ * @return {function(req:object,req:object,next:function)} the middlewear function
  */
 export default function auth(controller){
     return (req,res,next)=>{

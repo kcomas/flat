@@ -1,10 +1,12 @@
 
 "use strict"
 
-import userRouter from '../../flat-lib/server/router.js';
+import router from '../../flat-lib/server/router.js';
 import auth from '../helpers/auth.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
+
+var userRouter = new router();
 
 userRouter.use(auth(userRouter.controller));
 
