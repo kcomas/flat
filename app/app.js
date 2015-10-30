@@ -24,6 +24,7 @@ import userManager from './flat-lib/user/userManager.js'
 import cacheManager from './flat-lib/cache/cacheManager.js';
 import uploadManager from './flat-lib/upload/uploadManager.js';
 import controller from './flat-lib/controller.js';
+
 import flatLog from './flat-lib/helpers/flatLog.js';
 
 var app = new server();
@@ -47,6 +48,8 @@ var um = new uploadManager(app.getValue('uploadDir'));
 var controll = new controller(pm,sm,ses,tm,usm,cm,um); 
 controll.init();
 
+console.dir(controll);
+
 var logger = new flatLog(app.getValue('logDir'),true);
 
 app.use(logger.log());
@@ -64,11 +67,11 @@ app.route('/flat-login',signinRouter.run(controll));
 app.route('/flat-install',installRouter.run(controll));
 
 app.route('/flat-admin',adminRouter.run(controll));
-//app.route('/flat-admin/file',fileRouter.run(controll));
-//app.route('/flat-admin/page',pageRouter.run(controll));
-//app.route('/flat-admin/section',sectionRouter.run(controll));
-//app.route('/flat-admin/template',templateRouter.run(controll));
-//app.route('/flat-admin/user',userRouter.run(controll));
+app.route('/flat-admin/file',fileRouter.run(controll));
+app.route('/flat-admin/page',pageRouter.run(controll));
+app.route('/flat-admin/section',sectionRouter.run(controll));
+app.route('/flat-admin/template',templateRouter.run(controll));
+app.route('/flat-admin/user',userRouter.run(controll));
 
 app.route('/flat-debug',debugRouter.run(controll));
 
