@@ -4,10 +4,12 @@
 
 /**
  * Function for authentication the admin routes
- * @param {object} controller - the main controller
+ * @param {object} sessionManager - the session manager
+ * @param {object} userManager - the user manager
  * @return {function(req:object,req:object,next:function)} the middlewear function
  */
 export default function auth(sessionManager,userManager){
+    console.dir(sessionManager);
     return (req,res,next)=>{
         //check if the user has a logged in session
         var ses = sessionManager.getSession(req);
