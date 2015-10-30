@@ -8,7 +8,7 @@ import showSuccess from '../helpers/showSuccess.js';
 const blogRouter = new router();
 
 //list the blogs
-blogRouter.post('/flat-admin/blog/list'){
+blogRouter.post('/flat-admin/blog/list',(req,res)=>{
     res.statusCode = 200;
     res.setHeader('content-type','application/json; charset=utf8');
     res.end(blogRouter.controller.blogManager.toString());
