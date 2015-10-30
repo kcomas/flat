@@ -80,7 +80,7 @@ export default class page {
          * The page head js properites
          * @type {array}
          */
-        this.headJs = headJs || pageConfig.headJsDefault.slice() || [];
+        this.headJs = headJs || pageConfig.headJsDefault.slice();
 
         /**
          * The page container template

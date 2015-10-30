@@ -38,11 +38,11 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     }
 
     //edit a section
-    $scope.edit = function(page){
+    $scope.edit = function(){
     };
 
 
-    $scope.delete = function(page){
+    $scope.delete = function(){
     };
 
     $scope.clear = function(){
@@ -52,7 +52,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
         $scope.action.status = null;
     };
 
-
+    /*
     $scope.save = function(name){
        var jsonData = JSON.stringify({
             name : $scope.current.blog.name,
@@ -67,6 +67,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
             $scope.load();
        });
     };
+    */
 
 }]);
 
