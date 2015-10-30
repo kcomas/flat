@@ -7,7 +7,7 @@
     "cacheDir":"./flat-content/caches/",
     "userDir":"./flat-content/users/",
     "uploadDir":"./flat-content/uploads/",
-    "blogDir":"./flat-content/blogs",
+    "blogDir":"./flat-content/blogs/",
     "logDir":"./flat-logs/",
     "staticDir":"./flat-static/",
     "scriptDir":"/flat-scripts/",
