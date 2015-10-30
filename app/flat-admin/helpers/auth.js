@@ -29,8 +29,8 @@ export default function auth(controller){
             } else {
                 res.redirect('/flat-login');
             }
+        } else {
+            next();
         }
-    } else {
-        next();
     }
 }
