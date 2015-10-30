@@ -3,7 +3,7 @@
 import router from '../flat-lib/server/router.js';
 import pages from './pages.js';
 import pageManager from './page/pageManager.js';
-import auth form './helpers/auth/js';
+import auth from './helpers/auth/js';
 import showError from './helpers/showError.js';
 import showSuccess from './helpers/showSuccess.js';
 
