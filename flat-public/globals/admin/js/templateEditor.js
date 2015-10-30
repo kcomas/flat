@@ -73,13 +73,13 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     $scope.load = function(){
         //load the templates
-        $http.post('/flat-admin/list-templates').success(function(templates,status){
+        $http.post('/flat-admin/template/list').success(function(templates,status){
             $scope.templateList = templates;
         });
-        $http.post('/flat-admin/list-sections').success(function(sections,status){
+        $http.post('/flat-admin/section/list').success(function(sections,status){
             $scope.sectionList = sections;        
         });
-        $http.post('/flat-admin/list-files/private').success(function(files,status){
+        $http.post('/flat-admin/template/file/list/private').success(function(files,status){
             $scope.fileList = files;
         });
     };
@@ -94,7 +94,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             var jsonData = JSON.stringify({
                 filename : $scope.current.loadFile.fileName
             });
-            $http.post('/flat-admin/load-private',jsonData).success(function(file,status){
+            $http.post('/flat-admin/template/load-private',jsonData).success(function(file,status){
                 $scope.current.template.layout = JSON.stringify(file);
                 $scope.visualItems = file;
                 $scope.validate();
@@ -226,7 +226,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
                 name : $scope.current.template.name,
                 layout : $scope.current.template.layout
             });
-            $http.post('/flat-admin/upsert-template',jsonData).success(function(msg,status){
+            $http.post('/flat-admin/template/upsert',jsonData).success(function(msg,status){
                 $scope.action.status = status;
                 $scope.action.msg = msg;
                 $scope.load();
@@ -244,7 +244,7 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
             $scope.action.msg = err;
             return;
         }
-        $http.post('/flat-admin/remove-template',jsonData).success(function(msg,status){
+        $http.post('/flat-admin/template/remove',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
             $scope.load();

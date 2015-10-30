@@ -4,6 +4,11 @@
 import http from 'http';
 import server from './flat-lib/server/server.js';
 import adminRouter from './flat-admin/adminRouter.js';
+import sectionRouter from './flat-admin/routers/section.js';
+import fileRouter from './flat-admin/routers/file.js';
+import pageRouter from './flat-admin/routers/page.js';
+import templateRouter from './flat-admin/routers/template.js';
+import userRouter from './flat-admin/routers/user.js';
 import mainRouter from './flat-routers/index.js';
 import installRouter from './flat-routers/install.js';
 import signinRouter from './flat-routers/signin.js';
@@ -57,6 +62,11 @@ app.route('/flat-login',signinRouter.run(controll));
 app.route('/flat-install',installRouter.run(controll));
 
 app.route('/flat-admin',adminRouter.run(controll));
+app.route('/flat-admin/file',fileRouter.run(controll));
+app.route('/flat-admin/page',pageRouter.run(controll));
+app.route('/flat-admin/section',sectionRouter.run(controll));
+app.route('/flat-admin/template',templateRouter.run(controll));
+app.route('/flat-admin/user',userRouter.run(controll));
 
 app.route('/flat-debug',debugRouter.run(controll));
 

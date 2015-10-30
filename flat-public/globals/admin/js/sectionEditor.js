@@ -16,7 +16,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
     $scope.sectionList = [];
 
     $scope.load = function(){
-        $http.post('/flat-admin/list-sections').success(function(sections,status){
+        $http.post('/flat-admin/section/list').success(function(sections,status){
             $scope.sectionList = sections;        
         });
     };
@@ -55,7 +55,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
             $scope.action.msg = err;
             return;
         }
-        $http.post('/flat-admin/remove-section',jsonData).success(function(msg,status){
+        $http.post('/flat-admin/section/remove',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
             $scope.load();
@@ -74,7 +74,7 @@ app.controller('adminSectionEdit',['$scope','$http',function($scope,$http){
                 content : $scope.current.section.content
         });
 
-        $http.post('/flat-admin/upsert-section',jsonData).success(function(msg,status){
+        $http.post('/flat-admin/section/upsert',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
             $scope.load();

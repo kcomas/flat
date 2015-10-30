@@ -26,14 +26,14 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.part.layout = '';
 
     //load the templates
-    $http.post('/flat-admin/list-templates').success(function(templates,status){
+    $http.post('/flat-admin/template/list').success(function(templates,status){
         $scope.templateList = templates;
     });
 
     $scope.load = function(){
 
         //load the pages
-        $http.post('/flat-admin/list-pages').success(function(pages,status){
+        $http.post('/flat-admin/page/list').success(function(pages,status){
             $scope.pageList = pages;
         });
     };
@@ -100,7 +100,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
         var jsonData = JSON.stringify({
             permalink : page.permalink 
         });
-       $http.post('/flat-admin/remove-page',jsonData).success(function(msg,status){
+       $http.post('/flat-admin/page/remove',jsonData).success(function(msg,status){
             $scope.action.status = status;
             $scope.action.msg = msg;
             $scope.load();
@@ -140,7 +140,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             def : newArr
        });
 
-       $http.post('/flat-admin/upsert-page',jsonData).success(function(msg,status){
+       $http.post('/flat-admin/page/upsert',jsonData).success(function(msg,status){
             $scope.action.status = status;
             $scope.action.msg = msg;
             $scope.load();

@@ -11,7 +11,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     $scope.uploadList = [];    
     $scope.uploadDirs = {};
 
-    $http.post('/flat-admin/upload/dirs').success(function(jsonData,status){
+    $http.post('/flat-admin/file/dirs').success(function(jsonData,status){
         $scope.uploadDirs = jsonData;
     });
 
@@ -29,7 +29,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
     };
 
     $scope.load = function(){
-        $http.post('/flat-admin/list-files').success(function(files,status){
+        $http.post('/flat-admin/file/list').success(function(files,status){
             $scope.uploadList = files;
         });
     };
@@ -39,7 +39,7 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
         var jsonData = JSON.stringify({
             name : obj.fileName
         });
-        $http.post('/flat-admin/remove-upload',jsonData).success(function(msg,status){
+        $http.post('/flat-admin/file/remove',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
             $scope.load();
@@ -56,14 +56,6 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
             var win = window.open(dir,'_blank');
             win.focus();
         }
-    };
-
-    $scope.clean = function(){
-        $http.post('/flat-admin/check-files').success(function(msg,status){
-            $scope.action.msg = msg;
-            $scope.action.status = status;
-            $scope.load();
-        });
     };
 
     $scope.load();
@@ -105,7 +97,7 @@ function sendFile($scope,callback){
     }
     formData.append('private',$scope.current.private);
     var xhr = new XMLHttpRequest();
-    xhr.open('POST', '/flat-admin/upload', true);
+    xhr.open('POST', '/flat-admin/file/upload', true);
     xhr.onload = function () {
         if(xhr.status === 200){
             return callback(xhr.status,xhr.responseText);

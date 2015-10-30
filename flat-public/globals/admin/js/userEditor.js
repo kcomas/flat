@@ -8,15 +8,18 @@ app.controller('userPageEdit',['$scope','$http',function($scope,$http){
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
+    $scope.userList = [];
 
     //load the user
-    $http.post('/flat-admin/current-user').success(function(user,status){
+    $http.post('/flat-admin/user/current').success(function(user,status){
         $scope.current.user = user;
     });
     
 
     $scope.load = function(){
-        
+       $http.post('/flat-admin/user/list').success(function(users,status){
+            $scope.userList = users;
+       });
     };
 
     //load all of the sections
@@ -50,7 +53,7 @@ app.controller('userPageEdit',['$scope','$http',function($scope,$http){
             passA : $scope.current.newPasswordA,
             passB : $scope.current.newPasswordB
         });
-        $http.post('/flat-admin/current-user/update',jsonData).success(function(msg,status){
+        $http.post('/flat-admin/user/current/update',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
         });
