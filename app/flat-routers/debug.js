@@ -7,8 +7,6 @@ var debugRouter = new router();
 
 debugRouter.loadConfig('./flat-config/debug.json');
 
-console.dir(debugRouter.controller);
-
 debugRouter.use((req,res,next)=>{
     if(debugRouter.getValue('enabled') === 'true'){
         next();
@@ -16,7 +14,6 @@ debugRouter.use((req,res,next)=>{
         res.redirect('/');
     }
 });
-
 
 debugRouter.get('/flat-debug/view',(req,res)=>{
     res.setHeader('content-type','text/plain; charset=utf-8');
