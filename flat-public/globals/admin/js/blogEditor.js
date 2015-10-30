@@ -38,11 +38,20 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     }
 
     //edit a section
-    $scope.edit = function(){
+    $scope.edit = function(blog){
+        $scope.current.blog = blog;
     };
 
 
-    $scope.delete = function(){
+    $scope.delete = function(blog){
+        var jsonData = JSON.stringify({
+            permalink : $scope.current.blog.permalink
+        });
+        $http.post('/flat-admin/blog/remove',jsonData).success(function(msg,status){
+            $scope.action.msg = msg;
+            $scope.action.status = status;
+            $scope.load();
+        });
     };
 
     $scope.clear = function(){
