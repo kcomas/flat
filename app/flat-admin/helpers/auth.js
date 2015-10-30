@@ -4,11 +4,12 @@
 /**
  * Check if a route need to be authenticated
  * @param {array} authList - the array of urls that need auth
+ * @param {string} url - the url to check
  * @return {boolean} - if the url needs to be authenticated
  */
-function needsAuth(authList){
+function needsAuth(authList,url){
     for(let i=0,l=authList.length; i<l; i++){
-        if(req.url.indexOf(authList[i]) === 0){
+        if(url.indexOf(authList[i]) === 0){
             return true;
         }
     }
@@ -24,7 +25,7 @@ function needsAuth(authList){
 export default function auth(controller,authList){
     return (req,res,next)=>{
         //check if the user has a logged in session
-        if(needsAuth(req.url)){
+        if(needsAuth(authList,req.url)){
             var ses = controller.sessionManager.getSession(req);
             if(ses !== null){
                 if(ses.getData('username')){
