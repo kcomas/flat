@@ -48,7 +48,7 @@ blogRouter.post('/flat-admin/blog/upsert',(req,res)=>{
 //remove a blog
 blogRouter.post('/flat-admin/blog/remove',(req,res)=>{
     var permalink = req.body.permalink;
-    blogRouter.controller.removeByParam('permalink',permalink,(err,done)=>{
+    blogRouter.controller.blogManager.removeByParam('permalink',permalink,(err,done)=>{
         if(err){
             showError(req,res,err,500);
             return;
