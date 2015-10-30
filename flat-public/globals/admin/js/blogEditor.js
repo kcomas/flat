@@ -52,13 +52,12 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
         $scope.action.status = null;
     };
 
-    /*
     $scope.save = function(name){
        var jsonData = JSON.stringify({
             name : $scope.current.blog.name,
             title : $scope.current.blog.title,
             exceprt : $scope.current.blog.excerpt,
-            tags : $scope.current.blog.tags.split(',');
+            tags : $scope.current.blog.tags.split(','),
             content : $scope.current.blog.content
        });
        $http.post('/flat-admin/blog/upsert',jsonData).success(function(msg,status){
@@ -67,7 +66,6 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
             $scope.load();
        });
     };
-    */
 
 }]);
 
