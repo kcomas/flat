@@ -69,7 +69,7 @@ app.controller('userPageEdit',['$scope','$http',function($scope,$http){
             passA : $scope.newUser.passwordA,
             passB : $scope.newUser.passwordB
         });
-        $http.post('/flat-admin/user/add',jsonData).success(msg,status){
+        $http.post('/flat-admin/user/add',jsonData).success(function(msg,status){
             $scope.action.status = status;
             $scope.action.msg = msg;
             $scope.load();
