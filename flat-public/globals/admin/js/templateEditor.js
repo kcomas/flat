@@ -65,10 +65,10 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
     };
 
     //remove from the array via the object itself
-    $scope.removeElement = function(visualItem,index){
+    $scope.removeElement = function(father,index){
         console.dir(visualItem);
         console.dir(index);
-        visualItem.children.splice(index,1);        
+        father.visualItem.children.splice(index,1);        
     };
 
     $scope.load = function(){
