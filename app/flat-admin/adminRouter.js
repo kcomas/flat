@@ -18,7 +18,7 @@ if(renderErr.length > 0){
 }
 
 //auth
-//adminRouter.use(auth(adminRouter.controller.sessionManager,adminRouter.controller.userManager));
+adminRouter.use(auth(adminRouter.controller.sessionManager,adminRouter.controller.userManager));
 
 /**
  * List of get routes not to auto lookup
