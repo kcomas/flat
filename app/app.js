@@ -69,7 +69,7 @@ app.use((req,res,next)=>{
  */
 var authRoutes = ['/flat-admin','/flat-debug'];
 
-app.use(auth(controll,authRoutes));
+//app.use(auth(controll,authRoutes));
 
 app.route('/',mainRouter.run(controll));
 
