@@ -18,12 +18,6 @@ export default class item {
     constructor(dir,filename,data){
 
         /**
-         * The directory of the item
-         * @type {string}
-         */
-        this.dir = dir;
-
-        /**
          * The filename of the item
          * @type {string}
          */
@@ -48,7 +42,7 @@ export default class item {
          * The filemanger for the object
          * @type {object}
          */
-        this.fileManager = new fileManager(this.dir);
+        this.fileManager = new fileManager(dir);
 
         /**
          * The id generator

@@ -35,7 +35,7 @@ blogRouter.post('/flat-admin/blog/upsert',(req,res)=>{
         });
     } else {
         //update existing
-        blog.upsert({'title':title,'exceprt':excerpt,'content':content,'tags':tags},(err,done)=>{
+        blog.upsert({'title':title,'excerpt':excerpt,'content':content,'tags':tags},(err,done)=>{
             if(err){
                 showError(req,res,err,500);
                 return;
