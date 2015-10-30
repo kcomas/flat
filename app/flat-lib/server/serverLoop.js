@@ -34,6 +34,7 @@ export default class serverLoop {
         if(this.usesPosition < this.uses.length){
             console.trace();
             this.uses[this.usesPosition](this.req,this.res,()=>{
+                console.dir(this.uses[this.usesPosition].toString());
                 this.usesPosition++;
                 this.loop();
             });
