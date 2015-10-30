@@ -60,7 +60,7 @@ export default class routerLoop {
                    }
                 } else {
                     //end function
-                    this.end(req,res);
+                    this.end(this.req,this.res);
                 }
             } else if(this.req.method === 'POST'){
                 if(this.postsPosition < this.posts.length){
