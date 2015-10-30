@@ -63,7 +63,13 @@ app.use((req,res,next)=>{
     next();
 });
 
-//app.use(auth(controll));
+/**
+ * The array of routes required for auth
+ * @type {string}
+ */
+var authRoutes = ['/flat-admin','/flat-debug'];
+
+app.use(auth(controll,authRoutes);
 
 app.route('/',mainRouter.run(controll));
 

@@ -50,7 +50,10 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
 
 
     $scope.save = function(name){
-        
+       var jsonData = JSON.stringify({
+
+
+       });
     };
 
     
