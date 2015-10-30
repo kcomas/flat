@@ -68,11 +68,11 @@ app.route('/flat-login',signinRouter.run(controll));
 app.route('/flat-install',installRouter.run(controll));
 
 app.route('/flat-admin',adminRouter.run(controll));
-app.route('/flat-admin/file',fileRouter.run(controll));
-app.route('/flat-admin/page',pageRouter.run(controll));
-app.route('/flat-admin/section',sectionRouter.run(controll));
-app.route('/flat-admin/template',templateRouter.run(controll));
-app.route('/flat-admin/user',userRouter.run(controll));
+app.route('/flat-admin/file/',fileRouter.run(controll));
+app.route('/flat-admin/page/',pageRouter.run(controll));
+app.route('/flat-admin/section/',sectionRouter.run(controll));
+app.route('/flat-admin/template/',templateRouter.run(controll));
+app.route('/flat-admin/user/',userRouter.run(controll));
 
 app.route('/flat-debug',debugRouter.run(controll));
 
