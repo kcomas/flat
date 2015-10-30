@@ -45,7 +45,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
 
     $scope.delete = function(blog){
         var jsonData = JSON.stringify({
-            permalink : $scope.current.blog.permalink
+            permalink : blog.permalink
         });
         $http.post('/flat-admin/blog/remove',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
@@ -71,7 +71,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
        var jsonData = JSON.stringify({
             name : $scope.current.blog.name,
             title : $scope.current.blog.title,
-            exceprt : $scope.current.blog.excerpt,
+            excerpt : $scope.current.blog.excerpt,
             tags : tmpTags,
             content : $scope.current.blog.content
        });
