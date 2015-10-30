@@ -17,7 +17,7 @@ if(renderErr.length > 0){
     console.dir(renderErr);
 }
 
-console.dir(adminRouter.controller);
+console.dir(adminRouter._controller);
 
 //auth
 adminRouter.use(auth(adminRouter.controller.sessionManager,adminRouter.controller.userManager));
