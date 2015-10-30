@@ -8,7 +8,7 @@ import showSuccess from '../helpers/showSuccess.js';
 
 var templateRouter = new router();
 
-templateRouter.use(auth(templateRouter.controller));
+templateRouter.use(auth(templateRouter.controller.sessionManager,templateRouter.controller.userManager));
 
 //add update a template
 templateRouter.post('/flat-admin/template/upsert',(req,res)=>{

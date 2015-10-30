@@ -9,7 +9,7 @@ import pageRender from '../../flat-lib/helpers/pageRender.js';
 
 var pageRouter = new router();
 
-pageRouter.use(auth(pageRouter.controller));
+pageRouter.use(auth(pageRouter.controller.sessionManager,pageRouter.controller.userManager));
 
 //list all of the pages
 pageRouter.post('/flat-admin/page/list',(req,res)=>{

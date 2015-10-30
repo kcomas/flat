@@ -8,7 +8,7 @@ import showSuccess from '../helpers/showSuccess.js';
 
 var userRouter = new router();
 
-userRouter.use(auth(userRouter.controller));
+userRouter.use(auth(userRouter.controller.sessionManager,userRouter.controller.userManager));
 
 //get the cuurent user
 userRouter.post('/flat-admin/user/current',(req,res)=>{            

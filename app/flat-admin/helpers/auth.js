@@ -7,14 +7,14 @@
  * @param {object} controller - the main controller
  * @return {function(req:object,req:object,next:function)} the middlewear function
  */
-export default function auth(controller){
+export default function auth(sessionManager,userManager){
     return (req,res,next)=>{
         //check if the user has a logged in session
-        var ses = controller.sessionManager.getSession(req);
+        var ses = sessionManager.getSession(req);
         if(ses !== null){
             if(ses.getData('username')){
                 req.session = ses;
-                var user = controller.userManager.findByParam(ses.getData('username'));
+                var user = userManager.findByParam(ses.getData('username'));
                 if(user === null){
                     res.redirect('/flat-login');
                     return;

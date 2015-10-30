@@ -16,7 +16,7 @@ var uploadDirs = fileRouter.getValue('upload')
 
 var uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
-fileRouter.use(auth(fileRouter.controller));
+fileRouter.use(auth(fileRouter.controller.sessionManager,fileRouter.controller.userManager));
 
 //upload a file
 fileRouter.post('/flat-admin/file/upload',(req,res)=>{

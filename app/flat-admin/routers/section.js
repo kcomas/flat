@@ -8,7 +8,7 @@ import showSuccess from '../helpers/showSuccess.js'
 
 var sectionRouter = new router();
 
-sectionRouter.use(auth(sectionRouter.controller));
+sectionRouter.use(auth(sectionRouter.controller.sessionManager,sectionRouter.controller.userManager));
 
 //add/update a section to the sectionManager
 sectionRouter.post('/flat-admin/section/upsert',(req,res)=>{
