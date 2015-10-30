@@ -24,6 +24,7 @@ import templateManager from './flat-lib/template/templateManager.js';
 import userManager from './flat-lib/user/userManager.js'
 import cacheManager from './flat-lib/cache/cacheManager.js';
 import uploadManager from './flat-lib/upload/uploadManager.js';
+import blogManager from './flat-lib/blog/blogManager.js';
 import controller from './flat-lib/controller.js';
 
 import flatLog from './flat-lib/helpers/flatLog.js';
@@ -46,7 +47,9 @@ const cm = new cacheManager(app.getValue('cacheDir'));
 
 const um = new uploadManager(app.getValue('uploadDir'));
 
-const controll = new controller(pm,sm,ses,tm,usm,cm,um); 
+const bm = new blogManager(app.getValue('blogDir'));
+
+const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm); 
 controll.init();
 
 const logger = new flatLog(app.getValue('logDir'),true);

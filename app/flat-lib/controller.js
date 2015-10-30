@@ -18,8 +18,9 @@ export default class controller {
      * @param {userManager} userManager - the user manager
      * @param {cacheManager} cacheManager - the cache manager
      * @param {uploadManager} uploadManger - the uplaod manager
+     * @param {blogManager} blogManager - the blog manager
      */
-    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager){
+    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager){
 
         /**
          * The page manager
@@ -62,6 +63,12 @@ export default class controller {
          * @type {uploadManager}
          */
         this._uploadManager = uploadManager;
+
+        /**
+         * The blog manager
+         * @type {blogManager}
+         */
+        this._blogManager = blogManager;
 
     }
 
@@ -178,6 +185,22 @@ export default class controller {
     }
 
     /**
+     * Get the blog manager
+     * @return {blogManager} - the blog manager
+     */
+    get blogManager(){
+        return this._blogManager;
+    }
+
+    /**
+     * Set the blog manager
+     * @param {blogManager} manager - the blog manager
+     */
+    set blogManager(manager){
+        this._blogManager = manager;
+    }
+
+    /**
      * Init all of the managers
      */
     init(){
@@ -188,6 +211,7 @@ export default class controller {
         this._userManager.init();
         this._cacheManager.init();
         this._uploadManager.init();
+        this._blogManager.init();
     }
 
 
