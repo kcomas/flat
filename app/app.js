@@ -79,5 +79,7 @@ app.always((req,res)=>{
     res.end('<h1>404</h1>');
 });
 
+console.dir(app);
+
 http.createServer(app.run()).listen(app.getValue('port'));
 console.log("Server Started");
