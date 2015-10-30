@@ -2,6 +2,16 @@
 
     "description":"This is the data layout for the blogs on the site",
     "version":"0",
+    "data":{
+        "name":"the name of the blog",
+        "title":"the title of the blog",
+        "author":"the blog author",
+        "excerpt":"The blog except",
+        "content":"Blog content",
+        "dateCreated":"Date the blog was created",
+        "tags":"the blog tags"
+        "permalink":"auto generated permalink for the blog post of the date and the name"
+    }
 
 
 
