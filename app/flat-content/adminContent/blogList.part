@@ -2,7 +2,7 @@
     <div class="col-md-8 col-md-offset-2">
         <ul class="list-group" ng-repeat="b in blogList" />
             <li class="list-group-item">
-            {{b.name}} - {b.title} <button class="btn btn-primary" ng-click="edit(b)"/>Edit</button> <button class="btn btn-danger" ng-click="delete(b)">Delete</button>
+            {{b.name}} - {{b.title}} <button class="btn btn-primary" ng-click="edit(b)"/>Edit</button> <button class="btn btn-danger" ng-click="delete(b)">Delete</button>
             </li>
         </ul>
     </div>

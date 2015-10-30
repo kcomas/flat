@@ -33,7 +33,7 @@ export default class blog extends item {
             this.data.content = content;
             this.data.tags = tags;
             this.data.dateCreated = new Date();
-            this.data.permlink = '/' + this.data.dateCreated.getDay() + '/' + this.data.dateCreated.getMonth() + '/' + this.data.dateCreated.getYear + '/' + this.data.name;
+            this.data.permlink = '/' + this.data.dateCreated.getDay() + '/' + this.data.dateCreated.getMonth() + '/' + this.data.dateCreated.getYear() + '/' + this.data.name;
             this.save((err,done)=>{
                 return callback(err,done);
             });

@@ -34,7 +34,7 @@ export default class blogManager extends manager {
     }
 
     /**
-     * Int all of the caches 
+     * Int all of the blogs 
      * @override
      */
     init(){
