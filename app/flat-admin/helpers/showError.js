@@ -23,5 +23,5 @@ Object.defineProperty(Error.prototype, 'toJSON', {
 export default function showError(req,res,err,status){
     res.statusCode = status;
     res.setHeader('Content-Type','application/json; charset=utf8');
-    res.end(JSON.stringify(err));
+    res.end(JSON.stringify(err,null,2));
 }
