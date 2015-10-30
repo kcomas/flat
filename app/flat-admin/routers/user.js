@@ -57,7 +57,7 @@ userRouter.post('/flat-admin/user/add',(req,res)=>{
     var passA = req.body.passA;
     var passB = req.body.passB;
     if(passA !== passB){
-        showError(req,res,new Error("Passwords Do Not Match",500);
+        showError(req,res,new Error("Passwords Do Not Match"),500);
         return;
     }
     userRouter.controller.userManager.create(username,email,passA,(err,done)=>{
