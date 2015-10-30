@@ -7,6 +7,8 @@ var debugRouter = new router();
 
 debugRouter.loadConfig('./flat-config/debug.json');
 
+console.dir(debugRouter.controller);
+
 debugRouter.use((req,res,next)=>{
     if(debugRouter.getValue('enabled') === 'true'){
         next();
