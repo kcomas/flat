@@ -225,6 +225,7 @@ export default class page {
         if(this.extraTags.length > 0){
             tags = tags.concat(this.extraTags);
         }
+        console.dir(tags);
         //add files
         var files = [];
         var tpl = this.config.templateDir;
