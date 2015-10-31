@@ -111,7 +111,7 @@ templateRouter.get('/flat-admin/template/download',(req,res)=>{
     } else {
         res.statusCode = 200;
         res.setHeader('content-type','application/json; charset=utf-8');
-        res.end(template.get('layout');
+        res.end(template.get('layout'));
     }
 });
 
