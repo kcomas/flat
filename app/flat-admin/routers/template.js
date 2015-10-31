@@ -9,7 +9,7 @@ import uploadedFiles from '../../flat-lib/helpers/uploadedFiles.js';
 const templateRouter = new router();
 
 //load the admin config
-fileRouter.loadConfig('./flat-config/adminConfig.json');
+templateRouter.loadConfig('./flat-config/adminConfig.json');
 
 const uploadDirs = fileRouter.getValue('upload')
 
