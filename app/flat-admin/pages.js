@@ -66,6 +66,7 @@ userEditor.addJs({"src":"/globals/admin/js/userEditor.js"});
 var blogEditor = new page('/blog-editor','Edit Blog',pageConfig,'blogPageEdit');
 blogEditor.addContents('Edit','blogEditor.part');
 blogEditor.addContents('List','blogList.part');
+blogEditor.addContents('Template','blogTemplate.part');
 blogEditor.addJs({"src":"/globals/admin/js/blogEditor.js"});
 blogEditor.addHeadJs({"src":"/globals/tinymce/tinymce.min.js"});
 
