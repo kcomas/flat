@@ -249,6 +249,12 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         });
     };
 
+    //download a template
+    $scope.download(name){
+        var win = window.open('/flat-admin/template/download?name='+name,'_blank');
+        win.focus();
+    };
+
 }]);
 
 

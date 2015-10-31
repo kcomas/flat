@@ -2,7 +2,7 @@
     <div class="col-md-8 col-md-offset-2">
         <ul class="list-group" ng-repeat="template in templateList" />
             <li class="list-group-item">
-            {{template.name}} <button class="btn btn-primary" ng-click="edit(template.name)"/>Edit</button> <button class="btn btn-danger" ng-click="delete(template.name)">Delete</button>
+            {{template.name}} <button class="btn btn-primary" ng-click="edit(template.name)"/>Edit</button> <button class="btn btn-success" ng-click="download(template.name)">Download</button> <button class="btn btn-danger" ng-click="delete(template.name)">Delete</button>
             </li>
         </ul>
     </div>

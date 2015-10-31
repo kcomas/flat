@@ -102,6 +102,19 @@ templateRouter.get('/flat-admin/template/load-private',(req,res)=>{
     }
 });
 
+//download a template
+templateRouter.get('/flat-admin/template/download'(req,res)=>{
+    var name = req.query.name;
+    var template = templateRouter.controller.templateManager.findByParam('name',name);
+    if(template === null){
+        showError(req,res,new Error('template not found'),500);
+    } else {
+        res.statusCode = 200;
+        res.setHeader('content-type','application/json; charset=utf-8');
+        res.end(template.get('layout');
+    }
+});
+
 templateRouter.always((req,res)=>{
     showError(req,res,new Error("Not Found"),404);
 });
