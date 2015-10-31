@@ -25,7 +25,7 @@ signinRouter.use((req,res,next)=>{
 signinRouter.use((req,res,next)=>{
     if(signinRouter.getValue('installed') !== 'yes'){
         //redirect to index
-        res.redirect('/flat-login');
+        res.redirect('/flat-install');
     } else {
         next();
     }
