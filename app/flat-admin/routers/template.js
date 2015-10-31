@@ -103,7 +103,7 @@ templateRouter.get('/flat-admin/template/load-private',(req,res)=>{
 });
 
 //download a template
-templateRouter.get('/flat-admin/template/download'(req,res)=>{
+templateRouter.get('/flat-admin/template/download',(req,res)=>{
     var name = req.query.name;
     var template = templateRouter.controller.templateManager.findByParam('name',name);
     if(template === null){
