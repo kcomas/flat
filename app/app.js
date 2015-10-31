@@ -33,7 +33,7 @@ import flatLog from './flat-lib/helpers/flatLog.js';
 
 const app = new server();
 
-const config = new configManger('./flat-config/config.json');
+const config = new configManager('./flat-config/config.json');
 
 const pm = new pageManager(config.getValue('pageDir'));
 
