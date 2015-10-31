@@ -13,5 +13,11 @@
     "staticDir":"./flat-static/",
     "scriptDir":"/flat-scripts/",
     "sessionCookie":"flat-session",
-    "sessionTime":"14"
+    "sessionTime":"14",
+    "upload":{
+		"public":"../flat-public/uploads/",
+		"private":"./flat-content/private/"
+	},
+    "installed":"false",
+    "debugEnabled":"true"
 }

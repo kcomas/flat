@@ -5,10 +5,8 @@ import router from '../flat-lib/server/router.js';
 
 const debugRouter = new router();
 
-debugRouter.loadConfig('./flat-config/debug.json');
-
 debugRouter.use((req,res,next)=>{
-    if(debugRouter.getValue('enabled') === 'true'){
+    if(debugRouter.controller.config.getValue('enabled') === 'true'){
         next();
     } else {
         res.redirect('/');

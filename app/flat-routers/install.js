@@ -7,11 +7,8 @@ import router from '../flat-lib/server/router.js';
 
 const installRouter = new router();
 
-//load the install config
-installRouter.loadConfig('./flat-config/installConfig.json');
-
 installRouter.use((req,res,next)=>{
-    if(installRouter.getValue('installed') === 'yes'){
+    if(installRouter.controller.config.getValue('installed') === 'yes'){
         //redirect to index
         res.redirect('/flat-login');
     } else {
@@ -35,8 +32,7 @@ installRouter.post('/flat-install',(req,res)=>{
             res.setHeader('content-type','text/html; charset=utf8');
             res.end('Failed To Install');
         } else {
-           installRouter.setValue('installed','yes');
-           installRouter.writeConfig('./flat-config/installConfig.json');
+           installRouter.controller.config.setValue('installed','yes');
            res.redirect('/flat-login');
         }
     });

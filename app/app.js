@@ -3,6 +3,7 @@
 
 import http from 'http';
 import server from './flat-lib/server/server.js';
+import configManager from './flat-lib/config/config.js';
 
 import auth from './flat-admin/helpers/auth.js';
 import adminRouter from './flat-admin/adminRouter.js';
@@ -32,34 +33,34 @@ import flatLog from './flat-lib/helpers/flatLog.js';
 
 const app = new server();
 
-app.loadConfig('./flat-config/config.json');
+const config = new configManger('./flat-config/config.json');
 
-const pm = new pageManager(app.getValue('pageDir'));
+const pm = new pageManager(config.getValue('pageDir'));
 
-const sm = new sectionManager(app.getValue('sectionDir'));
+const sm = new sectionManager(config.getValue('sectionDir'));
 
-const ses = new sessionManager(app.getValue('sessionDir'));
+const ses = new sessionManager(config.getValue('sessionDir'));
 
-const tm = new templateManager(app.getValue('templateDir'));
+const tm = new templateManager(config.getValue('templateDir'));
 
-const usm = new userManager(app.getValue('userDir'));
+const usm = new userManager(config.getValue('userDir'));
 
-const cm = new cacheManager(app.getValue('cacheDir'));
+const cm = new cacheManager(config.getValue('cacheDir'));
 
-const um = new uploadManager(app.getValue('uploadDir'));
+const um = new uploadManager(config.getValue('uploadDir'));
 
-const bm = new blogManager(app.getValue('blogDir'));
+const bm = new blogManager(config.getValue('blogDir'));
 
-const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm); 
+const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm,config); 
 controll.init();
 
-const logger = new flatLog(app.getValue('logDir'),app.getValue('logToConsole'));
+const logger = new flatLog(config.getValue('logDir'),config.getValue('logToConsole'));
 
 app.use(logger.log());
 
 app.use((req,res,next)=>{
-    req.sessionCookieName = app.getValue('sessionCookie');
-    req.sessionCookieTime = 1000 * 60 * 60 * 24 * parseInt(app.getValue('sessionTime'));
+    req.sessionCookieName = config.getValue('sessionCookie');
+    req.sessionCookieTime = 1000 * 60 * 60 * 24 * parseInt(config.getValue('sessionTime'));
     next();
 });
 
@@ -93,5 +94,5 @@ app.always((req,res)=>{
     res.end('<h1>404</h1>');
 });
 
-http.createServer(app.run()).listen(app.getValue('port'));
+http.createServer(app.run()).listen(config.getValue('port'));
 console.log("Server Started");
