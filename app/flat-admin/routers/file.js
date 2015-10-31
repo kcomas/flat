@@ -8,9 +8,17 @@ import uploadedFiles from '../../flat-lib/helpers/uploadedFiles.js';
 
 const fileRouter = new router();
 
-const uploadDirs = fileRouter.controller.config.getValue('upload')
+var uploadDirs = null;
 
-const uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
+var uploader = null;
+
+fileRouter.use((req,res,next)=>{
+    if(uploadDirs === null){
+        uploadDirs = fileRouter.controller.config.getValue('upload');
+        uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
+    }
+    next();
+});
 
 //upload a file
 fileRouter.post('/flat-admin/file/upload',(req,res)=>{

@@ -54,8 +54,6 @@ const bm = new blogManager(config.getValue('blogDir'));
 const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm,config); 
 controll.init();
 
-console.dir(controll);
-
 const logger = new flatLog(config.getValue('logDir'),config.getValue('logToConsole'));
 
 app.use(logger.log());

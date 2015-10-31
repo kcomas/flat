@@ -8,9 +8,17 @@ import uploadedFiles from '../../flat-lib/helpers/uploadedFiles.js';
 
 const templateRouter = new router();
 
-const uploadDirs = templateRouter.controller.config.getValue('upload')
+var uploadDirs = null;
 
-const uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
+var uploader = null;
+
+templateRouter.use((req,res,next)=>{
+    if(uploadDirs === null){
+        uploadDirs = templateRouter.controller.config.getValue('upload');
+        uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
+    }
+    next();
+});
 
 //add update a template
 templateRouter.post('/flat-admin/template/upsert',(req,res)=>{
