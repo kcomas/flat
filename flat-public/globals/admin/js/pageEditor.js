@@ -31,7 +31,6 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     });
 
     $scope.load = function(){
-
         //load the pages
         $http.post('/flat-admin/page/list').success(function(pages,status){
             $scope.pageList = pages;
