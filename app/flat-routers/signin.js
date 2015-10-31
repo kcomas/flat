@@ -29,7 +29,7 @@ signinRouter.use((req,res,next)=>{
 });
 
 signinRouter.get('/flat-login',(req,res)=>{
-    res.sendStatic('signin.html');
+    res.sendStatic('./flat-static/signin.html');
 });
 
 signinRouter.post('/flat-login',(req,res)=>{

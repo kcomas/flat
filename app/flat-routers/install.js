@@ -18,7 +18,7 @@ installRouter.use((req,res,next)=>{
 
 //get the install page
 installRouter.get('/flat-install',(req,res)=>{
-    res.sendStatic('install.html');
+    res.sendStatic('./flat-static/install.html');
 });
 
 installRouter.post('/flat-install',(req,res)=>{
