@@ -5,6 +5,9 @@ import router from '../flat-lib/server/router.js';
 
 const signinRouter = new router();
 
+//load the install config
+signinRouter.loadConfig('./flat-config/installConfig.json');
+
 signinRouter.use((req,res,next)=>{
     //check if the user has a logged in session
     var ses = signinRouter.controller.sessionManager.getSession(req);
@@ -14,6 +17,15 @@ signinRouter.use((req,res,next)=>{
         } else {
             next();
         }
+    } else {
+        next();
+    }
+});
+
+signinRouter.use((req,res,next)=>{
+    if(signinRouter.getValue('installed') !== 'yes'){
+        //redirect to index
+        res.redirect('/flat-login');
     } else {
         next();
     }
