@@ -22,11 +22,12 @@ blogRouter.post('/flat-admin/blog/upsert',(req,res)=>{
     var excerpt = req.body.excerpt;
     var content = req.body.content;
     var tags = req.body.tags || [];
+    var template = req.body.template;
     var permalink = req.body.permalink;
     var blog = blogRouter.controller.blogManager.findByParam('permalink',permalink);
     if(blog === null){
         //create a new blog
-        blogRouter.controller.blogManager.create(name,title,author,excerpt,content,tags,(err,done)=>{
+        blogRouter.controller.blogManager.create(name,title,author,excerpt,content,tags,template,(err,done)=>{
             if(err){
                 showError(req,res,err,500);
                 return;
@@ -35,7 +36,7 @@ blogRouter.post('/flat-admin/blog/upsert',(req,res)=>{
         });
     } else {
         //update existing
-        blog.upsert({'title':title,'excerpt':excerpt,'content':content,'tags':tags},(err,done)=>{
+        blog.upsert({'title':title,'excerpt':excerpt,'content':content,'tags':tags,'template':template},(err,done)=>{
             if(err){
                 showError(req,res,err,500);
                 return;

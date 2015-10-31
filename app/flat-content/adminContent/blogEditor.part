@@ -3,6 +3,11 @@
         <h2>Edit Blog</h2>
         <form novalide>
             <input type="hidden" ng-model="current.blog.permalink" />
+            <h4>Template: {{current.blog.template.name}}</h4>
+            <div class="form-group">
+                <select class="form-control" ng-model="current.blog.template"  ng-options="template.name for template in templateList">
+                </select>
+            </div>
             <div class="form-group">
                 Name: <input class="form-control" type="text" ng-model="current.blog.name" />
             </div>

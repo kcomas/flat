@@ -11,11 +11,17 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     $scope.current = {};
     $scope.current.blog = {};
     $scope.current.blog.permalink = '';
+    $scope.current.blog.template = {};
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
     $scope.blogList =[];
+    $scope.templateList = [];
 
+    //load the templates
+    $http.post('/flat-admin/template/list').success(function(templates,status){
+        $scope.templateList = templates;
+    });
 
     $scope.load = function(){
         $http.post('/flat-admin/blog/list').success(function(blogs,status){
@@ -40,6 +46,9 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     //edit a section
     $scope.edit = function(blog){
         $scope.current.blog = blog;
+        var name = $scope.current.blog.template;
+        $scope.current.blog.template = {};
+        $scope.current.blog.template.name = name;
     };
 
 
@@ -73,7 +82,8 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
             title : $scope.current.blog.title,
             excerpt : $scope.current.blog.excerpt,
             tags : tmpTags,
-            content : $scope.current.blog.content
+            content : $scope.current.blog.content,
+            template : $scope.current.blog.template.name
        });
        $http.post('/flat-admin/blog/upsert',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
