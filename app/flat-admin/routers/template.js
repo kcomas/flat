@@ -11,7 +11,7 @@ const templateRouter = new router();
 //load the admin config
 templateRouter.loadConfig('./flat-config/adminConfig.json');
 
-const uploadDirs = fileRouter.getValue('upload')
+const uploadDirs = templateRouter.getValue('upload')
 
 const uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
