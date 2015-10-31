@@ -6,7 +6,7 @@ import fs from 'fs';
 /**
  * This class manages the config for the entrie site
  */
-export default config {
+export default class config {
 
     /**
      * Load the config class
