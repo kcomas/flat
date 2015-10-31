@@ -11,7 +11,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     $scope.current = {};
     $scope.current.blog = {};
     $scope.current.blog.permalink = '';
-    $scope.current.blog.template = {};
+    $scope.current.blog.template = '';
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
