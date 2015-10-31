@@ -7,7 +7,6 @@ import fs from 'fs';
  * This function adds new methods to the response object
  * @param {object} req - the request object
  * @param {object} res - the response object
- * @param {string} staticDir - the static file dir
  * @param {number} port - the server port number
  */
 export default function responseMods(req,res,port){
