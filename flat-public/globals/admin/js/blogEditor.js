@@ -46,9 +46,6 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     //edit a section
     $scope.edit = function(blog){
         $scope.current.blog = blog;
-        var name = $scope.current.blog.template;
-        $scope.current.blog.template = {};
-        $scope.current.blog.template.name = name;
     };
 
 

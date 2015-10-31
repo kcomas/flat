@@ -19,7 +19,7 @@ export default class blogManager extends manager {
      * @param {string} excerpt - the excerpt of the blog
      * @param {string} content - the content of the blog
      * @param {array} tags - the tags of the blog
-     * @param {string} - the name of the blog template
+     * @param {string} template - the name of the blog template
      * @param {function(err:error,done:boolean)} callback - the callback function
      * @return {function} the callback function
      */
