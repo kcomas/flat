@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <h2>Blog Template</h2>
         <h4>Blog List Page</h4>
-        <p><pre><blog></blog></pre><br />
+        <p><pre>%%blog%% %%/blog%%</pre><br />
         Title: %%theTitle%%<br />
         Author : %%theAuthor%%<br />
         Excerpt : %%theExceprt%%<br />
@@ -10,10 +10,10 @@
         Date : %%theDate%%<br />
         Link : %%theLink%%</p>
         <h4>Blog Post Page</h4>
-        <p><pre><blog></blog></pre><br />
+        <p><pre>%%blog%% %%/blog%%</pre><br />
         Title : %%theTitle%%<br />
-        Author : %%theAuthor<br />
-        Content : %%theContent<br />
+        Author : %%theAuthor%%<br />
+        Content : %%theContent%%<br />
         Tags : %%theTags%%<br />
         Date : %%theDate%%<p>
         <form novalidate>
