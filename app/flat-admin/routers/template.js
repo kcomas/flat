@@ -4,8 +4,16 @@
 import router from '../../flat-lib/server/router.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
+import uploadedFiles from '../../flat-lib/helpers/uploadedFiles.js';
 
 const templateRouter = new router();
+
+//load the admin config
+fileRouter.loadConfig('./flat-config/adminConfig.json');
+
+const uploadDirs = fileRouter.getValue('upload')
+
+const uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
 //add update a template
 templateRouter.post('/flat-admin/template/upsert',(req,res)=>{
