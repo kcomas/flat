@@ -1,5 +1,5 @@
 {
 
     "source":"./app",
-    "destination":"./docs"
+    "destination":"./flat-public/docs"
 }
