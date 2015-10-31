@@ -75,6 +75,25 @@ templateRouter.post('/flat-admin/template/load-private',(req,res)=>{
     }
 });
 
+//load a private file
+templateRouter.get('/flat-admin/template/load-private',(req,res)=>{
+    var filename = req.query.filename;
+    var item = templateRouter.controller.uploadManager.findByManyParams({'fileName':filename,'private':true});
+    if(item === null){
+        showError(req,res,new Error('private file not found'),500);
+    } else {
+        uploader.readFile(uploader.privateDir+filename,(err,mime,file)=>{
+            if(err){
+                showError(req,res,err,500);
+            } else {
+                res.statusCode = 200;
+                res.setHeader('content-type',mime + '; charset=utf-8');
+                res.end(file);
+            }
+        });
+    }
+});
+
 templateRouter.always((req,res)=>{
     showError(req,res,new Error("Not Found"),404);
 });

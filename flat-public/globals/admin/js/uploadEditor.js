@@ -55,6 +55,13 @@ app.controller('adminUpload',['$scope','$http',function($scope,$http){
             dir = dir.replace(public_remove,'');
             var win = window.open(dir,'_blank');
             win.focus();
+        } else {
+            //dowload the file
+            var jsonData = JSON.stringify({
+                filename : obj.fileName
+            });
+            var win = window.open('/flat-admin/template/load-private?filename='+obj.fileName,'_blank');
+            win.focus();
         }
     };
 
