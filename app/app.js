@@ -53,7 +53,7 @@ const bm = new blogManager(app.getValue('blogDir'));
 const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm); 
 controll.init();
 
-const logger = new flatLog(app.getValue('logDir'),true);
+const logger = new flatLog(app.getValue('logDir'),app.getValue('logToConsole');
 
 app.use(logger.log());
 
