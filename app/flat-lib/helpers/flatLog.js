@@ -64,7 +64,7 @@ export default class flatLog {
                     userAgent : req.headers['user-agent'],
                     date : done    
                 };
-                if(this._console === true){
+                if(this._console === "true"){
                     console.dir(logObj);
                 }
                 var strCode = res.statusCode.toString();
