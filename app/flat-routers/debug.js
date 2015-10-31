@@ -20,7 +20,7 @@ debugRouter.get('/flat-debug/view',(req,res)=>{
     var jsonString = '';
     try {
         var manager = req.query.manager;
-        jsonString = debugRouter.controller[manager].toString();
+        jsonString = JSON.stringify(debugRouter.controller[manager],null,2);
     } catch(err){
         jsonString = JSON.stringify(debugRouter.controller,null,2);
     }
