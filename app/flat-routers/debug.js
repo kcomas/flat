@@ -18,10 +18,14 @@ debugRouter.use((req,res,next)=>{
 debugRouter.get('/flat-debug/view',(req,res)=>{
     res.setHeader('content-type','text/plain; charset=utf-8');
     var jsonString = '';
-    try {
-        var manager = req.query.manager;
-        jsonString = JSON.stringify(debugRouter.controller[manager],null,2);
-    } catch(err){
+    var manager = req.query.manager;
+    if(manager){
+        try {
+            jsonString = JSON.stringify(debugRouter.controller[manager],null,2);
+        } catch(err){
+            jsonString = JSON.stringify(debugRouter.controller,null,2);
+        }
+    } else {
         jsonString = JSON.stringify(debugRouter.controller,null,2);
     }
     res.statusCode = 200;
