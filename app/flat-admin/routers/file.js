@@ -93,8 +93,8 @@ fileRouter.post('/flat-admin/file/dirs',(req,res)=>{
     res.statusCode = 200;
     res.setHeader('Content-Type','application/json; charset=utf8');
     var obj = {};
-    obj.public = fileRouter.controller.uploader.privateDir;
-    obj.private = fileRouter.controller.uploader.publicDir;
+    obj.private = fileRouter.controller.uploader.privateDir;
+    obj.public = fileRouter.controller.uploader.publicDir;
     res.end(JSON.stringify(obj));
 });
 
