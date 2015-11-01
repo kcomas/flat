@@ -91,7 +91,10 @@ fileRouter.post('/flat-admin/file/remove',(req,res)=>{
 fileRouter.post('/flat-admin/file/dirs',(req,res)=>{
     res.statusCode = 200;
     res.setHeader('Content-Type','application/json; charset=utf8');
-    res.end(JSON.stringify(uploadDirs));
+    var obj = {};
+    obj.public = fileRouter.controller.uploader.privateDir;
+    obj.private = fileRouter.controller.uploader.publicDir;
+    res.end(JSON.stringify(obj));
 });
 
 fileRouter.always((req,res)=>{
