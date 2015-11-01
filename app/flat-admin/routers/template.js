@@ -8,19 +8,6 @@ import uploadedFiles from '../../flat-lib/helpers/uploadedFiles.js';
 
 const templateRouter = new router();
 
-var uploadDirs = null;
-
-var uploader = null;
-
-templateRouter.use((req,res,next)=>{
-    if(uploadDirs === null){
-        uploadDirs = templateRouter.controller.config.getValue('upload');
-        console.dir(uploadDirs);
-        uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
-    }
-    next();
-});
-
 //add update a template
 templateRouter.post('/flat-admin/template/upsert',(req,res)=>{
     var name = req.body.name;
@@ -77,7 +64,7 @@ templateRouter.post('/flat-admin/template/load-private',(req,res)=>{
     if(item === null){
         showError(req,res,new Error('private file not found'),500);
     } else {
-        uploader.readFile(uploader.privateDir+filename,(err,mime,file)=>{
+        templateRouter.controller.uploader.readFile(templateRouter.controller.uploader.privateDir+filename,(err,mime,file)=>{
             if(err){
                 showError(req,res,err,500);
             } else {
@@ -96,7 +83,7 @@ templateRouter.get('/flat-admin/template/load-private',(req,res)=>{
     if(item === null){
         showError(req,res,new Error('private file not found'),500);
     } else {
-        uploader.readFile(uploader.privateDir+filename,(err,mime,file)=>{
+        templateRouter.controller.uploader.readFile(templateRouter.controller.uploader.privateDir+filename,(err,mime,file)=>{
             if(err){
                 showError(req,res,err,500);
             } else {

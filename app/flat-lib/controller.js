@@ -21,8 +21,9 @@ export default class controller {
      * @param {blogManager} blogManager - the blog manager
      * @param {config} configManager - the config manager
      * @param {info} infoManager - the info manager
+     * @param {uploadedFiles} uploadedFiles - the class that reads and writes files from the user
      */
-    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager,configManager,infoManager){
+    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager,configManager,infoManager,uploadedFiles){
 
         /**
          * The page manager
@@ -83,6 +84,12 @@ export default class controller {
          * @type {info}
          */
         this._info = infoManager;
+
+        /**
+         * The user file manager
+         * @type {uploadedFiles}
+         */
+        this._uploader = uploadedFiles;
 
     }
 
@@ -244,6 +251,22 @@ export default class controller {
      */
     get info(){
         return this._info;
+    }
+
+    /**
+     * Set the user file manager
+     * @param {uploadedFiles} manager - the user file manager
+     */
+    set uploader(manager){
+        this._uploader = manager;
+    }
+
+    /**
+     * Get the user file manager
+     * @return {uploadedFiles} the user file manager
+     */
+    get uploader(){
+        return this._uploader;
     }
 
     /**

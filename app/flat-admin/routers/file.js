@@ -4,21 +4,8 @@
 import router from '../../flat-lib/server/router.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
-import uploadedFiles from '../../flat-lib/helpers/uploadedFiles.js';
 
 const fileRouter = new router();
-
-var uploadDirs = null;
-
-var uploader = null;
-
-fileRouter.use((req,res,next)=>{
-    if(uploadDirs === null){
-        uploadDirs = fileRouter.controller.config.getValue('upload');
-        uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
-    }
-    next();
-});
 
 //upload a file
 fileRouter.post('/flat-admin/file/upload',(req,res)=>{
@@ -34,7 +21,7 @@ fileRouter.post('/flat-admin/file/upload',(req,res)=>{
             if(err){
                 showError(req,res,err,500);
             } else {
-                uploader.writeFile(pri,req.body.files.fileData.filename,mType,req.body.files.fileData.data,(err,done)=>{
+                fileRouter.controller.uploader.writeFile(pri,req.body.files.fileData.filename,mType,req.body.files.fileData.data,(err,done)=>{
                     if(err){
                         showError(req,res,err,500);
                     } else {
@@ -48,7 +35,7 @@ fileRouter.post('/flat-admin/file/upload',(req,res)=>{
             if(err){
                 showError(req,res,err,500);
             } else {
-                uploader.writeFile(pri,req.body.files.fileData.filename,mType,req.body.files.fileData.data,(err,done)=>{
+                fileRouter.controller.uploader.writeFile(pri,req.body.files.fileData.filename,mType,req.body.files.fileData.data,(err,done)=>{
                     if(err){
                         showError(req,res,err,500);
                     } else {
@@ -89,7 +76,7 @@ fileRouter.post('/flat-admin/file/remove',(req,res)=>{
         if(err){
             showError(req,res,err,500);
         } else {
-            uploader.removeFile(itemArr[0].get('private'),itemArr[0].get('fileName'),(err,done)=>{
+            fileRouter.controller.uploader.removeFile(itemArr[0].get('private'),itemArr[0].get('fileName'),(err,done)=>{
                 if(err){
                     showError(req,res,err,500);
                 } else {

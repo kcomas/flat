@@ -12,6 +12,7 @@ import blogManager from './flat-lib/blog/blogManager.js';
 import controller from './flat-lib/controller.js';
 import configManager from './flat-lib/config/config.js';
 import infoManager from './flat-lib/info/info.js';
+import uploadedFiles from '../flat-lib/helpers/uploadedFiles.js';
 
 const config = new configManager('./flat-config/config.json');
 
@@ -33,7 +34,11 @@ const bm = new blogManager(config.getValue('blogDir'));
 
 const info = new infoManager(config.getValue('infoFile'),config.getValue('infoFile'),parseInt(config.getValue('writeInfoToDiskAfter')));
 
-const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm,config,info); 
+let uploadDirs =  config.getValue('upload');
+
+const uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
+
+const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm,config,info,uploader); 
 controll.init();
 
 export default controll;
