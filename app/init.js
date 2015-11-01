@@ -31,7 +31,7 @@ const um = new uploadManager(config.getValue('uploadDir'));
 
 const bm = new blogManager(config.getValue('blogDir'));
 
-const info = new infoManager(config.getValue('infoFile'),config.getValue('infoFile'),parseInt(config.getValue('writeInfoToDiskAfter'));
+const info = new infoManager(config.getValue('infoFile'),config.getValue('infoFile'),parseInt(config.getValue('writeInfoToDiskAfter')));
 
 const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm,config,info); 
 controll.init();
