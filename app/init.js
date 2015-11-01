@@ -34,8 +34,7 @@ const bm = new blogManager(config.getValue('blogDir'));
 
 const info = new infoManager(config.getValue('infoFile'),config.getValue('infoFile'),parseInt(config.getValue('writeInfoToDiskAfter')));
 
-let uploadDirs =  config.getValue('upload');
-console.dir(uploadDirs);
+var uploadDirs =  config.getValue('upload');
 
 const uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
