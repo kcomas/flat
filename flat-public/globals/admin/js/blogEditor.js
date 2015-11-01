@@ -97,15 +97,11 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
        });
     };
 
-    $scope.checkNumber = function(){
+    //save the blog list template
+    $scope.saveListTemplate = function(){
         if(!Number.isInteger($scope.current.blogList.numPerPage)){
             $scope.current.blogList.numPerPage = 10;
         }
-    };
-
-    //save the blog list template
-    $scope.saveListTemplate = function(){
-
     };
 
 }]);
