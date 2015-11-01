@@ -24,7 +24,7 @@
                 </select>
             </div>
             <div class="form-group">
-                Number Of Blogs Per Page: <input class="form-control" ng-change="checkNumber(current.blogList.numPerPage)"  ng-model="current.blogList.numPerPage" />
+                Number Of Blogs Per Page: <input class="form-control" ng-change="checkNumber()"  ng-model="current.blogList.numPerPage" />
             </div>
             <div class="form-group text-center">
                 <button class="btn btn-success" ng-click="saveListTemplate()">Save</button>

@@ -14,6 +14,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     $scope.current.blog.template = '';
     $scope.current.blogList = {};
     $scope.current.blogList.template = '';
+    $scope.current.blogList.numPerPage = 10;
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
@@ -96,9 +97,9 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
        });
     };
 
-    $scope.checkNumber = function(num){
-        if(!Number.isInteger(num)){
-            num = 10;
+    $scope.checkNumber = function(){
+        if(!Number.isInteger($scope.current.blogList.numPerPage)){
+            $scope.current.blogList.numPerPage = 10;
         }
     };
 
