@@ -17,7 +17,7 @@
         Tags : %%theTags%%<br />
         Date : %%theDate%%<p>
         <form novalidate>
-
+            <h3>Blog List Template</h3>
         </div>
     </div>
 </div>
