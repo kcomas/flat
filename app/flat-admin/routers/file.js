@@ -4,6 +4,7 @@
 import router from '../../flat-lib/server/router.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
+import uploadedFiles from '../../flat-lib/helpers/uploadedFiles.js';
 
 const fileRouter = new router();
 
