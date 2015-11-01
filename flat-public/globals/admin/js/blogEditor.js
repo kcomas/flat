@@ -99,7 +99,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
 
     $scope.checkNumber = function(){
             var num = parseInt($scope.current.blogList.numPerPage);
-            if(isNaN(num){
+            if(isNaN(num)){
                 $scope.current.blogList.numPerPage = 10;
             }
     };
