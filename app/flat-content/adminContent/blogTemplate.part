@@ -17,7 +17,12 @@
         Tags : %%theTags%%<br />
         Date : %%theDate%%<p>
         <form novalidate>
-            <h3>Blog List Template</h3>
-        </div>
+            <h3>Blog List Template: {{current.blogListTemplate}}</h3>
+            <div class="form-group">
+                <select class="form-control" ng-model="current.blogListTemplate">
+                    <option ng-repeat="template in templateList" value="{{template.name}}">{{template.name}}</option>
+                </select>
+            </div>
+        </form>
     </div>
 </div>
