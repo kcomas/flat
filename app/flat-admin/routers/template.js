@@ -15,7 +15,7 @@ var uploader = null;
 templateRouter.use((req,res,next)=>{
     if(uploadDirs === null){
         uploadDirs = templateRouter.controller.config.getValue('upload');
-        console.log(uploadDirs);
+        console.dir(uploadDirs);
         uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
     }
     next();
