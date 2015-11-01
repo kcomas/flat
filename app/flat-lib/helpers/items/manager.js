@@ -26,9 +26,11 @@ export default class manager {
          * @type {array}
          */
         this.items = [];
-
-        //make sure the directory exists
-        if(!fs.existsSync(this.dir)){
+        
+        try {
+        //check that the dir exists if not create
+            let stat = fs.lstatSync(this.dir);
+        } catch(err){
             fs.mkdirSync(this.dir);
         }
     }

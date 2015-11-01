@@ -20,8 +20,9 @@ export default class controller {
      * @param {uploadManager} uploadManger - the uplaod manager
      * @param {blogManager} blogManager - the blog manager
      * @param {config} configManager - the config manager
+     * @param {info} infoManager - the info manager
      */
-    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager,configManager){
+    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager,configManager,infoManager){
 
         /**
          * The page manager
@@ -76,6 +77,12 @@ export default class controller {
          * @type {config}
          */
         this._config = configManager;
+
+        /**
+         * The info manager
+         * @type {info}
+         */
+        this._info = infoManager;
 
     }
 
@@ -221,6 +228,22 @@ export default class controller {
      */
     get config(){
         return this._config;
+    }
+
+    /**
+     * Set the info manager
+     * @param {info} manager - the info manager
+     */
+    set info(manager){
+        this._info = manager;
+    }
+
+    /**
+     * Get the info manager
+     * @return {info} the info manager
+     */
+    get info(){
+        return this._info;
     }
 
     /**
