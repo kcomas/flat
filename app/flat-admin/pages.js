@@ -33,7 +33,10 @@ if (!fs.existsSync(pageConfig.cacheDir)){
 var pages = [];
 
 
-var index = new page('/','Admin Home',pageConfig,'');
+var index = new page('/','Admin Home',pageConfig,'indexEdit');
+index.addContents('Info','indexInfo.part');
+index.addContents('Logs','indexLogs.part');
+index.addJs({"src":"/globals/admin/js/indexEditor.js"});
 
 var upload = new page('/upload','Upload Files',pageConfig,'adminUpload');
 upload.addContents('Upload','fileUpload.part');

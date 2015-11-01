@@ -1,0 +1,8 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>Log : {{current.logName}}</h2>
+        <div class="form-group">
+            Lines To Show: <input type="text" class="form-control" ng-model="current.logLines" />
+        </div>
+    </div>
+</div>
