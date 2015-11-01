@@ -82,6 +82,19 @@ export default class user extends item {
         return true;
     }
 
+    /**
+     * Convert the user to string and hide the username and password
+     * @override
+     * @return {object} the user object wihout the salt or hash
+     */
+    toString(){
+        var newUser = {};
+        newUser.username = this.data.username;
+        newUser.email = this.data.email;
+        newUser.dateCreated = this.data.dateCreated;
+        return JSON.stringify(newUser,null,2);
+    }
+
 
 
 }
