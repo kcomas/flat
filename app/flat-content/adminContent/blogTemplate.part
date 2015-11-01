@@ -17,11 +17,17 @@
         Tags : %%theTags%%<br />
         Date : %%theDate%%<p>
         <form novalidate>
-            <h3>Blog List Template: {{current.blogListTemplate}}</h3>
+            <h3>Blog List Template: {{current.blogList.template}}</h3>
             <div class="form-group">
-                <select class="form-control" ng-model="current.blogListTemplate">
+                <select class="form-control" ng-model="current.blogList.template">
                     <option ng-repeat="template in templateList" value="{{template.name}}">{{template.name}}</option>
                 </select>
+            </div>
+            <div class="form-group">
+                Number Of Blogs Per Page: <input class="form-control" ng-change="checkNumber(current.blogList.numPerPage)"  ng-model="current.blogList.numPerPage" />
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-success" ng-click="saveListTemplate()">Save</button>
             </div>
         </form>
     </div>

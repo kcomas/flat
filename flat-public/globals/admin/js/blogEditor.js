@@ -12,7 +12,8 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     $scope.current.blog = {};
     $scope.current.blog.permalink = '';
     $scope.current.blog.template = '';
-    $scope.current.blogListTemplate = '';
+    $scope.current.blogList = {};
+    $scope.current.blogList.template = '';
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
@@ -87,9 +88,25 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
        $http.post('/flat-admin/blog/upsert',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
-            $scope.clear();
+            if($scope.current.blog.permalink === ''){
+                //if no permalink for saving reload blogs list
+                $scope.clear();
+            }
             $scope.load();
        });
+    };
+
+    $scope.checkNumber = function(num){
+        try {
+            parseInt(num);
+        } catch(err){
+            num = 10;
+        }
+    };
+
+    //save the blog list template
+    $scope.saveListTemplate = function(){
+
     };
 
 }]);
