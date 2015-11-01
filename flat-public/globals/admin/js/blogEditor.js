@@ -97,7 +97,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.checkNumber = function(num){
-        if(!Number.isInteger(num){
+        if(!Number.isInteger(num)){
             num = 10;
         }
     };
