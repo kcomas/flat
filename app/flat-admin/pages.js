@@ -35,6 +35,7 @@ var pages = [];
 
 var index = new page('/','Admin Home',pageConfig,'indexEdit');
 index.addContents('Info','indexInfo.part');
+index.addContents('Sessions','indexSessions.part');
 index.addContents('Logs','indexLogs.part');
 index.addJs({"src":"/globals/admin/js/indexEditor.js"});
 

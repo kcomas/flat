@@ -3,6 +3,7 @@
 
 import fs from 'fs';
 
+
 /**
  * This class collects information from various parts of the server
  */
@@ -41,6 +42,18 @@ export default class info {
          * @type {object}
          */
         this._data = {};
+
+        /**
+         * The current page views key is the perm link
+         * @type {object}
+         */
+        this._data.pageViews = {};
+
+        /**
+         * The last user who logged in name and date
+         * @type {object}
+         */
+        this._data.lastLogin = {};
 
         //try to load the info file
         try {
@@ -87,11 +100,9 @@ export default class info {
     }
 
     /**
-     * Set or merge an object into the data object
-     * @param {object} obj - the object to merge
+     * Check if we need to write to disk
      */
-    set(obj){
-        Object.assign(this._data,obj);
+    checkWrite(){
         this.currentUpdates++;
         if(this.currentUpdates >= this.writeInfoToDiskAfter){
             //this is async but we are not looking if success or not
@@ -99,5 +110,20 @@ export default class info {
         }
     }
 
+    /**
+     * Get the data object
+     * @return {object} the data object
+     */
+    get data() {
+        return this._data;
+    }
+
+    /**
+     * Set the data object
+     * @param {object} obj - the new data object
+     */
+    set data(obj){
+        this._data = obj;
+    }
 
 }
