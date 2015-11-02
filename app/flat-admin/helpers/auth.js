@@ -44,6 +44,13 @@ export default function auth(controller,authList){
                 res.redirect('/flat-login');
             }
         } else {
+            //track page views
+            var data = controller.info.data;
+            if(data.pageViews[req.url]){
+                data.pageViews[req.url]++;
+            } else {
+                data.pageViews[req.url] = 1;
+            }
             next();
         }
     }
