@@ -168,7 +168,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
             $scope.action.msg = msg;
             $scope.action.status = status;
         });
-    });
+    };
 
 }]);
 
