@@ -220,14 +220,18 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
 
     //shift a child element up in its array
     $scope.shiftUp = function(itemArr,index){
-        if(index > 0  && index < itemArr.length){
+        console.dir(itemArr);
+        console.dir(index);
+        if(index < itemArr.length){
             itemArr.move(itemArr[index],1);
         }
     };
 
     //shift a child element down in its array
     $scope.shiftDown = function(itemArr,index){
-        if(index > 0  && index < itemArr.length){
+        console.dir(itemArr);
+        console.dir(index);
+        if(index > 0){
             itemArr.move(itemArr[index],-1);
         }
     };
