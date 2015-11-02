@@ -13,26 +13,20 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
     $scope.current.blog.permalink = '';
     $scope.current.blog.template = '';
     $scope.current.blogList = {};
-    $scope.current.blogList.template = '';
     $scope.current.blogList.numPerPage = 10;
+    $scope.current.blogList.cache = '';
     $scope.action = {};
     $scope.action.status = null;
     $scope.action.msg = '';
     $scope.blogList =[];
-    $scope.templateList = [];
-
-    //load the templates
-    $http.post('/flat-admin/template/list').success(function(templates,status){
-        $scope.templateList = templates;
-    });
 
     $scope.load = function(){
         $http.post('/flat-admin/blog/list').success(function(blogs,status){
             $scope.blogList = blogs;
         });
-        $http.post('/flat-admin/index/blogTemplate/get').success(function(data,status){
-            $scope.current.blogList.template = data.template;
+        $http.post('/flat-admin/blog/blogTemplate/get').success(function(data,status){
             $scope.current.blogList.numPerPage = data.numPerPage;
+            $scope.current.blogList.cache = data.cache;
         });
     };
 
@@ -87,7 +81,6 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
             excerpt : $scope.current.blog.excerpt,
             tags : tmpTags,
             content : $scope.current.blog.content,
-            template : $scope.current.blog.template,
             permalink : $scope.current.blog.permalink
        });
        $http.post('/flat-admin/blog/upsert',jsonData).success(function(msg,status){
@@ -108,10 +101,9 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
             $scope.current.blogList.numPerPage = 10;
         }
         var jsonData = JSON.stringify({
-            template : $scope.current.blogList.template,
             numPerPage : $scope.current.blogList.numPerPage
         });
-        $http.post('/flat-admin/index/blogTemplate/set',jsonData).success(function(msg,status){
+        $http.post('/flat-admin/blog/blogTemplate/set',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
             $scope.load();

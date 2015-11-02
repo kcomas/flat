@@ -19,13 +19,12 @@ export default class blogManager extends manager {
      * @param {string} excerpt - the excerpt of the blog
      * @param {string} content - the content of the blog
      * @param {array} tags - the tags of the blog
-     * @param {string} template - the name of the blog template
      * @param {function(err:error,done:boolean)} callback - the callback function
      * @return {function} the callback function
      */
-    create(name,title,author,excerpt,content,tags,template,callback){
+    create(name,title,author,excerpt,content,tags,callback){
         var newBlog = new blog(this.dir);
-        newBlog.create(name,title,author,excerpt,content,tags,template,(err,done)=>{
+        newBlog.create(name,title,author,excerpt,content,tags,(err,done)=>{
             if(err){
                 return callback(err,null);
             }

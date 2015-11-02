@@ -22,12 +22,11 @@ blogRouter.post('/flat-admin/blog/upsert',(req,res)=>{
     var excerpt = req.body.excerpt;
     var content = req.body.content;
     var tags = req.body.tags || [];
-    var template = req.body.template;
     var permalink = req.body.permalink;
     var blog = blogRouter.controller.blogManager.findByParam('permalink',permalink);
     if(blog === null){
         //create a new blog
-        blogRouter.controller.blogManager.create(name,title,author,excerpt,content,tags,template,(err,done)=>{
+        blogRouter.controller.blogManager.create(name,title,author,excerpt,content,tags,(err,done)=>{
             if(err){
                 showError(req,res,err,500);
                 return;
@@ -36,7 +35,7 @@ blogRouter.post('/flat-admin/blog/upsert',(req,res)=>{
         });
     } else {
         //update existing
-        blog.upsert({'title':title,'excerpt':excerpt,'content':content,'tags':tags,'template':template},(err,done)=>{
+        blog.upsert({'title':title,'excerpt':excerpt,'content':content,'tags':tags},(err,done)=>{
             if(err){
                 showError(req,res,err,500);
                 return;
@@ -56,6 +55,66 @@ blogRouter.post('/flat-admin/blog/remove',(req,res)=>{
         }
         showSuccess(req,res,'Blog Removed',200);
     });
+});
+
+//render a blog
+blogRouter.post('/flat-admin/blog/render',(req,res)=>{
+    var permalink = req.body.permalink;
+    var blog = blogRouter.controller.blogManager.findByParam('permalink',permalink);
+    if(blog === null){
+        showError(req,res,new Error('No Blog Found'),500);
+        return;
+    }
+    var cache = blogRouter.controller.cacheManager.findByParam('permalink',permalink);
+    var fileStr = blogRender(blog,blogRouter.controller.blogTemplate.cache); 
+    if(cache === null){
+        //create
+        blogRouter.controller.cacheManager.create(permalink,fileStr,(err,done)=>{
+            if(err){
+                showError(req,res,new Error('Failed To Create'),500);
+                return;
+            }
+            showSuccess(req,res,'Blog Cache Created',200);
+        });
+    } else {
+        //update
+        cache.upsert({'fileStr':fileStr},(err,done)=>{
+            if(err){
+                showError(req,res,new Error('Failed To Update'),500);
+                return;
+            }
+            showSuccess(req,res,'Blog Updated',200);
+        });
+    }
+});
+
+//set the blog cache
+blogRouter.post('/flat-admin/blog/blogTemplate/cache',(req,res)=>{
+    var permalink = req.bofy.permalink;
+    var cache = blogRouter.controller.cacheManager.findByParam('permalink',permalink);
+    if(cache === null){
+        showError(req,res,new Error('No Cache Found'),500);
+    }
+    blogRouter.controller.blogTemplate.cache = cache.get('fileStr');
+    showSuccess(req,res,'Blog Cache Set',200);
+});
+
+//update the blog list template
+blogRouter.post('/flat-admin/blog/blogTemplate/set',(req,res)=>{
+    var numPerPgae = parseInt(req.body.numPerPage);
+    blogRouter.controller.blogTemplate.numPerPage = numPerPage;
+    showSuccess(req,res,'Blog List Template Set',200);
+});
+
+//get the current blog template information
+blogRouter.post('/flat-admin/blog/blogTemplate/get',(req,res)=>{
+    var obj = {
+        'numPerPage':blogRouter.controller.blogTemplate.numPerPage,
+        'cache':blogRouter.controller.blogTemplate.cache
+    };
+    res.statusCode = 200;
+    res.setHeader('content-type','application/json; charset=utf-8');
+    res.end(JSON.stringify(obj));
 });
 
 blogRouter.always((req,res)=>{

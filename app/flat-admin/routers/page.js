@@ -16,7 +16,7 @@ pageRouter.post('/flat-admin/page/list',(req,res)=>{
 });
 
 //delete page
-pageRouter.post('/flat-admin/page/remov3',(req,res)=>{
+pageRouter.post('/flat-admin/page/remove',(req,res)=>{
     pageRouter.controller.pageManager.removeByParam('permalink',req.body.permalink,(err,done)=>{
         if(err){
             showError(req,res,err,500);

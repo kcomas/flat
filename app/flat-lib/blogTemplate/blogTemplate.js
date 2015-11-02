@@ -56,6 +56,12 @@ export default class blogTemplate {
          */
         this._data.numPerPage = 10;
 
+        /**
+         * The cache page to use for rendering
+         * @type {string}
+         */
+        this._data.cache = '';
+
         //try to read a file if it is on disk
         try {
             this._data = JSON.parse(fs.readFileSync(this._dir+this._file,'utf8'));
@@ -110,6 +116,22 @@ export default class blogTemplate {
      */
     get numPerPage(){
         return this._data.numPerPage;
+    }
+
+    /**
+     * Set the current blog cache file
+     * @param {string} str - the string of the blog cache
+     */
+    set cache(str){
+        this._data.cache = str;
+    }
+
+    /**
+     * Get the blog cache file
+     * @return {string} the blog cache
+     */
+    get cache(){
+        return this._data.cache;
     }
 
 
