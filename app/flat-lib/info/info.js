@@ -28,7 +28,11 @@ export default class info {
         try {
             var stat = fs.statSync(this.dir);
         } catch(err){
-            fs.mkdirSync(this.dir);
+			if(err.code === 'ENOENT'){
+				fs.mkdirSync(this.dir);
+			} else {
+				console.dir(err);
+			}
         }
 
         /**

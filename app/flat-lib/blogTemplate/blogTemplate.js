@@ -25,7 +25,11 @@ export default class blogTemplate {
         try {
             var stat = fs.statSync(this._dir);
         } catch(err){
-            fs.mkdirSync(this._dir);
+            if(err.code === 'ENOENT'){
+                fs.mkdirSync(this._dir);
+            } else {
+                console.dir(err);
+            }
         }
 
         /**

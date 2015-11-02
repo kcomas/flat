@@ -33,7 +33,11 @@ export default class uploadedFiles {
         //check that the dir exists if not create
             var stat = fs.statSync(this._publicDir);
         } catch(err){
-            fs.mkdirSync(this._publicDir);
+			if(err.code === 'ENOENT'){
+				fs.mkdirSync(this._publicDir);
+			} else {
+				console.dir(err);
+			}
         }
         /**
          * The private uploaded file dir
@@ -45,7 +49,11 @@ export default class uploadedFiles {
         //check that the dir exists if not create
             var stat = fs.statSync(this._privateDir);
         } catch(err){
-            fs.mkdirSync(this._privateDir);
+			if(err.code === 'ENOENT'){
+				fs.mkdirSync(this._privateDir);
+			} else {
+				console.dir(err);
+			}
         }
     }
 
