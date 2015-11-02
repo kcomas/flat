@@ -9,7 +9,7 @@
     "uploadDir":"./flat-content/uploads/",
     "blogDir":"./flat-content/blogs/",
     "logDir":"./flat-logs/",
-    "logToConsole":"true",
+    "logToConsole":"false",
     "scriptDir":"/flat-scripts/",
     "sessionCookie":"flat-session",
     "sessionTime":"14",

@@ -30,6 +30,10 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
         $http.post('/flat-admin/blog/list').success(function(blogs,status){
             $scope.blogList = blogs;
         });
+        $http.post('/flat-admin/index/blogTemplate/get').success(function(data,status){
+            $scope.current.blogList.template = data.template;
+            $scope.current.blogList.numPerPage = data.numPerPage;
+        });
     };
 
     //load all of the sections
