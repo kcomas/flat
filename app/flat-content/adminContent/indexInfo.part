@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <h2>System Info</h2>
         <div class="form-group">
-            <textarea style="max-height:500px; width:100%; overflow:scroll" readonly>{{current.info}}</textarea>
+            <textarea style="overflow:scroll" class="form-control" readonly>{{current.info}}</textarea>
         </div>
         <div class="form-group text-center">
             <button class="btn btn-primary" ng-click="refresh()">Refresh</button> <button class="btn btn-success" ng-click="toDisk()">Write To Disk</button>

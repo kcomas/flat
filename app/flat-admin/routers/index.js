@@ -31,7 +31,7 @@ indexRouter.post('/flat-admin/index/log',(req,res)=>{
     }
     var logDir = indexRouter.controller.config.getValue('logDir');
     tail(logDir+log,lines,(err,file)=>{
-        res.setHeader('content-type','application/json; charset=utf-8');
+        res.setHeader('content-type','text/plain; charset=utf-8');
         if(err){
             res.statusCode = 500;
             res.end(err);
