@@ -163,7 +163,7 @@ app.controller('adminPageEdit',['$scope','$http',function($scope,$http){
     $scope.setBlogTemplate = function(page){
         var jsonData = JSON.stringify({
             permalink : page.permalink
-        }):
+        });
         http.post('/flat-admin/blog/blogTemplate/cache',jsonData).success(function(msg,status){
             $scope.action.msg = msg;
             $scope.action.status = status;
