@@ -211,6 +211,27 @@ app.controller('adminTemplateEdit',['$scope','$http',function($scope,$http){
         }
    };
 
+    Array.prototype.move = function(element,offset){
+            var index = this.indexOf(element);
+            var newIndex = index + offset;
+            removedElement = this.splice(index, 1)[0];
+            this.splice(newIndex, 0, removedElement);
+    }
+
+    //shift a child element up in its array
+    $scope.shiftUp = function(itemArr,index){
+        if(index > 0  && index < itemArr.length){
+            itemArr.move(itemArr[index],1);
+        }
+    };
+
+    //shift a child element down in its array
+    $scope.shiftDown = function(itemArr,index){
+        if(index > 0  && index < itemArr.length){
+            itemArr.move(itemArr[index],-1);
+        }
+    };
+
     $scope.save = function(){
         if($scope.current.visual === true){
                 $scope.current.template.layout = angular.toJson($scope.visualItems);
