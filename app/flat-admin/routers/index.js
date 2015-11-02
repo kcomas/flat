@@ -1,7 +1,7 @@
 
 "use strict"
 
-import router from '../../flat-lib/helpers/server/router.js';
+import router from '../../flat-lib/server/router.js';
 import showError from '../helpers/showError.js';
 import showSuccess from '../helpers/showSuccess.js';
 import tail from '../../flat-scripts/tail.js';
