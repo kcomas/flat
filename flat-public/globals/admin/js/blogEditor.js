@@ -68,6 +68,16 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
         $scope.action.status = null;
     };
 
+    $scope.render = function(blog){
+        var jsonData = JSON.stringify({
+            permalink : blog.permalink
+        });
+        $http.post('/flat-admin/blog/render',jsonData).success(function(msg,status){
+            $scope.action.msg = msg;
+            $scope.action.status = status;
+        });
+    };
+
     $scope.save = function(name){
        var tmpTags = [];
        try {

@@ -18,7 +18,7 @@
         Date : $$theDate$$<p>
         <form novalidate>
             <h3>Blog Cache</h3>
-            <pre>{{current.blogList.cache}}<pre>
+            <pre>{{current.blogList.cache}}</pre>
             <div class="form-group">
                 Number Of Blogs Per Page: <input class="form-control" ng-model="current.blogList.numPerPage" />
             </div>

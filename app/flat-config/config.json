@@ -5,6 +5,7 @@
     "sessionDir":"./flat-content/sessions/",
     "templateDir":"./flat-content/templates/",
     "cacheDir":"./flat-content/caches/",
+    "blogCacheDir":"./flat-content/blogCaches/",
     "userDir":"./flat-content/users/",
     "uploadDir":"./flat-content/uploads/",
     "blogDir":"./flat-content/blogs/",

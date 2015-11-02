@@ -29,6 +29,8 @@ const usm = new userManager(config.getValue('userDir'));
 
 const cm = new cacheManager(config.getValue('cacheDir'));
 
+const blogCache = new cacheManager(config.getValue('blogCacheDir'));
+
 const um = new uploadManager(config.getValue('uploadDir'));
 
 const bm = new blogManager(config.getValue('blogDir'));
@@ -41,7 +43,7 @@ const uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
 const bt = new blogTemplate(config.getValue('blogListTemplateDir'),config.getValue('blogListTemplateFile'));
 
-const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm,config,info,uploader,bt); 
+const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm,config,info,uploader,bt,blogCache); 
 controll.init();
 
 export default controll;

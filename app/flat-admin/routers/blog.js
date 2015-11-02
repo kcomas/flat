@@ -53,7 +53,10 @@ blogRouter.post('/flat-admin/blog/remove',(req,res)=>{
             showError(req,res,err,500);
             return;
         }
-        showSuccess(req,res,'Blog Removed',200);
+         //delete the cached page if it exists
+         blogRouter.controller.blogCache.removeByParam('permalink',permalink,(err,done)=>{
+            showSuccess(req,res,"item deleted",200);
+        });
     });
 });
 
@@ -65,11 +68,11 @@ blogRouter.post('/flat-admin/blog/render',(req,res)=>{
         showError(req,res,new Error('No Blog Found'),500);
         return;
     }
-    var cache = blogRouter.controller.cacheManager.findByParam('permalink',permalink);
+    var cache = blogRouter.controller.blogCache.findByParam('permalink',permalink);
     var fileStr = blogRender(blog,blogRouter.controller.blogTemplate.cache); 
     if(cache === null){
         //create
-        blogRouter.controller.cacheManager.create(permalink,fileStr,(err,done)=>{
+        blogRouter.controller.blogCache.create(permalink,fileStr,(err,done)=>{
             if(err){
                 showError(req,res,new Error('Failed To Create'),500);
                 return;
@@ -91,7 +94,7 @@ blogRouter.post('/flat-admin/blog/render',(req,res)=>{
 //set the blog cache
 blogRouter.post('/flat-admin/blog/blogTemplate/cache',(req,res)=>{
     var permalink = req.body.permalink;
-    var cache = blogRouter.controller.cacheManager.findByParam('permalink',permalink);
+    var cache = blogRouter.controller.blogCache.findByParam('permalink',permalink);
     if(cache === null){
         showError(req,res,new Error('No Cache Found'),500);
         return;
