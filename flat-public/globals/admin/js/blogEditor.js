@@ -104,7 +104,7 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
             $scope.current.blogList.numPerPage = 10;
         }
         var jsonData = JSON.stringify({
-            template : current.blogList.template,
+            template : $scope.current.blogList.template,
             numPerPage : $scope.current.blogList.numPerPage
         });
         $http.post('/flat-admin/index/blogTemplate/set',jsonData).success(function(msg,status){
