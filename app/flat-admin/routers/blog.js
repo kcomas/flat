@@ -105,7 +105,7 @@ blogRouter.post('/flat-admin/blog/blogTemplate/cache',(req,res)=>{
 
 //update the blog list template
 blogRouter.post('/flat-admin/blog/blogTemplate/set',(req,res)=>{
-    var numPerPgae = parseInt(req.body.numPerPage);
+    var numPerPage = parseInt(req.body.numPerPage);
     blogRouter.controller.blogTemplate.numPerPage = numPerPage;
     showSuccess(req,res,'Blog List Template Set',200);
 });
