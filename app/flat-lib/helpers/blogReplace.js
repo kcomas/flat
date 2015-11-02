@@ -8,7 +8,8 @@
  * @return {string} the rendered layout
  */
 export default function blogReplace(toReplace,layout){
-    for(key in toReplace){
+    //@TODO CHNAGE THIS AND ALL OTHERS
+    for(let key in toReplace){
         layout = layout.replace(key,toReplace[key]);
     }
     return layout;
