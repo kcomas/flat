@@ -14,11 +14,11 @@ app.controller('indexEdit',['$scope','$http',function($scope,$http){
     $scope.current.session = '';
 
 
-    $scope.getAccessLog() = function(){
+    $scope.getAccessLog = function(){
         $scope.log('access.log');
     };
 
-    $scope.getErrorLog() = function(){
+    $scope.getErrorLog = function(){
         $scope.log('error.log');
     };
 
