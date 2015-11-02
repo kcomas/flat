@@ -57,11 +57,11 @@ indexRouter.post('/flat-admin/index/log',(req,res)=>{
 //update the bog list template
 indexRouter.post('/flat-admin/index/blogTemplate/set',(req,res)=>{
     var template = req.body.template;
-    var numPerPgae = parseInt(req.body.numPerPgae);
+    var numPerPgae = parseInt(req.body.numPerPage);
     if(template !== ''){
         indexRouter.controller.blogTemplate.template = template;
         indexRouter.controller.blogTemplate.numPerPage = numPerPgae;
-        showSuccess(req,res,'Blog List Template',200);
+        showSuccess(req,res,'Blog List Template Set',200);
     } else {
         showError(req,res,new Error('Template Not Set'),500);
     }
