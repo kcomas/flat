@@ -47,10 +47,10 @@ app.controller('indexEdit',['$scope','$http',function($scope,$http){
     $scope.refresh = function(){
         $scope.clear();
         $http.post('/flat-admin/index/info').success(function(info,status){
-            $scope.current.info = info;
+            $scope.current.info = JSON.stringify(info,null,2);
         });
         $http.post('/flat-admin/index/list-sessions').success(function(sessions,status){
-            $scope.current.session = sessions;
+            $scope.current.session = JSON.stringify(sessions,null,2);
         });
     };
 

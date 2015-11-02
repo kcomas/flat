@@ -15,7 +15,7 @@ export default function tail(file,lines,callback){
     var cmd = 'tail -n ' + lines + ' ' + file;
     exec(cmd,(error,stdout,stderr)=>{
         if(error){
-            return callback(error,null);
+            return callback(stderr,null);
         }
         return callback(null,stdout);
     });
