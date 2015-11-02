@@ -42,7 +42,7 @@ export default class flatLog {
          * The 200,300 log
          * @type {string}
          */
-        this.accessLog = 'acccess.log'
+        this.accessLog = 'access.log'
 
     }
 
