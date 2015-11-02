@@ -53,7 +53,7 @@ signinRouter.post('/flat-login',(req,res)=>{
             res.end('<h1>Unable to create session</h1>');
         } else {
             //add to the last login
-            var info = signInRouter.controller.info.data; 
+            var info = signinRouter.controller.info.data; 
             info.lastLogin[username] = new Date();
             res.redirect('/flat-admin');
         }
