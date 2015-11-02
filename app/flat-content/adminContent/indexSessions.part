@@ -2,7 +2,7 @@
     <div class="col-md-12">
         <h2>Current Sessions</h2>
         <div class="form-group">
-            <textarea style="overflow:scroll; min-height:400px;" class="form-control" readonly>{{current.session}}</textarea>
+            <textarea style="overflow:scroll; min-height:400px;" class="form-control" readonly ng-model="current.session"></textarea>
         </div>
         <div class="form-group text-center">
             <button class="btn btn-primary" ng-click="refresh()">Refresh</button>
