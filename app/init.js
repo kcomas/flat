@@ -32,7 +32,7 @@ const um = new uploadManager(config.getValue('uploadDir'));
 
 const bm = new blogManager(config.getValue('blogDir'));
 
-const info = new infoManager(config.getValue('infoFile'),config.getValue('infoFile'),parseInt(config.getValue('writeInfoToDiskAfter')));
+const info = new infoManager(config.getValue('infoDir'),config.getValue('infoFile'),parseInt(config.getValue('writeInfoToDiskAfter')));
 
 var uploadDirs =  config.getValue('upload');
 
