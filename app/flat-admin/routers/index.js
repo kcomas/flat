@@ -22,6 +22,18 @@ indexRouter.post('/flat-admin/index/info',(req,res)=>{
     res.end(indexRouter.controller.info.toString());
 });
 
+//force the info object to disk
+indexRouter.post('/flat-admin/index/info/toDisk',(req,res)=>{
+    indexRouter.controller.info.write((err,done)=>{
+        res.setHeader('content-type','text/html; charset=utf8');
+        if(err){
+            showError(req,res,new Error('Failed To Write To Disk'),500);
+            return;
+        }
+        showSuccess(req,res,'Info Writen',200);
+    });
+});
+
 //grab a log file
 indexRouter.post('/flat-admin/index/log',(req,res)=>{
     var log = req.body.log;

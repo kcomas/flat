@@ -115,6 +115,7 @@ export default class info {
      * @return {object} the data object
      */
     get data() {
+        this.checkWrite();
         return this._data;
     }
 

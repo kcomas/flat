@@ -22,6 +22,13 @@ app.controller('indexEdit',['$scope','$http',function($scope,$http){
         $scope.log('error.log');
     };
 
+    $scope.toDisk = function(){
+        $http.post('/flat-admin/index/info/toDisk').success(msg,status){
+            $scope.action.status = status;
+            $scope.action.msg = msg;
+        });
+    };
+
     $scope.log = function(name){
         $scope.current.logName = name;
         var jsonData = JSON.stringify({
