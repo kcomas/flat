@@ -5,7 +5,7 @@
             Lines To Show (max 500): <input type="text" class="form-control" ng-model="current.logLines" />
         </div>
         <div class="form-group">
-            <textarea style="overflow:scroll" class="form-control" readonly>{{current.logText}}</textarea>
+            <textarea style="overflow:scroll; min-height:400px;" class="form-control" readonly>{{current.logText}}</textarea>
         </div>
         <div class="form-group text-center">
             <button class="btn btn-primary" ng-click="getAccessLog()">Access.log</button> <button class="btn btn-primary" ng-click="getErrorLog()">Error.log</button>

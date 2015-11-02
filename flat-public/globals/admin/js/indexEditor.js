@@ -23,19 +23,13 @@ app.controller('indexEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.log = function(name){
-        $scope.clear();
         $scope.current.logName = name;
         var jsonData = JSON.stringify({
             log : name,
             lines : $scope.current.logLines
         });
         $http.post('/flat-admin/index/log',jsonData).success(function(log,status){
-            if(status === 500){
-                $scope.action.status = 500;
-                $scope.action.msg = log;
-            } else {
                 $scope.current.logText = log;
-            }
         });
     };
 
