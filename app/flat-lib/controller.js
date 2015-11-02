@@ -22,8 +22,9 @@ export default class controller {
      * @param {config} configManager - the config manager
      * @param {info} infoManager - the info manager
      * @param {uploadedFiles} uploadedFiles - the class that reads and writes files from the user
+     * @param {blogTemplate} blogTemplate - the blog template manager
      */
-    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager,configManager,infoManager,uploadedFiles){
+    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager,configManager,infoManager,uploadedFiles,blogTemplate){
 
         /**
          * The page manager
@@ -90,6 +91,12 @@ export default class controller {
          * @type {uploadedFiles}
          */
         this._uploader = uploadedFiles;
+
+        /**
+         * The blog template manager
+         * @type {blogTemplate}
+         */
+        this._blogTemplate = blogTemplate;
 
     }
 
@@ -267,6 +274,22 @@ export default class controller {
      */
     get uploader(){
         return this._uploader;
+    }
+
+    /**
+     * Set the blog template manager
+     * @param {blogTemplate} manager - the blog template manager
+     */
+    set blogTemplate(manager){
+        this._blogTemplate = manager;
+    }
+
+    /**
+     * Get the blog template manager
+     * @return {blogTemplate} the blog template manager
+     */
+    get blogTemplate(){
+        return this._blogTemplate;
     }
 
     /**

@@ -21,5 +21,7 @@
     "debugEnabled":"true",
     "infoDir":"./flat-content/infos/",
     "infoFile":"info.json",
-    "writeInfoToDiskAfter":"100"
+    "writeInfoToDiskAfter":"100",
+    "blogListTemplateDir":"./flat-content/blogTemplate/",
+    "blogListTemplateFile":"blogTemplate.json"
 }
