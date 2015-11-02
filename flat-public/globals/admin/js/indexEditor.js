@@ -23,7 +23,7 @@ app.controller('indexEdit',['$scope','$http',function($scope,$http){
     };
 
     $scope.toDisk = function(){
-        $http.post('/flat-admin/index/info/toDisk').success(msg,status){
+        $http.post('/flat-admin/index/info/toDisk').success(function(msg,status){
             $scope.action.status = status;
             $scope.action.msg = msg;
         });
