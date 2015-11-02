@@ -11,14 +11,14 @@ const indexRouter = new router();
 //list the sessions
 indexRouter.post('/flat-admin/index/list-sessions',(req,res)=>{
     res.statusCode = 200;
-    res.setHeader('content-type','text/plain; charset=utf-8');
+    res.setHeader('content-type','application/json; charset=utf-8');
     res.end(indexRouter.controller.sessionManager.toString());
 });
 
 //get the current info object
 indexRouter.post('/flat-admin/index/info',(req,res)=>{
     res.statusCode = 200;
-    res.setHeader('content-type','text/plain; charset=utf-8');
+    res.setHeader('content-type','application/json; charset=utf-8');
     res.end(indexRouter.controller.info.toString());
 });
 
@@ -31,7 +31,7 @@ indexRouter.post('/flat-admin/index/log',(req,res)=>{
     }
     var logDir = indexRouter.controller.config.getValue('logDir');
     tail(logDir+log,lines,(err,file)=>{
-        res.setHeader('content-type','text/plain; charset=utf-8');
+        res.setHeader('content-type','application/json; charset=utf-8');
         if(err){
             res.statusCode = 500;
             res.end(err);
