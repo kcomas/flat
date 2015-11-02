@@ -63,6 +63,12 @@ export default class info {
         }
 
         /**
+         * The last boot time
+         * @type {date}
+         */
+        this._data.boot = new Date();
+
+        /**
          * The number of updates before we write to disk
          * @type {number}
          */

@@ -47,6 +47,8 @@ app.route('/flat-login',signinRouter.run(controll));
 
 app.route('/flat-install',installRouter.run(controll));
 
+app.route('/flat-debug',debugRouter.run(controll));
+
 app.route('/flat-admin',adminRouter.run(controll));
 app.route('/flat-admin/file/',fileRouter.run(controll));
 app.route('/flat-admin/page/',pageRouter.run(controll));
@@ -55,8 +57,6 @@ app.route('/flat-admin/template/',templateRouter.run(controll));
 app.route('/flat-admin/user/',userRouter.run(controll));
 app.route('/flat-admin/blog/',blogRouter.run(controll));
 app.route('/flat-admin/index/',indexRouter.run(controll));
-
-app.route('/flat-debug',debugRouter.run(controll));
 
 app.always((req,res)=>{
     res.statusCode = 404;
