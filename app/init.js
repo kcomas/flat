@@ -39,7 +39,7 @@ var uploadDirs =  config.getValue('upload');
 
 const uploader = new uploadedFiles(uploadDirs.public,uploadDirs.private);
 
-const bt = new blogtemplate(config.getValue('blogListTemplateDir'),config.getValue('blogListTemplateFile'));
+const bt = new blogTemplate(config.getValue('blogListTemplateDir'),config.getValue('blogListTemplateFile'));
 
 const controll = new controller(pm,sm,ses,tm,usm,cm,um,bm,config,info,uploader,bt); 
 controll.init();
