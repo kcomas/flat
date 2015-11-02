@@ -25,6 +25,7 @@ export default class blogTemplate {
         try {
             var stat = statSync(this._dir);
         } catch(err){
+            console.dir(err);
             fs.mkdirSync(this._dir);
         }
 
