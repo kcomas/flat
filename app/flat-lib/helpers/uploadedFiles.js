@@ -31,7 +31,7 @@ export default class uploadedFiles {
 
         try {
         //check that the dir exists if not create
-            let stat = fs.lstatSync(this._publicDir);
+            var stat = fs.statSync(this._publicDir);
         } catch(err){
             fs.mkdirSync(this._publicDir);
         }
@@ -43,7 +43,7 @@ export default class uploadedFiles {
 
         try {
         //check that the dir exists if not create
-            let stat = fs.lstatSync(this._privateDir);
+            var stat = fs.statSync(this._privateDir);
         } catch(err){
             fs.mkdirSync(this._privateDir);
         }

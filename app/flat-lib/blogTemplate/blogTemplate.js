@@ -23,7 +23,7 @@ export default class blogTemplate {
 
         //check that the dir exitsts
         try {
-            let stat = lstatSync(this._dir);
+            var stat = statSync(this._dir);
         } catch(err){
             fs.mkdirSync(this._dir);
         }

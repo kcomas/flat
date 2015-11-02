@@ -26,7 +26,7 @@ export default class info {
 
         //check that the dir exists if not create
         try {
-            let stat = fs.lstatSync(this.dir);
+            var stat = fs.statSync(this.dir);
         } catch(err){
             fs.mkdirSync(this.dir);
         }

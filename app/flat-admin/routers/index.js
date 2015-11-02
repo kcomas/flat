@@ -53,6 +53,20 @@ indexRouter.post('/flat-admin/index/log',(req,res)=>{
     });
 });
 
+
+//update the bog list template
+indexRouter.post('/flat-admin/index/blogTemplate/set',(req,res)=>{
+    var template = req.body.template;
+    var numPerPgae = parseInt(req.body.numPerPgae);
+    if(template !== ''){
+        indexRouter.controller.blogTemplate.template = template;
+        indexRouter.controller.blogTemplate.numPerPage = numPerPgae;
+        showSuccess(req,res,'Blog List Template',200);
+    } else {
+        showError(req,res,new Error('Template Not Set'),500);
+    }
+});
+
 indexRouter.always((req,res)=>{
     showError(req,res,new Error("Not Found"),404);
 });
