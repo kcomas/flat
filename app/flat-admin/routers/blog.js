@@ -94,7 +94,7 @@ blogRouter.post('/flat-admin/blog/render',(req,res)=>{
 //set the blog cache
 blogRouter.post('/flat-admin/blog/blogTemplate/cache',(req,res)=>{
     var permalink = req.body.permalink;
-    var cache = blogRouter.controller.cacheMananger.findByParam('permalink',permalink);
+    var cache = blogRouter.controller.cacheManager.findByParam('permalink',permalink);
     if(cache === null){
         showError(req,res,new Error('No Cache Found'),500);
         return;
