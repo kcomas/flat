@@ -49,7 +49,7 @@ app.controller('indexEdit',['$scope','$http',function($scope,$http){
             $scope.current.info = info;
         });
         $http.post('/flat-admin/index/list-sessions').success(function(sessions,status){
-            $scope.current.session = session;
+            $scope.current.session = sessions;
         });
     };
 
