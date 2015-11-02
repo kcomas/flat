@@ -45,6 +45,7 @@ app.controller('indexEdit',['$scope','$http',function($scope,$http){
     }
 
     $scope.refresh = function(){
+        $scope.clear();
         $http.post('/flat-admin/index/info').success(function(info,status){
             $scope.current.info = info;
         });
