@@ -49,17 +49,13 @@ export default class cacheManager extends manager {
      */
     getSelection(start,total){
         var ret = '';
-        if(start === 1){
-            start = 0;
-        } else {
-            start = ((start-1)*total);
-        }
-        for(let i=start; i<total; i++){
+        start = (start*total)-1;
+        for(let i=start,n=0; n<total; n++){
             if(i === this.items.length){
                 break;
             }
-            console.dir(this.items[i]);
             ret += this.items[i].get('fileStr');
+            i++;
         }
         return ret;
     }   

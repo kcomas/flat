@@ -10,13 +10,10 @@ blogListRouter.use((req,res,next)=>{
     try {
       page =  parseInt(page);
     } catch(err){
-        page = 1;
+        page = 0;
     }
     if(isNaN(page)){
-        page = 1;
-    }
-    if(page === 0){
-        page = 1;
+        page = 0;
     }
     let total = blogListRouter.controller.blogTemplate.numPerPage;
     let blogStr = blogListRouter.controller.blogListCache.getSelection(page,total); 
