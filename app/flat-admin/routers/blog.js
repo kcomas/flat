@@ -101,8 +101,8 @@ blogRouter.post('/flat-admin/blog/render',(req,res)=>{
                     showSuccess(req,res,'Blog Updated',200);
                 });
             });
+        }
     });
-    }
 });
 
 //set the blog cache
