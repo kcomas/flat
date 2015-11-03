@@ -5,7 +5,7 @@ import router from '../flat-lib/server/router.js';
 
 const blogRouter = new router();
 
-blogRouter.use((req,res)=>{
+blogRouter.use((req,res,next)=>{
     //find the blog or next
     var newUrl = req.url.replace('/blog','');
     var blogCache = blogRouter.controller.blogCache.findByParam('permalink',newUrl);
