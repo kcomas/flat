@@ -1,0 +1,6930 @@
+{
+  "type": "Program",
+  "body": [
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "Literal",
+        "value": "use strict",
+        "raw": "\"use strict\"",
+        "range": [
+          1,
+          13
+        ],
+        "loc": {
+          "start": {
+            "line": 2,
+            "column": 0
+          },
+          "end": {
+            "line": 2,
+            "column": 12
+          }
+        }
+      },
+      "range": [
+        1,
+        15
+      ],
+      "loc": {
+        "start": {
+          "line": 2,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 0
+        }
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "page",
+            "range": [
+              22,
+              26
+            ],
+            "loc": {
+              "start": {
+                "line": 4,
+                "column": 7
+              },
+              "end": {
+                "line": 4,
+                "column": 11
+              }
+            }
+          },
+          "range": [
+            22,
+            26
+          ],
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 7
+            },
+            "end": {
+              "line": 4,
+              "column": 11
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "./page/page.js",
+        "raw": "'./page/page.js'",
+        "range": [
+          32,
+          48
+        ],
+        "loc": {
+          "start": {
+            "line": 4,
+            "column": 17
+          },
+          "end": {
+            "line": 4,
+            "column": 33
+          }
+        }
+      },
+      "range": [
+        15,
+        49
+      ],
+      "loc": {
+        "start": {
+          "line": 4,
+          "column": 0
+        },
+        "end": {
+          "line": 4,
+          "column": 34
+        }
+      }
+    },
+    {
+      "type": "ImportDeclaration",
+      "specifiers": [
+        {
+          "type": "ImportDefaultSpecifier",
+          "local": {
+            "type": "Identifier",
+            "name": "fs",
+            "range": [
+              57,
+              59
+            ],
+            "loc": {
+              "start": {
+                "line": 5,
+                "column": 7
+              },
+              "end": {
+                "line": 5,
+                "column": 9
+              }
+            }
+          },
+          "range": [
+            57,
+            59
+          ],
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 7
+            },
+            "end": {
+              "line": 5,
+              "column": 9
+            }
+          }
+        }
+      ],
+      "source": {
+        "type": "Literal",
+        "value": "fs",
+        "raw": "'fs'",
+        "range": [
+          65,
+          69
+        ],
+        "loc": {
+          "start": {
+            "line": 5,
+            "column": 15
+          },
+          "end": {
+            "line": 5,
+            "column": 19
+          }
+        }
+      },
+      "range": [
+        50,
+        70
+      ],
+      "loc": {
+        "start": {
+          "line": 5,
+          "column": 0
+        },
+        "end": {
+          "line": 5,
+          "column": 20
+        }
+      },
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The global page config object\n * @type {object}\n * @property {string} templateDir - the directory of the templates\n * @property {string} contentDir - the directory of the content files\n * @property {string} cacheDir - the directory of the built pages\n * @property {array} metaDefault - the default meta object\n * @property {array} cssDefault - the default css object\n * @property {array} jsDefault - the default js object\n * @property {array} headJsDefault - the default head js object\n * @property {string} containerDefault - the default container filename\n * @property {string} headDefault - the default head filename\n * @property {string} menuDefault - the default menu filename\n * @property {string} bodyDefault - the default body filename \n ",
+          "range": [
+            72,
+            827
+          ],
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 0
+            },
+            "end": {
+              "line": 21,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "pageConfig",
+            "range": [
+              832,
+              842
+            ],
+            "loc": {
+              "start": {
+                "line": 22,
+                "column": 4
+              },
+              "end": {
+                "line": 22,
+                "column": 14
+              }
+            }
+          },
+          "init": {
+            "type": "CallExpression",
+            "callee": {
+              "type": "MemberExpression",
+              "computed": false,
+              "object": {
+                "type": "Identifier",
+                "name": "JSON",
+                "range": [
+                  845,
+                  849
+                ],
+                "loc": {
+                  "start": {
+                    "line": 22,
+                    "column": 17
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 21
+                  }
+                }
+              },
+              "property": {
+                "type": "Identifier",
+                "name": "parse",
+                "range": [
+                  850,
+                  855
+                ],
+                "loc": {
+                  "start": {
+                    "line": 22,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 27
+                  }
+                }
+              },
+              "range": [
+                845,
+                855
+              ],
+              "loc": {
+                "start": {
+                  "line": 22,
+                  "column": 17
+                },
+                "end": {
+                  "line": 22,
+                  "column": 27
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "CallExpression",
+                "callee": {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "fs",
+                    "range": [
+                      856,
+                      858
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 22,
+                        "column": 28
+                      },
+                      "end": {
+                        "line": 22,
+                        "column": 30
+                      }
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "readFileSync",
+                    "range": [
+                      859,
+                      871
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 22,
+                        "column": 31
+                      },
+                      "end": {
+                        "line": 22,
+                        "column": 43
+                      }
+                    }
+                  },
+                  "range": [
+                    856,
+                    871
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 22,
+                      "column": 28
+                    },
+                    "end": {
+                      "line": 22,
+                      "column": 43
+                    }
+                  }
+                },
+                "arguments": [
+                  {
+                    "type": "Literal",
+                    "value": "./flat-config/pageConfig.json",
+                    "raw": "'./flat-config/pageConfig.json'",
+                    "range": [
+                      872,
+                      903
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 22,
+                        "column": 44
+                      },
+                      "end": {
+                        "line": 22,
+                        "column": 75
+                      }
+                    }
+                  }
+                ],
+                "range": [
+                  856,
+                  904
+                ],
+                "loc": {
+                  "start": {
+                    "line": 22,
+                    "column": 28
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 76
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "utf8",
+                "raw": "'utf8'",
+                "range": [
+                  905,
+                  911
+                ],
+                "loc": {
+                  "start": {
+                    "line": 22,
+                    "column": 77
+                  },
+                  "end": {
+                    "line": 22,
+                    "column": 83
+                  }
+                }
+              }
+            ],
+            "range": [
+              845,
+              912
+            ],
+            "loc": {
+              "start": {
+                "line": 22,
+                "column": 17
+              },
+              "end": {
+                "line": 22,
+                "column": 84
+              }
+            }
+          },
+          "range": [
+            832,
+            912
+          ],
+          "loc": {
+            "start": {
+              "line": 22,
+              "column": 4
+            },
+            "end": {
+              "line": 22,
+              "column": 84
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        828,
+        913
+      ],
+      "loc": {
+        "start": {
+          "line": 22,
+          "column": 0
+        },
+        "end": {
+          "line": 22,
+          "column": 85
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * The global page config object\n * @type {object}\n * @property {string} templateDir - the directory of the templates\n * @property {string} contentDir - the directory of the content files\n * @property {string} cacheDir - the directory of the built pages\n * @property {array} metaDefault - the default meta object\n * @property {array} cssDefault - the default css object\n * @property {array} jsDefault - the default js object\n * @property {array} headJsDefault - the default head js object\n * @property {string} containerDefault - the default container filename\n * @property {string} headDefault - the default head filename\n * @property {string} menuDefault - the default menu filename\n * @property {string} bodyDefault - the default body filename \n ",
+          "range": [
+            72,
+            827
+          ],
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 0
+            },
+            "end": {
+              "line": 21,
+              "column": 3
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Line",
+          "value": "make sure the cache dir exists",
+          "range": [
+            915,
+            947
+          ],
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 0
+            },
+            "end": {
+              "line": 24,
+              "column": 32
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "IfStatement",
+      "test": {
+        "type": "UnaryExpression",
+        "operator": "!",
+        "argument": {
+          "type": "CallExpression",
+          "callee": {
+            "type": "MemberExpression",
+            "computed": false,
+            "object": {
+              "type": "Identifier",
+              "name": "fs",
+              "range": [
+                953,
+                955
+              ],
+              "loc": {
+                "start": {
+                  "line": 25,
+                  "column": 5
+                },
+                "end": {
+                  "line": 25,
+                  "column": 7
+                }
+              }
+            },
+            "property": {
+              "type": "Identifier",
+              "name": "existsSync",
+              "range": [
+                956,
+                966
+              ],
+              "loc": {
+                "start": {
+                  "line": 25,
+                  "column": 8
+                },
+                "end": {
+                  "line": 25,
+                  "column": 18
+                }
+              }
+            },
+            "range": [
+              953,
+              966
+            ],
+            "loc": {
+              "start": {
+                "line": 25,
+                "column": 5
+              },
+              "end": {
+                "line": 25,
+                "column": 18
+              }
+            }
+          },
+          "arguments": [
+            {
+              "type": "MemberExpression",
+              "computed": false,
+              "object": {
+                "type": "Identifier",
+                "name": "pageConfig",
+                "range": [
+                  967,
+                  977
+                ],
+                "loc": {
+                  "start": {
+                    "line": 25,
+                    "column": 19
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 29
+                  }
+                }
+              },
+              "property": {
+                "type": "Identifier",
+                "name": "cacheDir",
+                "range": [
+                  978,
+                  986
+                ],
+                "loc": {
+                  "start": {
+                    "line": 25,
+                    "column": 30
+                  },
+                  "end": {
+                    "line": 25,
+                    "column": 38
+                  }
+                }
+              },
+              "range": [
+                967,
+                986
+              ],
+              "loc": {
+                "start": {
+                  "line": 25,
+                  "column": 19
+                },
+                "end": {
+                  "line": 25,
+                  "column": 38
+                }
+              }
+            }
+          ],
+          "range": [
+            953,
+            987
+          ],
+          "loc": {
+            "start": {
+              "line": 25,
+              "column": 5
+            },
+            "end": {
+              "line": 25,
+              "column": 39
+            }
+          }
+        },
+        "prefix": true,
+        "range": [
+          952,
+          987
+        ],
+        "loc": {
+          "start": {
+            "line": 25,
+            "column": 4
+          },
+          "end": {
+            "line": 25,
+            "column": 39
+          }
+        }
+      },
+      "consequent": {
+        "type": "BlockStatement",
+        "body": [
+          {
+            "type": "ExpressionStatement",
+            "expression": {
+              "type": "CallExpression",
+              "callee": {
+                "type": "MemberExpression",
+                "computed": false,
+                "object": {
+                  "type": "Identifier",
+                  "name": "fs",
+                  "range": [
+                    994,
+                    996
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 4
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 6
+                    }
+                  }
+                },
+                "property": {
+                  "type": "Identifier",
+                  "name": "mkdirSync",
+                  "range": [
+                    997,
+                    1006
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 7
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 16
+                    }
+                  }
+                },
+                "range": [
+                  994,
+                  1006
+                ],
+                "loc": {
+                  "start": {
+                    "line": 26,
+                    "column": 4
+                  },
+                  "end": {
+                    "line": 26,
+                    "column": 16
+                  }
+                }
+              },
+              "arguments": [
+                {
+                  "type": "MemberExpression",
+                  "computed": false,
+                  "object": {
+                    "type": "Identifier",
+                    "name": "pageConfig",
+                    "range": [
+                      1007,
+                      1017
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 26,
+                        "column": 17
+                      },
+                      "end": {
+                        "line": 26,
+                        "column": 27
+                      }
+                    }
+                  },
+                  "property": {
+                    "type": "Identifier",
+                    "name": "cacheDir",
+                    "range": [
+                      1018,
+                      1026
+                    ],
+                    "loc": {
+                      "start": {
+                        "line": 26,
+                        "column": 28
+                      },
+                      "end": {
+                        "line": 26,
+                        "column": 36
+                      }
+                    }
+                  },
+                  "range": [
+                    1007,
+                    1026
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 26,
+                      "column": 17
+                    },
+                    "end": {
+                      "line": 26,
+                      "column": 36
+                    }
+                  }
+                }
+              ],
+              "range": [
+                994,
+                1027
+              ],
+              "loc": {
+                "start": {
+                  "line": 26,
+                  "column": 4
+                },
+                "end": {
+                  "line": 26,
+                  "column": 37
+                }
+              }
+            },
+            "range": [
+              994,
+              1028
+            ],
+            "loc": {
+              "start": {
+                "line": 26,
+                "column": 4
+              },
+              "end": {
+                "line": 26,
+                "column": 38
+              }
+            }
+          }
+        ],
+        "range": [
+          988,
+          1030
+        ],
+        "loc": {
+          "start": {
+            "line": 25,
+            "column": 40
+          },
+          "end": {
+            "line": 27,
+            "column": 1
+          }
+        }
+      },
+      "alternate": null,
+      "range": [
+        948,
+        1030
+      ],
+      "loc": {
+        "start": {
+          "line": 25,
+          "column": 0
+        },
+        "end": {
+          "line": 27,
+          "column": 1
+        }
+      },
+      "leadingComments": [
+        {
+          "type": "Line",
+          "value": "make sure the cache dir exists",
+          "range": [
+            915,
+            947
+          ],
+          "loc": {
+            "start": {
+              "line": 24,
+              "column": 0
+            },
+            "end": {
+              "line": 24,
+              "column": 32
+            }
+          }
+        }
+      ],
+      "trailingComments": [
+        {
+          "type": "Block",
+          "value": "*\n * This is the array of all of the admin pages\n * @type {array}\n ",
+          "range": [
+            1032,
+            1103
+          ],
+          "loc": {
+            "start": {
+              "line": 29,
+              "column": 0
+            },
+            "end": {
+              "line": 32,
+              "column": 3
+            }
+          }
+        }
+      ]
+    },
+    {
+      "type": "Identifier",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "pages",
+            "range": [
+              1108,
+              1113
+            ],
+            "loc": {
+              "start": {
+                "line": 33,
+                "column": 4
+              },
+              "end": {
+                "line": 33,
+                "column": 9
+              }
+            }
+          },
+          "init": {
+            "type": "ArrayExpression",
+            "elements": [],
+            "range": [
+              1116,
+              1118
+            ],
+            "loc": {
+              "start": {
+                "line": 33,
+                "column": 12
+              },
+              "end": {
+                "line": 33,
+                "column": 14
+              }
+            }
+          },
+          "range": [
+            1108,
+            1118
+          ],
+          "loc": {
+            "start": {
+              "line": 33,
+              "column": 4
+            },
+            "end": {
+              "line": 33,
+              "column": 14
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        1104,
+        1119
+      ],
+      "loc": {
+        "start": {
+          "line": 33,
+          "column": 0
+        },
+        "end": {
+          "line": 33,
+          "column": 15
+        }
+      },
+      "leadingComments": [],
+      "name": "_",
+      "trailingComments": []
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "index",
+            "range": [
+              1126,
+              1131
+            ],
+            "loc": {
+              "start": {
+                "line": 36,
+                "column": 4
+              },
+              "end": {
+                "line": 36,
+                "column": 9
+              }
+            }
+          },
+          "init": {
+            "type": "NewExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "page",
+              "range": [
+                1138,
+                1142
+              ],
+              "loc": {
+                "start": {
+                  "line": 36,
+                  "column": 16
+                },
+                "end": {
+                  "line": 36,
+                  "column": 20
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": "/",
+                "raw": "'/'",
+                "range": [
+                  1143,
+                  1146
+                ],
+                "loc": {
+                  "start": {
+                    "line": 36,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 36,
+                    "column": 24
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "Admin Home",
+                "raw": "'Admin Home'",
+                "range": [
+                  1147,
+                  1159
+                ],
+                "loc": {
+                  "start": {
+                    "line": 36,
+                    "column": 25
+                  },
+                  "end": {
+                    "line": 36,
+                    "column": 37
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "pageConfig",
+                "range": [
+                  1160,
+                  1170
+                ],
+                "loc": {
+                  "start": {
+                    "line": 36,
+                    "column": 38
+                  },
+                  "end": {
+                    "line": 36,
+                    "column": 48
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "indexEdit",
+                "raw": "'indexEdit'",
+                "range": [
+                  1171,
+                  1182
+                ],
+                "loc": {
+                  "start": {
+                    "line": 36,
+                    "column": 49
+                  },
+                  "end": {
+                    "line": 36,
+                    "column": 60
+                  }
+                }
+              }
+            ],
+            "range": [
+              1134,
+              1183
+            ],
+            "loc": {
+              "start": {
+                "line": 36,
+                "column": 12
+              },
+              "end": {
+                "line": 36,
+                "column": 61
+              }
+            }
+          },
+          "range": [
+            1126,
+            1183
+          ],
+          "loc": {
+            "start": {
+              "line": 36,
+              "column": 4
+            },
+            "end": {
+              "line": 36,
+              "column": 61
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        1122,
+        1184
+      ],
+      "loc": {
+        "start": {
+          "line": 36,
+          "column": 0
+        },
+        "end": {
+          "line": 36,
+          "column": 62
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "index",
+            "range": [
+              1185,
+              1190
+            ],
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 0
+              },
+              "end": {
+                "line": 37,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              1191,
+              1202
+            ],
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 6
+              },
+              "end": {
+                "line": 37,
+                "column": 17
+              }
+            }
+          },
+          "range": [
+            1185,
+            1202
+          ],
+          "loc": {
+            "start": {
+              "line": 37,
+              "column": 0
+            },
+            "end": {
+              "line": 37,
+              "column": 17
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Info",
+            "raw": "'Info'",
+            "range": [
+              1203,
+              1209
+            ],
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 18
+              },
+              "end": {
+                "line": 37,
+                "column": 24
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "indexInfo.part",
+            "raw": "'indexInfo.part'",
+            "range": [
+              1210,
+              1226
+            ],
+            "loc": {
+              "start": {
+                "line": 37,
+                "column": 25
+              },
+              "end": {
+                "line": 37,
+                "column": 41
+              }
+            }
+          }
+        ],
+        "range": [
+          1185,
+          1227
+        ],
+        "loc": {
+          "start": {
+            "line": 37,
+            "column": 0
+          },
+          "end": {
+            "line": 37,
+            "column": 42
+          }
+        }
+      },
+      "range": [
+        1185,
+        1228
+      ],
+      "loc": {
+        "start": {
+          "line": 37,
+          "column": 0
+        },
+        "end": {
+          "line": 37,
+          "column": 43
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "index",
+            "range": [
+              1229,
+              1234
+            ],
+            "loc": {
+              "start": {
+                "line": 38,
+                "column": 0
+              },
+              "end": {
+                "line": 38,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              1235,
+              1246
+            ],
+            "loc": {
+              "start": {
+                "line": 38,
+                "column": 6
+              },
+              "end": {
+                "line": 38,
+                "column": 17
+              }
+            }
+          },
+          "range": [
+            1229,
+            1246
+          ],
+          "loc": {
+            "start": {
+              "line": 38,
+              "column": 0
+            },
+            "end": {
+              "line": 38,
+              "column": 17
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Sessions",
+            "raw": "'Sessions'",
+            "range": [
+              1247,
+              1257
+            ],
+            "loc": {
+              "start": {
+                "line": 38,
+                "column": 18
+              },
+              "end": {
+                "line": 38,
+                "column": 28
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "indexSessions.part",
+            "raw": "'indexSessions.part'",
+            "range": [
+              1258,
+              1278
+            ],
+            "loc": {
+              "start": {
+                "line": 38,
+                "column": 29
+              },
+              "end": {
+                "line": 38,
+                "column": 49
+              }
+            }
+          }
+        ],
+        "range": [
+          1229,
+          1279
+        ],
+        "loc": {
+          "start": {
+            "line": 38,
+            "column": 0
+          },
+          "end": {
+            "line": 38,
+            "column": 50
+          }
+        }
+      },
+      "range": [
+        1229,
+        1280
+      ],
+      "loc": {
+        "start": {
+          "line": 38,
+          "column": 0
+        },
+        "end": {
+          "line": 38,
+          "column": 51
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "index",
+            "range": [
+              1281,
+              1286
+            ],
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 0
+              },
+              "end": {
+                "line": 39,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              1287,
+              1298
+            ],
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 6
+              },
+              "end": {
+                "line": 39,
+                "column": 17
+              }
+            }
+          },
+          "range": [
+            1281,
+            1298
+          ],
+          "loc": {
+            "start": {
+              "line": 39,
+              "column": 0
+            },
+            "end": {
+              "line": 39,
+              "column": 17
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Logs",
+            "raw": "'Logs'",
+            "range": [
+              1299,
+              1305
+            ],
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 18
+              },
+              "end": {
+                "line": 39,
+                "column": 24
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "indexLogs.part",
+            "raw": "'indexLogs.part'",
+            "range": [
+              1306,
+              1322
+            ],
+            "loc": {
+              "start": {
+                "line": 39,
+                "column": 25
+              },
+              "end": {
+                "line": 39,
+                "column": 41
+              }
+            }
+          }
+        ],
+        "range": [
+          1281,
+          1323
+        ],
+        "loc": {
+          "start": {
+            "line": 39,
+            "column": 0
+          },
+          "end": {
+            "line": 39,
+            "column": 42
+          }
+        }
+      },
+      "range": [
+        1281,
+        1324
+      ],
+      "loc": {
+        "start": {
+          "line": 39,
+          "column": 0
+        },
+        "end": {
+          "line": 39,
+          "column": 43
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "index",
+            "range": [
+              1325,
+              1330
+            ],
+            "loc": {
+              "start": {
+                "line": 40,
+                "column": 0
+              },
+              "end": {
+                "line": 40,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addJs",
+            "range": [
+              1331,
+              1336
+            ],
+            "loc": {
+              "start": {
+                "line": 40,
+                "column": 6
+              },
+              "end": {
+                "line": 40,
+                "column": 11
+              }
+            }
+          },
+          "range": [
+            1325,
+            1336
+          ],
+          "loc": {
+            "start": {
+              "line": 40,
+              "column": 0
+            },
+            "end": {
+              "line": 40,
+              "column": 11
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    1338,
+                    1343
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 40,
+                      "column": 13
+                    },
+                    "end": {
+                      "line": 40,
+                      "column": 18
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/admin/js/indexEditor.js",
+                  "raw": "\"/globals/admin/js/indexEditor.js\"",
+                  "range": [
+                    1344,
+                    1378
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 40,
+                      "column": 19
+                    },
+                    "end": {
+                      "line": 40,
+                      "column": 53
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  1338,
+                  1378
+                ],
+                "loc": {
+                  "start": {
+                    "line": 40,
+                    "column": 13
+                  },
+                  "end": {
+                    "line": 40,
+                    "column": 53
+                  }
+                }
+              }
+            ],
+            "range": [
+              1337,
+              1379
+            ],
+            "loc": {
+              "start": {
+                "line": 40,
+                "column": 12
+              },
+              "end": {
+                "line": 40,
+                "column": 54
+              }
+            }
+          }
+        ],
+        "range": [
+          1325,
+          1380
+        ],
+        "loc": {
+          "start": {
+            "line": 40,
+            "column": 0
+          },
+          "end": {
+            "line": 40,
+            "column": 55
+          }
+        }
+      },
+      "range": [
+        1325,
+        1381
+      ],
+      "loc": {
+        "start": {
+          "line": 40,
+          "column": 0
+        },
+        "end": {
+          "line": 40,
+          "column": 56
+        }
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "upload",
+            "range": [
+              1387,
+              1393
+            ],
+            "loc": {
+              "start": {
+                "line": 42,
+                "column": 4
+              },
+              "end": {
+                "line": 42,
+                "column": 10
+              }
+            }
+          },
+          "init": {
+            "type": "NewExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "page",
+              "range": [
+                1400,
+                1404
+              ],
+              "loc": {
+                "start": {
+                  "line": 42,
+                  "column": 17
+                },
+                "end": {
+                  "line": 42,
+                  "column": 21
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": "/upload",
+                "raw": "'/upload'",
+                "range": [
+                  1405,
+                  1414
+                ],
+                "loc": {
+                  "start": {
+                    "line": 42,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 42,
+                    "column": 31
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "Upload Files",
+                "raw": "'Upload Files'",
+                "range": [
+                  1415,
+                  1429
+                ],
+                "loc": {
+                  "start": {
+                    "line": 42,
+                    "column": 32
+                  },
+                  "end": {
+                    "line": 42,
+                    "column": 46
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "pageConfig",
+                "range": [
+                  1430,
+                  1440
+                ],
+                "loc": {
+                  "start": {
+                    "line": 42,
+                    "column": 47
+                  },
+                  "end": {
+                    "line": 42,
+                    "column": 57
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "adminUpload",
+                "raw": "'adminUpload'",
+                "range": [
+                  1441,
+                  1454
+                ],
+                "loc": {
+                  "start": {
+                    "line": 42,
+                    "column": 58
+                  },
+                  "end": {
+                    "line": 42,
+                    "column": 71
+                  }
+                }
+              }
+            ],
+            "range": [
+              1396,
+              1455
+            ],
+            "loc": {
+              "start": {
+                "line": 42,
+                "column": 13
+              },
+              "end": {
+                "line": 42,
+                "column": 72
+              }
+            }
+          },
+          "range": [
+            1387,
+            1455
+          ],
+          "loc": {
+            "start": {
+              "line": 42,
+              "column": 4
+            },
+            "end": {
+              "line": 42,
+              "column": 72
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        1383,
+        1456
+      ],
+      "loc": {
+        "start": {
+          "line": 42,
+          "column": 0
+        },
+        "end": {
+          "line": 42,
+          "column": 73
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "upload",
+            "range": [
+              1457,
+              1463
+            ],
+            "loc": {
+              "start": {
+                "line": 43,
+                "column": 0
+              },
+              "end": {
+                "line": 43,
+                "column": 6
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              1464,
+              1475
+            ],
+            "loc": {
+              "start": {
+                "line": 43,
+                "column": 7
+              },
+              "end": {
+                "line": 43,
+                "column": 18
+              }
+            }
+          },
+          "range": [
+            1457,
+            1475
+          ],
+          "loc": {
+            "start": {
+              "line": 43,
+              "column": 0
+            },
+            "end": {
+              "line": 43,
+              "column": 18
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Upload",
+            "raw": "'Upload'",
+            "range": [
+              1476,
+              1484
+            ],
+            "loc": {
+              "start": {
+                "line": 43,
+                "column": 19
+              },
+              "end": {
+                "line": 43,
+                "column": 27
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "fileUpload.part",
+            "raw": "'fileUpload.part'",
+            "range": [
+              1485,
+              1502
+            ],
+            "loc": {
+              "start": {
+                "line": 43,
+                "column": 28
+              },
+              "end": {
+                "line": 43,
+                "column": 45
+              }
+            }
+          }
+        ],
+        "range": [
+          1457,
+          1503
+        ],
+        "loc": {
+          "start": {
+            "line": 43,
+            "column": 0
+          },
+          "end": {
+            "line": 43,
+            "column": 46
+          }
+        }
+      },
+      "range": [
+        1457,
+        1504
+      ],
+      "loc": {
+        "start": {
+          "line": 43,
+          "column": 0
+        },
+        "end": {
+          "line": 43,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "upload",
+            "range": [
+              1505,
+              1511
+            ],
+            "loc": {
+              "start": {
+                "line": 44,
+                "column": 0
+              },
+              "end": {
+                "line": 44,
+                "column": 6
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              1512,
+              1523
+            ],
+            "loc": {
+              "start": {
+                "line": 44,
+                "column": 7
+              },
+              "end": {
+                "line": 44,
+                "column": 18
+              }
+            }
+          },
+          "range": [
+            1505,
+            1523
+          ],
+          "loc": {
+            "start": {
+              "line": 44,
+              "column": 0
+            },
+            "end": {
+              "line": 44,
+              "column": 18
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "List",
+            "raw": "'List'",
+            "range": [
+              1524,
+              1530
+            ],
+            "loc": {
+              "start": {
+                "line": 44,
+                "column": 19
+              },
+              "end": {
+                "line": 44,
+                "column": 25
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "fileList.part",
+            "raw": "'fileList.part'",
+            "range": [
+              1531,
+              1546
+            ],
+            "loc": {
+              "start": {
+                "line": 44,
+                "column": 26
+              },
+              "end": {
+                "line": 44,
+                "column": 41
+              }
+            }
+          }
+        ],
+        "range": [
+          1505,
+          1547
+        ],
+        "loc": {
+          "start": {
+            "line": 44,
+            "column": 0
+          },
+          "end": {
+            "line": 44,
+            "column": 42
+          }
+        }
+      },
+      "range": [
+        1505,
+        1548
+      ],
+      "loc": {
+        "start": {
+          "line": 44,
+          "column": 0
+        },
+        "end": {
+          "line": 44,
+          "column": 43
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "upload",
+            "range": [
+              1549,
+              1555
+            ],
+            "loc": {
+              "start": {
+                "line": 45,
+                "column": 0
+              },
+              "end": {
+                "line": 45,
+                "column": 6
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addJs",
+            "range": [
+              1556,
+              1561
+            ],
+            "loc": {
+              "start": {
+                "line": 45,
+                "column": 7
+              },
+              "end": {
+                "line": 45,
+                "column": 12
+              }
+            }
+          },
+          "range": [
+            1549,
+            1561
+          ],
+          "loc": {
+            "start": {
+              "line": 45,
+              "column": 0
+            },
+            "end": {
+              "line": 45,
+              "column": 12
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    1563,
+                    1568
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 45,
+                      "column": 14
+                    },
+                    "end": {
+                      "line": 45,
+                      "column": 19
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/admin/js/uploadEditor.js",
+                  "raw": "\"/globals/admin/js/uploadEditor.js\"",
+                  "range": [
+                    1569,
+                    1604
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 45,
+                      "column": 20
+                    },
+                    "end": {
+                      "line": 45,
+                      "column": 55
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  1563,
+                  1604
+                ],
+                "loc": {
+                  "start": {
+                    "line": 45,
+                    "column": 14
+                  },
+                  "end": {
+                    "line": 45,
+                    "column": 55
+                  }
+                }
+              }
+            ],
+            "range": [
+              1562,
+              1605
+            ],
+            "loc": {
+              "start": {
+                "line": 45,
+                "column": 13
+              },
+              "end": {
+                "line": 45,
+                "column": 56
+              }
+            }
+          }
+        ],
+        "range": [
+          1549,
+          1606
+        ],
+        "loc": {
+          "start": {
+            "line": 45,
+            "column": 0
+          },
+          "end": {
+            "line": 45,
+            "column": 57
+          }
+        }
+      },
+      "range": [
+        1549,
+        1607
+      ],
+      "loc": {
+        "start": {
+          "line": 45,
+          "column": 0
+        },
+        "end": {
+          "line": 45,
+          "column": 58
+        }
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "sectionEditor",
+            "range": [
+              1613,
+              1626
+            ],
+            "loc": {
+              "start": {
+                "line": 47,
+                "column": 4
+              },
+              "end": {
+                "line": 47,
+                "column": 17
+              }
+            }
+          },
+          "init": {
+            "type": "NewExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "page",
+              "range": [
+                1633,
+                1637
+              ],
+              "loc": {
+                "start": {
+                  "line": 47,
+                  "column": 24
+                },
+                "end": {
+                  "line": 47,
+                  "column": 28
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": "/section-editor",
+                "raw": "'/section-editor'",
+                "range": [
+                  1638,
+                  1655
+                ],
+                "loc": {
+                  "start": {
+                    "line": 47,
+                    "column": 29
+                  },
+                  "end": {
+                    "line": 47,
+                    "column": 46
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "Edit Section",
+                "raw": "'Edit Section'",
+                "range": [
+                  1656,
+                  1670
+                ],
+                "loc": {
+                  "start": {
+                    "line": 47,
+                    "column": 47
+                  },
+                  "end": {
+                    "line": 47,
+                    "column": 61
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "pageConfig",
+                "range": [
+                  1671,
+                  1681
+                ],
+                "loc": {
+                  "start": {
+                    "line": 47,
+                    "column": 62
+                  },
+                  "end": {
+                    "line": 47,
+                    "column": 72
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "adminSectionEdit",
+                "raw": "'adminSectionEdit'",
+                "range": [
+                  1682,
+                  1700
+                ],
+                "loc": {
+                  "start": {
+                    "line": 47,
+                    "column": 73
+                  },
+                  "end": {
+                    "line": 47,
+                    "column": 91
+                  }
+                }
+              }
+            ],
+            "range": [
+              1629,
+              1701
+            ],
+            "loc": {
+              "start": {
+                "line": 47,
+                "column": 20
+              },
+              "end": {
+                "line": 47,
+                "column": 92
+              }
+            }
+          },
+          "range": [
+            1613,
+            1701
+          ],
+          "loc": {
+            "start": {
+              "line": 47,
+              "column": 4
+            },
+            "end": {
+              "line": 47,
+              "column": 92
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        1609,
+        1702
+      ],
+      "loc": {
+        "start": {
+          "line": 47,
+          "column": 0
+        },
+        "end": {
+          "line": 47,
+          "column": 93
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "sectionEditor",
+            "range": [
+              1703,
+              1716
+            ],
+            "loc": {
+              "start": {
+                "line": 48,
+                "column": 0
+              },
+              "end": {
+                "line": 48,
+                "column": 13
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              1717,
+              1728
+            ],
+            "loc": {
+              "start": {
+                "line": 48,
+                "column": 14
+              },
+              "end": {
+                "line": 48,
+                "column": 25
+              }
+            }
+          },
+          "range": [
+            1703,
+            1728
+          ],
+          "loc": {
+            "start": {
+              "line": 48,
+              "column": 0
+            },
+            "end": {
+              "line": 48,
+              "column": 25
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Edit",
+            "raw": "'Edit'",
+            "range": [
+              1729,
+              1735
+            ],
+            "loc": {
+              "start": {
+                "line": 48,
+                "column": 26
+              },
+              "end": {
+                "line": 48,
+                "column": 32
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "sectionEditor.part",
+            "raw": "'sectionEditor.part'",
+            "range": [
+              1736,
+              1756
+            ],
+            "loc": {
+              "start": {
+                "line": 48,
+                "column": 33
+              },
+              "end": {
+                "line": 48,
+                "column": 53
+              }
+            }
+          }
+        ],
+        "range": [
+          1703,
+          1757
+        ],
+        "loc": {
+          "start": {
+            "line": 48,
+            "column": 0
+          },
+          "end": {
+            "line": 48,
+            "column": 54
+          }
+        }
+      },
+      "range": [
+        1703,
+        1758
+      ],
+      "loc": {
+        "start": {
+          "line": 48,
+          "column": 0
+        },
+        "end": {
+          "line": 48,
+          "column": 55
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "sectionEditor",
+            "range": [
+              1759,
+              1772
+            ],
+            "loc": {
+              "start": {
+                "line": 49,
+                "column": 0
+              },
+              "end": {
+                "line": 49,
+                "column": 13
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              1773,
+              1784
+            ],
+            "loc": {
+              "start": {
+                "line": 49,
+                "column": 14
+              },
+              "end": {
+                "line": 49,
+                "column": 25
+              }
+            }
+          },
+          "range": [
+            1759,
+            1784
+          ],
+          "loc": {
+            "start": {
+              "line": 49,
+              "column": 0
+            },
+            "end": {
+              "line": 49,
+              "column": 25
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "List",
+            "raw": "'List'",
+            "range": [
+              1785,
+              1791
+            ],
+            "loc": {
+              "start": {
+                "line": 49,
+                "column": 26
+              },
+              "end": {
+                "line": 49,
+                "column": 32
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "sectionList.part",
+            "raw": "'sectionList.part'",
+            "range": [
+              1792,
+              1810
+            ],
+            "loc": {
+              "start": {
+                "line": 49,
+                "column": 33
+              },
+              "end": {
+                "line": 49,
+                "column": 51
+              }
+            }
+          }
+        ],
+        "range": [
+          1759,
+          1811
+        ],
+        "loc": {
+          "start": {
+            "line": 49,
+            "column": 0
+          },
+          "end": {
+            "line": 49,
+            "column": 52
+          }
+        }
+      },
+      "range": [
+        1759,
+        1812
+      ],
+      "loc": {
+        "start": {
+          "line": 49,
+          "column": 0
+        },
+        "end": {
+          "line": 49,
+          "column": 53
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "sectionEditor",
+            "range": [
+              1813,
+              1826
+            ],
+            "loc": {
+              "start": {
+                "line": 50,
+                "column": 0
+              },
+              "end": {
+                "line": 50,
+                "column": 13
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addJs",
+            "range": [
+              1827,
+              1832
+            ],
+            "loc": {
+              "start": {
+                "line": 50,
+                "column": 14
+              },
+              "end": {
+                "line": 50,
+                "column": 19
+              }
+            }
+          },
+          "range": [
+            1813,
+            1832
+          ],
+          "loc": {
+            "start": {
+              "line": 50,
+              "column": 0
+            },
+            "end": {
+              "line": 50,
+              "column": 19
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    1834,
+                    1839
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 50,
+                      "column": 21
+                    },
+                    "end": {
+                      "line": 50,
+                      "column": 26
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/admin/js/sectionEditor.js",
+                  "raw": "\"/globals/admin/js/sectionEditor.js\"",
+                  "range": [
+                    1840,
+                    1876
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 50,
+                      "column": 27
+                    },
+                    "end": {
+                      "line": 50,
+                      "column": 63
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  1834,
+                  1876
+                ],
+                "loc": {
+                  "start": {
+                    "line": 50,
+                    "column": 21
+                  },
+                  "end": {
+                    "line": 50,
+                    "column": 63
+                  }
+                }
+              }
+            ],
+            "range": [
+              1833,
+              1877
+            ],
+            "loc": {
+              "start": {
+                "line": 50,
+                "column": 20
+              },
+              "end": {
+                "line": 50,
+                "column": 64
+              }
+            }
+          }
+        ],
+        "range": [
+          1813,
+          1878
+        ],
+        "loc": {
+          "start": {
+            "line": 50,
+            "column": 0
+          },
+          "end": {
+            "line": 50,
+            "column": 65
+          }
+        }
+      },
+      "range": [
+        1813,
+        1879
+      ],
+      "loc": {
+        "start": {
+          "line": 50,
+          "column": 0
+        },
+        "end": {
+          "line": 50,
+          "column": 66
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "sectionEditor",
+            "range": [
+              1880,
+              1893
+            ],
+            "loc": {
+              "start": {
+                "line": 51,
+                "column": 0
+              },
+              "end": {
+                "line": 51,
+                "column": 13
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addHeadJs",
+            "range": [
+              1894,
+              1903
+            ],
+            "loc": {
+              "start": {
+                "line": 51,
+                "column": 14
+              },
+              "end": {
+                "line": 51,
+                "column": 23
+              }
+            }
+          },
+          "range": [
+            1880,
+            1903
+          ],
+          "loc": {
+            "start": {
+              "line": 51,
+              "column": 0
+            },
+            "end": {
+              "line": 51,
+              "column": 23
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    1905,
+                    1910
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 51,
+                      "column": 25
+                    },
+                    "end": {
+                      "line": 51,
+                      "column": 30
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/tinymce/tinymce.min.js",
+                  "raw": "\"/globals/tinymce/tinymce.min.js\"",
+                  "range": [
+                    1911,
+                    1944
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 51,
+                      "column": 31
+                    },
+                    "end": {
+                      "line": 51,
+                      "column": 64
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  1905,
+                  1944
+                ],
+                "loc": {
+                  "start": {
+                    "line": 51,
+                    "column": 25
+                  },
+                  "end": {
+                    "line": 51,
+                    "column": 64
+                  }
+                }
+              }
+            ],
+            "range": [
+              1904,
+              1945
+            ],
+            "loc": {
+              "start": {
+                "line": 51,
+                "column": 24
+              },
+              "end": {
+                "line": 51,
+                "column": 65
+              }
+            }
+          }
+        ],
+        "range": [
+          1880,
+          1946
+        ],
+        "loc": {
+          "start": {
+            "line": 51,
+            "column": 0
+          },
+          "end": {
+            "line": 51,
+            "column": 66
+          }
+        }
+      },
+      "range": [
+        1880,
+        1947
+      ],
+      "loc": {
+        "start": {
+          "line": 51,
+          "column": 0
+        },
+        "end": {
+          "line": 51,
+          "column": 67
+        }
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "templateEditor",
+            "range": [
+              1953,
+              1967
+            ],
+            "loc": {
+              "start": {
+                "line": 53,
+                "column": 4
+              },
+              "end": {
+                "line": 53,
+                "column": 18
+              }
+            }
+          },
+          "init": {
+            "type": "NewExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "page",
+              "range": [
+                1974,
+                1978
+              ],
+              "loc": {
+                "start": {
+                  "line": 53,
+                  "column": 25
+                },
+                "end": {
+                  "line": 53,
+                  "column": 29
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": "/template-editor",
+                "raw": "'/template-editor'",
+                "range": [
+                  1979,
+                  1997
+                ],
+                "loc": {
+                  "start": {
+                    "line": 53,
+                    "column": 30
+                  },
+                  "end": {
+                    "line": 53,
+                    "column": 48
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "Edit Template",
+                "raw": "'Edit Template'",
+                "range": [
+                  1998,
+                  2013
+                ],
+                "loc": {
+                  "start": {
+                    "line": 53,
+                    "column": 49
+                  },
+                  "end": {
+                    "line": 53,
+                    "column": 64
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "pageConfig",
+                "range": [
+                  2014,
+                  2024
+                ],
+                "loc": {
+                  "start": {
+                    "line": 53,
+                    "column": 65
+                  },
+                  "end": {
+                    "line": 53,
+                    "column": 75
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "adminTemplateEdit",
+                "raw": "'adminTemplateEdit'",
+                "range": [
+                  2025,
+                  2044
+                ],
+                "loc": {
+                  "start": {
+                    "line": 53,
+                    "column": 76
+                  },
+                  "end": {
+                    "line": 53,
+                    "column": 95
+                  }
+                }
+              }
+            ],
+            "range": [
+              1970,
+              2045
+            ],
+            "loc": {
+              "start": {
+                "line": 53,
+                "column": 21
+              },
+              "end": {
+                "line": 53,
+                "column": 96
+              }
+            }
+          },
+          "range": [
+            1953,
+            2045
+          ],
+          "loc": {
+            "start": {
+              "line": 53,
+              "column": 4
+            },
+            "end": {
+              "line": 53,
+              "column": 96
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        1949,
+        2046
+      ],
+      "loc": {
+        "start": {
+          "line": 53,
+          "column": 0
+        },
+        "end": {
+          "line": 53,
+          "column": 97
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "templateEditor",
+            "range": [
+              2047,
+              2061
+            ],
+            "loc": {
+              "start": {
+                "line": 54,
+                "column": 0
+              },
+              "end": {
+                "line": 54,
+                "column": 14
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              2062,
+              2073
+            ],
+            "loc": {
+              "start": {
+                "line": 54,
+                "column": 15
+              },
+              "end": {
+                "line": 54,
+                "column": 26
+              }
+            }
+          },
+          "range": [
+            2047,
+            2073
+          ],
+          "loc": {
+            "start": {
+              "line": 54,
+              "column": 0
+            },
+            "end": {
+              "line": 54,
+              "column": 26
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Edit",
+            "raw": "'Edit'",
+            "range": [
+              2074,
+              2080
+            ],
+            "loc": {
+              "start": {
+                "line": 54,
+                "column": 27
+              },
+              "end": {
+                "line": 54,
+                "column": 33
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "templateEditor.part",
+            "raw": "'templateEditor.part'",
+            "range": [
+              2081,
+              2102
+            ],
+            "loc": {
+              "start": {
+                "line": 54,
+                "column": 34
+              },
+              "end": {
+                "line": 54,
+                "column": 55
+              }
+            }
+          }
+        ],
+        "range": [
+          2047,
+          2103
+        ],
+        "loc": {
+          "start": {
+            "line": 54,
+            "column": 0
+          },
+          "end": {
+            "line": 54,
+            "column": 56
+          }
+        }
+      },
+      "range": [
+        2047,
+        2104
+      ],
+      "loc": {
+        "start": {
+          "line": 54,
+          "column": 0
+        },
+        "end": {
+          "line": 54,
+          "column": 57
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "templateEditor",
+            "range": [
+              2105,
+              2119
+            ],
+            "loc": {
+              "start": {
+                "line": 55,
+                "column": 0
+              },
+              "end": {
+                "line": 55,
+                "column": 14
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              2120,
+              2131
+            ],
+            "loc": {
+              "start": {
+                "line": 55,
+                "column": 15
+              },
+              "end": {
+                "line": 55,
+                "column": 26
+              }
+            }
+          },
+          "range": [
+            2105,
+            2131
+          ],
+          "loc": {
+            "start": {
+              "line": 55,
+              "column": 0
+            },
+            "end": {
+              "line": 55,
+              "column": 26
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "List",
+            "raw": "'List'",
+            "range": [
+              2132,
+              2138
+            ],
+            "loc": {
+              "start": {
+                "line": 55,
+                "column": 27
+              },
+              "end": {
+                "line": 55,
+                "column": 33
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "templateList.part",
+            "raw": "'templateList.part'",
+            "range": [
+              2139,
+              2158
+            ],
+            "loc": {
+              "start": {
+                "line": 55,
+                "column": 34
+              },
+              "end": {
+                "line": 55,
+                "column": 53
+              }
+            }
+          }
+        ],
+        "range": [
+          2105,
+          2159
+        ],
+        "loc": {
+          "start": {
+            "line": 55,
+            "column": 0
+          },
+          "end": {
+            "line": 55,
+            "column": 54
+          }
+        }
+      },
+      "range": [
+        2105,
+        2160
+      ],
+      "loc": {
+        "start": {
+          "line": 55,
+          "column": 0
+        },
+        "end": {
+          "line": 55,
+          "column": 55
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "templateEditor",
+            "range": [
+              2161,
+              2175
+            ],
+            "loc": {
+              "start": {
+                "line": 56,
+                "column": 0
+              },
+              "end": {
+                "line": 56,
+                "column": 14
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addJs",
+            "range": [
+              2176,
+              2181
+            ],
+            "loc": {
+              "start": {
+                "line": 56,
+                "column": 15
+              },
+              "end": {
+                "line": 56,
+                "column": 20
+              }
+            }
+          },
+          "range": [
+            2161,
+            2181
+          ],
+          "loc": {
+            "start": {
+              "line": 56,
+              "column": 0
+            },
+            "end": {
+              "line": 56,
+              "column": 20
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    2183,
+                    2188
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 56,
+                      "column": 22
+                    },
+                    "end": {
+                      "line": 56,
+                      "column": 27
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/admin/js/templateEditor.js",
+                  "raw": "\"/globals/admin/js/templateEditor.js\"",
+                  "range": [
+                    2189,
+                    2226
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 56,
+                      "column": 28
+                    },
+                    "end": {
+                      "line": 56,
+                      "column": 65
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  2183,
+                  2226
+                ],
+                "loc": {
+                  "start": {
+                    "line": 56,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 56,
+                    "column": 65
+                  }
+                }
+              }
+            ],
+            "range": [
+              2182,
+              2227
+            ],
+            "loc": {
+              "start": {
+                "line": 56,
+                "column": 21
+              },
+              "end": {
+                "line": 56,
+                "column": 66
+              }
+            }
+          }
+        ],
+        "range": [
+          2161,
+          2228
+        ],
+        "loc": {
+          "start": {
+            "line": 56,
+            "column": 0
+          },
+          "end": {
+            "line": 56,
+            "column": 67
+          }
+        }
+      },
+      "range": [
+        2161,
+        2229
+      ],
+      "loc": {
+        "start": {
+          "line": 56,
+          "column": 0
+        },
+        "end": {
+          "line": 56,
+          "column": 68
+        }
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "pageEditor",
+            "range": [
+              2235,
+              2245
+            ],
+            "loc": {
+              "start": {
+                "line": 58,
+                "column": 4
+              },
+              "end": {
+                "line": 58,
+                "column": 14
+              }
+            }
+          },
+          "init": {
+            "type": "NewExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "page",
+              "range": [
+                2252,
+                2256
+              ],
+              "loc": {
+                "start": {
+                  "line": 58,
+                  "column": 21
+                },
+                "end": {
+                  "line": 58,
+                  "column": 25
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": "/page-editor",
+                "raw": "'/page-editor'",
+                "range": [
+                  2257,
+                  2271
+                ],
+                "loc": {
+                  "start": {
+                    "line": 58,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 58,
+                    "column": 40
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "Edit Page",
+                "raw": "'Edit Page'",
+                "range": [
+                  2272,
+                  2283
+                ],
+                "loc": {
+                  "start": {
+                    "line": 58,
+                    "column": 41
+                  },
+                  "end": {
+                    "line": 58,
+                    "column": 52
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "pageConfig",
+                "range": [
+                  2284,
+                  2294
+                ],
+                "loc": {
+                  "start": {
+                    "line": 58,
+                    "column": 53
+                  },
+                  "end": {
+                    "line": 58,
+                    "column": 63
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "adminPageEdit",
+                "raw": "'adminPageEdit'",
+                "range": [
+                  2295,
+                  2310
+                ],
+                "loc": {
+                  "start": {
+                    "line": 58,
+                    "column": 64
+                  },
+                  "end": {
+                    "line": 58,
+                    "column": 79
+                  }
+                }
+              }
+            ],
+            "range": [
+              2248,
+              2311
+            ],
+            "loc": {
+              "start": {
+                "line": 58,
+                "column": 17
+              },
+              "end": {
+                "line": 58,
+                "column": 80
+              }
+            }
+          },
+          "range": [
+            2235,
+            2311
+          ],
+          "loc": {
+            "start": {
+              "line": 58,
+              "column": 4
+            },
+            "end": {
+              "line": 58,
+              "column": 80
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        2231,
+        2312
+      ],
+      "loc": {
+        "start": {
+          "line": 58,
+          "column": 0
+        },
+        "end": {
+          "line": 58,
+          "column": 81
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pageEditor",
+            "range": [
+              2313,
+              2323
+            ],
+            "loc": {
+              "start": {
+                "line": 59,
+                "column": 0
+              },
+              "end": {
+                "line": 59,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              2324,
+              2335
+            ],
+            "loc": {
+              "start": {
+                "line": 59,
+                "column": 11
+              },
+              "end": {
+                "line": 59,
+                "column": 22
+              }
+            }
+          },
+          "range": [
+            2313,
+            2335
+          ],
+          "loc": {
+            "start": {
+              "line": 59,
+              "column": 0
+            },
+            "end": {
+              "line": 59,
+              "column": 22
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Edit",
+            "raw": "'Edit'",
+            "range": [
+              2336,
+              2342
+            ],
+            "loc": {
+              "start": {
+                "line": 59,
+                "column": 23
+              },
+              "end": {
+                "line": 59,
+                "column": 29
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "pageEditor.part",
+            "raw": "'pageEditor.part'",
+            "range": [
+              2343,
+              2360
+            ],
+            "loc": {
+              "start": {
+                "line": 59,
+                "column": 30
+              },
+              "end": {
+                "line": 59,
+                "column": 47
+              }
+            }
+          }
+        ],
+        "range": [
+          2313,
+          2361
+        ],
+        "loc": {
+          "start": {
+            "line": 59,
+            "column": 0
+          },
+          "end": {
+            "line": 59,
+            "column": 48
+          }
+        }
+      },
+      "range": [
+        2313,
+        2362
+      ],
+      "loc": {
+        "start": {
+          "line": 59,
+          "column": 0
+        },
+        "end": {
+          "line": 59,
+          "column": 49
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pageEditor",
+            "range": [
+              2363,
+              2373
+            ],
+            "loc": {
+              "start": {
+                "line": 60,
+                "column": 0
+              },
+              "end": {
+                "line": 60,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              2374,
+              2385
+            ],
+            "loc": {
+              "start": {
+                "line": 60,
+                "column": 11
+              },
+              "end": {
+                "line": 60,
+                "column": 22
+              }
+            }
+          },
+          "range": [
+            2363,
+            2385
+          ],
+          "loc": {
+            "start": {
+              "line": 60,
+              "column": 0
+            },
+            "end": {
+              "line": 60,
+              "column": 22
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "List",
+            "raw": "'List'",
+            "range": [
+              2386,
+              2392
+            ],
+            "loc": {
+              "start": {
+                "line": 60,
+                "column": 23
+              },
+              "end": {
+                "line": 60,
+                "column": 29
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "pageList.part",
+            "raw": "'pageList.part'",
+            "range": [
+              2393,
+              2408
+            ],
+            "loc": {
+              "start": {
+                "line": 60,
+                "column": 30
+              },
+              "end": {
+                "line": 60,
+                "column": 45
+              }
+            }
+          }
+        ],
+        "range": [
+          2363,
+          2409
+        ],
+        "loc": {
+          "start": {
+            "line": 60,
+            "column": 0
+          },
+          "end": {
+            "line": 60,
+            "column": 46
+          }
+        }
+      },
+      "range": [
+        2363,
+        2410
+      ],
+      "loc": {
+        "start": {
+          "line": 60,
+          "column": 0
+        },
+        "end": {
+          "line": 60,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pageEditor",
+            "range": [
+              2411,
+              2421
+            ],
+            "loc": {
+              "start": {
+                "line": 61,
+                "column": 0
+              },
+              "end": {
+                "line": 61,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addJs",
+            "range": [
+              2422,
+              2427
+            ],
+            "loc": {
+              "start": {
+                "line": 61,
+                "column": 11
+              },
+              "end": {
+                "line": 61,
+                "column": 16
+              }
+            }
+          },
+          "range": [
+            2411,
+            2427
+          ],
+          "loc": {
+            "start": {
+              "line": 61,
+              "column": 0
+            },
+            "end": {
+              "line": 61,
+              "column": 16
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    2429,
+                    2434
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 61,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 61,
+                      "column": 23
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/admin/js/pageEditor.js",
+                  "raw": "\"/globals/admin/js/pageEditor.js\"",
+                  "range": [
+                    2435,
+                    2468
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 61,
+                      "column": 24
+                    },
+                    "end": {
+                      "line": 61,
+                      "column": 57
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  2429,
+                  2468
+                ],
+                "loc": {
+                  "start": {
+                    "line": 61,
+                    "column": 18
+                  },
+                  "end": {
+                    "line": 61,
+                    "column": 57
+                  }
+                }
+              }
+            ],
+            "range": [
+              2428,
+              2469
+            ],
+            "loc": {
+              "start": {
+                "line": 61,
+                "column": 17
+              },
+              "end": {
+                "line": 61,
+                "column": 58
+              }
+            }
+          }
+        ],
+        "range": [
+          2411,
+          2470
+        ],
+        "loc": {
+          "start": {
+            "line": 61,
+            "column": 0
+          },
+          "end": {
+            "line": 61,
+            "column": 59
+          }
+        }
+      },
+      "range": [
+        2411,
+        2471
+      ],
+      "loc": {
+        "start": {
+          "line": 61,
+          "column": 0
+        },
+        "end": {
+          "line": 61,
+          "column": 60
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pageEditor",
+            "range": [
+              2472,
+              2482
+            ],
+            "loc": {
+              "start": {
+                "line": 62,
+                "column": 0
+              },
+              "end": {
+                "line": 62,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addHeadJs",
+            "range": [
+              2483,
+              2492
+            ],
+            "loc": {
+              "start": {
+                "line": 62,
+                "column": 11
+              },
+              "end": {
+                "line": 62,
+                "column": 20
+              }
+            }
+          },
+          "range": [
+            2472,
+            2492
+          ],
+          "loc": {
+            "start": {
+              "line": 62,
+              "column": 0
+            },
+            "end": {
+              "line": 62,
+              "column": 20
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    2494,
+                    2499
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 62,
+                      "column": 22
+                    },
+                    "end": {
+                      "line": 62,
+                      "column": 27
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/tinymce/tinymce.min.js",
+                  "raw": "\"/globals/tinymce/tinymce.min.js\"",
+                  "range": [
+                    2500,
+                    2533
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 62,
+                      "column": 28
+                    },
+                    "end": {
+                      "line": 62,
+                      "column": 61
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  2494,
+                  2533
+                ],
+                "loc": {
+                  "start": {
+                    "line": 62,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 62,
+                    "column": 61
+                  }
+                }
+              }
+            ],
+            "range": [
+              2493,
+              2534
+            ],
+            "loc": {
+              "start": {
+                "line": 62,
+                "column": 21
+              },
+              "end": {
+                "line": 62,
+                "column": 62
+              }
+            }
+          }
+        ],
+        "range": [
+          2472,
+          2535
+        ],
+        "loc": {
+          "start": {
+            "line": 62,
+            "column": 0
+          },
+          "end": {
+            "line": 62,
+            "column": 63
+          }
+        }
+      },
+      "range": [
+        2472,
+        2536
+      ],
+      "loc": {
+        "start": {
+          "line": 62,
+          "column": 0
+        },
+        "end": {
+          "line": 62,
+          "column": 64
+        }
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "userEditor",
+            "range": [
+              2542,
+              2552
+            ],
+            "loc": {
+              "start": {
+                "line": 64,
+                "column": 4
+              },
+              "end": {
+                "line": 64,
+                "column": 14
+              }
+            }
+          },
+          "init": {
+            "type": "NewExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "page",
+              "range": [
+                2559,
+                2563
+              ],
+              "loc": {
+                "start": {
+                  "line": 64,
+                  "column": 21
+                },
+                "end": {
+                  "line": 64,
+                  "column": 25
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": "/user-editor",
+                "raw": "'/user-editor'",
+                "range": [
+                  2564,
+                  2578
+                ],
+                "loc": {
+                  "start": {
+                    "line": 64,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 64,
+                    "column": 40
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "Edit User",
+                "raw": "'Edit User'",
+                "range": [
+                  2579,
+                  2590
+                ],
+                "loc": {
+                  "start": {
+                    "line": 64,
+                    "column": 41
+                  },
+                  "end": {
+                    "line": 64,
+                    "column": 52
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "pageConfig",
+                "range": [
+                  2591,
+                  2601
+                ],
+                "loc": {
+                  "start": {
+                    "line": 64,
+                    "column": 53
+                  },
+                  "end": {
+                    "line": 64,
+                    "column": 63
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "userPageEdit",
+                "raw": "'userPageEdit'",
+                "range": [
+                  2602,
+                  2616
+                ],
+                "loc": {
+                  "start": {
+                    "line": 64,
+                    "column": 64
+                  },
+                  "end": {
+                    "line": 64,
+                    "column": 78
+                  }
+                }
+              }
+            ],
+            "range": [
+              2555,
+              2617
+            ],
+            "loc": {
+              "start": {
+                "line": 64,
+                "column": 17
+              },
+              "end": {
+                "line": 64,
+                "column": 79
+              }
+            }
+          },
+          "range": [
+            2542,
+            2617
+          ],
+          "loc": {
+            "start": {
+              "line": 64,
+              "column": 4
+            },
+            "end": {
+              "line": 64,
+              "column": 79
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        2538,
+        2618
+      ],
+      "loc": {
+        "start": {
+          "line": 64,
+          "column": 0
+        },
+        "end": {
+          "line": 64,
+          "column": 80
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "userEditor",
+            "range": [
+              2619,
+              2629
+            ],
+            "loc": {
+              "start": {
+                "line": 65,
+                "column": 0
+              },
+              "end": {
+                "line": 65,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              2630,
+              2641
+            ],
+            "loc": {
+              "start": {
+                "line": 65,
+                "column": 11
+              },
+              "end": {
+                "line": 65,
+                "column": 22
+              }
+            }
+          },
+          "range": [
+            2619,
+            2641
+          ],
+          "loc": {
+            "start": {
+              "line": 65,
+              "column": 0
+            },
+            "end": {
+              "line": 65,
+              "column": 22
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Edit",
+            "raw": "'Edit'",
+            "range": [
+              2642,
+              2648
+            ],
+            "loc": {
+              "start": {
+                "line": 65,
+                "column": 23
+              },
+              "end": {
+                "line": 65,
+                "column": 29
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "userEditor.part",
+            "raw": "'userEditor.part'",
+            "range": [
+              2649,
+              2666
+            ],
+            "loc": {
+              "start": {
+                "line": 65,
+                "column": 30
+              },
+              "end": {
+                "line": 65,
+                "column": 47
+              }
+            }
+          }
+        ],
+        "range": [
+          2619,
+          2667
+        ],
+        "loc": {
+          "start": {
+            "line": 65,
+            "column": 0
+          },
+          "end": {
+            "line": 65,
+            "column": 48
+          }
+        }
+      },
+      "range": [
+        2619,
+        2668
+      ],
+      "loc": {
+        "start": {
+          "line": 65,
+          "column": 0
+        },
+        "end": {
+          "line": 65,
+          "column": 49
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "userEditor",
+            "range": [
+              2669,
+              2679
+            ],
+            "loc": {
+              "start": {
+                "line": 66,
+                "column": 0
+              },
+              "end": {
+                "line": 66,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              2680,
+              2691
+            ],
+            "loc": {
+              "start": {
+                "line": 66,
+                "column": 11
+              },
+              "end": {
+                "line": 66,
+                "column": 22
+              }
+            }
+          },
+          "range": [
+            2669,
+            2691
+          ],
+          "loc": {
+            "start": {
+              "line": 66,
+              "column": 0
+            },
+            "end": {
+              "line": 66,
+              "column": 22
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "List",
+            "raw": "'List'",
+            "range": [
+              2692,
+              2698
+            ],
+            "loc": {
+              "start": {
+                "line": 66,
+                "column": 23
+              },
+              "end": {
+                "line": 66,
+                "column": 29
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "userList.part",
+            "raw": "'userList.part'",
+            "range": [
+              2699,
+              2714
+            ],
+            "loc": {
+              "start": {
+                "line": 66,
+                "column": 30
+              },
+              "end": {
+                "line": 66,
+                "column": 45
+              }
+            }
+          }
+        ],
+        "range": [
+          2669,
+          2715
+        ],
+        "loc": {
+          "start": {
+            "line": 66,
+            "column": 0
+          },
+          "end": {
+            "line": 66,
+            "column": 46
+          }
+        }
+      },
+      "range": [
+        2669,
+        2716
+      ],
+      "loc": {
+        "start": {
+          "line": 66,
+          "column": 0
+        },
+        "end": {
+          "line": 66,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "userEditor",
+            "range": [
+              2717,
+              2727
+            ],
+            "loc": {
+              "start": {
+                "line": 67,
+                "column": 0
+              },
+              "end": {
+                "line": 67,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              2728,
+              2739
+            ],
+            "loc": {
+              "start": {
+                "line": 67,
+                "column": 11
+              },
+              "end": {
+                "line": 67,
+                "column": 22
+              }
+            }
+          },
+          "range": [
+            2717,
+            2739
+          ],
+          "loc": {
+            "start": {
+              "line": 67,
+              "column": 0
+            },
+            "end": {
+              "line": 67,
+              "column": 22
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Add",
+            "raw": "'Add'",
+            "range": [
+              2740,
+              2745
+            ],
+            "loc": {
+              "start": {
+                "line": 67,
+                "column": 23
+              },
+              "end": {
+                "line": 67,
+                "column": 28
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "userAdd.part",
+            "raw": "'userAdd.part'",
+            "range": [
+              2746,
+              2760
+            ],
+            "loc": {
+              "start": {
+                "line": 67,
+                "column": 29
+              },
+              "end": {
+                "line": 67,
+                "column": 43
+              }
+            }
+          }
+        ],
+        "range": [
+          2717,
+          2761
+        ],
+        "loc": {
+          "start": {
+            "line": 67,
+            "column": 0
+          },
+          "end": {
+            "line": 67,
+            "column": 44
+          }
+        }
+      },
+      "range": [
+        2717,
+        2762
+      ],
+      "loc": {
+        "start": {
+          "line": 67,
+          "column": 0
+        },
+        "end": {
+          "line": 67,
+          "column": 45
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "userEditor",
+            "range": [
+              2763,
+              2773
+            ],
+            "loc": {
+              "start": {
+                "line": 68,
+                "column": 0
+              },
+              "end": {
+                "line": 68,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addJs",
+            "range": [
+              2774,
+              2779
+            ],
+            "loc": {
+              "start": {
+                "line": 68,
+                "column": 11
+              },
+              "end": {
+                "line": 68,
+                "column": 16
+              }
+            }
+          },
+          "range": [
+            2763,
+            2779
+          ],
+          "loc": {
+            "start": {
+              "line": 68,
+              "column": 0
+            },
+            "end": {
+              "line": 68,
+              "column": 16
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    2781,
+                    2786
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 68,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 68,
+                      "column": 23
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/admin/js/userEditor.js",
+                  "raw": "\"/globals/admin/js/userEditor.js\"",
+                  "range": [
+                    2787,
+                    2820
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 68,
+                      "column": 24
+                    },
+                    "end": {
+                      "line": 68,
+                      "column": 57
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  2781,
+                  2820
+                ],
+                "loc": {
+                  "start": {
+                    "line": 68,
+                    "column": 18
+                  },
+                  "end": {
+                    "line": 68,
+                    "column": 57
+                  }
+                }
+              }
+            ],
+            "range": [
+              2780,
+              2821
+            ],
+            "loc": {
+              "start": {
+                "line": 68,
+                "column": 17
+              },
+              "end": {
+                "line": 68,
+                "column": 58
+              }
+            }
+          }
+        ],
+        "range": [
+          2763,
+          2822
+        ],
+        "loc": {
+          "start": {
+            "line": 68,
+            "column": 0
+          },
+          "end": {
+            "line": 68,
+            "column": 59
+          }
+        }
+      },
+      "range": [
+        2763,
+        2823
+      ],
+      "loc": {
+        "start": {
+          "line": 68,
+          "column": 0
+        },
+        "end": {
+          "line": 68,
+          "column": 60
+        }
+      }
+    },
+    {
+      "type": "VariableDeclaration",
+      "declarations": [
+        {
+          "type": "VariableDeclarator",
+          "id": {
+            "type": "Identifier",
+            "name": "blogEditor",
+            "range": [
+              2829,
+              2839
+            ],
+            "loc": {
+              "start": {
+                "line": 70,
+                "column": 4
+              },
+              "end": {
+                "line": 70,
+                "column": 14
+              }
+            }
+          },
+          "init": {
+            "type": "NewExpression",
+            "callee": {
+              "type": "Identifier",
+              "name": "page",
+              "range": [
+                2846,
+                2850
+              ],
+              "loc": {
+                "start": {
+                  "line": 70,
+                  "column": 21
+                },
+                "end": {
+                  "line": 70,
+                  "column": 25
+                }
+              }
+            },
+            "arguments": [
+              {
+                "type": "Literal",
+                "value": "/blog-editor",
+                "raw": "'/blog-editor'",
+                "range": [
+                  2851,
+                  2865
+                ],
+                "loc": {
+                  "start": {
+                    "line": 70,
+                    "column": 26
+                  },
+                  "end": {
+                    "line": 70,
+                    "column": 40
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "Edit Blog",
+                "raw": "'Edit Blog'",
+                "range": [
+                  2866,
+                  2877
+                ],
+                "loc": {
+                  "start": {
+                    "line": 70,
+                    "column": 41
+                  },
+                  "end": {
+                    "line": 70,
+                    "column": 52
+                  }
+                }
+              },
+              {
+                "type": "Identifier",
+                "name": "pageConfig",
+                "range": [
+                  2878,
+                  2888
+                ],
+                "loc": {
+                  "start": {
+                    "line": 70,
+                    "column": 53
+                  },
+                  "end": {
+                    "line": 70,
+                    "column": 63
+                  }
+                }
+              },
+              {
+                "type": "Literal",
+                "value": "blogPageEdit",
+                "raw": "'blogPageEdit'",
+                "range": [
+                  2889,
+                  2903
+                ],
+                "loc": {
+                  "start": {
+                    "line": 70,
+                    "column": 64
+                  },
+                  "end": {
+                    "line": 70,
+                    "column": 78
+                  }
+                }
+              }
+            ],
+            "range": [
+              2842,
+              2904
+            ],
+            "loc": {
+              "start": {
+                "line": 70,
+                "column": 17
+              },
+              "end": {
+                "line": 70,
+                "column": 79
+              }
+            }
+          },
+          "range": [
+            2829,
+            2904
+          ],
+          "loc": {
+            "start": {
+              "line": 70,
+              "column": 4
+            },
+            "end": {
+              "line": 70,
+              "column": 79
+            }
+          }
+        }
+      ],
+      "kind": "var",
+      "range": [
+        2825,
+        2905
+      ],
+      "loc": {
+        "start": {
+          "line": 70,
+          "column": 0
+        },
+        "end": {
+          "line": 70,
+          "column": 80
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "blogEditor",
+            "range": [
+              2906,
+              2916
+            ],
+            "loc": {
+              "start": {
+                "line": 71,
+                "column": 0
+              },
+              "end": {
+                "line": 71,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              2917,
+              2928
+            ],
+            "loc": {
+              "start": {
+                "line": 71,
+                "column": 11
+              },
+              "end": {
+                "line": 71,
+                "column": 22
+              }
+            }
+          },
+          "range": [
+            2906,
+            2928
+          ],
+          "loc": {
+            "start": {
+              "line": 71,
+              "column": 0
+            },
+            "end": {
+              "line": 71,
+              "column": 22
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Edit",
+            "raw": "'Edit'",
+            "range": [
+              2929,
+              2935
+            ],
+            "loc": {
+              "start": {
+                "line": 71,
+                "column": 23
+              },
+              "end": {
+                "line": 71,
+                "column": 29
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "blogEditor.part",
+            "raw": "'blogEditor.part'",
+            "range": [
+              2936,
+              2953
+            ],
+            "loc": {
+              "start": {
+                "line": 71,
+                "column": 30
+              },
+              "end": {
+                "line": 71,
+                "column": 47
+              }
+            }
+          }
+        ],
+        "range": [
+          2906,
+          2954
+        ],
+        "loc": {
+          "start": {
+            "line": 71,
+            "column": 0
+          },
+          "end": {
+            "line": 71,
+            "column": 48
+          }
+        }
+      },
+      "range": [
+        2906,
+        2955
+      ],
+      "loc": {
+        "start": {
+          "line": 71,
+          "column": 0
+        },
+        "end": {
+          "line": 71,
+          "column": 49
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "blogEditor",
+            "range": [
+              2956,
+              2966
+            ],
+            "loc": {
+              "start": {
+                "line": 72,
+                "column": 0
+              },
+              "end": {
+                "line": 72,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              2967,
+              2978
+            ],
+            "loc": {
+              "start": {
+                "line": 72,
+                "column": 11
+              },
+              "end": {
+                "line": 72,
+                "column": 22
+              }
+            }
+          },
+          "range": [
+            2956,
+            2978
+          ],
+          "loc": {
+            "start": {
+              "line": 72,
+              "column": 0
+            },
+            "end": {
+              "line": 72,
+              "column": 22
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "List",
+            "raw": "'List'",
+            "range": [
+              2979,
+              2985
+            ],
+            "loc": {
+              "start": {
+                "line": 72,
+                "column": 23
+              },
+              "end": {
+                "line": 72,
+                "column": 29
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "blogList.part",
+            "raw": "'blogList.part'",
+            "range": [
+              2986,
+              3001
+            ],
+            "loc": {
+              "start": {
+                "line": 72,
+                "column": 30
+              },
+              "end": {
+                "line": 72,
+                "column": 45
+              }
+            }
+          }
+        ],
+        "range": [
+          2956,
+          3002
+        ],
+        "loc": {
+          "start": {
+            "line": 72,
+            "column": 0
+          },
+          "end": {
+            "line": 72,
+            "column": 46
+          }
+        }
+      },
+      "range": [
+        2956,
+        3003
+      ],
+      "loc": {
+        "start": {
+          "line": 72,
+          "column": 0
+        },
+        "end": {
+          "line": 72,
+          "column": 47
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "blogEditor",
+            "range": [
+              3004,
+              3014
+            ],
+            "loc": {
+              "start": {
+                "line": 73,
+                "column": 0
+              },
+              "end": {
+                "line": 73,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addContents",
+            "range": [
+              3015,
+              3026
+            ],
+            "loc": {
+              "start": {
+                "line": 73,
+                "column": 11
+              },
+              "end": {
+                "line": 73,
+                "column": 22
+              }
+            }
+          },
+          "range": [
+            3004,
+            3026
+          ],
+          "loc": {
+            "start": {
+              "line": 73,
+              "column": 0
+            },
+            "end": {
+              "line": 73,
+              "column": 22
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Literal",
+            "value": "Blog List Template",
+            "raw": "'Blog List Template'",
+            "range": [
+              3027,
+              3047
+            ],
+            "loc": {
+              "start": {
+                "line": 73,
+                "column": 23
+              },
+              "end": {
+                "line": 73,
+                "column": 43
+              }
+            }
+          },
+          {
+            "type": "Literal",
+            "value": "blogTemplate.part",
+            "raw": "'blogTemplate.part'",
+            "range": [
+              3048,
+              3067
+            ],
+            "loc": {
+              "start": {
+                "line": 73,
+                "column": 44
+              },
+              "end": {
+                "line": 73,
+                "column": 63
+              }
+            }
+          }
+        ],
+        "range": [
+          3004,
+          3068
+        ],
+        "loc": {
+          "start": {
+            "line": 73,
+            "column": 0
+          },
+          "end": {
+            "line": 73,
+            "column": 64
+          }
+        }
+      },
+      "range": [
+        3004,
+        3069
+      ],
+      "loc": {
+        "start": {
+          "line": 73,
+          "column": 0
+        },
+        "end": {
+          "line": 73,
+          "column": 65
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "blogEditor",
+            "range": [
+              3070,
+              3080
+            ],
+            "loc": {
+              "start": {
+                "line": 74,
+                "column": 0
+              },
+              "end": {
+                "line": 74,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addJs",
+            "range": [
+              3081,
+              3086
+            ],
+            "loc": {
+              "start": {
+                "line": 74,
+                "column": 11
+              },
+              "end": {
+                "line": 74,
+                "column": 16
+              }
+            }
+          },
+          "range": [
+            3070,
+            3086
+          ],
+          "loc": {
+            "start": {
+              "line": 74,
+              "column": 0
+            },
+            "end": {
+              "line": 74,
+              "column": 16
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    3088,
+                    3093
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 74,
+                      "column": 18
+                    },
+                    "end": {
+                      "line": 74,
+                      "column": 23
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/admin/js/blogEditor.js",
+                  "raw": "\"/globals/admin/js/blogEditor.js\"",
+                  "range": [
+                    3094,
+                    3127
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 74,
+                      "column": 24
+                    },
+                    "end": {
+                      "line": 74,
+                      "column": 57
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  3088,
+                  3127
+                ],
+                "loc": {
+                  "start": {
+                    "line": 74,
+                    "column": 18
+                  },
+                  "end": {
+                    "line": 74,
+                    "column": 57
+                  }
+                }
+              }
+            ],
+            "range": [
+              3087,
+              3128
+            ],
+            "loc": {
+              "start": {
+                "line": 74,
+                "column": 17
+              },
+              "end": {
+                "line": 74,
+                "column": 58
+              }
+            }
+          }
+        ],
+        "range": [
+          3070,
+          3129
+        ],
+        "loc": {
+          "start": {
+            "line": 74,
+            "column": 0
+          },
+          "end": {
+            "line": 74,
+            "column": 59
+          }
+        }
+      },
+      "range": [
+        3070,
+        3130
+      ],
+      "loc": {
+        "start": {
+          "line": 74,
+          "column": 0
+        },
+        "end": {
+          "line": 74,
+          "column": 60
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "blogEditor",
+            "range": [
+              3131,
+              3141
+            ],
+            "loc": {
+              "start": {
+                "line": 75,
+                "column": 0
+              },
+              "end": {
+                "line": 75,
+                "column": 10
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "addHeadJs",
+            "range": [
+              3142,
+              3151
+            ],
+            "loc": {
+              "start": {
+                "line": 75,
+                "column": 11
+              },
+              "end": {
+                "line": 75,
+                "column": 20
+              }
+            }
+          },
+          "range": [
+            3131,
+            3151
+          ],
+          "loc": {
+            "start": {
+              "line": 75,
+              "column": 0
+            },
+            "end": {
+              "line": 75,
+              "column": 20
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "ObjectExpression",
+            "properties": [
+              {
+                "type": "Property",
+                "key": {
+                  "type": "Literal",
+                  "value": "src",
+                  "raw": "\"src\"",
+                  "range": [
+                    3153,
+                    3158
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 75,
+                      "column": 22
+                    },
+                    "end": {
+                      "line": 75,
+                      "column": 27
+                    }
+                  }
+                },
+                "value": {
+                  "type": "Literal",
+                  "value": "/globals/tinymce/tinymce.min.js",
+                  "raw": "\"/globals/tinymce/tinymce.min.js\"",
+                  "range": [
+                    3159,
+                    3192
+                  ],
+                  "loc": {
+                    "start": {
+                      "line": 75,
+                      "column": 28
+                    },
+                    "end": {
+                      "line": 75,
+                      "column": 61
+                    }
+                  }
+                },
+                "kind": "init",
+                "method": false,
+                "shorthand": false,
+                "computed": false,
+                "range": [
+                  3153,
+                  3192
+                ],
+                "loc": {
+                  "start": {
+                    "line": 75,
+                    "column": 22
+                  },
+                  "end": {
+                    "line": 75,
+                    "column": 61
+                  }
+                }
+              }
+            ],
+            "range": [
+              3152,
+              3193
+            ],
+            "loc": {
+              "start": {
+                "line": 75,
+                "column": 21
+              },
+              "end": {
+                "line": 75,
+                "column": 62
+              }
+            }
+          }
+        ],
+        "range": [
+          3131,
+          3194
+        ],
+        "loc": {
+          "start": {
+            "line": 75,
+            "column": 0
+          },
+          "end": {
+            "line": 75,
+            "column": 63
+          }
+        }
+      },
+      "range": [
+        3131,
+        3195
+      ],
+      "loc": {
+        "start": {
+          "line": 75,
+          "column": 0
+        },
+        "end": {
+          "line": 75,
+          "column": 64
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pages",
+            "range": [
+              3197,
+              3202
+            ],
+            "loc": {
+              "start": {
+                "line": 77,
+                "column": 0
+              },
+              "end": {
+                "line": 77,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "push",
+            "range": [
+              3203,
+              3207
+            ],
+            "loc": {
+              "start": {
+                "line": 77,
+                "column": 6
+              },
+              "end": {
+                "line": 77,
+                "column": 10
+              }
+            }
+          },
+          "range": [
+            3197,
+            3207
+          ],
+          "loc": {
+            "start": {
+              "line": 77,
+              "column": 0
+            },
+            "end": {
+              "line": 77,
+              "column": 10
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "index",
+            "range": [
+              3208,
+              3213
+            ],
+            "loc": {
+              "start": {
+                "line": 77,
+                "column": 11
+              },
+              "end": {
+                "line": 77,
+                "column": 16
+              }
+            }
+          }
+        ],
+        "range": [
+          3197,
+          3214
+        ],
+        "loc": {
+          "start": {
+            "line": 77,
+            "column": 0
+          },
+          "end": {
+            "line": 77,
+            "column": 17
+          }
+        }
+      },
+      "range": [
+        3197,
+        3215
+      ],
+      "loc": {
+        "start": {
+          "line": 77,
+          "column": 0
+        },
+        "end": {
+          "line": 77,
+          "column": 18
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pages",
+            "range": [
+              3216,
+              3221
+            ],
+            "loc": {
+              "start": {
+                "line": 78,
+                "column": 0
+              },
+              "end": {
+                "line": 78,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "push",
+            "range": [
+              3222,
+              3226
+            ],
+            "loc": {
+              "start": {
+                "line": 78,
+                "column": 6
+              },
+              "end": {
+                "line": 78,
+                "column": 10
+              }
+            }
+          },
+          "range": [
+            3216,
+            3226
+          ],
+          "loc": {
+            "start": {
+              "line": 78,
+              "column": 0
+            },
+            "end": {
+              "line": 78,
+              "column": 10
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "sectionEditor",
+            "range": [
+              3227,
+              3240
+            ],
+            "loc": {
+              "start": {
+                "line": 78,
+                "column": 11
+              },
+              "end": {
+                "line": 78,
+                "column": 24
+              }
+            }
+          }
+        ],
+        "range": [
+          3216,
+          3241
+        ],
+        "loc": {
+          "start": {
+            "line": 78,
+            "column": 0
+          },
+          "end": {
+            "line": 78,
+            "column": 25
+          }
+        }
+      },
+      "range": [
+        3216,
+        3242
+      ],
+      "loc": {
+        "start": {
+          "line": 78,
+          "column": 0
+        },
+        "end": {
+          "line": 78,
+          "column": 26
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pages",
+            "range": [
+              3243,
+              3248
+            ],
+            "loc": {
+              "start": {
+                "line": 79,
+                "column": 0
+              },
+              "end": {
+                "line": 79,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "push",
+            "range": [
+              3249,
+              3253
+            ],
+            "loc": {
+              "start": {
+                "line": 79,
+                "column": 6
+              },
+              "end": {
+                "line": 79,
+                "column": 10
+              }
+            }
+          },
+          "range": [
+            3243,
+            3253
+          ],
+          "loc": {
+            "start": {
+              "line": 79,
+              "column": 0
+            },
+            "end": {
+              "line": 79,
+              "column": 10
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "templateEditor",
+            "range": [
+              3254,
+              3268
+            ],
+            "loc": {
+              "start": {
+                "line": 79,
+                "column": 11
+              },
+              "end": {
+                "line": 79,
+                "column": 25
+              }
+            }
+          }
+        ],
+        "range": [
+          3243,
+          3269
+        ],
+        "loc": {
+          "start": {
+            "line": 79,
+            "column": 0
+          },
+          "end": {
+            "line": 79,
+            "column": 26
+          }
+        }
+      },
+      "range": [
+        3243,
+        3270
+      ],
+      "loc": {
+        "start": {
+          "line": 79,
+          "column": 0
+        },
+        "end": {
+          "line": 79,
+          "column": 27
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pages",
+            "range": [
+              3271,
+              3276
+            ],
+            "loc": {
+              "start": {
+                "line": 80,
+                "column": 0
+              },
+              "end": {
+                "line": 80,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "push",
+            "range": [
+              3277,
+              3281
+            ],
+            "loc": {
+              "start": {
+                "line": 80,
+                "column": 6
+              },
+              "end": {
+                "line": 80,
+                "column": 10
+              }
+            }
+          },
+          "range": [
+            3271,
+            3281
+          ],
+          "loc": {
+            "start": {
+              "line": 80,
+              "column": 0
+            },
+            "end": {
+              "line": 80,
+              "column": 10
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "pageEditor",
+            "range": [
+              3282,
+              3292
+            ],
+            "loc": {
+              "start": {
+                "line": 80,
+                "column": 11
+              },
+              "end": {
+                "line": 80,
+                "column": 21
+              }
+            }
+          }
+        ],
+        "range": [
+          3271,
+          3293
+        ],
+        "loc": {
+          "start": {
+            "line": 80,
+            "column": 0
+          },
+          "end": {
+            "line": 80,
+            "column": 22
+          }
+        }
+      },
+      "range": [
+        3271,
+        3294
+      ],
+      "loc": {
+        "start": {
+          "line": 80,
+          "column": 0
+        },
+        "end": {
+          "line": 80,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pages",
+            "range": [
+              3295,
+              3300
+            ],
+            "loc": {
+              "start": {
+                "line": 81,
+                "column": 0
+              },
+              "end": {
+                "line": 81,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "push",
+            "range": [
+              3301,
+              3305
+            ],
+            "loc": {
+              "start": {
+                "line": 81,
+                "column": 6
+              },
+              "end": {
+                "line": 81,
+                "column": 10
+              }
+            }
+          },
+          "range": [
+            3295,
+            3305
+          ],
+          "loc": {
+            "start": {
+              "line": 81,
+              "column": 0
+            },
+            "end": {
+              "line": 81,
+              "column": 10
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "userEditor",
+            "range": [
+              3306,
+              3316
+            ],
+            "loc": {
+              "start": {
+                "line": 81,
+                "column": 11
+              },
+              "end": {
+                "line": 81,
+                "column": 21
+              }
+            }
+          }
+        ],
+        "range": [
+          3295,
+          3317
+        ],
+        "loc": {
+          "start": {
+            "line": 81,
+            "column": 0
+          },
+          "end": {
+            "line": 81,
+            "column": 22
+          }
+        }
+      },
+      "range": [
+        3295,
+        3318
+      ],
+      "loc": {
+        "start": {
+          "line": 81,
+          "column": 0
+        },
+        "end": {
+          "line": 81,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pages",
+            "range": [
+              3319,
+              3324
+            ],
+            "loc": {
+              "start": {
+                "line": 82,
+                "column": 0
+              },
+              "end": {
+                "line": 82,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "push",
+            "range": [
+              3325,
+              3329
+            ],
+            "loc": {
+              "start": {
+                "line": 82,
+                "column": 6
+              },
+              "end": {
+                "line": 82,
+                "column": 10
+              }
+            }
+          },
+          "range": [
+            3319,
+            3329
+          ],
+          "loc": {
+            "start": {
+              "line": 82,
+              "column": 0
+            },
+            "end": {
+              "line": 82,
+              "column": 10
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "upload",
+            "range": [
+              3330,
+              3336
+            ],
+            "loc": {
+              "start": {
+                "line": 82,
+                "column": 11
+              },
+              "end": {
+                "line": 82,
+                "column": 17
+              }
+            }
+          }
+        ],
+        "range": [
+          3319,
+          3337
+        ],
+        "loc": {
+          "start": {
+            "line": 82,
+            "column": 0
+          },
+          "end": {
+            "line": 82,
+            "column": 18
+          }
+        }
+      },
+      "range": [
+        3319,
+        3338
+      ],
+      "loc": {
+        "start": {
+          "line": 82,
+          "column": 0
+        },
+        "end": {
+          "line": 82,
+          "column": 19
+        }
+      }
+    },
+    {
+      "type": "ExpressionStatement",
+      "expression": {
+        "type": "CallExpression",
+        "callee": {
+          "type": "MemberExpression",
+          "computed": false,
+          "object": {
+            "type": "Identifier",
+            "name": "pages",
+            "range": [
+              3339,
+              3344
+            ],
+            "loc": {
+              "start": {
+                "line": 83,
+                "column": 0
+              },
+              "end": {
+                "line": 83,
+                "column": 5
+              }
+            }
+          },
+          "property": {
+            "type": "Identifier",
+            "name": "push",
+            "range": [
+              3345,
+              3349
+            ],
+            "loc": {
+              "start": {
+                "line": 83,
+                "column": 6
+              },
+              "end": {
+                "line": 83,
+                "column": 10
+              }
+            }
+          },
+          "range": [
+            3339,
+            3349
+          ],
+          "loc": {
+            "start": {
+              "line": 83,
+              "column": 0
+            },
+            "end": {
+              "line": 83,
+              "column": 10
+            }
+          }
+        },
+        "arguments": [
+          {
+            "type": "Identifier",
+            "name": "blogEditor",
+            "range": [
+              3350,
+              3360
+            ],
+            "loc": {
+              "start": {
+                "line": 83,
+                "column": 11
+              },
+              "end": {
+                "line": 83,
+                "column": 21
+              }
+            }
+          }
+        ],
+        "range": [
+          3339,
+          3361
+        ],
+        "loc": {
+          "start": {
+            "line": 83,
+            "column": 0
+          },
+          "end": {
+            "line": 83,
+            "column": 22
+          }
+        }
+      },
+      "range": [
+        3339,
+        3362
+      ],
+      "loc": {
+        "start": {
+          "line": 83,
+          "column": 0
+        },
+        "end": {
+          "line": 83,
+          "column": 23
+        }
+      }
+    },
+    {
+      "type": "Identifier",
+      "declaration": {
+        "type": "Identifier",
+        "name": "pages",
+        "range": [
+          3379,
+          3384
+        ],
+        "loc": {
+          "start": {
+            "line": 85,
+            "column": 15
+          },
+          "end": {
+            "line": 85,
+            "column": 20
+          }
+        }
+      },
+      "range": [
+        3364,
+        3385
+      ],
+      "loc": {
+        "start": {
+          "line": 85,
+          "column": 0
+        },
+        "end": {
+          "line": 85,
+          "column": 21
+        }
+      },
+      "name": "_",
+      "leadingComments": [],
+      "trailingComments": []
+    },
+    {
+      "type": "ExportDefaultDeclaration",
+      "declaration": {
+        "type": "VariableDeclaration",
+        "declarations": [
+          {
+            "type": "VariableDeclarator",
+            "id": {
+              "type": "Identifier",
+              "name": "pages",
+              "range": [
+                1108,
+                1113
+              ],
+              "loc": {
+                "start": {
+                  "line": 33,
+                  "column": 4
+                },
+                "end": {
+                  "line": 33,
+                  "column": 9
+                }
+              }
+            },
+            "init": {
+              "type": "ArrayExpression",
+              "elements": [],
+              "range": [
+                1116,
+                1118
+              ],
+              "loc": {
+                "start": {
+                  "line": 33,
+                  "column": 12
+                },
+                "end": {
+                  "line": 33,
+                  "column": 14
+                }
+              }
+            },
+            "range": [
+              1108,
+              1118
+            ],
+            "loc": {
+              "start": {
+                "line": 33,
+                "column": 4
+              },
+              "end": {
+                "line": 33,
+                "column": 14
+              }
+            }
+          }
+        ],
+        "kind": "var",
+        "range": [
+          1104,
+          1119
+        ],
+        "loc": {
+          "start": {
+            "line": 33,
+            "column": 0
+          },
+          "end": {
+            "line": 33,
+            "column": 15
+          }
+        },
+        "leadingComments": [
+          {
+            "type": "Block",
+            "value": "*\n * This is the array of all of the admin pages\n * @type {array}\n ",
+            "range": [
+              1032,
+              1103
+            ],
+            "loc": {
+              "start": {
+                "line": 29,
+                "column": 0
+              },
+              "end": {
+                "line": 32,
+                "column": 3
+              }
+            }
+          }
+        ],
+        "trailingComments": []
+      },
+      "range": [
+        3364,
+        3385
+      ],
+      "loc": {
+        "start": {
+          "line": 85,
+          "column": 0
+        },
+        "end": {
+          "line": 85,
+          "column": 21
+        }
+      }
+    }
+  ],
+  "sourceType": "module",
+  "range": [
+    1,
+    3385
+  ],
+  "loc": {
+    "start": {
+      "line": 2,
+      "column": 0
+    },
+    "end": {
+      "line": 85,
+      "column": 21
+    }
+  },
+  "comments": [
+    {
+      "type": "Block",
+      "value": "*\n * The global page config object\n * @type {object}\n * @property {string} templateDir - the directory of the templates\n * @property {string} contentDir - the directory of the content files\n * @property {string} cacheDir - the directory of the built pages\n * @property {array} metaDefault - the default meta object\n * @property {array} cssDefault - the default css object\n * @property {array} jsDefault - the default js object\n * @property {array} headJsDefault - the default head js object\n * @property {string} containerDefault - the default container filename\n * @property {string} headDefault - the default head filename\n * @property {string} menuDefault - the default menu filename\n * @property {string} bodyDefault - the default body filename \n ",
+      "range": [
+        72,
+        827
+      ],
+      "loc": {
+        "start": {
+          "line": 7,
+          "column": 0
+        },
+        "end": {
+          "line": 21,
+          "column": 3
+        }
+      }
+    },
+    {
+      "type": "Line",
+      "value": "make sure the cache dir exists",
+      "range": [
+        915,
+        947
+      ],
+      "loc": {
+        "start": {
+          "line": 24,
+          "column": 0
+        },
+        "end": {
+          "line": 24,
+          "column": 32
+        }
+      }
+    },
+    {
+      "type": "Block",
+      "value": "*\n * This is the array of all of the admin pages\n * @type {array}\n ",
+      "range": [
+        1032,
+        1103
+      ],
+      "loc": {
+        "start": {
+          "line": 29,
+          "column": 0
+        },
+        "end": {
+          "line": 32,
+          "column": 3
+        }
+      }
+    }
+  ]
+}

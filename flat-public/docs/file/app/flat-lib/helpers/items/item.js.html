@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../../">
+  <title data-ice="title">app/flat-lib/helpers/items/item.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-admin</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-manager">manager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pages">pages</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-admin/helpers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-auth">auth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-showError">showError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-showSuccess">showSuccess</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-admin/page</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-admin/page/page.js~page.html">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-admin/page/pageManager.js~pageManager.html">pageManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-contentsRender">contentsRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pageRender">pageRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tagRender">tagRender</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/controller.js~controller.html">controller</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/blog</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/blog/blog.js~blog.html">blog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/blog/blogManager.js~blogManager.html">blogManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/blogTemplate</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/blogTemplate/blogTemplate.js~blogTemplate.html">blogTemplate</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/cache</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/cache/cache.js~cache.html">cache</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/cache/cacheManager.js~cacheManager.html">cacheManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/config</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/config/config.js~config.html">config</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/helpers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/fileManager.js~fileManager.html">fileManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/flatLog.js~flatLog.html">flatLog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/uploadedFiles.js~uploadedFiles.html">uploadedFiles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-blogRender">blogRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-blogReplace">blogReplace</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-emailVal">emailVal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-idGen">idGen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pageRender">pageRender</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/helpers/items</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/items/item.js~item.html">item</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/items/manager.js~manager.html">manager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/info</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/info/info.js~info.html">info</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/page</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/page/page.js~page.html">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/page/pageManager.js~pageManager.html">pageManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/section</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/section/section.js~section.html">section</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/section/sectionManager.js~sectionManager.html">sectionManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/server</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/router.js~router.html">router</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/routerLoop.js~routerLoop.html">routerLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/server.js~server.html">server</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/serverLoop.js~serverLoop.html">serverLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cookies">cookies</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-loadBody">loadBody</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-responseMods">responseMods</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-urlMods">urlMods</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/session</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/session/session.js~session.html">session</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/session/sessionManager.js~sessionManager.html">sessionManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/template</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/template/template.js~template.html">template</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/template/templateManager.js~templateManager.html">templateManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/upload</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/upload/upload.js~upload.html">upload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/upload/uploadManager.js~uploadManager.html">uploadManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/user</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/user/user.js~user.html">user</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/user/userManager.js~userManager.html">userManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-scripts</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tail">tail</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">app/flat-lib/helpers/items/item.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+&quot;use strict&quot;
+
+import idGen from &apos;../idGen.js&apos;;
+import fileManager from &apos;../fileManager.js&apos;;
+
+/**
+ * This class is to be used for users,sessions,pages,sections it provides a template for all to extend
+ */
+export default class item {
+
+    /**
+     * @constructor
+     * @param {string} dir - the directory of the item
+     * @param {string} filename - the filename of the item
+     * @param {object} data - the data of the item
+     */
+    constructor(dir,filename,data){
+
+        /**
+         * The filename of the item
+         * @type {string}
+         */
+        this.filename = filename || &apos;&apos;;
+
+        /**
+         * The id of the item, the filename without .json
+         */
+        this.id = &apos;&apos;;
+        
+        if(this.filename !== &apos;&apos;){
+            this.id = this.filename.replace(&apos;.json&apos;,&apos;&apos;);
+        }
+
+        /**
+         * The data of the item
+         * @type {object}
+         */
+        this.data = data || {};
+
+        /**
+         * The filemanger for the object
+         * @type {object}
+         */
+        this.fileManager = new fileManager(dir);
+
+        /**
+         * The id generator
+         * @type function
+         */
+        this.idGen = idGen;
+
+    }
+
+    /**
+     * This method is diferent depening on the sub class
+     * @abstract
+     */
+    create(){
+
+    }
+
+    /**
+     * Save the object to disk
+     * @param {function(err:error,done:boolean)} callback - if the file was saved or not
+     * @return {function} the callback if error or if the file saved
+     */
+    save(callback){
+        this.fileManager.save(this.filename,this.data,(err,done)=&gt;{
+            return callback(err,done);
+        });
+    }
+
+    /**
+     * Load a file from disk
+     * @param {function(err:error,done:boolean)} callback - if the file was loaded or not
+     * @return {function} the callack if the file loaded or not
+     */
+    load(callback){
+        this.fileManager.load(this.filename,(err,obj)=&gt;{
+            if(err){
+                return callback(err,null);
+            }
+            this.data = obj;
+            return callback(null,true);
+        });
+    }
+
+    /**
+     * Remove a file from disk
+     * @param {function(err:error,done:boolean)} callback - if the file was deleted or error
+     * @return {function} the callback function
+     */
+    unlink(callback){
+        this.fileManager.unlink(this.filename,(err,done)=&gt;{
+            return callback(err,done);
+        });
+    }
+
+    /**
+     * Remove File from the disk syncronusly
+     */
+    unlinkSync(){
+        this.fileManager.unlinkSync(this.filename);
+    }
+
+    /**
+     * Generate an id and filename
+     * @return {function(err:error,done:boolean)} the callback if the id was generated or not
+     */
+    genId(callback){
+        if(this.filename === &apos;&apos; &amp;&amp; this.id === &apos;&apos;){
+            this.idGen((err,id)=&gt;{
+                this.id = id;
+                this.filename = id+&apos;.json&apos;;
+                return callback(null,true);
+            });
+        } else {
+            return callback(new Error(&quot;Id allready generated&quot;),null);
+        }
+    }
+
+    /**
+     * UpdateInsert the data var and write to disk
+     * @param {object} obj - the object to be added
+     * @param {function(err:error,done:boolean)} callback - the status of the update done is true if update is sucessful
+     * @return {function} the callback function
+     */
+    upsert(obj,callback){
+        for(let key in obj){
+           this.data[key] = obj[key]; 
+        }
+        this.save((err,done)=&gt;{
+            return callback(err,done);
+        });
+    }
+
+    /**
+     * Delete from the data var and save to disk
+     * @param {array} keys - the keys to be deleted
+     * @param {function(err:error,done:boolean)} callback - the status if the delete was sucessful done is true if the delete was a success
+     * @return {function} the callback function
+     */
+    del(keys,callback){
+        keys.forEach((key)=&gt;{
+            delete this.data[key];
+        });
+        this.save((err,done)=&gt;{
+            return callback(err,done);
+        });
+    }
+
+    /**
+     * Get a key value from the data obj
+     * @param {string} key - the key of the value to get
+     * @return {object|array|string|number|date|null|undefined} the value of the key
+     */
+    get(key){
+        return this.data[key];
+    }
+
+    /**
+     * Convert the item to a json string
+     * @return {string} the json string of the data
+     */
+    toString(){
+        return JSON.stringify(this.data,null,2);
+    }
+
+
+
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.1)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

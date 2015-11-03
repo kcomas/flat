@@ -1,0 +1,15 @@
+<div ng-controller="%controller%">
+    <div class="row">
+        <div class="alert alert-success" ng-show="action.status==200">
+            {{action.msg}}
+        </div>
+        <div class="alert alert-danger" ng-show="action.status==500">
+            {{action.msg}}
+        </div>
+    </div>
+    <div ng-controller="adminTabs">
+        <uib-tabset justified="true">
+            %contents%
+        </uib-tabset>
+    </div>
+</div>

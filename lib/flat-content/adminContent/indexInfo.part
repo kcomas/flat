@@ -1,0 +1,11 @@
+<div class="row">
+    <div class="col-md-12">
+        <h2>System Info</h2>
+        <div class="form-group">
+            <textarea style="overflow:scroll; min-height:400px" class="form-control" readonly ng-model="current.info"></textarea>
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-primary" ng-click="refresh()">Refresh</button> <button class="btn btn-success" ng-click="toDisk()">Write To Disk</button>
+        </div>
+    </div>
+</div>

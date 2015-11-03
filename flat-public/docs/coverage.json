@@ -1,0 +1,277 @@
+{
+  "coverage": "93.84%",
+  "expectCount": 276,
+  "actualCount": 259,
+  "files": {
+    "app/flat-lib/helpers/flatLog.js": {
+      "expectCount": 5,
+      "actualCount": 4,
+      "undocumentLines": [
+        16
+      ]
+    },
+    "app/flat-lib/helpers/items/manager.js": {
+      "expectCount": 18,
+      "actualCount": 17,
+      "undocumentLines": [
+        81
+      ]
+    },
+    "app/flat-admin/page/page.js": {
+      "expectCount": 27,
+      "actualCount": 27,
+      "undocumentLines": []
+    },
+    "app/flat-lib/session/session.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
+    },
+    "app/flat-lib/server/router.js": {
+      "expectCount": 18,
+      "actualCount": 17,
+      "undocumentLines": [
+        138
+      ]
+    },
+    "app/flat-lib/server/server.js": {
+      "expectCount": 15,
+      "actualCount": 14,
+      "undocumentLines": [
+        131
+      ]
+    },
+    "app/flat-admin/helpers/auth.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-lib/user/user.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "app/flat-lib/blog/blog.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "app/flat-lib/controller.js": {
+      "expectCount": 31,
+      "actualCount": 31,
+      "undocumentLines": []
+    },
+    "app/flat-lib/blogTemplate/blogTemplate.js": {
+      "expectCount": 12,
+      "actualCount": 12,
+      "undocumentLines": []
+    },
+    "app/flat-lib/blog/blogManager.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "app/flat-lib/helpers/blogRender.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-lib/helpers/blogReplace.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-lib/cache/cache.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "app/flat-lib/cache/cacheManager.js": {
+      "expectCount": 4,
+      "actualCount": 4,
+      "undocumentLines": []
+    },
+    "app/flat-lib/info/info.js": {
+      "expectCount": 11,
+      "actualCount": 11,
+      "undocumentLines": []
+    },
+    "app/flat-lib/session/sessionManager.js": {
+      "expectCount": 6,
+      "actualCount": 6,
+      "undocumentLines": []
+    },
+    "app/flat-lib/config/config.js": {
+      "expectCount": 5,
+      "actualCount": 5,
+      "undocumentLines": []
+    },
+    "app/flat-lib/helpers/uploadedFiles.js": {
+      "expectCount": 12,
+      "actualCount": 12,
+      "undocumentLines": []
+    },
+    "app/flat-lib/helpers/items/item.js": {
+      "expectCount": 17,
+      "actualCount": 17,
+      "undocumentLines": []
+    },
+    "app/flat-lib/server/serverLoop.js": {
+      "expectCount": 9,
+      "actualCount": 4,
+      "undocumentLines": [
+        26,
+        22,
+        23,
+        25,
+        24
+      ]
+    },
+    "app/flat-admin/page/pageManager.js": {
+      "expectCount": 6,
+      "actualCount": 6,
+      "undocumentLines": []
+    },
+    "app/flat-lib/server/routerLoop.js": {
+      "expectCount": 12,
+      "actualCount": 6,
+      "undocumentLines": [
+        38,
+        36,
+        37,
+        33,
+        34,
+        35
+      ]
+    },
+    "app/flat-lib/helpers/fileManager.js": {
+      "expectCount": 7,
+      "actualCount": 7,
+      "undocumentLines": []
+    },
+    "app/flat-admin/page/contentsRender.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-lib/server/cookies.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-lib/user/userManager.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "app/flat-lib/page/page.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "app/flat-lib/upload/upload.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "app/flat-lib/template/templateManager.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "app/flat-lib/section/sectionManager.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "app/flat-lib/page/pageManager.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "app/flat-lib/template/template.js": {
+      "expectCount": 2,
+      "actualCount": 2,
+      "undocumentLines": []
+    },
+    "app/flat-lib/upload/uploadManager.js": {
+      "expectCount": 3,
+      "actualCount": 3,
+      "undocumentLines": []
+    },
+    "app/flat-lib/section/section.js": {
+      "expectCount": 3,
+      "actualCount": 2,
+      "undocumentLines": [
+        28
+      ]
+    },
+    "app/flat-lib/helpers/emailVal.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-lib/helpers/idGen.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-lib/server/loadBody.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-admin/adminRouter.js": {
+      "expectCount": 1,
+      "actualCount": 0,
+      "undocumentLines": [
+        12
+      ]
+    },
+    "app/flat-lib/helpers/pageRender.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-admin/page/pageRender.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-admin/pages.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-lib/server/responseMods.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-admin/helpers/showError.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-admin/helpers/showSuccess.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-admin/page/tagRender.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-scripts/tail.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    },
+    "app/flat-lib/server/urlMods.js": {
+      "expectCount": 1,
+      "actualCount": 1,
+      "undocumentLines": []
+    }
+  }
+}

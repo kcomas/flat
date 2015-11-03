@@ -1,0 +1,27 @@
+{
+
+    "templateDir":"./flat-content/adminTemplate/",
+    "contentDir":"./flat-content/adminContent/",
+    "cacheDir":"./flat-content/adminCache/",
+    "metaDefault":[
+        {"charset":"utf-8"},
+        {"name":"viewport","content":"width=device-width, initial-scale=1"}
+    ],
+    "cssDefault":[
+        {"href":"/globals/bootstrap/css/bootstrap.min.css","rel":"stylesheet"},
+        {"href":"/globals/bootstrap/css/bootstrap-theme.min.css","rel":"stylesheet"},
+        {"href":"/globals/bootstrap/css/style.css","rel":"stylesheet"}
+    ],
+    "jsDefault":[
+        {"src":"/globals/angular/angular.min.js"},
+        {"src":"/globals/angular/bootstrap.ui.min.js"},
+        {"src":"/globals/tinymce/ngtinymce.js"},
+        {"src":"/globals/admin/js/backend.js"}
+    ],
+    "headJsDefault":[],
+    "containerDefault":"container.htm",
+    "headDefault":"head.htm",
+    "menuDefault":"menu.htm",
+    "bodyDefault":"body.htm",
+    "footDefault":"foot.htm"
+}

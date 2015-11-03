@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../">
+  <title data-ice="title">app/flat-lib/controller.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-admin</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-manager">manager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pages">pages</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-admin/helpers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-auth">auth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-showError">showError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-showSuccess">showSuccess</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-admin/page</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-admin/page/page.js~page.html">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-admin/page/pageManager.js~pageManager.html">pageManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-contentsRender">contentsRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pageRender">pageRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tagRender">tagRender</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/controller.js~controller.html">controller</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/blog</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/blog/blog.js~blog.html">blog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/blog/blogManager.js~blogManager.html">blogManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/blogTemplate</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/blogTemplate/blogTemplate.js~blogTemplate.html">blogTemplate</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/cache</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/cache/cache.js~cache.html">cache</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/cache/cacheManager.js~cacheManager.html">cacheManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/config</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/config/config.js~config.html">config</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/helpers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/fileManager.js~fileManager.html">fileManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/flatLog.js~flatLog.html">flatLog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/uploadedFiles.js~uploadedFiles.html">uploadedFiles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-blogRender">blogRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-blogReplace">blogReplace</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-emailVal">emailVal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-idGen">idGen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pageRender">pageRender</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/helpers/items</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/items/item.js~item.html">item</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/items/manager.js~manager.html">manager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/info</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/info/info.js~info.html">info</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/page</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/page/page.js~page.html">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/page/pageManager.js~pageManager.html">pageManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/section</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/section/section.js~section.html">section</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/section/sectionManager.js~sectionManager.html">sectionManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/server</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/router.js~router.html">router</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/routerLoop.js~routerLoop.html">routerLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/server.js~server.html">server</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/serverLoop.js~serverLoop.html">serverLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cookies">cookies</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-loadBody">loadBody</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-responseMods">responseMods</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-urlMods">urlMods</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/session</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/session/session.js~session.html">session</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/session/sessionManager.js~sessionManager.html">sessionManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/template</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/template/template.js~template.html">template</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/template/templateManager.js~templateManager.html">templateManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/upload</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/upload/upload.js~upload.html">upload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/upload/uploadManager.js~uploadManager.html">uploadManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/user</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/user/user.js~user.html">user</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/user/userManager.js~userManager.html">userManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-scripts</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tail">tail</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">app/flat-lib/controller.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+&quot;use strict&quot;
+
+import manager from &apos;./helpers/items/manager.js&apos;;
+
+/**
+ * This class manages all of the managers
+ */
+export default class controller {
+
+    /**
+     * Add all of the managers into the class
+     * @constructor
+     * @param {pageManager} pageManager - the page manager
+     * @param {sectionManager} sectionManager - the section manager
+     * @param {sessionManager} sessionManager - the session manager
+     * @param {templateManager} templateManager - the template manager
+     * @param {userManager} userManager - the user manager
+     * @param {cacheManager} cacheManager - the cache manager
+     * @param {uploadManager} uploadManger - the uplaod manager
+     * @param {blogManager} blogManager - the blog manager
+     * @param {config} configManager - the config manager
+     * @param {info} infoManager - the info manager
+     * @param {uploadedFiles} uploadedFiles - the class that reads and writes files from the user
+     * @param {blogTemplate} blogTemplate - the blog template manager
+     * @param {cacheManager} blogCache - the cacheManager for blogs
+     * @param {cacheManager} blogListCache - the cache manager for the blog lists
+     */
+    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager,configManager,infoManager,uploadedFiles,blogTemplate,blogCache,blogListCache){
+
+        /**
+         * The page manager
+         * @type {pageManager}
+         */
+        this._pageManager = pageManager;
+
+        /**
+         * The Section Manager
+         * @type {sectionManager}
+         */
+        this._sectionManager = sectionManager;
+
+        /**
+         * The session manager
+         * @type {sessionManager}
+         */
+        this._sessionManager = sessionManager;
+
+        /**
+         * The template manager
+         * @type {templateManager}
+         */
+        this._templateManager = templateManager;
+
+        /**
+         * The user manager
+         * @type {userManager}
+         */
+        this._userManager = userManager;
+
+        /**
+         * The cache manager
+         * @type {cacheManager}
+         */
+        this._cacheManager = cacheManager;
+
+        /**
+         * The uplaod manager
+         * @type {uploadManager}
+         */
+        this._uploadManager = uploadManager;
+
+        /**
+         * The blog manager
+         * @type {blogManager}
+         */
+        this._blogManager = blogManager;
+
+        /**
+         * The config manager
+         * @type {config}
+         */
+        this._config = configManager;
+
+        /**
+         * The info manager
+         * @type {info}
+         */
+        this._info = infoManager;
+
+        /**
+         * The user file manager
+         * @type {uploadedFiles}
+         */
+        this._uploader = uploadedFiles;
+
+        /**
+         * The blog template manager
+         * @type {blogTemplate}
+         */
+        this._blogTemplate = blogTemplate;
+
+        /**
+         * The blog cache manager
+         * @type {cacheManager}
+         */
+        this._blogCache = blogCache; 
+
+        /**
+         * The blog list cache manager
+         * @type {cacheManager}
+         */
+        this._blogListCache = blogListCache;
+
+    }
+
+    /**
+     * Get the page manager
+     * @return {pageManager} the page manager
+     */
+    get pageManager(){
+        return this._pageManager;
+    }
+
+    /**
+     * Set the pageManager
+     * @param {pageManager} manager - the page manager
+     */
+    set pageManager(manager){
+        this._pageManager = manager;
+    }
+
+    /**
+     * Get the section manager
+     * @return {sectionManager} the section manager
+     */
+    get sectionManager(){
+        return this._sectionManager;
+    }
+
+    /**
+     * Set the section manager
+     * @param {sectionManager} manager - the section manager
+     */
+    set sectionManager(manager){
+        this._sectionManager = manager;
+    }
+
+    /**
+     * Get the session manager
+     * @return {sessionManager} the session manager
+     */
+    get sessionManager(){
+        return this._sessionManager;
+    }
+
+    /**
+     * Set the session manager
+     * @param {sessionManager} manager - the session manager
+     */
+    set sessionManager(manager){
+        this._sessionManager = manager;
+    }
+
+    /**
+     * Get the template manager
+     * @return {templateManager} the template manager
+     */
+    get templateManager(){
+        return this._templateManager;
+    }
+
+    /**
+     * Set the template manager
+     * @param {templateManager} manager - the template manager
+     */
+    set templateManager(manager){
+        this._templateManager = manager;
+    }
+
+    /**
+     * Get the user manager
+     * @return {userManager} the user manager
+     */
+    get userManager(){
+        return this._userManager;
+    }
+
+    /**
+     * Set the user manager
+     * @param {userManager} userManager - the user manager
+     */
+    set userManager(userManager){
+        this._userManager = manager;
+    }
+
+    /**
+     * Get the cache manager
+     * @return {cacheManager} the cache manager
+     */
+    get cacheManager(){
+        return this._cacheManager;
+    }
+
+    /**
+     * Set the cache manager
+     * @param {cacheManager} manager - the cache manager
+     */
+    set cacheManager(manager){
+        this._cacheManager = manager;
+    }
+
+    /**
+     * Get the upload manager
+     * @return {uploadManger} the upload manager
+     */
+    get uploadManager(){
+        return this._uploadManager;
+    }
+
+    /**
+     * Set the upload manager
+     * @param {uploadManager} manager - the upload manager
+     */
+    set uploadManager(manager){
+        this._uploadManager = manager;
+    }
+
+    /**
+     * Get the blog manager
+     * @return {blogManager} - the blog manager
+     */
+    get blogManager(){
+        return this._blogManager;
+    }
+
+    /**
+     * Set the blog manager
+     * @param {blogManager} manager - the blog manager
+     */
+    set blogManager(manager){
+        this._blogManager = manager;
+    }
+
+    /**
+     * set the config manager
+     * @param {config} manager - the config manager
+     */
+    set config(manager){
+        this._config = manager;
+    }
+
+    /**
+     * get the config manager
+     * @return {config} the config manager
+     */
+    get config(){
+        return this._config;
+    }
+
+    /**
+     * Set the info manager
+     * @param {info} manager - the info manager
+     */
+    set info(manager){
+        this._info = manager;
+    }
+
+    /**
+     * Get the info manager
+     * @return {info} the info manager
+     */
+    get info(){
+        return this._info;
+    }
+
+    /**
+     * Set the user file manager
+     * @param {uploadedFiles} manager - the user file manager
+     */
+    set uploader(manager){
+        this._uploader = manager;
+    }
+
+    /**
+     * Get the user file manager
+     * @return {uploadedFiles} the user file manager
+     */
+    get uploader(){
+        return this._uploader;
+    }
+
+    /**
+     * Set the blog template manager
+     * @param {blogTemplate} manager - the blog template manager
+     */
+    set blogTemplate(manager){
+        this._blogTemplate = manager;
+    }
+
+    /**
+     * Get the blog template manager
+     * @return {blogTemplate} the blog template manager
+     */
+    get blogTemplate(){
+        return this._blogTemplate;
+    }
+
+    /**
+     * Get the blog cache
+     * @type {cacheManager}
+     */
+    get blogCache(){
+        return this._blogCache;
+    }
+
+    /**
+     * Set the blog cache
+     * @param {cacheManager} manager - the blog cache manager
+     */
+    set blogCache(manager){
+        this._blogCache = manager;
+    }
+
+    /**
+     * Get the blog list cache
+     * @return {cacheManager} - the blog list cache manager
+     */
+    get blogListCache(){
+        return this._blogListCache;
+    }
+
+    /**
+     * Set the blog list cache
+     * @param {cacheManager} manager - the blog list cache manager
+     */
+    set blogListCache(manager){
+        this._blogListCache = manager;
+    }
+
+    /**
+     * Init all of the managers
+     */
+    init(){
+        this._pageManager.init();
+        this._sectionManager.init();
+        this._sessionManager.init();
+        this._templateManager.init();
+        this._userManager.init();
+        this._cacheManager.init();
+        this._uploadManager.init();
+        this._blogManager.init();
+        this._blogCache.init();
+        this._blogListCache.init();
+    }
+
+
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.1)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>

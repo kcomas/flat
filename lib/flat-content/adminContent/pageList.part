@@ -1,0 +1,9 @@
+<div class="row">
+    <div class="col-md-8 col-md-offset-2">
+        <ul class="list-group" ng-repeat="p in pageList" />
+            <li class="list-group-item">
+            {{p.permalink}} <button class="btn btn-primary" ng-click="edit(p)"/>Edit</button> <button class="btn btn-danger" ng-click="delete(p)">Delete</button> <button class="btn btn-warning" ng-click="render(p)">Render</button> <button class="btn btn-default" ng-click="setBlogTemplate(p)">Set Blog Template</button>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+<div class="row">
+    <div class="col-md-8">
+        <h3>Edit</h3>
+        <form novalidate>
+            <div class="form-group">
+                <h4>Private File</h4>
+                <select class="form-control" ng-model="current.loadFile" ng-change="loadPrivate()" ng-options="file.fileName for file in fileList"></select>               
+            </div>
+            <div class="form-group">
+                Template Name: <input class="form-control" ng-model="current.template.name" type="text" />
+            </div>
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="radio" ng-model="current.visual"  ng-value="true"> Visual Editor                  
+                </label>
+                <label class="radio-inline">
+                    <input type="radio" ng-model="current.visual" ng-value="false"> Text Editor                  
+                </label>
+            </div>
+            <div class="form-group" ng-show="current.visual==true">
+                <div id="visualEditor" style="overflow:scroll">
+                    <div ng-repeat="visualItem in visualItems" ng-include="'visualEditorLayout'">
+
+                    </div>
+                </div>
+            </div>
+            <div class="form-group" ng-show="current.visual==false">
+                Template JSON: <textarea id="formEdit" class="form-control" style="width:100%; min-height:500px" ng-model="current.template.layout"></textarea>
+                <div class="alert alert-success" ng-show="current.valid">Valid JSON</div>
+                <div class="alert alert-danger" ng-show="!current.valid">Invalid JSON</div>
+            </div>
+            <div class="form-group text-center">
+                <button class="btn btn-success" ng-click="save()">Save</button>
+                <button class="btn btn-danger" ng-click="clear()">Clear</button>
+                <button class="btn btn-warning" ng-click="validate()">Validate</button>
+            </div>
+        </form>
+    </div>
+    <div class="col-md-4">
+        <h3>Section List</h3>
+        <ul class="list-group" ng-repeat="section in sectionList">
+            <li class="list-group-item">{{section.name}} <button class="btn btn-primary" ng-click="insert(section.layout)">Insert</button>
+        </ul>
+    </div>
+</div>
+<script type="text/ng-template" id="visualEditorLayout">
+<div class="visualListItem">
+    <button class="btn btn-danger removeItem" ng-if="$parent.visualItem"  ng-click="removeElement($parent.$parent.$parent,$index)" >-</button>
+    <button class="btn btn-primary" ng-if="$parent.visualItem" ng-click="shiftUp($parent.$parent.$parent.visualItem.children,$index)"><span class="glyphicon glyphicon-arrow-up"></span></button>
+    <button class="btn btn-primary" ng-if="$parent.visualItem" ng-click="shiftDown($parent.$parent.$parent.visualItem.children,$index)"><span class="glyphicon glyphicon-arrow-down"></span></button>
+    Tag: <input type="text" class="itemTag" ng-click="currentVisualBox(visualItem,'tag')" ng-model="visualItem.tag" /><br />
+    Atts: <button class="btn btn-primary" ng-click="addAtts(visualItem)">+</button><br />
+    <div ng-repeat="item in visualItem.atts">
+        <input ng-model="item.key" type="text" ng-click="currentVisualBox(item,'key')" /> : <input type="text" ng-model="item.value" ng-click="currentVisualBox(item,'value')" />
+        <button class="btn btn-warning" ng-click="deleteAtts(visualItem.atts,$index)">-</button>
+    </div>
+    Html: <input type="text" class="itemHtml" ng-click="currentVisualBox(visualItem,'html')" ng-model="visualItem.html" /><br />
+    <div>
+        <button class="btn btn-success addItem" ng-click="addChild(visualItem)">+</button> 
+    </div>
+    <div ng-if"visualItem.children">
+        <div class="visualListItemChildren" style="margin-left:30px; border:1px solid #ccc;" ng-repeat="visualItem in visualItem.children" ng-include="'visualEditorLayout'">
+        </div>
+    <div>
+</div>
+</script>

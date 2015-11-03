@@ -1,0 +1,29 @@
+{
+    "port":3000,
+    "pageDir":"./flat-content/pages/",
+    "sectionDir":"./flat-content/sections/",
+    "sessionDir":"./flat-content/sessions/",
+    "templateDir":"./flat-content/templates/",
+    "cacheDir":"./flat-content/caches/",
+    "blogCacheDir":"./flat-content/blogCaches/",
+    "blogListCacheDir":"./flat-content/blogListCaches",
+    "userDir":"./flat-content/users/",
+    "uploadDir":"./flat-content/uploads/",
+    "blogDir":"./flat-content/blogs/",
+    "logDir":"./flat-logs/",
+    "logToConsole":"false",
+    "scriptDir":"/flat-scripts/",
+    "sessionCookie":"flat-session",
+    "sessionTime":"14",
+    "upload":{
+		"public":"../flat-public/uploads/",
+		"private":"./flat-content/private/"
+	},
+    "installed":"false",
+    "debugEnabled":"true",
+    "infoDir":"./flat-content/infos/",
+    "infoFile":"info.json",
+    "writeInfoToDiskAfter":"100",
+    "blogListTemplateDir":"./flat-content/blogTemplate/",
+    "blogListTemplateFile":"blogTemplate.json"
+}

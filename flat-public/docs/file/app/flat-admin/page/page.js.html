@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl" href="../../../../">
+  <title data-ice="title">app/flat-admin/page/page.js | API Document</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  
+  
+  <script src="script/manual.js"></script>
+</head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+</header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-admin</div><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-manager">manager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-variable">V</span><span data-ice="name"><span><a href="variable/index.html#static-variable-pages">pages</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-admin/helpers</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-auth">auth</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-showError">showError</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-showSuccess">showSuccess</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-admin/page</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-admin/page/page.js~page.html">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-admin/page/pageManager.js~pageManager.html">pageManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-contentsRender">contentsRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pageRender">pageRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tagRender">tagRender</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/controller.js~controller.html">controller</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/blog</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/blog/blog.js~blog.html">blog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/blog/blogManager.js~blogManager.html">blogManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/blogTemplate</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/blogTemplate/blogTemplate.js~blogTemplate.html">blogTemplate</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/cache</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/cache/cache.js~cache.html">cache</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/cache/cacheManager.js~cacheManager.html">cacheManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/config</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/config/config.js~config.html">config</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/helpers</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/fileManager.js~fileManager.html">fileManager</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/flatLog.js~flatLog.html">flatLog</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/uploadedFiles.js~uploadedFiles.html">uploadedFiles</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-blogRender">blogRender</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-blogReplace">blogReplace</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-emailVal">emailVal</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-idGen">idGen</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-pageRender">pageRender</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/helpers/items</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/items/item.js~item.html">item</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/helpers/items/manager.js~manager.html">manager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/info</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/info/info.js~info.html">info</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/page</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/page/page.js~page.html">page</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/page/pageManager.js~pageManager.html">pageManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/section</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/section/section.js~section.html">section</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/section/sectionManager.js~sectionManager.html">sectionManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/server</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/router.js~router.html">router</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/routerLoop.js~routerLoop.html">routerLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/server.js~server.html">server</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/server/serverLoop.js~serverLoop.html">serverLoop</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-cookies">cookies</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-loadBody">loadBody</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-responseMods">responseMods</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-urlMods">urlMods</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/session</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/session/session.js~session.html">session</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/session/sessionManager.js~sessionManager.html">sessionManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/template</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/template/template.js~template.html">template</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/template/templateManager.js~templateManager.html">templateManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/upload</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/upload/upload.js~upload.html">upload</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/upload/uploadManager.js~uploadManager.html">uploadManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-lib/user</div><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/user/user.js~user.html">user</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-class">C</span><span data-ice="name"><span><a href="class/app/flat-lib/user/userManager.js~userManager.html">userManager</a></span></span></li>
+<li data-ice="doc"><div data-ice="dirPath" class="nav-dir-path">flat-scripts</div><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-tail">tail</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><h1 data-ice="title">app/flat-admin/page/page.js</h1>
+<pre class="source-code line-number raw-source-code"><code class="prettyprint linenums" data-ice="content">
+&quot;use strict&quot;
+
+import fs from &apos;fs&apos;;
+import contentsRender from &apos;./contentsRender.js&apos;;
+import tagRender from &apos;./tagRender.js&apos;;
+import pageRender from &apos;./pageRender.js&apos;;
+
+/**
+ * The class used to define the admin pages
+ */
+export default class page {
+
+    /**
+     * @constructor
+     * @param {string} permalink - the permalink of the page
+     * @param {string} title - the title of the page
+     * @param {object} pageConfig - the configuraton of the pages
+     * @param {string} controller - the controller for the content inside the tabs
+     * @property {string} templateDir - the directory of the templates
+     * @property {string} contentDir - the directory of the content files
+     * @property {string} cacheDir - the directory of the built pages
+     * @property {array} metaDefault - the default meta object
+     * @property {array} cssDefault - the default css object
+     * @property {array} jsDefault - the default js object
+     * @property {array} headJsDefault - the default head js object
+     * @property {string} containerDefault - the default container filename
+     * @property {string} headDefault - the default head filename
+     * @property {string} menuDefault - the default menu filename
+     * @property {string} bodyDefault - the default body filename 
+     * @param {array} meta - the array of meta objects
+     * @param {array} css - the array of css objects
+     * @param {array} js - the array of js objetcs
+     * @param {array} headJs - array of js objects that go in the head
+     * @param {string} container - the template of the container filename
+     * @param {string} head - the template of the head filename
+     * @param {string} menu - the template of the menu filename
+     * @parma {string} body - the template of the body filename
+     * @param {string} foot - the template of the foot filename
+     */
+    constructor(permalink,title,pageConfig,controller,meta,css,js,container,head,headJs,menu,body,foot){
+        
+        /**
+         * The page permalink
+         * @type {string}
+         */
+        this.permalink = permalink;
+
+        /**
+         * The page title
+         * @type {string}
+         */
+        this.title = title;
+
+        /**
+         * The page config for defaults
+         * @type {object}
+         */
+        this.config = pageConfig;
+
+        /**
+         * The page meta properties
+         * @type {array}
+         */
+        this.meta = meta || pageConfig.metaDefault.slice();
+
+        /**
+         * The page css properties
+         * @type {array}
+         */
+        this.css = css || pageConfig.cssDefault.slice();
+
+        /**
+         * The page js properties
+         * @type {array}
+         */
+        this.js = js || pageConfig.jsDefault.slice();
+
+        /**
+         * The page head js properites
+         * @type {array}
+         */
+        this.headJs = headJs || pageConfig.headJsDefault.slice();
+
+        /**
+         * The page container template
+         * @type {string}
+         */
+        this.container = container || pageConfig.containerDefault.slice();
+
+        /**
+         * The page head template
+         * @type {string}
+         */
+        this.head = head || pageConfig.headDefault.slice();
+
+        /**
+         * The page menu template
+         * @type {string}
+         */
+        this.menu = menu || pageConfig.menuDefault.slice();
+
+        /**
+         * The page body template
+         * @type {string}
+         */
+        this.body = body || pageConfig.bodyDefault.slice();
+
+        /**
+         * The page foot template
+         * @type {string}
+         */
+        this.foot = foot || pageConfig.footDefault.slice();
+
+        /**
+         * The page tab sections contents
+         * @type {array}
+         */
+        this.contents = [];
+
+        /**
+         * The extra tags for replacing in the template
+         * @type {array}
+         */
+        this.extraTags = [];
+
+        /**
+         * This defines if we load the page from memory or file
+         * @type {boolean}
+         */
+        this.memory = true;
+
+        /**
+         * This is the string of the page
+         */
+        this.pageString = &apos;&apos;;
+
+        /**
+         * The page controller
+         * @type {string}
+         */
+        this.controller = controller;
+
+        this.addTag(&apos;controller&apos;,controller);
+
+    }
+
+    /**
+     * Add a js file to the js string
+     * @param {object} js - the js object
+     * @property {string} name - the name of the attribute
+     * @property {string} value - the value of the attribute
+     */
+    addJs(js){
+        this.js.push(js);
+    }
+
+    /**
+     * Add js to the head of the page
+     * @param {object} js - the js object
+     * @property {string} name - the name of the attribute
+     * @property {string} value - the value of the attribute
+     */
+    addHeadJs(js){
+        this.headJs.push(js);
+    }
+
+    /**
+     * Add a meta object to the meta array
+     * @param {object} meta - the meta object
+     * @property {string} name - the name of the attribute
+     * @property {string} value - the value of the attribute
+     */
+    addMeta(meta){
+        this.meta.push(meta);
+    }
+
+    /**
+     * Add contents to the contents array
+     * @param {string} name - the name of the contents section
+     * @param {string} filename - the filename of the contents section
+     */
+    addContents(name,filename){
+        var obj = {};
+        obj.name = name;
+        obj.filename = filename;
+        this.contents.push(obj);
+    }
+
+    /**
+     * Add an extra tag with content into the extra tags
+     * @param {string} name - the name of the tag
+     * @param {string} content - the content of the tag
+     */
+    addTag(name,content){
+        var obj = {};
+        obj[name] = content;
+        this.extraTags.push(obj);
+    }
+
+    /**
+     * Remove an extra tag with content
+     * @param {string} name - the name of the tag
+     */
+    removeTag(name){
+        for(let key in this.extraTags){
+            if(key === name){
+                delete this.extraTags[key];
+            }
+        }
+    }
+
+    /**
+     * Syncronously render the page
+     */
+    render(){
+        var tags = [];
+        tags.push({&apos;contents&apos;:contentsRender(this.config.contentDir,this.contents)});
+        //render the tags
+        tags.push({&apos;title&apos;:this.title});
+        tags.push({&apos;meta&apos;:tagRender(&apos;meta&apos;,true,this.meta)});
+        tags.push({&apos;css&apos;:tagRender(&apos;link&apos;,true,this.css)});
+        tags.push({&apos;headJs&apos;:tagRender(&apos;script&apos;,false,this.headJs)});
+        tags.push({&apos;js&apos;:tagRender(&apos;script&apos;,false,this.js)});
+        if(this.extraTags.length &gt; 0){
+            tags = tags.concat(this.extraTags);
+        }
+        //add files
+        var files = [];
+        var tpl = this.config.templateDir;
+        files.push({&apos;container&apos;:tpl+this.container});
+        files.push({&apos;menu&apos;:tpl+this.menu});
+        files.push({&apos;head&apos;:tpl+this.head});
+        files.push({&apos;body&apos;:tpl+this.body});
+        files.push({&apos;foot&apos;:tpl+this.foot});
+        //render the page to a file
+        this.pageString = pageRender(this.config.cacheDir,this.permalink,tags,files);
+    }
+
+    /**
+     * Load the page from a file and pass in a data object for angular
+     * @param {function(err:error,file:string)} callback - the callback function returns the file after the data is added
+     */
+    load(callback){
+        if(this.memory === true){
+                var string = this.pageString;
+                return callback(null,string);
+        } else {
+            fs.readFile(this.config.cacheDir+this.permalink.replace(&apos;/&apos;,&apos;~&apos;)+&apos;.html&apos;,&apos;utf8&apos;,(err,file)=&gt;{
+                if(err){
+                    console.log(err);
+                    return callback(err,null);
+                }
+                return callback(null,file);
+            });
+        }
+    }
+    
+
+}
+</code></pre>
+
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(0.4.1)</span></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
