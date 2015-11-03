@@ -14,7 +14,7 @@ import blogReplace from './blogReplace.js';
  */
 export default function blogRender(blog,layout,blogHtml,blogCacheHtml,callback){
 
-    var toReplace = {
+    let toReplace = {
         '$$theTitle$$' : blog.get('title'),
         '$$theAuthor$$' : blog.get('author'),
         '$$theContent$$' : blog.get('content'),
@@ -24,6 +24,6 @@ export default function blogRender(blog,layout,blogHtml,blogCacheHtml,callback){
     let layout2 = layout;
     let str = blogReplace(toReplace,blogHtml);
     toReplace['$$theLink'] = blog.get('permalink');
-    let st2 = blogReplace(toReplace,blogCacheHtml);
+    let str2 = blogReplace(toReplace,blogCacheHtml);
     return callback(layout.replace('<BLOGDATA/>',str).replace('<BLOGLIST/>',''),layout2.replace('<BLOGLIST/>',str2).replace('<BLOGDATA/>',''));
 }
