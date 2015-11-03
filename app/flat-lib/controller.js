@@ -24,8 +24,9 @@ export default class controller {
      * @param {uploadedFiles} uploadedFiles - the class that reads and writes files from the user
      * @param {blogTemplate} blogTemplate - the blog template manager
      * @param {cacheManager} blogCache - the cacheManager for blogs
+     * @param {cacheManager} blogListCache - the cache manager for the blog lists
      */
-    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager,configManager,infoManager,uploadedFiles,blogTemplate,blogCache){
+    constructor(pageManager,sectionManager,sessionManager,templateManager,userManager,cacheManager,uploadManager,blogManager,configManager,infoManager,uploadedFiles,blogTemplate,blogCache,blogListCache){
 
         /**
          * The page manager
@@ -104,6 +105,12 @@ export default class controller {
          * @type {cacheManager}
          */
         this._blogCache = blogCache; 
+
+        /**
+         * The blog list cache manager
+         * @type {cacheManager}
+         */
+        this._blogListCache = blogListCache;
 
     }
 
@@ -316,6 +323,22 @@ export default class controller {
     }
 
     /**
+     * Get the blog list cache
+     * @return {cacheManager} - the blog list cache manager
+     */
+    get blogListCache(){
+        return this._blogListCache;
+    }
+
+    /**
+     * Set the blog list cache
+     * @param {cacheManager} manager - the blog list cache manager
+     */
+    set blogListCache(manager){
+        this._blogListCache = manager;
+    }
+
+    /**
      * Init all of the managers
      */
     init(){
@@ -328,6 +351,7 @@ export default class controller {
         this._uploadManager.init();
         this._blogManager.init();
         this._blogCache.init();
+        this._blogListCache.init();
     }
 
 

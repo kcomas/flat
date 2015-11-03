@@ -6,6 +6,7 @@
         <p><pre>$$$$blogList$$$$ $$$$/blogList$$$$</pre><br />
         Title: $$$$theTitle$$$$<br />
         Author : $$$$theAuthor$$$$<br />
+        Content : $$$$theContent$$$$<br />
         Tags : $$$$theTags$$$$<br />
         Date : $$$$theDate$$$$<br />
         Link : $$$$theLink$$$$</p>

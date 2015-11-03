@@ -8,9 +8,10 @@ import blogReplace from './blogReplace.js';
  * @param {blog} blog - the blog class to pass in
  * @param {string} layout - the layout to use on the blog
  * @param {string} blogHtml - the blog html
- * @return {string} the rendered blog page
+ * @param {function(cacheString:string,cacheListString:string)}  callback - returns the cachestring and the list cache string
+ * @return {function} the callback function
  */
-export default function blogRender(blog,layout,blogHtml){
+export default function blogRender(blog,layout,blogHtml,blogCacheHtml,callback){
 
     var toReplace = {
         '$$theTitle$$' : blog.get('title'),
@@ -19,6 +20,9 @@ export default function blogRender(blog,layout,blogHtml){
         '$$theTags$$' : blog.get('tags').join(' '),
         '$$theDate$$' : blog.get('dateCreated')
     };
+    let layout2 = layout;
     let str = blogReplace(toReplace,blogHtml);
-    return layout.replace('<BLOGDATA/>',str).replace('<BLOGLIST/>','');
+    toReplace['$$theLink'] = blog.get('permalink');
+    let st2 = blogReplace(toReplace,blogCacheHtml);
+    return callback(layout.replace('<BLOGDATA/>',str).replace('<BLOGLIST/>',''),layout2.replace('<BLOGLIST/>',str2).replace('<BLOGDATA/>',''));
 }

@@ -69,25 +69,39 @@ blogRouter.post('/flat-admin/blog/render',(req,res)=>{
         return;
     }
     var cache = blogRouter.controller.blogCache.findByParam('permalink',permalink);
-    var fileStr = blogRender(blog,blogRouter.controller.blogTemplate.cache,blogRouter.controller.blogTemplate.blogHtml); 
-    if(cache === null){
-        //create
-        blogRouter.controller.blogCache.create(permalink,fileStr,(err,done)=>{
-            if(err){
-                showError(req,res,new Error('Failed To Create'),500);
-                return;
-            }
-            showSuccess(req,res,'Blog Cache Created',200);
-        });
-    } else {
-        //update
-        cache.upsert({'fileStr':fileStr},(err,done)=>{
-            if(err){
-                showError(req,res,new Error('Failed To Update'),500);
-                return;
-            }
-            showSuccess(req,res,'Blog Updated',200);
-        });
+    var listCache = blogRouter.controller.blogListCache.findByParam('permalink',permalink);
+    blogRender(blog,blogRouter.controller.blogTemplate.cache,blogRouter.controller.blogTemplate.blogHtml,blogRouter.controller.blogTemplate.blogListHtml,(cacheStr,listCacheStr)=>{ 
+        if(cache === null && listCache === null){
+            //create
+            blogRouter.controller.blogCache.create(permalink,cacheStr,(err,done)=>{
+                if(err){
+                    showError(req,res,new Error('Failed To Create'),500);
+                    return;
+                }
+                blogRouter.controller.blogListCache.create(permalink,listCacheStr,(err,done)=>{
+                    if(err){
+                        showError(req,res,new Error('Falied To Create List Cache'),500);
+                        return;
+                    }
+                    showSuccess(req,res,'Blog Cache Created',200);
+                });
+            });
+        } else {
+            //update
+            cache.upsert({'fileStr':cacheStr},(err,done)=>{
+                if(err){
+                    showError(req,res,new Error('Failed To Update'),500);
+                    return;
+                }
+                listCache.upsert({'fileStr',listCacheStr},(err,done)=>{
+                    if(err){
+                        showError(req,res,new Error('Failed To Update List Cache'),500);
+                        return;
+                    }
+                    showSuccess(req,res,'Blog Updated',200);
+                });
+            });
+    });
     }
 });
 
