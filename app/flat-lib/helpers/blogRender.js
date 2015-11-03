@@ -20,5 +20,5 @@ export default function blogRender(blog,layout,blogHtml){
         '$$theDate$$' : blog.get('dateCreated')
     };
     let str = blogReplace(toReplace,blogHtml);
-    return layout.replace('<BLOGDATA/>',blogHtml);
+    return layout.replace('<BLOGDATA/>',str);
 }
