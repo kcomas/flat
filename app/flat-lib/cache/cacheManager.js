@@ -53,7 +53,7 @@ export default class cacheManager extends manager {
             start = (start*total)-1;
         }
         for(let i=start,n=0; n<total; n++){
-            if(i === this.items.length){
+            if(i >= this.items.length){
                 break;
             }
             ret += this.items[i].get('fileStr');
