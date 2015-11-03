@@ -62,6 +62,12 @@ export default class blogTemplate {
          */
         this._data.cache = '';
 
+        /**
+         * The inernal string where the blog html is held
+         * @type {string}
+         */
+        this._data.blogHtml = '';
+
         //try to read a file if it is on disk
         try {
             this._data = JSON.parse(fs.readFileSync(this._dir+this._file,'utf8'));
@@ -86,21 +92,6 @@ export default class blogTemplate {
         return JSON.stringify(this._data,null,2);
     }
 
-    /**
-     * Set the current template
-     * @param {string} temp - the new template
-     */
-    set template(temp){
-        this._data.template = temp;
-    }
-
-    /**
-     * Get the current template
-     * @return {string} the current template
-     */
-    get template(){
-        return this._data.template;
-    }
 
     /**
      * Set the currents number of blogs per page
@@ -124,6 +115,11 @@ export default class blogTemplate {
      */
     set cache(str){
         this._data.cache = str;
+        //get the blog substring
+        let start = this._data.cache.indexOf('$$blog$$');
+        let end = this._data.cache.indexOf('$$/blog$$');
+        this._data.blogHtml = this._data.cache.substring(start,end);
+        this.data.cache.replace(this._data.blogHtml,'$$BLOGDATA$$');
     }
 
     /**

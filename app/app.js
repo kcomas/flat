@@ -21,6 +21,7 @@ import installRouter from './flat-routers/install.js';
 import signinRouter from './flat-routers/signin.js';
 import debugRouter from './flat-routers/debug.js';
 import mainBlogRouter from './flat-routers/blog.js';
+import blogListRouter from './flat-routers/blogList.js';
 
 const app = new server();
 
@@ -45,6 +46,8 @@ app.use(auth(controll,authRoutes));
 app.route('/',mainRouter.run(controll));
 
 app.route('/blog',mainBlogRouter.run(controll));
+
+app.route('/blog-list',blogListRouter.run(controll));
 
 app.route('/flat-login',signinRouter.run(controll));
 

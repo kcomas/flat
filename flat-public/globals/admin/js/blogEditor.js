@@ -49,7 +49,6 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
         $scope.current.blog = blog;
     };
 
-
     $scope.delete = function(blog){
         var jsonData = JSON.stringify({
             permalink : blog.permalink
