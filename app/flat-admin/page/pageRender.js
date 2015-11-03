@@ -37,7 +37,6 @@ export default function pageRender(dir,permalink,tags,files){
             try {
                 var reg = new RegExp('%'+key+'%','g');
                 container = container.replace(reg,tag[key]);
-                console.dir(container);
             } catch(err){
                 console.log(err);
             }
