@@ -41,4 +41,22 @@ export default class cacheManager extends manager {
         });
     }
 
+    /**
+     * Retrive a certian number of items based
+     * @override
+     * @param {number} start - the starting number in the loop
+     * @param {number} total - the total number to collect
+     * @return {string} the items collected as the filestr
+     */
+    getSelection(start,total){
+        var ret = '';
+        for(let i=start; i<total; i++){
+            if(i === this.items.length){
+                break;
+            }
+            ret += this.items[i].get('fileStr');
+        }
+        return ret;
+    }   
+    
 }

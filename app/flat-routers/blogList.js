@@ -6,7 +6,7 @@ import router from '../flat-lib/server/router.js';
 const blogListRouter = new router();
 
 blogListRouter.use((req,res,next)=>{
-    var page = req.query.page;
+    let page = req.query.page;
     try {
       page =  parseInt(page);
     } catch(err){
@@ -15,6 +15,14 @@ blogListRouter.use((req,res,next)=>{
     if(page === 0){
         page = 1;
     }
+    let total = blogListRouter.controller.blogTemplate.numPerPage;
+    let blogsStr = blogListRouter.controller.blogListCache.getSelection((page-1)*10,total); 
+    //grab the blog template
+    let blogTemplate = blogListRouter.controller.blogTemplate.cache.replace('<BLOGDATA/>','');
+    blogTemplate = blogTemplate.replace('<BLOGLIST/>',blogStr);
+    res.statusCode = 200;
+    res.setHeader('content-type','text/html; chartset=utf-8');
+    res.end(blogTemplate);
 });
 
 blogListRouter.always((req,res)=>{
