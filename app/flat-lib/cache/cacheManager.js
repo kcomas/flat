@@ -52,9 +52,8 @@ export default class cacheManager extends manager {
         if(start === 1){
             start = 0;
         } else {
-            start = ((start-1)*total)-1;
+            start = ((start-1)*total);
         }
-        console.dir(start);
         for(let i=start; i<total; i++){
             if(i === this.items.length){
                 break;
