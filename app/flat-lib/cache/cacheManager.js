@@ -54,10 +54,12 @@ export default class cacheManager extends manager {
         } else {
             start = ((start-1)*total)-1;
         }
+        console.dir(start);
         for(let i=start; i<total; i++){
             if(i === this.items.length){
                 break;
             }
+            console.dir(this.items[i]);
             ret += this.items[i].get('fileStr');
         }
         return ret;
