@@ -12,7 +12,7 @@ blogListRouter.use((req,res,next)=>{
     } catch(err){
         page = 1;
     }
-    if(isNaN(page){
+    if(isNaN(page)){
         page = 1;
     }
     if(page === 0){
