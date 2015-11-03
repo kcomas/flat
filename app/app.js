@@ -20,6 +20,7 @@ import mainRouter from './flat-routers/index.js';
 import installRouter from './flat-routers/install.js';
 import signinRouter from './flat-routers/signin.js';
 import debugRouter from './flat-routers/debug.js';
+import blogRouter from './flat-routers/blog.js';
 
 const app = new server();
 
@@ -42,6 +43,8 @@ var authRoutes = ['/flat-admin','/flat-debug'];
 app.use(auth(controll,authRoutes));
 
 app.route('/',mainRouter.run(controll));
+
+app.route('/blog',blogRouter.run(controll));
 
 app.route('/flat-login',signinRouter.run(controll));
 
