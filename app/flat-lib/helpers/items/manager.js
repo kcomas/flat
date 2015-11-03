@@ -234,22 +234,5 @@ export default class manager {
         str += ']';
         return str.replace(/,(?=[^,]*$)/, '');
     }
-
-    /**
-     * Retrive a certian number of items based
-     * @param {number} start - the starting number in the loop
-     * @param {number} total - the total number to collect
-     * @return {array} the items collected
-     */
-    getSelection(start,total){
-        var ret = [];
-        for(let i=start; i<total; i++){
-            if(i === this.items.length){
-                break;
-            }
-            ret.push(this.items[i]);
-        }
-        return ret;
-    }
     
 }
