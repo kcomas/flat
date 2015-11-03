@@ -235,6 +235,7 @@ export default class page {
         files.push({'foot':tpl+this.foot});
         //render the page to a file
         this.pageString = pageRender(this.config.cacheDir,this.permalink,tags,files);
+        console.dir(this.pageString);
     }
 
     /**
