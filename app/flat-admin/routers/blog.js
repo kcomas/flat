@@ -55,7 +55,10 @@ blogRouter.post('/flat-admin/blog/remove',(req,res)=>{
         }
          //delete the cached page if it exists
          blogRouter.controller.blogCache.removeByParam('permalink',permalink,(err,done)=>{
-            showSuccess(req,res,"item deleted",200);
+            //delete from the list cache
+            blogRouter.controller.blogListCache.removeByParam('permalink',permalink,(err,done)=>{
+                showSuccess(req,res,"item deleted",200);
+            });
         });
     });
 });
