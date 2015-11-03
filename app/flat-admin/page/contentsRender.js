@@ -14,6 +14,7 @@ export default function contentsRender(dir,contents){
     contents.forEach((content)=>{
         try {
             rendered += '<uib-tab heading="'+content.name+'" >'+fs.readFileSync(dir+content.filename,'utf8')+'</uib-tab>';   
+            console.dir(rendered);
         } catch (err){
             console.log(err);
         }
