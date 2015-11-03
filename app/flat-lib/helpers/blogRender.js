@@ -23,7 +23,7 @@ export default function blogRender(blog,layout,blogHtml,blogCacheHtml,callback){
     };
     let layout2 = layout;
     let str = blogReplace(toReplace,blogHtml);
-    toReplace['$$theLink$$'] = blog.get('permalink');
+    toReplace['$$theLink$$'] = '/blog' + blog.get('permalink');
     let str2 = blogReplace(toReplace,blogCacheHtml);
     return callback(layout.replace('<BLOGDATA/>',str).replace('<BLOGLIST/>',''),layout2.replace('<BLOGLIST/>',str2).replace('<BLOGDATA/>',''));
 }

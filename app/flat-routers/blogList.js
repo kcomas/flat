@@ -17,6 +17,7 @@ blogListRouter.use((req,res,next)=>{
     }
     let total = blogListRouter.controller.blogTemplate.numPerPage;
     let blogStr = blogListRouter.controller.blogListCache.getSelection((page-1)*10,total); 
+    console.log(blogStr);
     //grab the blog template
     let blogTemplate = blogListRouter.controller.blogTemplate.cache.replace('<BLOGDATA/>','');
     blogTemplate = blogTemplate.replace('<BLOGLIST/>',blogStr);
