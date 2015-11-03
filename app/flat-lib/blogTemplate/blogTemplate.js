@@ -126,7 +126,7 @@ export default class blogTemplate {
         let end = this._data.cache.indexOf('</$$blog$$>') + '</$$blog$$>'.length;
 
         if(start !== -1 && end !== -1){
-        t   his._data.blogHtml = this._data.cache.substring(start,end);
+            this._data.blogHtml = this._data.cache.substring(start,end);
             this._data.cache = this._data.cache.replace(this._data.blogHtml,'<BLOGDATA/>');
             this._data.blogHtml = this._data.blogHtml.replace('<\$\$blog\$\$>','').replace('</\$\$blog\$\$>','');
         }
