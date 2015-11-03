@@ -70,7 +70,7 @@ blogRouter.post('/flat-admin/blog/render',(req,res)=>{
         return;
     }
     var cache = blogRouter.controller.blogCache.findByParam('permalink',permalink);
-    var fileStr = blogRender(blog,blogRouter.controller.blogTemplate.cache); 
+    var fileStr = blogRender(blog,blogRouter.controller.blogTemplate.cache,blogRouter.controller.blogTemplate.blogHtml); 
     if(cache === null){
         //create
         blogRouter.controller.blogCache.create(permalink,fileStr,(err,done)=>{

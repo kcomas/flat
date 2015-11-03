@@ -130,6 +130,22 @@ export default class blogTemplate {
         return this._data.cache;
     }
 
+    /**
+     * Get the blog html
+     * @return {string} the inner blog html for lists
+     */
+    get blogHtml(){
+        return this._data.blogHtml;
+    }
+
+    /**
+     * Set the blog html
+     * @param {string} html - the new blog html string
+     */
+    set blogHtml(html){
+        this._data.blogHtml = html;
+    }
+
 
 
 }
