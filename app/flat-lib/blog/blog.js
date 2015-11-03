@@ -15,13 +15,12 @@ export default class blog extends item {
      * @param {string} name - the name of the blog
      * @param {string} title - the title of the blog
      * @param {string} author - the author of the blog
-     * @param {string} excerpt - the excerpt of the blog
      * @param {string} content - the content of the blog
      * @param {array} tags - the tags of the blog
      * @param {function(err:error,done:boolean)} callback - the callback function
      * @return {function} the callback function
      */
-    create(name,title,author,excerpt,content,tags,callback){
+    create(name,title,author,content,tags,callback){
         this.genId((err,done)=>{
             if(err){
                 return callback(err,null);
@@ -29,7 +28,6 @@ export default class blog extends item {
             this.data.name = name;
             this.data.title = title;
             this.data.author = author;
-            this.data.excerpt = excerpt;
             this.data.content = content;
             this.data.tags = tags;
             this.data.dateCreated = new Date();

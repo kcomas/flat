@@ -87,7 +87,6 @@ app.controller('blogPageEdit',['$scope','$http',function($scope,$http){
        var jsonData = JSON.stringify({
             name : $scope.current.blog.name,
             title : $scope.current.blog.title,
-            excerpt : $scope.current.blog.excerpt,
             tags : tmpTags,
             content : $scope.current.blog.content,
             permalink : $scope.current.blog.permalink

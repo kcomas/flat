@@ -68,6 +68,12 @@ export default class blogTemplate {
          */
         this._data.blogHtml = '';
 
+        /**
+         * The blog list internal html
+         * @type {string}
+         */
+        this._data.blogListHtml = '';
+
         //try to read a file if it is on disk
         try {
             this._data = JSON.parse(fs.readFileSync(this._dir+this._file,'utf8'));
@@ -118,9 +124,17 @@ export default class blogTemplate {
         //get the blog substring
         let start = this._data.cache.indexOf('<$$blog$$>');
         let end = this._data.cache.indexOf('</$$blog$$>') + '</$$blog$$>'.length;
+
         this._data.blogHtml = this._data.cache.substring(start,end);
         this._data.cache = this._data.cache.replace(this._data.blogHtml,'<BLOGDATA/>');
         this._data.blogHtml = this._data.blogHtml.replace('<\$\$blog\$\$>','').replace('</\$\$blog\$\$>','');
+
+        start = this._data.cache.indexOf('<$$blogList$$>');
+        end = this._data.cache.indexOf('</$$blogList$$>') + '</$$blogList$$>'.length;
+
+        this._data.blogListHtml = this._data.cache.substring(start,end);
+        this._data.cache = this._data.cache.replace(this._data.blogListHtml,'<BLOGLIST/>');
+        this._data.blogListHtml = this._data.blogListHtml.replace('<\$\$blogList\$\$>','').replace('</\$\$blogList\$\$>','');
     }
 
     /**
@@ -145,6 +159,22 @@ export default class blogTemplate {
      */
     set blogHtml(html){
         this._data.blogHtml = html;
+    }
+
+    /**
+     * Get the blog List Html
+     * @return {string} the blog list html
+     */
+    get blogListHtml(){
+        return this._data.blogListHtml;
+    }
+
+    /**
+     * Set the blog list html
+     * @param {string} html - the new blog list html
+     */
+    set blogListHtml(html){
+        this._data.blogListHtml = html;
     }
 
 

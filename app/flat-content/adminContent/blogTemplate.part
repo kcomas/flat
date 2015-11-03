@@ -3,19 +3,19 @@
         <h2>Blog Template</h2>
         <h4>Blog List Page</h4>
         <p>Dollar Signs Are Double</p>
-        <p><pre>$$$$blog$$$$ $$$$/blog$$$$</pre><br />
+        <p><pre>$$$$blogList$$$$ $$$$/blogList$$$$</pre><br />
         Title: $$$$theTitle$$$$<br />
         Author : $$$$theAuthor$$$$<br />
-        Excerpt : $$$$theExceprt$$$$<br />
         Tags : $$$$theTags$$$$<br />
         Date : $$$$theDate$$$$<br />
         Link : $$$$theLink$$$$</p>
         <h4>Blog Post Page</h4>
-        <p><br />
+        <p><pre>$$$$blog$$$$ $$$$/blog$$$$</pre><br />
         Title : $$$$theTitle$$$$<br />
         Author : $$$$theAuthor$$$$<br />
         Content : $$$$theContent$$$$<br />
         Tags : $$$$theTags$$$$<br />
+        Link : $$$$theLink$$$$<br />
         Date : $$$$theDate$$$$<p>
         <form novalidate>
             <h3>Blog Cache</h3>
