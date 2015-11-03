@@ -49,7 +49,9 @@ export default class cacheManager extends manager {
      */
     getSelection(start,total){
         var ret = '';
-        start = (start*total)-1;
+        if(start > 0){
+            start = (start*total)-1;
+        }
         for(let i=start,n=0; n<total; n++){
             if(i === this.items.length){
                 break;
