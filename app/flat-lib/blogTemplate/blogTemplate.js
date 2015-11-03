@@ -119,7 +119,7 @@ export default class blogTemplate {
         let start = this._data.cache.indexOf('$$blog$$');
         let end = this._data.cache.indexOf('$$/blog$$');
         this._data.blogHtml = this._data.cache.substring(start,end);
-        this.data.cache.replace(this._data.blogHtml,'$$BLOGDATA$$');
+        this._data.cache.replace(this._data.blogHtml,'$$BLOGDATA$$');
     }
 
     /**
