@@ -8,7 +8,8 @@ import blogReplace from './blogReplace.js';
  * @param {blog} blog - the blog class to pass in
  * @param {string} layout - the layout to use on the blog
  * @param {string} blogHtml - the blog html
- * @param {function(cacheString:string,cacheListString:string)}  callback - returns the cachestring and the list cache string
+ * @param {string} blogCacheHtml - the blog list cache html
+ * @param {function(cacheString:string,cacheListString:string)} callback - returns the cachestring and the list cache string
  * @return {function} the callback function
  */
 export default function blogRender(blog,layout,blogHtml,blogCacheHtml,callback){

@@ -93,7 +93,7 @@ blogRouter.post('/flat-admin/blog/render',(req,res)=>{
                     showError(req,res,new Error('Failed To Update'),500);
                     return;
                 }
-                listCache.upsert({'fileStr',listCacheStr},(err,done)=>{
+                listCache.upsert({'fileStr':listCacheStr},(err,done)=>{
                     if(err){
                         showError(req,res,new Error('Failed To Update List Cache'),500);
                         return;
